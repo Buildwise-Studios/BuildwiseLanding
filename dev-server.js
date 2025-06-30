@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { createServer } from 'vite'
 
 const server = await createServer({
@@ -9,5 +10,4 @@ const server = await createServer({
 })
 
 await server.listen()
-console.log('Frontend server running on port 5000')
 server.printUrls()

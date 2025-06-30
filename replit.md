@@ -2,7 +2,7 @@
 
 ## Overview
 
-Buildwise is a modern full-stack web application for an MVP development consulting agency. The application is built with a React frontend and Express.js backend, featuring a marketing website that showcases the company's services, approach, and team. The architecture emphasizes modern web development practices with TypeScript, component-based design, and responsive UI.
+Buildwise is a modern frontend-only React application for an MVP development consulting agency. The application is a static marketing website that showcases the company's services, approach, and team. The architecture emphasizes modern web development practices with TypeScript, component-based design, and responsive UI using Vite for fast development.
 
 ## System Architecture
 
