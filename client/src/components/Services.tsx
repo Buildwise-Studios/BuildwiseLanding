@@ -1,32 +1,27 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Rocket, Palette, TrendingUp, Users, DollarSign, ArrowRight } from "lucide-react";
+import { Rocket, Palette, TrendingUp, Users, DollarSign, ArrowRight, Bot, Rabbit } from "lucide-react";
 
 const services = [
   {
     icon: Rocket,
     title: "MVP Development",
-    description: "This is our core business: we put all our energy and know-how into it. Our developers have significant experience in creating comprehensive solutions ranging from startups to corporate worlds.",
+    description: "Our bread and butter: We build market-ready MVPs using efficient frameworks, automation tools, and the latest AI models. From startups to enterprises, we deliver products that are scalable, functional, and ready to make an impact.",
   },
   {
     icon: Palette,
     title: "UI/UX Prototyping",
-    description: "We create stunning user interfaces and experiences that convert. Our design process focuses on user-centered design principles to ensure maximum engagement and usability.",
+    description: "Simple, intuitive designs that prioritize user experience. We focus on clean interfaces that convert and engage your audience.",
   },
   {
-    icon: TrendingUp,
-    title: "Growth Hacking",
-    description: "We implement data-driven growth strategies to help your MVP gain traction quickly. From user acquisition to retention optimization, we've got you covered.",
+    icon: Rabbit,
+    title: "Rapid Market Testing",
+    description: "Use Google Ads, Facebook Ads, and other tools to validate your idea in real time. We help you identify your audience, refine your messaging, and test key hypotheses before scaling.",
   },
   {
-    icon: Users,
-    title: "B2B Sales Optimization",
-    description: "We optimize your B2B sales funnel with proven strategies and tools. From lead generation to conversion optimization, we help you scale efficiently.",
-  },
-  {
-    icon: DollarSign,
-    title: "Fundraising Support",
-    description: "We help you prepare for fundraising with investor-ready documentation, pitch decks, and financial projections that tell your story compellingly.",
+    icon: Bot,
+    title: "AI Agents & Chatbots",
+    description: "Build intelligent AI agents and chatbots tailored to your business needs. Automate customer interactions, boost engagement, and streamline operations.Perfect for startups in e-commerce, SaaS, and customer service industries.",
   },
 ];
 
@@ -39,8 +34,8 @@ export default function Services() {
             Our Services
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We don't just provide expertise in creating your software product,
-            but much more through our ecosystem of partners.
+          We specialize in building MVPs fast and effectively, but we also go beyond development to help you test, 
+          validate, and grow your product. Here's what we offer:
           </p>
         </div>
 
@@ -71,9 +66,7 @@ export default function Services() {
               </h3>
               <p className="text-teal-100 mb-6 leading-relaxed">
                 This is our core business: we put all our energy and know-how
-                into it. Our developers have significant experience in creating
-                comprehensive solutions ranging from startups to corporate
-                worlds.
+                into it. We have hands on experience building prototypes, MVPs and scalable products.
               </p>
               <Button 
                 variant="secondary" 

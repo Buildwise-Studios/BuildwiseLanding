@@ -4,21 +4,30 @@ import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: "FinanceTracker",
-    description: "A comprehensive financial management platform that helps small businesses track expenses, manage invoices, and generate detailed financial reports.",
-    category: "Financial Technology",
+    title: "VoxAI",
+    description: "A text-to-3D asset tool for indie game developers and studios.",
+    what: "Leverages the latest open-source diffusion models to generate 3D models and images. Business Model: SaaS with a credit-based system.",
+    objective: "Help non-3D-skilled developers prototype faster and create assets effortlessly.",
+    highlight: "Incubated at Hong Kong Science Park.",
+    category: "AI Startup",
     image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300",
   },
   {
-    title: "EcoMarket",
-    description: "A sustainable marketplace connecting eco-conscious consumers with local sustainable product suppliers through an intuitive mobile experience.",
-    category: "E-commerce",
+    title: "Botwise",
+    description: "A WhatsApp AI Assistant for booking cars from start to finish.",
+    what: "Combines automations and AI agents to handle car bookings 24/7.",
+    objective: "Reduce costs, improve efficiency, and eliminate the need for constant human intervention.",
+    highlight: "Operational, scalable, and cost-effective.",
+    category: "AI Chatbot",
     image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300",
   },
   {
-    title: "HealthConnect",
-    description: "A telemedicine platform that connects patients with healthcare providers, featuring appointment scheduling, video consultations, and health records management.",
-    category: "Healthcare",
+    title: "LeaguePass",
+    description: "An automated esports tournament solution for mobile games.",
+    what: "Simplifies tournament management for popular mobile titles by automating the entire process.",
+    objective: "Streamline tournament creation and operation.",
+    highlight: "Incubated at Cyberport Hong Kong.",
+    category: "Esports Startup",
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300",
   },
 ];
@@ -50,7 +59,19 @@ export default function Projects() {
                   {project.title}
                 </h3>
                 <p className="text-gray-600 mb-4">{project.description}</p>
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col items-start justify-center text-sm">
+                <div>
+                  <p className='flex font-semibold'>What it does:</p>
+                  <p className="text-gray-600 mb-4">{project.what}</p>
+                </div>
+                <div>
+                  <p className='flex font-semibold'>Objective:</p>
+                  <p className="text-gray-600 mb-4">{project.objective}</p>
+                </div>
+                <div>
+                  <p className='flex font-semibold'>Highlight:</p>
+                  <p className="text-gray-600 mb-4">{project.highlight}</p>
+                </div>
                   <span className="text-sm text-gray-500">{project.category}</span>
                   <button className="text-teal-600 hover:text-teal-700 font-semibold">
                     <ExternalLink className="h-4 w-4" />

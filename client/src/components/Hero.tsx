@@ -8,15 +8,19 @@ export default function Hero() {
         <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
           <div className="mb-8 lg:mb-0">
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-              We Build Your{" "}
-              <span className="text-teal-500">MVP</span> in Less Than{" "}
-              <span className="text-teal-500">3 Months</span>
+              Launch Your{" "}
+              <span className="text-teal-500">MVP</span> in just{" "}
+              <span className="text-teal-500">12 Weeks</span>
             </h1>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              We are a consulting and development agency specialized in creating
-              MVPs (Minimum Viable Products). Thanks to our low-code approach
-              and AI-powered development, launch your idea to market in less
-              than 12 weeks.
+              Transform your idea into a market-ready product with our low-code, 
+              AI-powered development process.
+            </p>
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              We’re a small, agile team based in Hong Kong, leveraging AI, 
+              automation, 
+              and rapid development tools to deliver high-quality MVPs faster and 
+              smarter, at a reasonable cost.
             </p>
             <Button 
               size="lg" 
