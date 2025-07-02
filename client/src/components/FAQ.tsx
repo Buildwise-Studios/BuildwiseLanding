@@ -15,7 +15,7 @@ const faqs = [
   {
     id: "faq3",
     question: "What types of technologies do you use for MVP development?",
-    answer: "We use modern, scalable technologies including React, Next.js, Node.js, Python, AWS cloud infrastructure, MongoDB, TypeScript, and AI/ML tools. Our tech stack is carefully selected based on your specific project requirements to ensure optimal performance and future scalability.",
+    answer: "We use modern, scalable technologies including React, Next.js, Node.js, Python, AWS cloud infrastructure, MongoDB, Supabase, TypeScript, PydanticAI, LangGraph and other AI tools. Our tech stack is carefully selected based on your specific project requirements to ensure optimal performance and future scalability.",
   },
   {
     id: "faq4",

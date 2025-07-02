@@ -1,4 +1,5 @@
 import { Rocket, Mail, Phone, MapPin, Linkedin, Twitter, Github } from "lucide-react";
+import { FiFacebook, FiInstagram } from "react-icons/fi";
 
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
@@ -31,15 +32,21 @@ export default function Footer() {
               to help you test your market quickly and cost-effectively.
             </p>
             <div className="flex space-x-4">
+            <a href="https://www.linkedin.com/in/charles-fauchet-gaminginfluence/" target="_blank" rel="noopener noreferrer">
               <button className="text-gray-400 hover:text-teal-500 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </button>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61577737420712" target="_blank" rel="noopener noreferrer">
               <button className="text-gray-400 hover:text-teal-500 transition-colors">
-                <Twitter className="h-5 w-5" />
+                <FiFacebook  className="h-5 w-5" />
               </button>
+            </a>
+            <a href="https://www.instagram.com/buildwise852/" target="_blank" rel="noopener noreferrer">
               <button className="text-gray-400 hover:text-teal-500 transition-colors">
-                <Github className="h-5 w-5" />
+                <FiInstagram className="h-5 w-5" />
               </button>
+              </a>
             </div>
           </div>
 
@@ -100,24 +107,22 @@ export default function Footer() {
                   href="mailto:hello@buildwise.com"
                   className="text-gray-300 hover:text-teal-500 transition-colors"
                 >
-                  hello@buildwise.com
+                  charles@voxelai.ai
                 </a>
               </div>
               <div className="flex items-center">
                 <Phone className="h-5 w-5 text-teal-500 mr-3" />
                 <a
-                  href="tel:+14155551234"
+                  href="tel:+85269784602"
                   className="text-gray-300 hover:text-teal-500 transition-colors"
                 >
-                  +1 (415) 555-1234
+                  +852 6978 4602
                 </a>
               </div>
               <div className="flex items-start">
                 <MapPin className="h-5 w-5 text-teal-500 mr-3 mt-1" />
                 <span className="text-gray-300">
-                  San Francisco, CA
-                  <br />
-                  United States
+                  Hong Kong
                 </span>
               </div>
             </div>
@@ -127,7 +132,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 mb-4 md:mb-0">
-              © 2024 Buildwise. All rights reserved.
+              © 2025 Metaverse Lab Limited. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <button className="text-gray-400 hover:text-teal-500 transition-colors">

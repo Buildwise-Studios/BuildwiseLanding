@@ -1,11 +1,21 @@
 import { Search, Lightbulb, Code, Rocket } from "lucide-react";
 
+// images
+import mvp from '@/assets/mvp.png';
+import rapidDev from '@/assets/rapid-dev.png';
+import roadmap from '@/assets/roadmap.png';
+import traffic from '@/assets/mvp.png';
+
+const original_urls = ["https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=400", "https://images.unsplash.com/photo-1590103514966-5e2a11c13e21?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=400", 
+
+  "https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=400", "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=400"
+ ]
 const steps = [
   {
     number: 1,
     title: "How Do We Test Your Product Idea Fast?",
     icon: Search,
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=400",
+    image: mvp,
     features: [
       {
         title: "Stop Overthinking. Test Your Idea Fast",
@@ -26,7 +36,7 @@ const steps = [
     number: 2,
     title: "When Do We Launch It?",
     icon: Lightbulb,
-    image: "https://images.unsplash.com/photo-1590103514966-5e2a11c13e21?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=400",
+    image: roadmap,
     features: [
       {
         title: "Commit to Launch",
@@ -46,7 +56,7 @@ const steps = [
     number: 3,
     title: "Rapid Development",
     icon: Code,
-    image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=400",
+    image: rapidDev,
     features: [
       {
         title: "Light Architecture",
@@ -66,7 +76,7 @@ const steps = [
     number: 4,
     title: "The Launch",
     icon: Rocket,
-    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=400",
+    image: traffic,
     features: [
       {
         title: "Market Launch",
@@ -130,7 +140,9 @@ export default function Approach() {
                 <img
                   src={step.image}
                   alt={`${step.title} process illustration`}
-                  className="rounded-xl shadow-lg mx-auto"
+                  className="rounded-xl mx-auto"
+                  width={250}
+                  height={200}
                 />
               </div>
             </div>

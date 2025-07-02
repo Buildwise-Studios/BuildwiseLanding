@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Rocket } from "lucide-react";
+import { Menu, Egg } from "lucide-react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,9 +32,7 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <div className="bg-teal-500 rounded-lg p-2 mr-3">
-              <Rocket className="h-5 w-5 text-white" />
-            </div>
+            <Egg className="h-8 w-8 text-teal-500 " />
             <span className="text-xl font-bold text-gray-900">Buildwise</span>
           </div>
 

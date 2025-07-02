@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Rocket, Palette, TrendingUp, Users, DollarSign, ArrowRight, Bot, Rabbit } from "lucide-react";
+// images
+import buildwiseTeam from '@/assets/buildwise-team.png';
 
 const services = [
   {
@@ -83,9 +85,9 @@ export default function Services() {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
+                src="https://images.unsplash.com/photo-1523908511403-7fc7b25592f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
                 alt="Development team collaborating in modern office"
-                className="rounded-xl shadow-lg w-full"
+                className="w-full rounded-xl shadow-lg"
               />
             </div>
           </div>

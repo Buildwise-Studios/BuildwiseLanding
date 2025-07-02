@@ -1,6 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Star } from "lucide-react";
 
+
+
+
+const original_unplash_image = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+
 export default function Hero() {
   return (
     <section className="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-teal-50">
@@ -10,14 +15,14 @@ export default function Hero() {
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
               Launch Your{" "}
               <span className="text-teal-500">MVP</span> in just{" "}
-              <span className="text-teal-500">12 Weeks</span>
+              <span className="text-teal-500">8 Weeks</span>
             </h1>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
               Transform your idea into a market-ready product with our low-code, 
               AI-powered development process.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              We’re a small, agile team based in Hong Kong, leveraging AI, 
+              We’re a compact, agile team based in Hong Kong, leveraging AI, 
               automation, 
               and rapid development tools to deliver high-quality MVPs faster and 
               smarter, at a reasonable cost.
@@ -41,11 +46,13 @@ export default function Hero() {
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
               alt="Modern tech team collaboration workspace"
               className="rounded-2xl shadow-2xl w-full"
+              width={800}
+              height={600}
             />
             <div className="absolute -bottom-6 -right-6 bg-white rounded-xl p-4 shadow-lg">
               <div className="flex items-center space-x-3">
                 <img
-                  src="https://images.unsplash.com/photo-1494790108755-2616b332c3ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"
+                  src="https://images.unsplash.com/photo-1512484776495-a09d92e87c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"
                   alt="Client testimonial"
                   className="w-12 h-12 rounded-full object-cover"
                 />
@@ -55,7 +62,7 @@ export default function Hero() {
                       <Star key={i} className="w-3 h-3 fill-current" />
                     ))}
                   </div>
-                  <p className="text-sm text-gray-600">Incredible results!</p>
+                  <p className="text-sm text-gray-600">It's live!</p>
                 </div>
               </div>
             </div>

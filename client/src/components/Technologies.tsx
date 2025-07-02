@@ -4,12 +4,13 @@ import {
   SiNodedotjs, 
   SiPython, 
   SiDocker, 
-  SiMongodb,
+  SiSupabase,
   SiNextdotjs,
-  SiTypescript,
-  SiGraphql,
-  SiKubernetes,
-  SiStripe
+  SiOpenai,
+  SiLangchain,
+  SiVercel,
+  SiStripe,
+  SiReplit
 } from "react-icons/si";
 import { Brain } from "lucide-react";
 
@@ -19,12 +20,12 @@ const technologies = [
   { name: "Node.js", icon: SiNodedotjs, color: "text-green-500", bgColor: "hover:bg-green-50" },
   { name: "Python", icon: SiPython, color: "text-yellow-500", bgColor: "hover:bg-yellow-50" },
   { name: "Docker", icon: SiDocker, color: "text-blue-600", bgColor: "hover:bg-blue-50" },
-  { name: "MongoDB", icon: SiMongodb, color: "text-green-600", bgColor: "hover:bg-green-50" },
+  { name: "Supabase", icon: SiSupabase, color: "text-teal-400", bgColor: "hover:bg-green-50" },
   { name: "Next.js", icon: SiNextdotjs, color: "text-gray-700", bgColor: "hover:bg-gray-100" },
-  { name: "TypeScript", icon: SiTypescript, color: "text-blue-600", bgColor: "hover:bg-blue-50" },
-  { name: "GraphQL", icon: SiGraphql, color: "text-pink-500", bgColor: "hover:bg-pink-50" },
-  { name: "Kubernetes", icon: SiKubernetes, color: "text-blue-700", bgColor: "hover:bg-blue-50" },
-  { name: "AI/ML", icon: Brain, color: "text-purple-500", bgColor: "hover:bg-purple-50" },
+  { name: "Replit", icon: SiReplit, color: "text-orange-500", bgColor: "hover:bg-orange-50" },
+  { name: "LangChain", icon: SiLangchain, color: "text-green-900", bgColor: "hover:bg-green-50" },
+  { name: "Vercel", icon: SiVercel, color: "text-black-700", bgColor: "hover:bg-gray-100" },
+  { name: "OpenAI", icon:  SiOpenai, color: "text-teal-500", bgColor: "hover:bg-teal-50" },
   { name: "Stripe", icon: SiStripe, color: "text-indigo-500", bgColor: "hover:bg-indigo-50" },
 ];
 
@@ -37,7 +38,7 @@ export default function Technologies() {
             Technologies We Use
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We leverage cutting-edge technologies and frameworks to build
+            We leverage technologies and frameworks that we know well to build
             scalable, efficient MVPs.
           </p>
         </div>

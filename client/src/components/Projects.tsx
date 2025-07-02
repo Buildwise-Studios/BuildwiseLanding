@@ -1,6 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
+// images
+import leaguePass from '@/assets/leaguepass.png';
+import voxai from '@/assets/voxaisq.png';
+import botwise from '@/assets/botwise.jpeg';
 
 const projects = [
   {
@@ -10,7 +14,7 @@ const projects = [
     objective: "Help non-3D-skilled developers prototype faster and create assets effortlessly.",
     highlight: "Incubated at Hong Kong Science Park.",
     category: "AI Startup",
-    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300",
+    image: voxai,
   },
   {
     title: "Botwise",
@@ -19,7 +23,7 @@ const projects = [
     objective: "Reduce costs, improve efficiency, and eliminate the need for constant human intervention.",
     highlight: "Operational, scalable, and cost-effective.",
     category: "AI Chatbot",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300",
+    image: botwise,
   },
   {
     title: "LeaguePass",
@@ -28,7 +32,7 @@ const projects = [
     objective: "Streamline tournament creation and operation.",
     highlight: "Incubated at Cyberport Hong Kong.",
     category: "Esports Startup",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300",
+    image: leaguePass,
   },
 ];
 
@@ -52,7 +56,7 @@ export default function Projects() {
               <img
                 src={project.image}
                 alt={`${project.title} interface`}
-                className="w-full h-48 object-cover"
+                className="w-full p-5 h-48 object-cover"
               />
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -73,9 +77,9 @@ export default function Projects() {
                   <p className="text-gray-600 mb-4">{project.highlight}</p>
                 </div>
                   <span className="text-sm text-gray-500">{project.category}</span>
-                  <button className="text-teal-600 hover:text-teal-700 font-semibold">
+                  {/* <button className="text-teal-600 hover:text-teal-700 font-semibold">
                     <ExternalLink className="h-4 w-4" />
-                  </button>
+                  </button> */}
                 </div>
               </CardContent>
             </Card>
@@ -84,7 +88,7 @@ export default function Projects() {
 
         <div className="text-center mt-12">
           <Button size="lg" className="bg-teal-500 hover:bg-teal-600">
-            View All Projects
+            Get Started
           </Button>
         </div>
       </div>
