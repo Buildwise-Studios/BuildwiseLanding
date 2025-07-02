@@ -31,10 +31,12 @@ export default function Header() {
     <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
+          <a href="https://www.buildwise-studios" target="_blank" rel="noopener noreferrer">
           <div className="flex items-center">
             <Egg className="h-8 w-8 text-teal-500 " />
             <span className="text-xl font-bold text-gray-900">Buildwise</span>
           </div>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
