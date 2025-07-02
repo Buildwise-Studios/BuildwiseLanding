@@ -1,11 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Star } from "lucide-react";
 
-
-
-
-const original_unplash_image = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-
 export default function Hero() {
   return (
     <section className="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-teal-50">
@@ -27,19 +22,15 @@ export default function Hero() {
               and rapid development tools to deliver high-quality MVPs faster and 
               smarter, at a reasonable cost.
             </p>
+            <a href="https://calendly.com/charles-buildwise/30min" target="_blank" rel="noopener noreferrer">
             <Button 
               size="lg" 
               className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 text-lg font-semibold"
-              onClick={() => {
-                const element = document.getElementById("contact");
-                if (element) {
-                  element.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
             >
               <Calendar className="mr-2 h-5 w-5" />
               Schedule a Meeting
             </Button>
+            </a>
           </div>
           <div className="relative">
             <img

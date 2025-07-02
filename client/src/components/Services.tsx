@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Rocket, Palette, TrendingUp, Users, DollarSign, ArrowRight, Bot, Rabbit } from "lucide-react";
-// images
-import buildwiseTeam from '@/assets/buildwise-team.png';
 
 const services = [
   {
@@ -70,18 +68,14 @@ export default function Services() {
                 This is our core business: we put all our energy and know-how
                 into it. We have hands on experience building prototypes, MVPs and scalable products.
               </p>
+              <a href="https://calendly.com/charles-buildwise/30min" target="_blank" rel="noopener noreferrer">
               <Button 
                 variant="secondary" 
                 size="lg"
-                onClick={() => {
-                  const element = document.getElementById("contact");
-                  if (element) {
-                    element.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
               >
                 Get Started
               </Button>
+              </a>
             </div>
             <div>
               <img

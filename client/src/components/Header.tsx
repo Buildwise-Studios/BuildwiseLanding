@@ -48,12 +48,13 @@ export default function Header() {
                   {item.label}
                 </button>
               ))}
+              <a href="https://calendly.com/charles-buildwise/30min" target="_blank" rel="noopener noreferrer">
               <Button 
-                onClick={() => scrollToSection("contact")}
                 className="bg-teal-500 hover:bg-teal-600"
               >
                 Get Started
               </Button>
+              </a>
             </div>
           </div>
 

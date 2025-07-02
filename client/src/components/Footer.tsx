@@ -1,4 +1,4 @@
-import { Rocket, Mail, Phone, MapPin, Linkedin, Twitter, Github } from "lucide-react";
+import { Egg, Mail, Phone, MapPin, Linkedin } from "lucide-react";
 import { FiFacebook, FiInstagram } from "react-icons/fi";
 
 export default function Footer() {
@@ -22,7 +22,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
               <div className="bg-teal-500 rounded-lg p-2 mr-3">
-                <Rocket className="h-5 w-5 text-white" />
+                <Egg className="h-5 w-5 text-white" />
               </div>
               <span className="text-xl font-bold">Buildwise</span>
             </div>
@@ -104,7 +104,7 @@ export default function Footer() {
               <div className="flex items-center">
                 <Mail className="h-5 w-5 text-teal-500 mr-3" />
                 <a
-                  href="mailto:hello@buildwise.com"
+                  href="mailto:charles@voxelai.ai"
                   className="text-gray-300 hover:text-teal-500 transition-colors"
                 >
                   charles@voxelai.ai
@@ -135,12 +135,16 @@ export default function Footer() {
               © 2025 Metaverse Lab Limited. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <button className="text-gray-400 hover:text-teal-500 transition-colors">
-                Privacy Policy
-              </button>
-              <button className="text-gray-400 hover:text-teal-500 transition-colors">
-                Terms of Service
-              </button>
+              <a href="https://www.buildwise-studios/privacy-policy" target="_blank" rel="noopener noreferrer">
+                <button className="text-gray-400 hover:text-teal-500 transition-colors">
+                  Privacy Policy
+                </button>
+              </a>
+              <a href="https://www.buildwise-studios/terms-of-services" target="_blank" rel="noopener noreferrer">
+                <button className="text-gray-400 hover:text-teal-500 transition-colors">
+                  Terms of Service
+                </button>
+              </a>
             </div>
           </div>
         </div>
