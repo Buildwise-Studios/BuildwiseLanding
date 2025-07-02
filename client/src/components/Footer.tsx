@@ -135,12 +135,12 @@ export default function Footer() {
               © 2025 Metaverse Lab Limited. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <a href="https://www.buildwise-studios/privacy-policy" target="_blank" rel="noopener noreferrer">
+              <a href="/privacy-policy" target="_blank" >
                 <button className="text-gray-400 hover:text-teal-500 transition-colors">
                   Privacy Policy
                 </button>
               </a>
-              <a href="https://www.buildwise-studios/terms-of-services" target="_blank" rel="noopener noreferrer">
+              <a href="/terms-of-services" target="_blank" >
                 <button className="text-gray-400 hover:text-teal-500 transition-colors">
                   Terms of Service
                 </button>
