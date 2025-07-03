@@ -4,7 +4,7 @@ import { Search, Lightbulb, Code, Rocket } from "lucide-react";
 import mvp from '@/assets/mvp.png';
 import rapidDev from '@/assets/rapid-dev.png';
 import roadmap from '@/assets/roadmap.png';
-import traffic from '@/assets/mvp.png';
+import traffic from '@/assets/traffic.png';
 
 const original_urls = ["https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=400", "https://images.unsplash.com/photo-1590103514966-5e2a11c13e21?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=400", 
 
