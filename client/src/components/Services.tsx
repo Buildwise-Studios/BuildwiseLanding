@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Rocket, Palette, TrendingUp, Users, DollarSign, ArrowRight, Bot, Rabbit } from "lucide-react";
+import { Rocket, Palette, ArrowRight, Bot, Rabbit } from "lucide-react";
 
 const services = [
   {
@@ -50,9 +50,11 @@ export default function Services() {
                   {service.title}
                 </h3>
                 <p className="text-gray-600 mb-6">{service.description}</p>
+                <a href="https://calendly.com/charles-buildwise/30min" target="_blank" rel="noopener noreferrer">
                 <button className="text-teal-600 font-semibold hover:text-teal-700 inline-flex items-center">
                   Learn More <ArrowRight className="ml-2 h-4 w-4" />
                 </button>
+                </a>
               </CardContent>
             </Card>
           ))}

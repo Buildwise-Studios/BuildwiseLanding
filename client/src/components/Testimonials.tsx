@@ -10,9 +10,9 @@ const testimonials = [
     rating: 5,
   },
   {
-    name: "Frederic M.",
-    title: "Founder, Botwise",
-    content: "We are building something really solid thanks to you guys!!!",
+    name: "Bosco Wang.",
+    title: "Early Stage Startup Founder",
+    content: "Technical co-founder backed out 3 weeks before my Cyberport incubation application was due. Buildwise delivered a working MVP that made me confident for the pitch. And I got in!!!",
     image: "https://images.unsplash.com/photo-1487309078313-fad80c3ec1e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
     rating: 5,
   },
