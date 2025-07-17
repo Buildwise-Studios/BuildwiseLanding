@@ -10,7 +10,7 @@ export default function Hero() {
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
               Launch Your{" "}
               <span className="text-teal-500">MVP</span> in just{" "}
-              <span className="text-teal-500">8 Weeks</span>
+              <span className="text-teal-500">4 Weeks</span>
             </h1>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
               Transform your idea into a market-ready product with our low-code, 
