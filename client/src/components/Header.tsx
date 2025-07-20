@@ -19,12 +19,22 @@ export default function Header() {
     }
   };
 
+  const handleNavClick = (item: any) => {
+    if (item.isPage) {
+      setLocation(`/${item.id.replace('ai-pm', 'ai-product-manager')}`);
+      setIsOpen(false);
+    } else {
+      scrollToSection(item.id);
+    }
+  };
+
   const navItems = [
     { label: "Our Approach", id: "approach" },
     { label: "Services", id: "services" },
     { label: "Projects", id: "projects" },
     { label: "Team", id: "team" },
     { label: "FAQ", id: "faq" },
+    { label: "AI Product Manager", id: "ai-pm", isPage: true },
   ];
 
   return (

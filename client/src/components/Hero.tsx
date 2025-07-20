@@ -1,12 +1,15 @@
 import { Button } from "@/components/ui/button";
-import { Calendar, Star } from "lucide-react";
+import { Calendar, Star, Bot } from "lucide-react";
+import { useLocation } from "wouter";
 
 export default function Hero() {
+  const [, setLocation] = useLocation();
+
   return (
     <section className="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-teal-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
-          <div className="mb-8 lg:mb-0">
+          <div className="flex flex-col gap-4 mb-8 lg:mb-0">
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
               Launch Your{" "}
               <span className="text-teal-500">MVP</span> in just{" "}
@@ -25,12 +28,21 @@ export default function Hero() {
             <a href="https://calendly.com/charles-buildwise/30min" target="_blank" rel="noopener noreferrer">
             <Button 
               size="lg" 
-              className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 text-lg font-semibold"
+              className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 text-lg font-semibold w-1/2"
             >
               <Calendar className="mr-2 h-5 w-5" />
               Schedule a Meeting
             </Button>
             </a>
+            <Button 
+                size="lg" 
+                variant="outline"
+                className="border-teal-500 text-teal-600 hover:bg-teal-50 px-8 py-4 text-lg font-semibold w-1/2"
+                onClick={() => setLocation("/ai-product-manager")}
+              >
+                <Bot className="mr-2 h-5 w-5" />
+                Scope your project with AI
+            </Button>
           </div>
           <div className="relative">
             <img
