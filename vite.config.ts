@@ -32,7 +32,7 @@ export default defineConfig({
     host: '0.0.0.0', // Expose to external network (important for Replit)
     port: Number(process.env.PORT) || 5173, // Use Replit's assigned port if available
     allowedHosts: [
-      "52132a18-d893-4c57-9212-33d23d04eb4e-00-jjsonu1rkbn2.riker.replit.dev", // Add Replit's required host
+      ".replit.dev", // Allow all Replit subdomains with wildcard
     ],
     fs: {
       strict: true,
