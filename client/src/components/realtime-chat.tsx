@@ -1,21 +1,18 @@
-import { cn } from '@/lib/utils'
-import { ChatMessageItem } from '@/components/chat-message'
-import { useChatScroll } from '@/hooks/use-chat-scroll'
-import {
-  type ChatMessage,
-  useRealtimeChat,
-} from '@/hooks/use-realtime-chat'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Send } from 'lucide-react'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { cn } from "@/lib/utils";
+import { ChatMessageItem } from "@/components/chat-message";
+import { useChatScroll } from "@/hooks/use-chat-scroll";
+import { type ChatMessage, useRealtimeChat } from "@/hooks/use-realtime-chat";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Send } from "lucide-react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 interface RealtimeChatProps {
-  roomName: string
-  username: string
-  sessionId?: string
-  onMessage?: (messages: ChatMessage[]) => void
-  messages?: ChatMessage[]
+  roomName: string;
+  username: string;
+  sessionId?: string;
+  onMessage?: (messages: ChatMessage[]) => void;
+  messages?: ChatMessage[];
 }
 
 /**
@@ -33,7 +30,7 @@ export const RealtimeChat = ({
   onMessage,
   messages: initialMessages = [],
 }: RealtimeChatProps) => {
-  const { containerRef, scrollToBottom } = useChatScroll()
+  const { containerRef, scrollToBottom } = useChatScroll();
 
   const {
     messages: realtimeMessages,
@@ -43,94 +40,104 @@ export const RealtimeChat = ({
     roomName,
     username,
     sessionId,
-  })
-  const [newMessage, setNewMessage] = useState('')
+  });
+  const [newMessage, setNewMessage] = useState("");
 
   // Merge realtime messages with initial messages
   const allMessages = useMemo(() => {
-    const mergedMessages = [...initialMessages, ...realtimeMessages]
+    const mergedMessages = [...initialMessages, ...realtimeMessages];
     // Remove duplicates based on message id
     const uniqueMessages = mergedMessages.filter(
-      (message, index, self) => index === self.findIndex((m) => m.id === message.id)
-    )
+      (message, index, self) =>
+        index === self.findIndex((m) => m.id === message.id),
+    );
     // Sort by creation date
-    const sortedMessages = uniqueMessages.sort((a, b) => a.createdAt.localeCompare(b.createdAt))
+    const sortedMessages = uniqueMessages.sort((a, b) =>
+      a.createdAt.localeCompare(b.createdAt),
+    );
 
-    return sortedMessages
-  }, [initialMessages, realtimeMessages])
+    return sortedMessages;
+  }, [initialMessages, realtimeMessages]);
 
   const memoizedOnMessage = useCallback(() => {
     if (onMessage) {
-      onMessage(allMessages)
+      onMessage(allMessages);
     }
-  }, [onMessage, allMessages])
+  }, [onMessage, allMessages]);
 
   useEffect(() => {
-    memoizedOnMessage()
-  }, [memoizedOnMessage])
+    memoizedOnMessage();
+  }, [memoizedOnMessage]);
 
   useEffect(() => {
     // Scroll to bottom whenever messages change
-    scrollToBottom()
-  }, [allMessages, scrollToBottom])
+    scrollToBottom();
+  }, [allMessages, scrollToBottom]);
 
   const handleSendMessage = useCallback(
     async (e: React.FormEvent) => {
-      e.preventDefault()
-      if (!newMessage.trim()) return
+      e.preventDefault();
+      if (!newMessage.trim()) return;
 
       // Send the user's message first
-      sendMessage(newMessage)
-      
+      sendMessage(newMessage);
+
       // Store the message to send to webhook
-      const userMessage = newMessage
-      
+      const userMessage = newMessage;
+
       // Clear the input field immediately
-      setNewMessage('')
+      setNewMessage("");
 
       // Trigger the webhook to fetch the bot's response
       try {
-        const response = await fetch('https://metalab.app.n8n.cloud/webhook-test/d7f6b3de-d918-49dd-b915-0f4a603271d0', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
+        const response = await fetch(
+          "https://metalab.app.n8n.cloud/webhook-test/d7f6b3de-d918-49dd-b915-0f4a603271d0",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              sessionId: sessionId,
+              message: userMessage,
+              username: username,
+              timestamp: new Date().toISOString(),
+            }),
           },
-          body: JSON.stringify({
-            sessionId: sessionId,
-            message: userMessage,
-            username: username,
-            timestamp: new Date().toISOString(),
-          }),
-        })
+        );
 
         if (!response.ok) {
-          const errorData = await response.json().catch(() => ({ message: 'Unknown error' }))
-          console.warn('n8n webhook returned error:', {
+          const errorData = await response
+            .json()
+            .catch(() => ({ message: "Unknown error" }));
+          console.warn("n8n webhook returned error:", {
             status: response.status,
             statusText: response.statusText,
-            error: errorData
-          })
-          
+            error: errorData,
+          });
+
           // If it's a 404, the workflow needs to be activated
           if (response.status === 404) {
-            console.warn('n8n webhook not registered. Please activate your workflow in n8n.')
+            console.warn(
+              "n8n webhook not registered. Please activate your workflow in n8n.",
+            );
           }
-          return
+          return;
         }
 
-        const botReply = await response.json()
-        console.log('Bot reply received:', botReply)
+        const botReply = await response.json();
+        console.log("Bot reply received:", botReply);
 
         // Add the bot's reply to the chat
         if (botReply.output) {
-          sendMessage(botReply.output)
+          sendMessage(botReply.output);
         }
       } catch (error) {
-        console.error('Error triggering webhook:', error)
+        console.error("Error triggering webhook:", error);
       }
     },
-    [newMessage, sendMessage, sessionId, username]
-  )
+    [newMessage, sendMessage, sessionId, username],
+  );
 
   return (
     <div className="flex flex-col h-full w-full bg-background text-foreground antialiased">
@@ -143,8 +150,9 @@ export const RealtimeChat = ({
         ) : null}
         <div className="space-y-1">
           {allMessages.map((message, index) => {
-            const prevMessage = index > 0 ? allMessages[index - 1] : null
-            const showHeader = !prevMessage || prevMessage.user.name !== message.user.name
+            const prevMessage = index > 0 ? allMessages[index - 1] : null;
+            const showHeader =
+              !prevMessage || prevMessage.user.name !== message.user.name;
 
             return (
               <div
@@ -157,16 +165,19 @@ export const RealtimeChat = ({
                   showHeader={showHeader}
                 />
               </div>
-            )
+            );
           })}
         </div>
       </div>
 
-      <form onSubmit={handleSendMessage} className="flex w-full gap-2 border-t border-border p-4">
+      <form
+        onSubmit={handleSendMessage}
+        className="flex w-full gap-2 border-t border-border p-4"
+      >
         <Input
           className={cn(
-            'rounded-full bg-background text-sm transition-all duration-300',
-            newMessage.trim() ? 'w-[calc(100%-36px)]' : 'w-full'
+            "rounded-full bg-background text-sm transition-all duration-300",
+            newMessage.trim() ? "w-[calc(100%-36px)]" : "w-full",
           )}
           type="text"
           value={newMessage}
@@ -185,5 +196,5 @@ export const RealtimeChat = ({
         )}
       </form>
     </div>
-  )
-}
+  );
+};
