@@ -57,27 +57,6 @@ export default function Team() {
             </div>
           ))}
         </div>
-
-        <Card>
-          <CardContent className="p-8 lg:p-12">
-            <p className="text-lg text-gray-600 leading-relaxed text-center max-w-4xl mx-auto">
-              <strong>How Charles helps you: </strong>Charles specializes in transforming ideas into functional, 
-              market-ready products. With a strong focus on building MVPs for non-technical founders, 
-              he combines his fullstack development skills with a strategic mindset to bring your product vision to life.
-              <br />
-              <br />
-              <strong>How Nemo helps you: </strong>Nemo brings 5+ years of experience in software engineering, 
-              leading the development of advanced AI and tech solutions. 
-              As the tech lead on projects like VoxAI and LeaguePass, Nemo designs scalable architectures, builds robust systems, 
-              and ensures seamless integrations that bring your MVP to life.
-              <br />
-              <br />
-              <strong>How Thomas Helps You: </strong>Thomas drives customer acquisition strategies to help your MVP grow and scale. 
-              He specializes in Meta Ads (Facebook & Instagram) and conversion-optimized funnels, 
-              ensuring your product gets the traction it needs to succeed in competitive markets.
-            </p>
-          </CardContent>
-        </Card>
       </div>
     </section>
   );

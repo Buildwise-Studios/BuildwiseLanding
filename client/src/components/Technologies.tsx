@@ -1,32 +1,92 @@
-import { 
-  SiAmazonwebservices, 
-  SiReact, 
-  SiNodedotjs, 
-  SiPython, 
-  SiDocker, 
+import {
+  SiAmazonwebservices,
+  SiAnthropic,
+  SiReact,
+  SiNodedotjs,
+  SiPython,
+  SiDocker,
   SiSupabase,
   SiNextdotjs,
   SiOpenai,
   SiLangchain,
   SiVercel,
   SiStripe,
-  SiReplit
 } from "react-icons/si";
 import { Brain } from "lucide-react";
 
 const technologies = [
-  { name: "AWS", icon: SiAmazonwebservices, color: "text-orange-500", bgColor: "hover:bg-orange-50" },
-  { name: "React", icon: SiReact, color: "text-blue-500", bgColor: "hover:bg-blue-50" },
-  { name: "Node.js", icon: SiNodedotjs, color: "text-green-500", bgColor: "hover:bg-green-50" },
-  { name: "Python", icon: SiPython, color: "text-yellow-500", bgColor: "hover:bg-yellow-50" },
-  { name: "Docker", icon: SiDocker, color: "text-blue-600", bgColor: "hover:bg-blue-50" },
-  { name: "Supabase", icon: SiSupabase, color: "text-teal-400", bgColor: "hover:bg-green-50" },
-  { name: "Next.js", icon: SiNextdotjs, color: "text-gray-700", bgColor: "hover:bg-gray-100" },
-  { name: "Replit", icon: SiReplit, color: "text-orange-500", bgColor: "hover:bg-orange-50" },
-  { name: "LangChain", icon: SiLangchain, color: "text-green-900", bgColor: "hover:bg-green-50" },
-  { name: "Vercel", icon: SiVercel, color: "text-black-700", bgColor: "hover:bg-gray-100" },
-  { name: "OpenAI", icon:  SiOpenai, color: "text-teal-500", bgColor: "hover:bg-teal-50" },
-  { name: "Stripe", icon: SiStripe, color: "text-indigo-500", bgColor: "hover:bg-indigo-50" },
+  {
+    name: "AWS",
+    icon: SiAmazonwebservices,
+    color: "text-orange-500",
+    bgColor: "hover:bg-orange-50",
+  },
+  {
+    name: "React",
+    icon: SiReact,
+    color: "text-blue-500",
+    bgColor: "hover:bg-blue-50",
+  },
+  {
+    name: "Node.js",
+    icon: SiNodedotjs,
+    color: "text-green-500",
+    bgColor: "hover:bg-green-50",
+  },
+  {
+    name: "Python",
+    icon: SiPython,
+    color: "text-yellow-500",
+    bgColor: "hover:bg-yellow-50",
+  },
+  {
+    name: "Docker",
+    icon: SiDocker,
+    color: "text-blue-600",
+    bgColor: "hover:bg-blue-50",
+  },
+  {
+    name: "Supabase",
+    icon: SiSupabase,
+    color: "text-teal-400",
+    bgColor: "hover:bg-green-50",
+  },
+  {
+    name: "Next.js",
+    icon: SiNextdotjs,
+    color: "text-gray-700",
+    bgColor: "hover:bg-gray-100",
+  },
+  {
+    name: "Anthropic",
+    icon: SiAnthropic,
+    color: "text-black-700",
+    bgColor: "hover:bg-orange-50",
+  },
+  {
+    name: "LangChain",
+    icon: SiLangchain,
+    color: "text-green-900",
+    bgColor: "hover:bg-green-50",
+  },
+  {
+    name: "Vercel",
+    icon: SiVercel,
+    color: "text-black-700",
+    bgColor: "hover:bg-gray-100",
+  },
+  {
+    name: "OpenAI",
+    icon: SiOpenai,
+    color: "text-teal-500",
+    bgColor: "hover:bg-teal-50",
+  },
+  {
+    name: "Stripe",
+    icon: SiStripe,
+    color: "text-indigo-500",
+    bgColor: "hover:bg-indigo-50",
+  },
 ];
 
 export default function Technologies() {
@@ -46,7 +106,9 @@ export default function Technologies() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
           {technologies.map((tech, index) => (
             <div key={index} className="text-center group">
-              <div className={`bg-gray-50 rounded-xl p-6 ${tech.bgColor} transition-colors group-hover:shadow-md`}>
+              <div
+                className={`bg-gray-50 rounded-xl p-6 ${tech.bgColor} transition-colors group-hover:shadow-md`}
+              >
                 <tech.icon className={`text-4xl ${tech.color} mb-2 mx-auto`} />
                 <p className="text-sm font-medium text-gray-700">{tech.name}</p>
               </div>
