@@ -59,11 +59,15 @@ export const RealtimeChat = ({
     return sortedMessages
   }, [initialMessages, realtimeMessages])
 
-  useEffect(() => {
+  const memoizedOnMessage = useCallback(() => {
     if (onMessage) {
       onMessage(allMessages)
     }
-  }, [allMessages, onMessage])
+  }, [onMessage, allMessages])
+
+  useEffect(() => {
+    memoizedOnMessage()
+  }, [memoizedOnMessage])
 
   useEffect(() => {
     // Scroll to bottom whenever messages change
@@ -73,12 +77,12 @@ export const RealtimeChat = ({
   const handleSendMessage = useCallback(
     (e: React.FormEvent) => {
       e.preventDefault()
-      if (!newMessage.trim() || !isConnected) return
+      if (!newMessage.trim()) return
 
       sendMessage(newMessage)
       setNewMessage('')
     },
-    [newMessage, isConnected, sendMessage]
+    [newMessage, sendMessage]
   )
 
   return (
@@ -115,19 +119,19 @@ export const RealtimeChat = ({
         <Input
           className={cn(
             'rounded-full bg-background text-sm transition-all duration-300',
-            isConnected && newMessage.trim() ? 'w-[calc(100%-36px)]' : 'w-full'
+            newMessage.trim() ? 'w-[calc(100%-36px)]' : 'w-full'
           )}
           type="text"
           value={newMessage}
           onChange={(e) => setNewMessage(e.target.value)}
           placeholder="Type a message..."
-          disabled={!isConnected}
+          disabled={false}
         />
-        {isConnected && newMessage.trim() && (
+        {newMessage.trim() && (
           <Button
             className="aspect-square rounded-full animate-in fade-in slide-in-from-right-4 duration-300"
             type="submit"
-            disabled={!isConnected}
+            disabled={false}
           >
             <Send className="size-4" />
           </Button>

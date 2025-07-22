@@ -75,10 +75,6 @@ export default function AIProductManager() {
                 roomName="pm-agent-chat"
                 username={userName}
                 sessionId={userEmail}
-                onMessage={(messages) => {
-                  // n8n webhook integration is now handled in the chat hook
-                  console.log("New messages:", messages);
-                }}
               />
             </CardContent>
           </Card>

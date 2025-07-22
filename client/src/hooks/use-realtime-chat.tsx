@@ -21,12 +21,12 @@ export interface ChatMessage {
 const EVENT_MESSAGE_TYPE = 'message'
 
 export function useRealtimeChat({ roomName, username, sessionId }: UseRealtimeChatProps) {
-  const supabase = createClient()
   const [messages, setMessages] = useState<ChatMessage[]>([])
-  const [channel, setChannel] = useState<ReturnType<typeof supabase.channel> | null>(null)
+  const [channel, setChannel] = useState<ReturnType<ReturnType<typeof createClient>['channel']> | null>(null)
   const [isConnected, setIsConnected] = useState(false)
 
   useEffect(() => {
+    const supabase = createClient()
     const newChannel = supabase.channel(roomName)
 
     newChannel
@@ -34,8 +34,11 @@ export function useRealtimeChat({ roomName, username, sessionId }: UseRealtimeCh
         setMessages((current) => [...current, payload.payload as ChatMessage])
       })
       .subscribe(async (status) => {
+        console.log('Supabase connection status:', status)
         if (status === 'SUBSCRIBED') {
           setIsConnected(true)
+        } else if (status === 'CHANNEL_ERROR' || status === 'TIMED_OUT') {
+          setIsConnected(false)
         }
       })
 
@@ -43,12 +46,13 @@ export function useRealtimeChat({ roomName, username, sessionId }: UseRealtimeCh
 
     return () => {
       supabase.removeChannel(newChannel)
+      setIsConnected(false)
     }
-  }, [roomName, username, supabase])
+  }, [roomName])
 
   const sendMessage = useCallback(
     async (content: string) => {
-      if (!channel || !isConnected) return
+      if (!channel) return
 
       const message: ChatMessage = {
         id: crypto.randomUUID(),
