@@ -3,7 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { RealtimeChat } from "@/components/realtime-chat";
-import { ArrowLeft, Bot, MessageSquare, Target, Lightbulb, CheckCircle } from "lucide-react";
+import {
+  ArrowLeft,
+  Bot,
+  MessageSquare,
+  Target,
+  Lightbulb,
+  CheckCircle,
+} from "lucide-react";
 import { useLocation } from "wouter";
 
 export default function AIProductManager() {
@@ -22,18 +29,21 @@ export default function AIProductManager() {
     {
       icon: Target,
       title: "Scope Definition",
-      description: "Define clear project boundaries and objectives through guided conversation"
+      description:
+        "Define clear project boundaries and objectives through guided conversation",
     },
     {
       icon: Lightbulb,
-      title: "Feature Prioritization", 
-      description: "Identify and prioritize the most valuable features for your MVP"
+      title: "Feature Prioritization",
+      description:
+        "Identify and prioritize the most valuable features for your MVP",
     },
     {
       icon: CheckCircle,
       title: "Requirements Gathering",
-      description: "Extract detailed functional and technical requirements from your vision"
-    }
+      description:
+        "Extract detailed functional and technical requirements from your vision",
+    },
   ];
 
   if (chatStarted) {
@@ -41,8 +51,8 @@ export default function AIProductManager() {
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-teal-50">
         <div className="max-w-4xl mx-auto px-4 py-8">
           <div className="mb-6">
-            <Button 
-              variant="ghost" 
+            <Button
+              variant="ghost"
               onClick={() => setChatStarted(false)}
               className="mb-4"
             >
@@ -54,12 +64,16 @@ export default function AIProductManager() {
                 <Bot className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">Meet Mei-Ling</h1>
-                <p className="text-gray-600">Chat with Mei-Ling to define your project scope</p>
+                <h1 className="text-2xl font-bold text-gray-900">
+                  Meet Mei-Ling
+                </h1>
+                <p className="text-gray-600">
+                  Chat with Mei-Ling to define your project scope
+                </p>
               </div>
             </div>
           </div>
-          
+
           <Card className="h-[600px] flex flex-col">
             <CardHeader className="border-b bg-gray-50/50">
               <div className="flex items-center justify-between">
@@ -71,8 +85,8 @@ export default function AIProductManager() {
               </div>
             </CardHeader>
             <CardContent className="flex-1 p-0">
-              <RealtimeChat 
-                roomName="pm-agent-chat"
+              <RealtimeChat
+                roomName={userName}
                 username={userName}
                 userEmail={userEmail}
                 sessionId={userEmail}
@@ -87,8 +101,8 @@ export default function AIProductManager() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-teal-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <Button 
-          variant="ghost" 
+        <Button
+          variant="ghost"
           onClick={() => setLocation("/")}
           className="mb-8"
         >
@@ -109,8 +123,9 @@ export default function AIProductManager() {
             Get your project requirements document and UI Mock up in 24h!
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Get expert guidance from our AI Product Manager to define your project scope, 
-            prioritize features, and create a clear roadmap for your MVP development.
+            Get expert guidance from our AI Product Manager to define your
+            project scope, prioritize features, and create a clear roadmap for
+            your MVP development.
           </p>
           <div className="flex items-center justify-center gap-2">
             <Badge variant="secondary" className="bg-teal-100 text-teal-700">
@@ -126,7 +141,10 @@ export default function AIProductManager() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           {features.map((feature, index) => (
-            <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+            <Card
+              key={index}
+              className="text-center hover:shadow-lg transition-shadow"
+            >
               <CardContent className="p-8">
                 <div className="bg-teal-100 rounded-xl p-3 w-fit mx-auto mb-6">
                   <feature.icon className="h-8 w-8 text-teal-600" />
@@ -142,11 +160,16 @@ export default function AIProductManager() {
 
         <Card className="max-w-lg mx-auto">
           <CardHeader>
-            <CardTitle className="text-center">Start Your Conversation</CardTitle>
+            <CardTitle className="text-center">
+              Start Your Conversation
+            </CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
                 Your Name
               </label>
               <input
@@ -159,7 +182,10 @@ export default function AIProductManager() {
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
                 Your Email
               </label>
               <input
@@ -171,7 +197,7 @@ export default function AIProductManager() {
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
               />
             </div>
-            <Button 
+            <Button
               onClick={handleStartChat}
               disabled={!userName.trim() || !userEmail.trim()}
               className="w-full bg-teal-500 hover:bg-teal-600"
@@ -181,7 +207,8 @@ export default function AIProductManager() {
               Start Chat with AI Product Manager
             </Button>
             <p className="text-sm text-gray-500 text-center">
-              Our AI will guide you through defining your project requirements and scope.
+              Our AI will guide you through defining your project requirements
+              and scope.
             </p>
           </CardContent>
         </Card>
