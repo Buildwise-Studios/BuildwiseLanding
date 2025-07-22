@@ -98,9 +98,9 @@ export const RealtimeChat = ({
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              sessionId: sessionId,
+              sessionId: roomName,
               message: userMessage,
-              username: username,
+              contact: username,
               timestamp: new Date().toISOString(),
             }),
           },
