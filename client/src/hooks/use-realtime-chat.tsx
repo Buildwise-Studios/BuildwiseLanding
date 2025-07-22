@@ -51,14 +51,14 @@ export function useRealtimeChat({ roomName, username, sessionId }: UseRealtimeCh
   }, [roomName])
 
   const sendMessage = useCallback(
-    async (content: string) => {
+    async (content: string, senderName?: string) => {
       if (!channel) return
 
       const message: ChatMessage = {
         id: crypto.randomUUID(),
         content,
         user: {
-          name: username,
+          name: senderName || username,
         },
         createdAt: new Date().toISOString(),
       }
@@ -78,5 +78,12 @@ export function useRealtimeChat({ roomName, username, sessionId }: UseRealtimeCh
     [channel, isConnected, username, sessionId]
   )
 
-  return { messages, sendMessage, isConnected }
+  const sendBotMessage = useCallback(
+    async (content: string) => {
+      return sendMessage(content, "AI Assistant")
+    },
+    [sendMessage]
+  )
+
+  return { messages, sendMessage, sendBotMessage, isConnected }
 }

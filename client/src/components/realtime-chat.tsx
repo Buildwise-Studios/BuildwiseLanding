@@ -35,6 +35,7 @@ export const RealtimeChat = ({
   const {
     messages: realtimeMessages,
     sendMessage,
+    sendBotMessage,
     isConnected,
   } = useRealtimeChat({
     roomName,
@@ -130,13 +131,13 @@ export const RealtimeChat = ({
 
         // Add the bot's reply to the chat
         if (botReply.output) {
-          sendMessage(botReply.output);
+          sendBotMessage(botReply.output);
         }
       } catch (error) {
         console.error("Error triggering webhook:", error);
       }
     },
-    [newMessage, sendMessage, sessionId, username],
+    [newMessage, sendMessage, sendBotMessage, sessionId, username],
   );
 
   return (
@@ -153,7 +154,7 @@ export const RealtimeChat = ({
             const prevMessage = index > 0 ? allMessages[index - 1] : null;
             const showHeader =
               !prevMessage || prevMessage.user.name !== message.user.name;
-            console.log(message.user.name);
+
 
             return (
               <div
