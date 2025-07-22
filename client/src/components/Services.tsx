@@ -81,7 +81,7 @@ export default function Services() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant="secondary" size="lg">
+                <Button variant="secondary" size="lg" className="hover:bg-gray-100">
                   <Calendar className="mr-2 h-5 w-5" />
                   Schedule a Meeting
                 </Button>

@@ -2,9 +2,11 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Egg } from "lucide-react";
+import { useLocation } from "wouter";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [, setLocation] = useLocation();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -60,13 +62,12 @@ export default function Header() {
                   {item.label}
                 </button>
               ))}
-              <a href="https://calendly.com/charles-buildwise/30min" target="_blank" rel="noopener noreferrer">
               <Button 
                 className="bg-teal-500 hover:bg-teal-600"
+                onClick={() => setLocation("/ai-product-manager")}
               >
                 Get Started
               </Button>
-              </a>
             </div>
           </div>
 
@@ -90,7 +91,7 @@ export default function Header() {
                     </button>
                   ))}
                   <Button 
-                    onClick={() => scrollToSection("contact")}
+                    onClick={() => setLocation("/ai-product-manager")}
                     className="bg-teal-500 hover:bg-teal-600 mt-4"
                   >
                     Get Started
