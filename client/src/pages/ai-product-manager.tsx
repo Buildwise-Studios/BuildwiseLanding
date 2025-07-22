@@ -74,8 +74,9 @@ export default function AIProductManager() {
               <RealtimeChat 
                 roomName="pm-agent-chat"
                 username={userName}
+                sessionId={userEmail}
                 onMessage={(messages) => {
-                  // Here you can integrate with your n8n webhook
+                  // n8n webhook integration is now handled in the chat hook
                   console.log("New messages:", messages);
                 }}
               />
