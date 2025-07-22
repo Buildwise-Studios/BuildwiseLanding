@@ -73,41 +73,7 @@ export function useRealtimeChat({ roomName, username, sessionId }: UseRealtimeCh
         payload: message,
       })
 
-      // Call n8n webhook if sessionId is provided
-      if (sessionId) {
-        try {
-          const response = await fetch('https://metalab.app.n8n.cloud/webhook-test/d7f6b3de-d918-49dd-b915-0f4a603271d0', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              sessionId: sessionId,
-              message: content,
-              username: username,
-              timestamp: new Date().toISOString(),
-            }),
-          })
-          
-          if (!response.ok) {
-            const errorData = await response.json().catch(() => ({ message: 'Unknown error' }))
-            console.warn('n8n webhook returned error:', {
-              status: response.status,
-              statusText: response.statusText,
-              error: errorData
-            })
-            
-            // If it's a 404, the workflow needs to be activated
-            if (response.status === 404) {
-              console.warn('n8n webhook not registered. Please activate your workflow in n8n.')
-            }
-          } else {
-            console.log('n8n webhook called successfully')
-          }
-        } catch (error) {
-          console.error('Failed to call n8n webhook:', error)
-        }
-      }
+
     },
     [channel, isConnected, username, sessionId]
   )

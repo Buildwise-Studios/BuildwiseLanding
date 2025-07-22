@@ -1,3 +1,5 @@
+'use client'
+
 import { cn } from '@/lib/utils'
 import { ChatMessageItem } from '@/components/chat-message'
 import { useChatScroll } from '@/hooks/use-chat-scroll'
@@ -13,7 +15,6 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 interface RealtimeChatProps {
   roomName: string
   username: string
-  sessionId?: string
   onMessage?: (messages: ChatMessage[]) => void
   messages?: ChatMessage[]
 }
@@ -29,7 +30,6 @@ interface RealtimeChatProps {
 export const RealtimeChat = ({
   roomName,
   username,
-  sessionId,
   onMessage,
   messages: initialMessages = [],
 }: RealtimeChatProps) => {
@@ -42,7 +42,6 @@ export const RealtimeChat = ({
   } = useRealtimeChat({
     roomName,
     username,
-    sessionId,
   })
   const [newMessage, setNewMessage] = useState('')
 
@@ -59,15 +58,11 @@ export const RealtimeChat = ({
     return sortedMessages
   }, [initialMessages, realtimeMessages])
 
-  const memoizedOnMessage = useCallback(() => {
+  useEffect(() => {
     if (onMessage) {
       onMessage(allMessages)
     }
-  }, [onMessage, allMessages])
-
-  useEffect(() => {
-    memoizedOnMessage()
-  }, [memoizedOnMessage])
+  }, [allMessages, onMessage])
 
   useEffect(() => {
     // Scroll to bottom whenever messages change
@@ -77,59 +72,40 @@ export const RealtimeChat = ({
   const handleSendMessage = useCallback(
     async (e: React.FormEvent) => {
       e.preventDefault()
-      if (!newMessage.trim()) return
+      if (!newMessage.trim() || !isConnected) return
 
-      // Send the user's message first
       sendMessage(newMessage)
-      
-      // Store the message to send to webhook
-      const userMessage = newMessage
-      
-      // Clear the input field immediately
-      setNewMessage('')
-
       // Trigger the webhook to fetch the bot's response
       try {
-        const response = await fetch('https://metalab.app.n8n.cloud/webhook-test/d7f6b3de-d918-49dd-b915-0f4a603271d0', {
+        const response = await fetch('https://metalab.app.n8n.cloud/webhook-test/test-linkedin-agent', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            sessionId: sessionId,
-            message: userMessage,
-            username: username,
-            timestamp: new Date().toISOString(),
+            username,
+            message: newMessage,
+            roomName,
           }),
         })
 
         if (!response.ok) {
-          const errorData = await response.json().catch(() => ({ message: 'Unknown error' }))
-          console.warn('n8n webhook returned error:', {
-            status: response.status,
-            statusText: response.statusText,
-            error: errorData
-          })
-          
-          // If it's a 404, the workflow needs to be activated
-          if (response.status === 404) {
-            console.warn('n8n webhook not registered. Please activate your workflow in n8n.')
-          }
+          console.error('Failed to fetch bot response:', response.statusText)
           return
         }
 
-        const botReply = await response.json()
-        console.log('Bot reply received:', botReply)
+      const botReply = await response.json()
 
-        // Add the bot's reply to the chat
-        if (botReply.output) {
-          sendMessage(botReply.output)
-        }
-      } catch (error) {
-        console.error('Error triggering webhook:', error)
-      }
+      // Add the bot's reply to the chat
+      sendMessage(botReply.output)
+    } catch (error) {
+      console.error('Error triggering webhook:', error)
+    }
+
+      // Clear the input field
+      setNewMessage('')
     },
-    [newMessage, sendMessage, sessionId, username]
+    [newMessage, isConnected, sendMessage]
   )
 
   return (
@@ -166,19 +142,19 @@ export const RealtimeChat = ({
         <Input
           className={cn(
             'rounded-full bg-background text-sm transition-all duration-300',
-            newMessage.trim() ? 'w-[calc(100%-36px)]' : 'w-full'
+            isConnected && newMessage.trim() ? 'w-[calc(100%-36px)]' : 'w-full'
           )}
           type="text"
           value={newMessage}
           onChange={(e) => setNewMessage(e.target.value)}
           placeholder="Type a message..."
-          disabled={false}
+          disabled={!isConnected}
         />
-        {newMessage.trim() && (
+        {isConnected && newMessage.trim() && (
           <Button
             className="aspect-square rounded-full animate-in fade-in slide-in-from-right-4 duration-300"
             type="submit"
-            disabled={false}
+            disabled={!isConnected}
           >
             <Send className="size-4" />
           </Button>
