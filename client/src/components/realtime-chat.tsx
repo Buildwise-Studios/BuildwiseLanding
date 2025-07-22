@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { ChatMessageItem } from "@/components/chat-message";
+import { TypingIndicator } from "@/components/typing-indicator";
 import { useChatScroll } from "@/hooks/use-chat-scroll";
 import { type ChatMessage, useRealtimeChat } from "@/hooks/use-realtime-chat";
 import { Button } from "@/components/ui/button";
@@ -37,6 +38,8 @@ export const RealtimeChat = ({
     sendMessage,
     sendBotMessage,
     isConnected,
+    isTyping,
+    setTypingIndicator,
   } = useRealtimeChat({
     roomName,
     username,
@@ -89,6 +92,9 @@ export const RealtimeChat = ({
       // Clear the input field immediately
       setNewMessage("");
 
+      // Show typing indicator before making the API call
+      setTypingIndicator(true);
+
       // Trigger the webhook to fetch the bot's response
       try {
         const response = await fetch(
@@ -135,9 +141,12 @@ export const RealtimeChat = ({
         }
       } catch (error) {
         console.error("Error triggering webhook:", error);
+      } finally {
+        // Hide typing indicator regardless of success or failure
+        setTypingIndicator(false);
       }
     },
-    [newMessage, sendMessage, sendBotMessage, sessionId, username],
+    [newMessage, sendMessage, sendBotMessage, setTypingIndicator, sessionId, username],
   );
 
   return (
@@ -169,6 +178,13 @@ export const RealtimeChat = ({
               </div>
             );
           })}
+          
+          {/* Show typing indicator when bot is typing */}
+          {isTyping && (
+            <div className="animate-in fade-in slide-in-from-bottom-4 duration-300">
+              <TypingIndicator />
+            </div>
+          )}
         </div>
       </div>
 

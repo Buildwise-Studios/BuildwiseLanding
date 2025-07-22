@@ -24,6 +24,7 @@ export function useRealtimeChat({ roomName, username, sessionId }: UseRealtimeCh
   const [messages, setMessages] = useState<ChatMessage[]>([])
   const [channel, setChannel] = useState<ReturnType<ReturnType<typeof createClient>['channel']> | null>(null)
   const [isConnected, setIsConnected] = useState(false)
+  const [isTyping, setIsTyping] = useState(false)
 
   useEffect(() => {
     const supabase = createClient()
@@ -85,5 +86,9 @@ export function useRealtimeChat({ roomName, username, sessionId }: UseRealtimeCh
     [sendMessage]
   )
 
-  return { messages, sendMessage, sendBotMessage, isConnected }
+  const setTypingIndicator = useCallback((typing: boolean) => {
+    setIsTyping(typing)
+  }, [])
+
+  return { messages, sendMessage, sendBotMessage, isConnected, isTyping, setTypingIndicator }
 }
