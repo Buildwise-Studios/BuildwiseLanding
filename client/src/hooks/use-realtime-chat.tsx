@@ -83,7 +83,7 @@ export function useRealtimeChat({ roomName, username, userEmail, sessionId }: Us
 
   const sendBotMessage = useCallback(
     async (content: string) => {
-      return sendMessage(content, "AI Assistant")
+      return sendMessage(content, "Mei-Ling")
     },
     [sendMessage]
   )

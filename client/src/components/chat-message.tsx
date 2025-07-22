@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import type { ChatMessage } from "@/hooks/use-realtime-chat";
+import meiLingImage from "@assets/IMG_3832_1753195688183.jpeg";
 
 interface ChatMessageItemProps {
   message: ChatMessage;
@@ -12,10 +13,25 @@ export const ChatMessageItem = ({
   isOwnMessage,
   showHeader,
 }: ChatMessageItemProps) => {
+  const isMeiLing = message.user.name === "Mei-Ling";
+  
   return (
     <div
       className={`flex mt-2 ${isOwnMessage ? "justify-end" : "justify-start"}`}
     >
+      {/* Avatar for Mei-Ling messages */}
+      {!isOwnMessage && isMeiLing && (
+        <div className="flex-shrink-0 mr-3">
+          <div className="w-8 h-8 rounded-full overflow-hidden">
+            <img 
+              src={meiLingImage} 
+              alt="Mei-Ling" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      )}
+      
       <div
         className={cn("max-w-[75%] w-fit flex flex-col gap-1", {
           "items-end": isOwnMessage,

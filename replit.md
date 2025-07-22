@@ -36,6 +36,9 @@ Preferred communication style: Simple, everyday language.
 - **Chat System**: Supabase-powered real-time chat with broadcast channels
 - **Live Communication**: WebSocket-based messaging for instant interaction
 - **User Sessions**: Email-based chat sessions with persistent history
+- **AI Assistant**: Personalized AI agent named "Mei-Ling" with profile picture
+- **Welcome Messages**: Automated personalized greeting explaining PRD process
+- **Typing Indicators**: Visual feedback during AI response processing
 
 ### UI/UX Components
 - **Responsive Design**: Mobile-first approach with Tailwind CSS

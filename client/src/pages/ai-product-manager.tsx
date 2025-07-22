@@ -54,8 +54,8 @@ export default function AIProductManager() {
                 <Bot className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">AI Product Manager</h1>
-                <p className="text-gray-600">Chat with our AI to define your project scope</p>
+                <h1 className="text-2xl font-bold text-gray-900">Meet Mei-Ling</h1>
+                <p className="text-gray-600">Chat with Mei-Ling to define your project scope</p>
               </div>
             </div>
           </div>
@@ -67,7 +67,7 @@ export default function AIProductManager() {
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                   <span className="text-sm font-medium">Connected</span>
                 </div>
-                <Badge variant="secondary">AI Product Manager</Badge>
+                <Badge variant="secondary">Mei-Ling</Badge>
               </div>
             </CardHeader>
             <CardContent className="flex-1 p-0">
