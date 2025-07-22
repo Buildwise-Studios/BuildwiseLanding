@@ -11,6 +11,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 interface RealtimeChatProps {
   roomName: string;
   username: string;
+  userEmail: string;
   sessionId?: string;
   onMessage?: (messages: ChatMessage[]) => void;
   messages?: ChatMessage[];
@@ -27,6 +28,7 @@ interface RealtimeChatProps {
 export const RealtimeChat = ({
   roomName,
   username,
+  userEmail,
   sessionId,
   onMessage,
   messages: initialMessages = [],
@@ -43,6 +45,7 @@ export const RealtimeChat = ({
   } = useRealtimeChat({
     roomName,
     username,
+    userEmail,
     sessionId,
   });
   const [newMessage, setNewMessage] = useState("");
@@ -98,7 +101,7 @@ export const RealtimeChat = ({
       // Trigger the webhook to fetch the bot's response
       try {
         const response = await fetch(
-          "https://metalab.app.n8n.cloud/webhook-test/d7f6b3de-d918-49dd-b915-0f4a603271d0",
+          "https://metalab.app.n8n.cloud/webhook/d7f6b3de-d918-49dd-b915-0f4a603271d0",
           {
             method: "POST",
             headers: {
@@ -146,7 +149,14 @@ export const RealtimeChat = ({
         setTypingIndicator(false);
       }
     },
-    [newMessage, sendMessage, sendBotMessage, setTypingIndicator, sessionId, username],
+    [
+      newMessage,
+      sendMessage,
+      sendBotMessage,
+      setTypingIndicator,
+      sessionId,
+      username,
+    ],
   );
 
   return (
@@ -164,7 +174,6 @@ export const RealtimeChat = ({
             const showHeader =
               !prevMessage || prevMessage.user.name !== message.user.name;
 
-
             return (
               <div
                 key={message.id}
@@ -178,7 +187,7 @@ export const RealtimeChat = ({
               </div>
             );
           })}
-          
+
           {/* Show typing indicator when bot is typing */}
           {isTyping && (
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-300">

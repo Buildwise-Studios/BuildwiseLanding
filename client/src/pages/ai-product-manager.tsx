@@ -74,6 +74,7 @@ export default function AIProductManager() {
               <RealtimeChat 
                 roomName="pm-agent-chat"
                 username={userName}
+                userEmail={userEmail}
                 sessionId={userEmail}
               />
             </CardContent>
