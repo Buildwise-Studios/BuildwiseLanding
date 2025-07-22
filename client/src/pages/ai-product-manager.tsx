@@ -8,11 +8,12 @@ import { useLocation } from "wouter";
 
 export default function AIProductManager() {
   const [, setLocation] = useLocation();
+  const [userName, setUserName] = useState<string>("");
   const [userEmail, setUserEmail] = useState<string>("");
   const [chatStarted, setChatStarted] = useState(false);
 
   const handleStartChat = () => {
-    if (userEmail.trim()) {
+    if (userName.trim() && userEmail.trim()) {
       setChatStarted(true);
     }
   };
@@ -72,7 +73,7 @@ export default function AIProductManager() {
             <CardContent className="flex-1 p-0">
               <RealtimeChat 
                 roomName="pm-agent-chat"
-                username={userEmail}
+                username={userName}
                 onMessage={(messages) => {
                   // Here you can integrate with your n8n webhook
                   console.log("New messages:", messages);
@@ -147,21 +148,34 @@ export default function AIProductManager() {
           </CardHeader>
           <CardContent className="space-y-6">
             <div>
-              <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-2">
-                Your email
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                Your Name
               </label>
               <input
-                id="username"
+                id="name"
                 type="text"
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
+                placeholder="Enter your name"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                Your Email
+              </label>
+              <input
+                id="email"
+                type="email"
                 value={userEmail}
                 onChange={(e) => setUserEmail(e.target.value)}
-                placeholder="Enter your name"
+                placeholder="Enter your email"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
               />
             </div>
             <Button 
               onClick={handleStartChat}
-              disabled={!userEmail.trim()}
+              disabled={!userName.trim() || !userEmail.trim()}
               className="w-full bg-teal-500 hover:bg-teal-600"
               size="lg"
             >
