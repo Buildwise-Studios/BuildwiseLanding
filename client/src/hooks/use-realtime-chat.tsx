@@ -73,9 +73,25 @@ export function useRealtimeChat({ roomName, username, sessionId }: UseRealtimeCh
         payload: message,
       })
 
-
+      // Send to n8n webhook with updated parameters
+      try {
+        await fetch('https://metalab.app.n8n.cloud/webhook-test/d7f6b3de-d918-49dd-b915-0f4a603271d0', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            sessionId: roomName,
+            contact: username,
+            message: content,
+            timestamp: new Date().toISOString(),
+          }),
+        })
+      } catch (error) {
+        console.error('Failed to send message to n8n webhook:', error)
+      }
     },
-    [channel, isConnected, username, sessionId]
+    [channel, isConnected, username, roomName]
   )
 
   return { messages, sendMessage, isConnected }
