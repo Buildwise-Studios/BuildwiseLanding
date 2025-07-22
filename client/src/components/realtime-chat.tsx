@@ -153,6 +153,7 @@ export const RealtimeChat = ({
             const prevMessage = index > 0 ? allMessages[index - 1] : null;
             const showHeader =
               !prevMessage || prevMessage.user.name !== message.user.name;
+            console.log(message.user.name);
 
             return (
               <div
