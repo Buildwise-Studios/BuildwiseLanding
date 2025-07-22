@@ -1,27 +1,31 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Rocket, Palette, ArrowRight, Bot, Rabbit } from "lucide-react";
+import { Rocket, Palette, ArrowRight, Bot, Rabbit, Calendar } from "lucide-react";
 
 const services = [
   {
     icon: Rocket,
     title: "MVP Development",
-    description: "Our bread and butter: We build market-ready MVPs using efficient frameworks, automation tools, and the latest AI models. From startups to enterprises, we deliver products that are scalable, functional, and ready to make an impact.",
+    description:
+      "Our bread and butter: We build market-ready MVPs using efficient frameworks, automation tools, and the latest AI models. From startups to enterprises, we deliver products that are scalable, functional, and ready to make an impact.",
   },
   {
     icon: Palette,
     title: "UI/UX Prototyping",
-    description: "Simple, intuitive designs that prioritize user experience. We focus on clean interfaces that convert and engage your audience.",
+    description:
+      "Simple, intuitive designs that prioritize user experience. We focus on clean interfaces that convert and engage your audience.",
   },
   {
     icon: Rabbit,
     title: "Rapid Market Testing",
-    description: "Use Google Ads, Facebook Ads, and other tools to validate your idea in real time. We help you identify your audience, refine your messaging, and test key hypotheses before scaling.",
+    description:
+      "Use Google Ads, Facebook Ads, and other tools to validate your idea in real time. We help you identify your audience, refine your messaging, and test key hypotheses before scaling.",
   },
   {
     icon: Bot,
     title: "AI Agents & Chatbots",
-    description: "Build intelligent AI agents and chatbots tailored to your business needs. Automate customer interactions, boost engagement, and streamline operations.Perfect for startups in e-commerce, SaaS, and customer service industries.",
+    description:
+      "Build intelligent AI agents and chatbots tailored to your business needs. Automate customer interactions, boost engagement, and streamline operations.Perfect for startups in e-commerce, SaaS, and customer service industries.",
   },
 ];
 
@@ -34,8 +38,9 @@ export default function Services() {
             Our Services
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          We specialize in building MVPs fast and effectively, but we also go beyond development to help you test, 
-          validate, and grow your product. Here's what we offer:
+            We specialize in building MVPs fast and effectively, but we also go
+            beyond development to help you test, validate, and grow your
+            product. Here's what we offer:
           </p>
         </div>
 
@@ -50,11 +55,11 @@ export default function Services() {
                   {service.title}
                 </h3>
                 <p className="text-gray-600 mb-6">{service.description}</p>
-                <a href="https://calendly.com/charles-buildwise/30min" target="_blank" rel="noopener noreferrer">
-                <button className="text-teal-600 font-semibold hover:text-teal-700 inline-flex items-center">
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                </button>
-                </a>
+                <a
+                  href="https://calendly.com/charles-buildwise/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></a>
               </CardContent>
             </Card>
           ))}
@@ -68,15 +73,18 @@ export default function Services() {
               </h3>
               <p className="text-teal-100 mb-6 leading-relaxed">
                 This is our core business: we put all our energy and know-how
-                into it. We have hands on experience building prototypes, MVPs and scalable products.
+                into it. We have hands on experience building prototypes, MVPs
+                and scalable products.
               </p>
-              <a href="https://calendly.com/charles-buildwise/30min" target="_blank" rel="noopener noreferrer">
-              <Button 
-                variant="secondary" 
-                size="lg"
+              <a
+                href="https://calendly.com/charles-buildwise/30min"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Get Started
-              </Button>
+                <Button variant="secondary" size="lg" className="hover:bg-gray-100">
+                  <Calendar className="mr-2 h-5 w-5" />
+                  Schedule a Meeting
+                </Button>
               </a>
             </div>
             <div>

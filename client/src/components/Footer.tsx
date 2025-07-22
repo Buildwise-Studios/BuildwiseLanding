@@ -32,20 +32,32 @@ export default function Footer() {
               to help you test your market quickly and cost-effectively.
             </p>
             <div className="flex space-x-4">
-            <a href="https://www.linkedin.com/in/charles-fauchet-gaminginfluence/" target="_blank" rel="noopener noreferrer">
-              <button className="text-gray-400 hover:text-teal-500 transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </button>
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=61577737420712" target="_blank" rel="noopener noreferrer">
-              <button className="text-gray-400 hover:text-teal-500 transition-colors">
-                <FiFacebook  className="h-5 w-5" />
-              </button>
-            </a>
-            <a href="https://www.instagram.com/buildwise852/" target="_blank" rel="noopener noreferrer">
-              <button className="text-gray-400 hover:text-teal-500 transition-colors">
-                <FiInstagram className="h-5 w-5" />
-              </button>
+              <a
+                href="https://www.linkedin.com/in/charles-fauchet-gaminginfluence/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="text-gray-400 hover:text-teal-500 transition-colors">
+                  <Linkedin className="h-5 w-5" />
+                </button>
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61577737420712"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="text-gray-400 hover:text-teal-500 transition-colors">
+                  <FiFacebook className="h-5 w-5" />
+                </button>
+              </a>
+              <a
+                href="https://www.instagram.com/buildwise852/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="text-gray-400 hover:text-teal-500 transition-colors">
+                  <FiInstagram className="h-5 w-5" />
+                </button>
               </a>
             </div>
           </div>
@@ -107,7 +119,7 @@ export default function Footer() {
                   href="mailto:charles@voxelai.ai"
                   className="text-gray-300 hover:text-teal-500 transition-colors"
                 >
-                  charles@voxelai.ai
+                  contact@buildwise-studios.com
                 </a>
               </div>
               <div className="flex items-center">
@@ -121,9 +133,7 @@ export default function Footer() {
               </div>
               <div className="flex items-start">
                 <MapPin className="h-5 w-5 text-teal-500 mr-3 mt-1" />
-                <span className="text-gray-300">
-                  Hong Kong
-                </span>
+                <span className="text-gray-300">Hong Kong</span>
               </div>
             </div>
           </div>
@@ -135,12 +145,12 @@ export default function Footer() {
               © 2025 Metaverse Lab Limited. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <a href="/privacy-policy" target="_blank" >
+              <a href="/privacy-policy" target="_blank">
                 <button className="text-gray-400 hover:text-teal-500 transition-colors">
                   Privacy Policy
                 </button>
               </a>
-              <a href="/terms-of-services" target="_blank" >
+              <a href="/terms-of-services" target="_blank">
                 <button className="text-gray-400 hover:text-teal-500 transition-colors">
                   Terms of Service
                 </button>

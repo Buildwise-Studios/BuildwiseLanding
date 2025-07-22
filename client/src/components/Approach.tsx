@@ -1,51 +1,55 @@
-import { Search, Lightbulb, Code, Rocket } from "lucide-react";
+import { Search, Lightbulb, Code, Rocket, Bot } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 // images
-import mvp from '@/assets/mvp.png';
-import rapidDev from '@/assets/rapid-dev.png';
-import roadmap from '@/assets/roadmap.png';
-import traffic from '@/assets/traffic.png';
-
+import mvp from "@/assets/mvp.png";
+import rapidDev from "@/assets/rapid-dev.png";
+import roadmap from "@/assets/roadmap.png";
+import traffic from "@/assets/traffic.png";
 
 const steps = [
   {
     number: 1,
-    title: "How Do We Test Your Product Idea Fast?",
+    title: "Test your idea Fast",
     icon: Search,
     image: mvp,
     features: [
       {
-        title: "Stop Overthinking. Test Your Idea Fast",
-        description: "The goal is to find the quickest way to confront your idea with the market.",
+        title: "Test Your Idea Fast",
+        description:
+          "The goal is to find the quickest way to confront your idea with the market.",
       },
       {
         title: "Audience First",
-        description: "Who are your first users, and where can you find them? We answer these questions before building anything.",
+        description:
+          "Who are your first users, and where can you find them? We answer these questions before building anything.",
       },
       {
         title: "The MVP of your MVP",
-        description: "We identify the ONE feature that makes the difference. Your MVP should do ONE thing and do it really well.",
+        description:
+          "We identify the ONE feature that makes the difference. Your MVP should do ONE thing and do it really well.",
       },
-
     ],
   },
   {
     number: 2,
-    title: "When Do We Launch It?",
+    title: "Roadmap",
     icon: Lightbulb,
     image: roadmap,
     features: [
       {
-        title: "Commit to Launch",
-        description: "We set a launch date. This drives the project timeline and keeps the focus on your MVP’s core value. No endless development or unnecessary features.",
+        title: "We agree on a launch date",
+        description:
+          "This drives the project timeline and keeps the focus on your MVP’s core value. No endless development or unnecessary features.",
       },
       {
-        title: "User Journey",
-        description: "We validate the user journey before development begins.",
+        title: "We define the User Journey",
+        description: "This is validated before development begins.",
       },
       {
         title: "What You See Is What You Get",
-        description: "We finalize the design so you know exactly what to expect, no surprises.",
+        description:
+          "We finalize the design so you know exactly what to expect, no surprises.",
       },
     ],
   },
@@ -57,35 +61,18 @@ const steps = [
     features: [
       {
         title: "Light Architecture",
-        description: "We use automation tools and efficient frameworks to integrate APIs seamlessly.",
+        description:
+          "We use automation tools and efficient frameworks to integrate APIs seamlessly.",
       },
       {
-        title: "AI-Powered Development",
-        description: "Our AI tools speed up development and streamline content creation.",
+        title: "AI-Assisted Development",
+        description:
+          "Our tools use AI in various forms to speed up development and streamline content creation.",
       },
       {
         title: "Minimalist Frontend Approach",
-        description: "Focus on chat interfaces and clean, simple designs for a faster build and better user experience.",
-      },
-    ],
-  },
-  {
-    number: 4,
-    title: "The Launch",
-    icon: Rocket,
-    image: traffic,
-    features: [
-      {
-        title: "Market Launch",
-        description: "We guide you through the entire launch process to ensure success.",
-      },
-      {
-        title: "Learn from Your Users",
-        description: "We set up analytics and gather user feedback to learn and iterate quickly.",
-      },
-      {
-        title: "Beyond MVP",
-        description: "We’ll support you beyond the MVP, helping you scale and evolve your product.",
+        description:
+          "Focus on chat interfaces and clean, simple designs for a faster build and better user experience.",
       },
     ],
   },
@@ -100,8 +87,8 @@ export default function Approach() {
             Our Approach
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          We’ve streamlined the MVP development process to help you bring your ideas to life quickly and cost-effectively. 
-          Here’s how we do it:
+            We’ve streamlined the MVP development process to help you bring your
+            ideas to life quickly and cost-effectively. Here’s how we do it:
           </p>
         </div>
 
@@ -113,7 +100,9 @@ export default function Approach() {
                 index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
               }`}
             >
-              <div className={`mb-8 lg:mb-0 ${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
+              <div
+                className={`mb-8 lg:mb-0 ${index % 2 === 1 ? "lg:col-start-2" : ""}`}
+              >
                 <div className="flex items-center mb-6">
                   <div className="bg-teal-500 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-4">
                     {step.number}
@@ -133,7 +122,9 @@ export default function Approach() {
                   ))}
                 </div>
               </div>
-              <div className={`text-center ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
+              <div
+                className={`text-center ${index % 2 === 1 ? "lg:col-start-1" : ""}`}
+              >
                 <img
                   src={step.image}
                   alt={`${step.title} process illustration`}
@@ -144,6 +135,26 @@ export default function Approach() {
               </div>
             </div>
           ))}
+        </div>
+        
+        {/* Call to Action after Rapid Development */}
+        <div className="text-center mt-16">
+          <div className="bg-gray-50 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Ready to Start Your MVP Journey?
+            </h3>
+            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+              Let our AI Product Manager help you define your project scope and get started with a clear roadmap.
+            </p>
+            <Button
+              size="lg"
+              className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 text-lg font-semibold"
+              onClick={() => window.location.href = '/ai-product-manager'}
+            >
+              <Bot className="mr-2 h-5 w-5" />
+              Scope your project with AI
+            </Button>
+          </div>
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Calendar } from "lucide-react";
 // images
 import leaguePass from '@/assets/leaguepass.png';
 import voxai from '@/assets/voxaisq.png';
@@ -89,7 +89,8 @@ export default function Projects() {
         <div className="text-center mt-12">
         <a href="https://calendly.com/charles-buildwise/30min" target="_blank" rel="noopener noreferrer">
           <Button size="lg" className="bg-teal-500 hover:bg-teal-600">
-            Get Started
+            <Calendar className="mr-2 h-5 w-5" />
+            Schedule a Meeting
           </Button>
         </a>
         </div>
