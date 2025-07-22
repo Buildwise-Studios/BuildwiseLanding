@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Rocket, Palette, ArrowRight, Bot, Rabbit } from "lucide-react";
+import { Rocket, Palette, ArrowRight, Bot, Rabbit, Calendar } from "lucide-react";
 
 const services = [
   {
@@ -82,7 +82,8 @@ export default function Services() {
                 rel="noopener noreferrer"
               >
                 <Button variant="secondary" size="lg">
-                  Get Started
+                  <Calendar className="mr-2 h-5 w-5" />
+                  Schedule a Meeting
                 </Button>
               </a>
             </div>

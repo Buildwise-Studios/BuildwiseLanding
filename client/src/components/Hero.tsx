@@ -23,28 +23,19 @@ export default function Hero() {
               automation, and rapid development tools to deliver high-quality
               MVPs faster and smarter.
             </p>
-            <a
-              href="https://calendly.com/charles-buildwise/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <div className="space-y-4">
               <Button
                 size="lg"
-                className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 text-lg font-semibold w-1/2"
+                className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 text-lg font-semibold w-full"
+                onClick={() => setLocation("/ai-product-manager")}
               >
-                <Calendar className="mr-2 h-5 w-5" />
-                Schedule a Meeting
+                <Bot className="mr-2 h-5 w-5" />
+                Scope your project with AI
               </Button>
-            </a>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-teal-500 text-teal-600 hover:bg-teal-50 px-8 py-4 text-lg font-semibold w-1/2"
-              onClick={() => setLocation("/ai-product-manager")}
-            >
-              <Bot className="mr-2 h-5 w-5" />
-              Scope your project with AI
-            </Button>
+              <p className="text-sm text-gray-500 text-center">
+                Get your project requirements doc and UI Mock up in 24h!
+              </p>
+            </div>
           </div>
           <div className="relative">
             <img
