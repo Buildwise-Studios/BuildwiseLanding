@@ -67,7 +67,7 @@ export default function AIProductManager() {
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                   <span className="text-sm font-medium">Connected</span>
                 </div>
-                <Badge variant="secondary">Mei-Ling</Badge>
+                <Badge variant="secondary">Mei-Ling, Product Manager</Badge>
               </div>
             </CardHeader>
             <CardContent className="flex-1 p-0">

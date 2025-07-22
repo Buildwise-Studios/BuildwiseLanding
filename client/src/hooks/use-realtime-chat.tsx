@@ -91,11 +91,17 @@ export function useRealtimeChat({ roomName, username, userEmail, sessionId }: Us
   const sendWelcomeMessage = useCallback(async () => {
     if (welcomeMessageSent || messages.length > 0) return
     
-    const welcomeContent = `Hi ${username}! I am going to ask you a series of questions to define the scope of your project and produce a Product Requirements Document (PRD) that our team will send after our chat. Once you validate the document, we'll produce a mockup of your project's UI within the next 24 hours! 
-
-Will ${userEmail} be the best way to contact you, if not please confirm your best email address!`
+    const firstMessage = `Hi ${username}! I am going to ask you a series of questions to define the scope of your project and produce a Product Requirements Document (PRD) that our team will send after our chat. Once you validate the document, we'll produce a mockup of your project's UI within the next 24 hours!`
     
-    await sendBotMessage(welcomeContent)
+    const secondMessage = `Will ${userEmail} be the best way to contact you, if not please confirm your best email address!`
+    
+    await sendBotMessage(firstMessage)
+    
+    // Add a small delay before sending the second message
+    setTimeout(async () => {
+      await sendBotMessage(secondMessage)
+    }, 1000)
+    
     setWelcomeMessageSent(true)
   }, [username, userEmail, sendBotMessage, welcomeMessageSent, messages.length])
 
