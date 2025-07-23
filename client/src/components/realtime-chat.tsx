@@ -160,9 +160,13 @@ export const RealtimeChat = ({
   );
 
   return (
-    <div className="flex flex-col h-full w-full bg-background text-foreground antialiased">
-      {/* Messages */}
-      <div ref={containerRef} className="flex-1 overflow-y-auto p-4 space-y-4">
+    <div className="relative h-full w-full bg-background text-foreground antialiased flex flex-col">
+      {/* Messages Area - Fixed height with bottom padding for input */}
+      <div 
+        ref={containerRef} 
+        className="flex-1 overflow-y-auto p-4 pb-20 space-y-4"
+        style={{ height: 'calc(100% - 80px)' }}
+      >
         {allMessages.length === 0 ? (
           <div className="text-center text-sm text-muted-foreground">
             No messages yet. Start the conversation!
@@ -197,31 +201,34 @@ export const RealtimeChat = ({
         </div>
       </div>
 
-      <form
-        onSubmit={handleSendMessage}
-        className="flex w-full gap-2 border-t border-border p-4"
-      >
-        <Input
-          className={cn(
-            "rounded-full bg-background text-sm transition-all duration-300",
-            newMessage.trim() ? "w-[calc(100%-36px)]" : "w-full",
-          )}
-          type="text"
-          value={newMessage}
-          onChange={(e) => setNewMessage(e.target.value)}
-          placeholder="Type a message..."
-          disabled={false}
-        />
-        {newMessage.trim() && (
-          <Button
-            className="aspect-square rounded-full animate-in fade-in slide-in-from-right-4 duration-300"
-            type="submit"
+      {/* Fixed Input Area at Bottom */}
+      <div className="absolute bottom-0 left-0 right-0 bg-background border-t border-border">
+        <form
+          onSubmit={handleSendMessage}
+          className="flex w-full gap-2 p-4"
+        >
+          <Input
+            className={cn(
+              "rounded-full bg-background text-sm transition-all duration-300",
+              newMessage.trim() ? "w-[calc(100%-36px)]" : "w-full",
+            )}
+            type="text"
+            value={newMessage}
+            onChange={(e) => setNewMessage(e.target.value)}
+            placeholder="Type a message..."
             disabled={false}
-          >
-            <Send className="size-4" />
-          </Button>
-        )}
-      </form>
+          />
+          {newMessage.trim() && (
+            <Button
+              className="aspect-square rounded-full animate-in fade-in slide-in-from-right-4 duration-300"
+              type="submit"
+              disabled={false}
+            >
+              <Send className="size-4" />
+            </Button>
+          )}
+        </form>
+      </div>
     </div>
   );
 };
