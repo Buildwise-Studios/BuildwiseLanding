@@ -31,30 +31,30 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-20 bg-gray-50 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 break-words">
             Our Services
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
             We specialize in building MVPs fast and effectively, but we also go
             beyond development to help you test, validate, and grow your
             product. Here's what we offer:
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-16 w-full">
           {services.map((service, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow">
-              <CardContent className="p-8">
+            <Card key={index} className="hover:shadow-lg transition-shadow w-full">
+              <CardContent className="p-6 sm:p-8">
                 <div className="bg-teal-100 rounded-lg p-3 w-fit mb-6">
                   <service.icon className="h-6 w-6 text-teal-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 break-words">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
+                <p className="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed">{service.description}</p>
                 <a
                   href="https://calendly.com/charles-buildwise/30min"
                   target="_blank"
@@ -65,13 +65,13 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="bg-teal-500 rounded-2xl p-8 lg:p-12 text-white">
-          <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
-            <div className="mb-8 lg:mb-0">
-              <h3 className="text-2xl lg:text-3xl font-bold mb-4">
+        <div className="bg-teal-500 rounded-2xl p-6 sm:p-8 lg:p-12 text-white w-full overflow-hidden">
+          <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center w-full">
+            <div className="mb-8 lg:mb-0 w-full">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 break-words">
                 MVP Development
               </h3>
-              <p className="text-teal-100 mb-6 leading-relaxed">
+              <p className="text-teal-100 mb-6 leading-relaxed text-sm sm:text-base">
                 This is our core business: we put all our energy and know-how
                 into it. We have hands on experience building prototypes, MVPs
                 and scalable products.
@@ -80,18 +80,19 @@ export default function Services() {
                 href="https://calendly.com/charles-buildwise/30min"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="inline-block w-full sm:w-auto"
               >
-                <Button variant="secondary" size="lg" className="hover:bg-gray-100">
-                  <Calendar className="mr-2 h-5 w-5" />
-                  Schedule a Meeting
+                <Button variant="secondary" size="lg" className="hover:bg-gray-100 w-full sm:w-auto">
+                  <Calendar className="mr-2 h-5 w-5 flex-shrink-0" />
+                  <span className="truncate">Schedule a Meeting</span>
                 </Button>
               </a>
             </div>
-            <div>
+            <div className="w-full">
               <img
                 src="https://images.unsplash.com/photo-1523908511403-7fc7b25592f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
                 alt="Development team collaborating in modern office"
-                className="w-full rounded-xl shadow-lg"
+                className="w-full max-w-full h-auto rounded-xl shadow-lg"
               />
             </div>
           </div>

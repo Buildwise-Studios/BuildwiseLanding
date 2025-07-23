@@ -38,45 +38,45 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-20 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 break-words">
             Our Recent Projects
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
             Discover some of our successful MVP implementations across various
             industries.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full">
           {projects.map((project, index) => (
-            <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
+            <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow w-full">
               <img
                 src={project.image}
                 alt={`${project.title} interface`}
-                className="w-full p-5 h-48 object-cover"
+                className="w-full p-4 sm:p-5 h-40 sm:h-48 object-cover"
               />
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+              <CardContent className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 break-words">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
-                <div className="flex flex-col items-start justify-center text-sm">
-                <div>
-                  <p className='flex font-semibold'>What it does:</p>
-                  <p className="text-gray-600 mb-4">{project.what}</p>
+                <p className="text-sm sm:text-base text-gray-600 mb-4 leading-relaxed">{project.description}</p>
+                <div className="flex flex-col items-start justify-center text-xs sm:text-sm space-y-3">
+                <div className="w-full">
+                  <p className='font-semibold break-words'>What it does:</p>
+                  <p className="text-gray-600 mb-2 leading-relaxed">{project.what}</p>
                 </div>
-                <div>
-                  <p className='flex font-semibold'>Objective:</p>
-                  <p className="text-gray-600 mb-4">{project.objective}</p>
+                <div className="w-full">
+                  <p className='font-semibold break-words'>Objective:</p>
+                  <p className="text-gray-600 mb-2 leading-relaxed">{project.objective}</p>
                 </div>
-                <div>
-                  <p className='flex font-semibold'>Highlight:</p>
-                  <p className="text-gray-600 mb-4">{project.highlight}</p>
+                <div className="w-full">
+                  <p className='font-semibold break-words'>Highlight:</p>
+                  <p className="text-gray-600 mb-2 leading-relaxed">{project.highlight}</p>
                 </div>
-                  <span className="text-sm text-gray-500">{project.category}</span>
+                  <span className="text-xs sm:text-sm text-gray-500 break-words">{project.category}</span>
                   {/* <button className="text-teal-600 hover:text-teal-700 font-semibold">
                     <ExternalLink className="h-4 w-4" />
                   </button> */}
@@ -86,11 +86,11 @@ export default function Projects() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-        <a href="https://calendly.com/charles-buildwise/30min" target="_blank" rel="noopener noreferrer">
-          <Button size="lg" className="bg-teal-500 hover:bg-teal-600">
-            <Calendar className="mr-2 h-5 w-5" />
-            Schedule a Meeting
+        <div className="text-center mt-12 w-full">
+        <a href="https://calendly.com/charles-buildwise/30min" target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
+          <Button size="lg" className="bg-teal-500 hover:bg-teal-600 w-full sm:w-auto">
+            <Calendar className="mr-2 h-5 w-5 flex-shrink-0" />
+            <span className="truncate">Schedule a Meeting</span>
           </Button>
         </a>
         </div>

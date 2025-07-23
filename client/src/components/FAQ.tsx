@@ -46,37 +46,37 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-20 bg-teal-500">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="py-20 bg-teal-500 overflow-hidden">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 break-words">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-teal-100 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-teal-100 max-w-3xl mx-auto px-4">
             Get answers to the most common questions about our MVP development
             process.
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-4 w-full">
           {faqs.map((faq) => (
             <div key={faq.id} className="bg-white rounded-lg overflow-hidden">
               <button
                 onClick={() => toggleItem(faq.id)}
-                className="w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors"
+                className="w-full text-left p-4 sm:p-6 flex justify-between items-start hover:bg-gray-50 transition-colors"
               >
-                <span className="font-semibold text-gray-900 pr-4">
+                <span className="font-semibold text-gray-900 pr-4 text-sm sm:text-base break-words flex-1">
                   {faq.question}
                 </span>
                 <ChevronDown
-                  className={`text-gray-500 transition-transform h-5 w-5 flex-shrink-0 ${
+                  className={`text-gray-500 transition-transform h-5 w-5 flex-shrink-0 mt-0.5 ${
                     openItems.includes(faq.id) ? "rotate-180" : ""
                   }`}
                 />
               </button>
               {openItems.includes(faq.id) && (
-                <div className="px-6 pb-6">
-                  <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                <div className="px-4 sm:px-6 pb-4 sm:pb-6">
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base break-words">{faq.answer}</p>
                 </div>
               )}
             </div>

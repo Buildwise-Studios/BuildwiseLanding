@@ -40,30 +40,30 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <a href="/" target="_self" rel="noopener noreferrer">
+    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50 overflow-hidden">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="flex justify-between items-center h-16 w-full">
+          <a href="/" target="_self" rel="noopener noreferrer" className="flex-shrink-0">
           <div className="flex items-center">
-            <Egg className="h-8 w-8 text-teal-500 " />
-            <span className="text-xl font-bold text-gray-900">Buildwise</span>
+            <Egg className="h-6 w-6 sm:h-8 sm:w-8 text-teal-500" />
+            <span className="text-lg sm:text-xl font-bold text-gray-900 ml-2 truncate">Buildwise</span>
           </div>
           </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-8">
+            <div className="ml-10 flex items-center space-x-6 lg:space-x-8">
               {navItems.map((item) => (
                 <button
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-gray-700 hover:text-teal-600 transition-colors"
+                  onClick={() => handleNavClick(item)}
+                  className="text-gray-700 hover:text-teal-600 transition-colors text-sm lg:text-base whitespace-nowrap"
                 >
                   {item.label}
                 </button>
               ))}
               <Button 
-                className="bg-teal-500 hover:bg-teal-600"
+                className="bg-teal-500 hover:bg-teal-600 flex-shrink-0"
                 onClick={() => setLocation("/ai-product-manager")}
               >
                 Get Started
@@ -75,24 +75,24 @@ export default function Header() {
           <div className="md:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
+                <Button variant="ghost" size="icon" className="flex-shrink-0">
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[280px]">
-                <div className="flex flex-col space-y-4 mt-8">
+              <SheetContent side="right" className="w-[280px] overflow-hidden">
+                <div className="flex flex-col space-y-4 mt-8 w-full">
                   {navItems.map((item) => (
                     <button
                       key={item.id}
-                      onClick={() => scrollToSection(item.id)}
-                      className="text-left text-gray-700 hover:text-teal-600 transition-colors py-2"
+                      onClick={() => handleNavClick(item)}
+                      className="text-left text-gray-700 hover:text-teal-600 transition-colors py-2 w-full truncate"
                     >
                       {item.label}
                     </button>
                   ))}
                   <Button 
                     onClick={() => setLocation("/ai-product-manager")}
-                    className="bg-teal-500 hover:bg-teal-600 mt-4"
+                    className="bg-teal-500 hover:bg-teal-600 mt-4 w-full"
                   >
                     Get Started
                   </Button>
