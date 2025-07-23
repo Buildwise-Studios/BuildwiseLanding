@@ -33,7 +33,7 @@ export const RealtimeChat = ({
   onMessage,
   messages: initialMessages = [],
 }: RealtimeChatProps) => {
-  const { containerRef, scrollToBottom, scrollToBottomImmediate } = useChatScroll();
+  const { containerRef, scrollToBottom } = useChatScroll();
 
   const {
     messages: realtimeMessages,
@@ -76,18 +76,10 @@ export const RealtimeChat = ({
     memoizedOnMessage();
   }, [memoizedOnMessage]);
 
-  // Scroll to bottom when messages change
   useEffect(() => {
+    // Scroll to bottom whenever messages change
     scrollToBottom();
   }, [allMessages, scrollToBottom]);
-
-  // Scroll to bottom when typing indicator changes
-  useEffect(() => {
-    if (isTyping) {
-      // Small delay to ensure typing indicator is rendered
-      setTimeout(() => scrollToBottom(true), 100);
-    }
-  }, [isTyping, scrollToBottom]);
 
   const handleSendMessage = useCallback(
     async (e: React.FormEvent) => {
@@ -102,9 +94,6 @@ export const RealtimeChat = ({
 
       // Clear the input field immediately
       setNewMessage("");
-
-      // Scroll to bottom after sending message
-      setTimeout(() => scrollToBottom(true), 50);
 
       // Show typing indicator before making the API call
       setTypingIndicator(true);
@@ -152,16 +141,12 @@ export const RealtimeChat = ({
         // Add the bot's reply to the chat
         if (botReply.output) {
           sendBotMessage(botReply.output);
-          // Ensure scroll to bottom after bot message
-          setTimeout(() => scrollToBottom(true), 200);
         }
       } catch (error) {
         console.error("Error triggering webhook:", error);
       } finally {
         // Hide typing indicator regardless of success or failure
         setTypingIndicator(false);
-        // Final scroll to ensure input is visible
-        setTimeout(() => scrollToBottom(true), 100);
       }
     },
     [
@@ -177,7 +162,7 @@ export const RealtimeChat = ({
   return (
     <div className="flex flex-col h-full w-full bg-background text-foreground antialiased">
       {/* Messages */}
-      <div ref={containerRef} className="flex-1 overflow-y-auto p-4 space-y-4" style={{ scrollBehavior: 'smooth' }}>
+      <div ref={containerRef} className="flex-1 overflow-y-auto p-4 space-y-4">
         {allMessages.length === 0 ? (
           <div className="text-center text-sm text-muted-foreground">
             No messages yet. Start the conversation!
@@ -210,8 +195,6 @@ export const RealtimeChat = ({
             </div>
           )}
         </div>
-        {/* Bottom padding to ensure last message is visible above input */}
-        <div className="h-4"></div>
       </div>
 
       <form
