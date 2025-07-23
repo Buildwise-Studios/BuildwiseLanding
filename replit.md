@@ -35,7 +35,7 @@ Preferred communication style: Simple, everyday language.
 - **Chat System**: Supabase-powered real-time chat with broadcast channels
 - **Live Communication**: WebSocket-based messaging for instant interaction
 - **User Sessions**: Email-based chat sessions with persistent history
-- **AI Assistant**: Personalized AI agent named "Mei-Ling" with profile picture
+- **AI Assistant**: Personalized AI agent named "Jason" with profile picture
 - **Welcome Messages**: Automated personalized greeting explaining PRD process
 - **Typing Indicators**: Visual feedback during AI response processing
 
@@ -155,3 +155,26 @@ The application is designed as a single-page application (SPA) with client-side 
 
 ### Current Status:
 All mobile layout improvements have been implemented. The application now provides a smooth mobile experience without horizontal scrolling. A Vite plugin issue (replit-cartographer traverse function error) is preventing the application from starting, but the mobile layout code is ready for testing once resolved.
+
+## AI Agent Update - Jason Rebrand (July 23, 2025)
+
+### AI Agent Persona Change
+✓ Replaced AI agent persona from Mei-Ling to Jason based on marketing feedback
+✓ Updated all references throughout the application (components, hooks, documentation)
+✓ Replaced agent profile picture with new Jason image (professional male persona)
+
+### Bot Labeling Implementation
+✓ Added Discord-style "BOT" labels next to agent name in all contexts
+✓ Created reusable BotBadge component with consistent styling
+✓ Applied bot labels in:
+  - Chat message headers
+  - Typing indicators
+  - Main chat interface header
+  - AI Product Manager page
+
+### Technical Updates:
+- Updated use-realtime-chat hook to send messages as "Jason"
+- Modified chat-message and typing-indicator components
+- Updated AI Product Manager page with Jason's image and bot badge
+- Created BotBadge UI component for consistency
+- Updated documentation references from Mei-Ling to Jason

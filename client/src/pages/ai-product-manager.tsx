@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { BotBadge } from "@/components/ui/bot-badge";
 import { RealtimeChat } from "@/components/realtime-chat";
 import {
   ArrowLeft,
@@ -60,15 +61,22 @@ export default function AIProductManager() {
               Back to Setup
             </Button>
             <div className="flex items-center gap-3 mb-2">
-              <div className="bg-teal-500 rounded-lg p-2">
-                <Bot className="h-6 w-6 text-white" />
+              <div className="w-12 h-12 rounded-full overflow-hidden">
+                <img 
+                  src="/attached_assets/jason.png"
+                  alt="Jason" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">
-                  Meet Mei-Ling
-                </h1>
+                <div className="flex items-center gap-2">
+                  <h1 className="text-2xl font-bold text-gray-900">
+                    Meet Jason
+                  </h1>
+                  <BotBadge />
+                </div>
                 <p className="text-gray-600">
-                  Chat with Mei-Ling to define your project scope
+                  Chat with Jason to define your project scope
                 </p>
               </div>
             </div>

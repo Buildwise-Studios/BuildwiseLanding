@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import type { ChatMessage } from "@/hooks/use-realtime-chat";
-import meiLingImage from "@assets/IMG_3832_1753195688183.jpeg";
+import jasonImage from "@assets/jason.png";
+import { BotBadge } from "@/components/ui/bot-badge";
 
 interface ChatMessageItemProps {
   message: ChatMessage;
@@ -13,19 +14,19 @@ export const ChatMessageItem = ({
   isOwnMessage,
   showHeader,
 }: ChatMessageItemProps) => {
-  const isMeiLing = message.user.name === "Mei-Ling";
+  const isJason = message.user.name === "Jason";
   
   return (
     <div
       className={`flex mt-2 ${isOwnMessage ? "justify-end" : "justify-start"}`}
     >
-      {/* Avatar for Mei-Ling messages */}
-      {!isOwnMessage && isMeiLing && (
+      {/* Avatar for Jason messages */}
+      {!isOwnMessage && isJason && (
         <div className="flex-shrink-0 mr-3">
           <div className="w-8 h-8 rounded-full overflow-hidden">
             <img 
-              src={meiLingImage} 
-              alt="Mei-Ling" 
+              src={jasonImage} 
+              alt="Jason" 
               className="w-full h-full object-cover"
             />
           </div>
@@ -44,6 +45,7 @@ export const ChatMessageItem = ({
             })}
           >
             <span className={"font-medium"}>{message.user.name}</span>
+            {isJason && <BotBadge size="sm" />}
             <span className="text-foreground/50 text-xs">
               {new Date(message.createdAt).toLocaleTimeString("en-US", {
                 hour: "2-digit",
