@@ -33,7 +33,7 @@ export default function Hero() {
                 <img 
                   src={jasonImage} 
                   alt="Jason AI Agent" 
-                  className="mr-2 h-4 w-4 sm:h-5 sm:w-5 rounded-full object-cover flex-shrink-0" 
+                  className="mr-2 h-8 w-8 sm:h-10 sm:w-10 rounded-full object-cover flex-shrink-0" 
                 />
                 <span className="text-center leading-tight">Scope your project with Jason, our AI agent</span>
               </Button>
