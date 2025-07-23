@@ -20,9 +20,65 @@ export default function AIProductManager() {
   const [userName, setUserName] = useState<string>("");
   const [userEmail, setUserEmail] = useState<string>("");
   const [chatStarted, setChatStarted] = useState(false);
+  const [emailError, setEmailError] = useState<string>("");
+  const [isEmailValid, setIsEmailValid] = useState<boolean>(false);
+
+  // Disposable email domains list
+  const disposableDomains = [
+    '10minutemail.com', 'guerrillamail.com', 'mailinator.com', 'tempmail.org',
+    'yopmail.com', 'maildrop.cc', 'throwaway.email', 'temp-mail.org',
+    'disposablemail.com', 'getnada.com', 'mohmal.com', 'sharklasers.com',
+    'guerrillamailblock.com', 'pokemail.net', 'spam4.me', 'bccto.me',
+    'temp-mail.ru', 'tempail.com', 'dispostable.com', 'fakeinbox.com'
+  ];
+
+  // Email validation function
+  const validateEmail = (email: string): { isValid: boolean; error: string } => {
+    if (!email.trim()) {
+      return { isValid: false, error: "" };
+    }
+
+    // Basic email regex pattern
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (!emailRegex.test(email)) {
+      return { isValid: false, error: "Please enter a valid email address" };
+    }
+
+    // Extract domain from email
+    const domain = email.split('@')[1]?.toLowerCase();
+    
+    // Check for disposable domains
+    if (domain && disposableDomains.includes(domain)) {
+      return { isValid: false, error: "Please use a business or personal email address" };
+    }
+
+    // Check for common typos in popular domains
+    const suggestions: { [key: string]: string } = {
+      'gmial.com': 'gmail.com',
+      'gmai.com': 'gmail.com',
+      'yahooo.com': 'yahoo.com',
+      'hotmial.com': 'hotmail.com',
+      'outlok.com': 'outlook.com'
+    };
+
+    if (domain && suggestions[domain]) {
+      return { isValid: false, error: `Did you mean ${email.replace(domain, suggestions[domain])}?` };
+    }
+
+    return { isValid: true, error: "" };
+  };
+
+  // Handle email change with validation
+  const handleEmailChange = (email: string) => {
+    setUserEmail(email);
+    const validation = validateEmail(email);
+    setIsEmailValid(validation.isValid);
+    setEmailError(validation.error);
+  };
 
   const handleStartChat = () => {
-    if (userName.trim() && userEmail.trim()) {
+    if (userName.trim() && userEmail.trim() && isEmailValid) {
       setChatStarted(true);
     }
   };
@@ -201,14 +257,26 @@ export default function AIProductManager() {
                 id="email"
                 type="email"
                 value={userEmail}
-                onChange={(e) => setUserEmail(e.target.value)}
-                placeholder="Enter your email"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                onChange={(e) => handleEmailChange(e.target.value)}
+                placeholder="Enter your business or personal email"
+                className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:border-transparent ${
+                  emailError 
+                    ? 'border-red-300 focus:ring-red-500' 
+                    : isEmailValid && userEmail.trim() 
+                      ? 'border-green-300 focus:ring-green-500'
+                      : 'border-gray-300 focus:ring-teal-500'
+                }`}
               />
+              {emailError && (
+                <p className="mt-1 text-sm text-red-600">{emailError}</p>
+              )}
+              {isEmailValid && userEmail.trim() && (
+                <p className="mt-1 text-sm text-green-600">✓ Valid email address</p>
+              )}
             </div>
             <Button
               onClick={handleStartChat}
-              disabled={!userName.trim() || !userEmail.trim()}
+              disabled={!userName.trim() || !userEmail.trim() || !isEmailValid}
               className="w-full bg-teal-500 hover:bg-teal-600"
               size="lg"
             >
