@@ -27,13 +27,13 @@ export default function Hero() {
             <div className="space-y-4 w-full">
               <Button
                 size="lg"
-                className="bg-teal-500 hover:bg-teal-600 text-white px-4 sm:px-8 py-4 text-sm sm:text-lg font-semibold w-full flex items-center justify-center"
+                className="bg-teal-500 hover:bg-teal-600 text-white px-6 sm:px-8 py-5 text-sm sm:text-lg font-semibold w-full flex items-center justify-center gap-3"
                 onClick={() => setLocation("/ai-product-manager")}
               >
                 <img
                   src={jasonImage}
                   alt="Jason AI Agent"
-                  className="hidden sm:block mr-2 h-8 w-8 sm:h-10 sm:w-10 rounded-full object-cover flex-shrink-0"
+                  className="hidden min-[390px]:block h-7 w-7 sm:h-9 sm:w-9 rounded-full object-cover flex-shrink-0"
                 />
                 <span className="text-center leading-tight">
                   Scope your project with Jason, our AI agent
