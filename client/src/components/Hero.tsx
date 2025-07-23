@@ -30,12 +30,14 @@ export default function Hero() {
                 className="bg-teal-500 hover:bg-teal-600 text-white px-4 sm:px-8 py-4 text-sm sm:text-lg font-semibold w-full flex items-center justify-center"
                 onClick={() => setLocation("/ai-product-manager")}
               >
-                <img 
-                  src={jasonImage} 
-                  alt="Jason AI Agent" 
-                  className="mr-2 h-8 w-8 sm:h-10 sm:w-10 rounded-full object-cover flex-shrink-0" 
+                <img
+                  src={jasonImage}
+                  alt="Jason AI Agent"
+                  className="hidden sm:block mr-2 h-8 w-8 sm:h-10 sm:w-10 rounded-full object-cover flex-shrink-0"
                 />
-                <span className="text-center leading-tight">Scope your project with Jason, our AI agent</span>
+                <span className="text-center leading-tight">
+                  Scope your project with Jason, our AI agent
+                </span>
               </Button>
               <p className="text-sm text-gray-500 text-center px-2">
                 Get your project requirements doc and UI Mock up in 24h!
