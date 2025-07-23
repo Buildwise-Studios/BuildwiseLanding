@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BotBadge } from "@/components/ui/bot-badge";
 import { RealtimeChat } from "@/components/realtime-chat";
+import jasonImage from "@assets/jason.png";
 import {
   ArrowLeft,
   Bot,
@@ -63,7 +64,7 @@ export default function AIProductManager() {
             <div className="flex items-center gap-3 mb-2">
               <div className="w-12 h-12 rounded-full overflow-hidden">
                 <img 
-                  src="attached_assets/jason.png"
+                  src={jasonImage}
                   alt="Jason" 
                   className="w-full h-full object-cover"
                 />
