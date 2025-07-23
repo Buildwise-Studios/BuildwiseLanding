@@ -1,5 +1,6 @@
-import { Search, Lightbulb, Code, Rocket, Bot } from "lucide-react";
+import { Search, Lightbulb, Code, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import jasonImage from "@assets/jason.png";
 
 // images
 import mvp from "@/assets/mvp.png";
@@ -174,8 +175,12 @@ export default function Approach() {
               className="bg-teal-500 hover:bg-teal-600 text-white px-6 sm:px-8 py-4 text-base sm:text-lg font-semibold w-full sm:w-auto"
               onClick={() => window.location.href = '/ai-product-manager'}
             >
-              <Bot className="mr-2 h-5 w-5 flex-shrink-0" />
-              <span className="truncate">Scope your project with AI</span>
+              <img 
+                src={jasonImage} 
+                alt="Jason AI Agent" 
+                className="mr-2 h-5 w-5 rounded-full object-cover flex-shrink-0" 
+              />
+              <span className="break-words">Scope your project with Jason, our AI agent</span>
             </Button>
           </div>
         </div>
