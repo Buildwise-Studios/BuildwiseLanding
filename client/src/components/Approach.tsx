@@ -77,29 +77,7 @@ const steps = [
       },
     ],
   },
-  {
-    number: 4,
-    title: "Launch & Iterate",
-    icon: Rocket,
-    image: traffic,
-    features: [
-      {
-        title: "Launch as Soon as Possible",
-        description:
-          "The goal is to get your MVP in front of users and start collecting valuable feedback.",
-      },
-      {
-        title: "Measure & Learn",
-        description:
-          "Track user behavior, collect feedback, and identify what works.",
-      },
-      {
-        title: "Iterate Based on Real Data",
-        description:
-          "Use insights from actual users to guide the next development cycle.",
-      },
-    ],
-  },
+
 ];
 
 export default function Approach() {
@@ -111,7 +89,7 @@ export default function Approach() {
             Our Approach
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
-            We follow a proven 4-step process to turn your idea into a
+            We follow a proven 3-step process to turn your idea into a
             market-ready MVP.
           </p>
         </div>
