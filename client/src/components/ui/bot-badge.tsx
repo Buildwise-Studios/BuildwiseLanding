@@ -14,7 +14,7 @@ export const BotBadge = ({ className, size = "default" }: BotBadgeProps) => {
         className
       )}
     >
-      BOT
+      AI Agent
     </span>
   );
 };

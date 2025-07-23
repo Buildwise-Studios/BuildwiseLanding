@@ -63,7 +63,7 @@ export default function AIProductManager() {
             <div className="flex items-center gap-3 mb-2">
               <div className="w-12 h-12 rounded-full overflow-hidden">
                 <img 
-                  src="/attached_assets/jason.png"
+                  src="attached_assets/jason.png"
                   alt="Jason" 
                   className="w-full h-full object-cover"
                 />
@@ -89,7 +89,7 @@ export default function AIProductManager() {
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                   <span className="text-sm font-medium">Connected</span>
                 </div>
-                <Badge variant="secondary">Mei-Ling, Product Manager</Badge>
+                <Badge variant="secondary">Jason, Product Manager</Badge>
               </div>
             </CardHeader>
             <CardContent className="flex-1 p-0">
