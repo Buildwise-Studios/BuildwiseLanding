@@ -149,13 +149,15 @@ export default function AIProductManager() {
                 <Badge variant="secondary">Jason, Product Manager</Badge>
               </div>
             </CardHeader>
-            <CardContent className="flex-1 p-0">
-              <RealtimeChat
-                roomName={userName}
-                username={userName}
-                userEmail={userEmail}
-                sessionId={userEmail}
-              />
+            <CardContent className="flex-1 p-0 overflow-hidden">
+              <div className="h-full">
+                <RealtimeChat
+                  roomName={userName}
+                  username={userName}
+                  userEmail={userEmail}
+                  sessionId={userEmail}
+                />
+              </div>
             </CardContent>
           </Card>
         </div>

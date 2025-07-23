@@ -164,8 +164,8 @@ export const RealtimeChat = ({
       {/* Messages Area - Fixed height with bottom padding for input */}
       <div 
         ref={containerRef} 
-        className="flex-1 overflow-y-auto p-4 pb-20 space-y-4"
-        style={{ height: 'calc(100% - 80px)' }}
+        className="overflow-y-auto p-4 pb-20 space-y-4"
+        style={{ height: 'calc(100% - 80px)', maxHeight: 'calc(100% - 80px)' }}
       >
         {allMessages.length === 0 ? (
           <div className="text-center text-sm text-muted-foreground">
