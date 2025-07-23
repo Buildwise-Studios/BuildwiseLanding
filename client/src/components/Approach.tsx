@@ -172,15 +172,15 @@ export default function Approach() {
             </p>
             <Button
               size="lg"
-              className="bg-teal-500 hover:bg-teal-600 text-white px-6 sm:px-8 py-4 text-base sm:text-lg font-semibold w-full sm:w-auto"
+              className="bg-teal-500 hover:bg-teal-600 text-white px-4 sm:px-8 py-4 text-sm sm:text-lg font-semibold w-full sm:w-auto flex items-center justify-center"
               onClick={() => window.location.href = '/ai-product-manager'}
             >
               <img 
                 src={jasonImage} 
                 alt="Jason AI Agent" 
-                className="mr-2 h-5 w-5 rounded-full object-cover flex-shrink-0" 
+                className="mr-2 h-4 w-4 sm:h-5 sm:w-5 rounded-full object-cover flex-shrink-0" 
               />
-              <span className="break-words">Scope your project with Jason, our AI agent</span>
+              <span className="text-center leading-tight">Scope your project with Jason, our AI agent</span>
             </Button>
           </div>
         </div>
