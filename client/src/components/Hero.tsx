@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Calendar, Star, Bot } from "lucide-react";
+import { Calendar, Star } from "lucide-react";
 import { useLocation } from "wouter";
+import jasonImage from "@assets/jason.png";
 
 export default function Hero() {
   const [, setLocation] = useLocation();
@@ -29,8 +30,12 @@ export default function Hero() {
                 className="bg-teal-500 hover:bg-teal-600 text-white px-6 sm:px-8 py-4 text-base sm:text-lg font-semibold w-full"
                 onClick={() => setLocation("/ai-product-manager")}
               >
-                <Bot className="mr-2 h-5 w-5 flex-shrink-0" />
-                <span className="truncate">Scope your project with AI</span>
+                <img 
+                  src={jasonImage} 
+                  alt="Jason AI Agent" 
+                  className="mr-2 h-5 w-5 rounded-full object-cover flex-shrink-0" 
+                />
+                <span className="truncate">Scope your project with Jason, our AI agent</span>
               </Button>
               <p className="text-sm text-gray-500 text-center px-2">
                 Get your project requirements doc and UI Mock up in 24h!
