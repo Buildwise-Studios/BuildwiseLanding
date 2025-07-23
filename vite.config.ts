@@ -10,14 +10,14 @@ export default defineConfig(async () => {
   ];
 
   // Only add cartographer in development on Replit
-  if (process.env.NODE_ENV !== "production" && process.env.REPL_ID !== undefined) {
-    try {
-      const { cartographer } = await import("@replit/vite-plugin-cartographer");
-      plugins.push(cartographer());
-    } catch (error) {
-      console.warn("Failed to load cartographer plugin:", error.message);
-    }
-  }
+//  if (process.env.NODE_ENV !== "production" && process.env.REPL_ID !== undefined) {
+   // try {
+     // const { cartographer } = await import("@replit/vite-plugin-cartographer");
+    //  plugins.push(cartographer());
+   // } catch (error) {
+  //    console.warn("Failed to load cartographer plugin:", error.message);
+ //   }
+ // }
 
   return {
     plugins,
