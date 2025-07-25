@@ -184,13 +184,13 @@ export default function AIProductManager() {
             </div>
           </div>
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            AI Product Manager
+            Scope your MVP Requirements with AI
           </h1>
           <h2 className="text-4xl lg:text-3xl font-bold text-gray-900 mb-6">
             Get your project requirements document and UI Mock up in 24h!
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Get expert guidance from our AI Product Manager to define your
+            Get expert guidance from Jason, our AI Product Manager to define your
             project scope, prioritize features, and create a clear roadmap for
             your MVP development.
           </p>
