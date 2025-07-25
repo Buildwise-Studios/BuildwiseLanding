@@ -184,7 +184,7 @@ export default function AIProductManager() {
             </div>
           </div>
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Scope your MVP Requirements with AI
+            Scope your MVP with AI
           </h1>
           <h2 className="text-4xl lg:text-3xl font-bold text-gray-900 mb-6">
             Get your project requirements document and UI Mock up in 24h!
