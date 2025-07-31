@@ -17,7 +17,7 @@ export default function Hero() {
             </h1>
             <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
               Transform your idea into a market-ready product with our
-              AI-powered development process.
+              AI-augmented development process.
             </p>
             <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
               We are a compact and agile team based in Hong Kong, leveraging AI,
