@@ -25,45 +25,68 @@ export default function AIProductManager() {
 
   // Disposable email domains list
   const disposableDomains = [
-    '10minutemail.com', 'guerrillamail.com', 'mailinator.com', 'tempmail.org',
-    'yopmail.com', 'maildrop.cc', 'throwaway.email', 'temp-mail.org',
-    'disposablemail.com', 'getnada.com', 'mohmal.com', 'sharklasers.com',
-    'guerrillamailblock.com', 'pokemail.net', 'spam4.me', 'bccto.me',
-    'temp-mail.ru', 'tempail.com', 'dispostable.com', 'fakeinbox.com'
+    "10minutemail.com",
+    "guerrillamail.com",
+    "mailinator.com",
+    "tempmail.org",
+    "yopmail.com",
+    "maildrop.cc",
+    "throwaway.email",
+    "temp-mail.org",
+    "disposablemail.com",
+    "getnada.com",
+    "mohmal.com",
+    "sharklasers.com",
+    "guerrillamailblock.com",
+    "pokemail.net",
+    "spam4.me",
+    "bccto.me",
+    "temp-mail.ru",
+    "tempail.com",
+    "dispostable.com",
+    "fakeinbox.com",
   ];
 
   // Email validation function
-  const validateEmail = (email: string): { isValid: boolean; error: string } => {
+  const validateEmail = (
+    email: string,
+  ): { isValid: boolean; error: string } => {
     if (!email.trim()) {
       return { isValid: false, error: "" };
     }
 
     // Basic email regex pattern
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
+
     if (!emailRegex.test(email)) {
       return { isValid: false, error: "Please enter a valid email address" };
     }
 
     // Extract domain from email
-    const domain = email.split('@')[1]?.toLowerCase();
-    
+    const domain = email.split("@")[1]?.toLowerCase();
+
     // Check for disposable domains
     if (domain && disposableDomains.includes(domain)) {
-      return { isValid: false, error: "Please use a business or personal email address" };
+      return {
+        isValid: false,
+        error: "Please use a business or personal email address",
+      };
     }
 
     // Check for common typos in popular domains
     const suggestions: { [key: string]: string } = {
-      'gmial.com': 'gmail.com',
-      'gmai.com': 'gmail.com',
-      'yahooo.com': 'yahoo.com',
-      'hotmial.com': 'hotmail.com',
-      'outlok.com': 'outlook.com'
+      "gmial.com": "gmail.com",
+      "gmai.com": "gmail.com",
+      "yahooo.com": "yahoo.com",
+      "hotmial.com": "hotmail.com",
+      "outlok.com": "outlook.com",
     };
 
     if (domain && suggestions[domain]) {
-      return { isValid: false, error: `Did you mean ${email.replace(domain, suggestions[domain])}?` };
+      return {
+        isValid: false,
+        error: `Did you mean ${email.replace(domain, suggestions[domain])}?`,
+      };
     }
 
     return { isValid: true, error: "" };
@@ -119,9 +142,9 @@ export default function AIProductManager() {
             </Button>
             <div className="flex items-center gap-3 mb-2">
               <div className="w-12 h-12 rounded-full overflow-hidden">
-                <img 
+                <img
                   src={jasonImage}
-                  alt="Jason" 
+                  alt="Jason"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -181,9 +204,9 @@ export default function AIProductManager() {
           <div className="flex justify-center mb-6">
             <div className="relative">
               <div className="w-20 h-20 rounded-2xl overflow-hidden bg-gray-100">
-                <img 
+                <img
                   src={jasonImage}
-                  alt="Jason - AI Product Manager" 
+                  alt="Jason - AI Product Manager"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -193,15 +216,15 @@ export default function AIProductManager() {
             </div>
           </div>
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Scope your project with AI
+            Scope your project with Jason
           </h1>
-          <h2 className="text-4xl lg:text-3xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">
             Get your project requirements document and UI Mock up in 24h!
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Get expert guidance from Jason, our AI Product Manager to define your
-            project scope, prioritize features, and create a clear roadmap for
-            your MVP development.
+            Get expert guidance from Jason, our AI Product Manager to define
+            your project scope, prioritize features, and create a clear roadmap
+            for your MVP development.
           </p>
           <div className="flex items-center justify-center gap-2">
             <Badge variant="secondary" className="bg-teal-100 text-teal-700">
@@ -271,18 +294,20 @@ export default function AIProductManager() {
                 onChange={(e) => handleEmailChange(e.target.value)}
                 placeholder="Enter your business or personal email"
                 className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:border-transparent ${
-                  emailError 
-                    ? 'border-red-300 focus:ring-red-500' 
-                    : isEmailValid && userEmail.trim() 
-                      ? 'border-green-300 focus:ring-green-500'
-                      : 'border-gray-300 focus:ring-teal-500'
+                  emailError
+                    ? "border-red-300 focus:ring-red-500"
+                    : isEmailValid && userEmail.trim()
+                      ? "border-green-300 focus:ring-green-500"
+                      : "border-gray-300 focus:ring-teal-500"
                 }`}
               />
               {emailError && (
                 <p className="mt-1 text-sm text-red-600">{emailError}</p>
               )}
               {isEmailValid && userEmail.trim() && (
-                <p className="mt-1 text-sm text-green-600">✓ Valid email address</p>
+                <p className="mt-1 text-sm text-green-600">
+                  ✓ Valid email address
+                </p>
               )}
             </div>
             <Button
