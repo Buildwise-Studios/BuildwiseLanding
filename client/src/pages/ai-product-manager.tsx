@@ -185,8 +185,8 @@ export default function AIProductManager() {
                 alt="Jason - AI Product Manager" 
                 className="w-full h-full object-cover"
               />
-              <div className="absolute -bottom-1 -right-1 bg-blue-600 text-white text-xs px-1.5 py-0.5 rounded-md font-medium shadow-sm">
-                AI AGENT
+              <div className="absolute -bottom-1 -right-1 inline-flex items-center gap-1 font-medium bg-blue-100 text-blue-700 rounded px-1.5 py-0.5 text-xs shadow-sm">
+                AI Agent
               </div>
             </div>
           </div>
