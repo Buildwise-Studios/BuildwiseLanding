@@ -179,12 +179,19 @@ export default function AIProductManager() {
 
         <div className="text-center mb-16">
           <div className="flex justify-center mb-6">
-            <div className="bg-teal-500 rounded-2xl p-4">
-              <Bot className="h-12 w-12 text-white" />
+            <div className="relative w-20 h-20 rounded-2xl overflow-hidden bg-gray-100">
+              <img 
+                src={jasonImage}
+                alt="Jason - AI Product Manager" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute -bottom-1 -right-1 bg-blue-600 text-white text-xs px-1.5 py-0.5 rounded-md font-medium shadow-sm">
+                AI AGENT
+              </div>
             </div>
           </div>
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Scope your MVP with AI
+            Scope your project with AI
           </h1>
           <h2 className="text-4xl lg:text-3xl font-bold text-gray-900 mb-6">
             Get your project requirements document and UI Mock up in 24h!
