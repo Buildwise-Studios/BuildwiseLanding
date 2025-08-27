@@ -179,13 +179,15 @@ export default function AIProductManager() {
 
         <div className="text-center mb-16">
           <div className="flex justify-center mb-6">
-            <div className="relative w-20 h-20 rounded-2xl overflow-hidden bg-gray-100">
-              <img 
-                src={jasonImage}
-                alt="Jason - AI Product Manager" 
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute -bottom-1 -right-1 inline-flex items-center gap-1 font-medium bg-blue-100 text-blue-700 rounded px-1.5 py-0.5 text-xs shadow-sm z-10">
+            <div className="relative">
+              <div className="w-20 h-20 rounded-2xl overflow-hidden bg-gray-100">
+                <img 
+                  src={jasonImage}
+                  alt="Jason - AI Product Manager" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-1 -right-1 inline-flex items-center gap-1 font-medium bg-blue-100 text-blue-700 rounded px-1.5 py-0.5 text-xs shadow-sm">
                 AI Agent
               </div>
             </div>
