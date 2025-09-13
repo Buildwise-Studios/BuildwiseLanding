@@ -219,7 +219,7 @@ export default function AIProductManager() {
             Scope your project with Jason
           </h1>
           <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">
-            Get your project requirements document and UI Mock up in 24h!
+            Get your project requirements document and Mock up in 24h!
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             Get expert guidance from Jason, our AI Product Manager to define
