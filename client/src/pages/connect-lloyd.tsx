@@ -86,22 +86,28 @@ export default function ConnectLloyd() {
 
   const handleConnect = () => {
     if (window.FB) {
-      // WhatsApp Embedded Signup using FB.ui
-      window.FB.ui(
-        {
-          method: "business_login",
-          config_id: "1330172168108416",
-        },
+      // WhatsApp Embedded Signup flow with proper scopes
+      window.FB.login(
         function (response: any) {
-          console.log("WhatsApp signup response:", response);
-          if (response && !response.error_message) {
-            console.log("Successfully completed WhatsApp signup", response);
-            // Handle successful signup
-            setLoginStatus({ status: "connected" });
-            // You can extract phone number ID, WABA ID, etc. from the response
+          console.log("Login response:", response);
+          if (response.authResponse) {
+            console.log("Successfully logged in", response);
+            statusChangeCallback(response);
+            
+            // After login, the embedded signup should have completed
+            // You can now fetch the WABA details using the access token
+            const accessToken = response.authResponse.accessToken;
+            console.log("Access Token:", accessToken);
+            
+            // You can use this token to call your backend to retrieve
+            // the WhatsApp Business Account details
           } else {
-            console.error("WhatsApp signup error:", response);
+            console.log("User cancelled login or did not fully authorize.");
           }
+        },
+        {
+          config_id: "1330172168108416",
+          // Let the config handle all parameters without overriding
         }
       );
     }
