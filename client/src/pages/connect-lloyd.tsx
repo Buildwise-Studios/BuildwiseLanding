@@ -54,7 +54,7 @@ export default function ConnectLloyd() {
     // Initialize Facebook SDK
     window.fbAsyncInit = function () {
       window.FB.init({
-        appId: import.meta.env.VITE_FACEBOOK_APP_ID,
+        appId: "676079095347490",
         cookie: true,
         xfbml: true,
         version: "v24.0",
