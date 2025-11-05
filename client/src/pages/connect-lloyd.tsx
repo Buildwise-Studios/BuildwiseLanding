@@ -88,7 +88,7 @@ export default function ConnectLloyd() {
     if (window.FB) {
       window.FB.login(function (response: LoginStatus) {
         statusChangeCallback(response);
-      });
+      }, {config_id: '1330172168108416'});
     }
   };
 
