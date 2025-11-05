@@ -86,13 +86,14 @@ export default function ConnectLloyd() {
 
   const handleConnect = () => {
     if (window.FB) {
+      // WhatsApp Embedded Signup flow
       window.FB.login(
         function (response: LoginStatus) {
           statusChangeCallback(response);
         },
         {
           config_id: "1330172168108416",
-          response_type: "code",
+          // Remove response_type to let the config handle the WhatsApp signup flow
         }
       );
     }
