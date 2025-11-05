@@ -5,14 +5,12 @@ import Home from "@/pages/home";
 import Tos from "@/pages/tos";
 import AIProductManager from "@/pages/ai-product-manager";
 import PrivacyPolicy from "@/pages/privacy";
-import ConnectLloyd from "@/pages/connect-lloyd";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/ai-product-manager" component={AIProductManager} />
-      <Route path="/connect-lloyd" component={ConnectLloyd} />
       <Route path="/terms-of-services" component={Tos} />
       <Route path="/privacy-policy" component={PrivacyPolicy } />
       <Route path="/:rest*" component={Home} />
