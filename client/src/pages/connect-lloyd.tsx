@@ -86,12 +86,15 @@ export default function ConnectLloyd() {
 
   const handleConnect = () => {
     if (window.FB) {
-      window.FB.login(function (response: LoginStatus) {
-        statusChangeCallback(response);
-      }, {
-        config_id: '1330172168108416',
-        response_type: 'code'
-      });
+      window.FB.login(
+        function (response: LoginStatus) {
+          statusChangeCallback(response);
+        },
+        {
+          config_id: "1330172168108416",
+          response_type: "code",
+        }
+      );
     }
   };
 
