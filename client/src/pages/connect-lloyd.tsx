@@ -61,10 +61,10 @@ export default function ConnectLloyd() {
       });
       window.FB.AppEvents.logPageView();
 
-      // Check login status on page load
-      window.FB.getLoginStatus(function (response: LoginStatus) {
-        statusChangeCallback(response);
-      });
+      // Check login status on page load - DISABLED FOR DEBUGGING
+      // window.FB.getLoginStatus(function (response: LoginStatus) {
+      //   statusChangeCallback(response);
+      // });
     };
 
     // Make checkLoginState available globally for FB button
