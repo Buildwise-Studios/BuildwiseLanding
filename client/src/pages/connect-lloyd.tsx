@@ -89,18 +89,18 @@ export default function ConnectLloyd() {
       // WhatsApp Embedded Signup using FB.ui
       window.FB.ui(
         {
-          method: 'business_login',
+          method: "business_login",
           config_id: "1330172168108416",
         },
         function (response: any) {
-          console.log('WhatsApp signup response:', response);
+          console.log("WhatsApp signup response:", response);
           if (response && !response.error_message) {
-            console.log('Successfully completed WhatsApp signup', response);
+            console.log("Successfully completed WhatsApp signup", response);
             // Handle successful signup
-            setLoginStatus({ status: 'connected' });
+            setLoginStatus({ status: "connected" });
             // You can extract phone number ID, WABA ID, etc. from the response
           } else {
-            console.error('WhatsApp signup error:', response);
+            console.error("WhatsApp signup error:", response);
           }
         }
       );
