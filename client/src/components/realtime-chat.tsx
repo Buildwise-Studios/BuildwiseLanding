@@ -56,11 +56,11 @@ export const RealtimeChat = ({
     // Remove duplicates based on message id
     const uniqueMessages = mergedMessages.filter(
       (message, index, self) =>
-        index === self.findIndex((m) => m.id === message.id),
+        index === self.findIndex((m) => m.id === message.id)
     );
     // Sort by creation date
     const sortedMessages = uniqueMessages.sort((a, b) =>
-      a.createdAt.localeCompare(b.createdAt),
+      a.createdAt.localeCompare(b.createdAt)
     );
 
     return sortedMessages;
@@ -101,7 +101,7 @@ export const RealtimeChat = ({
       // Trigger the webhook to fetch the bot's response
       try {
         const response = await fetch(
-          "https://metalab.app.n8n.cloud/webhook/d7f6b3de-d918-49dd-b915-0f4a603271d0",
+          "https://n8n-n8n.iftctq.easypanel.host/webhook/d7f6b3de-d918-49dd-b915-0f4a603271d0",
           {
             method: "POST",
             headers: {
@@ -113,7 +113,7 @@ export const RealtimeChat = ({
               username: username,
               timestamp: new Date().toISOString(),
             }),
-          },
+          }
         );
 
         if (!response.ok) {
@@ -129,7 +129,7 @@ export const RealtimeChat = ({
           // If it's a 404, the workflow needs to be activated
           if (response.status === 404) {
             console.warn(
-              "n8n webhook not registered. Please activate your workflow in n8n.",
+              "n8n webhook not registered. Please activate your workflow in n8n."
             );
           }
           return;
@@ -156,16 +156,16 @@ export const RealtimeChat = ({
       setTypingIndicator,
       sessionId,
       username,
-    ],
+    ]
   );
 
   return (
     <div className="relative h-full w-full bg-background text-foreground antialiased flex flex-col">
       {/* Messages Area - Fixed height with bottom padding for input */}
-      <div 
-        ref={containerRef} 
+      <div
+        ref={containerRef}
         className="overflow-y-auto p-4 pb-20 space-y-4"
-        style={{ height: 'calc(100% - 80px)', maxHeight: 'calc(100% - 80px)' }}
+        style={{ height: "calc(100% - 80px)", maxHeight: "calc(100% - 80px)" }}
       >
         {allMessages.length === 0 ? (
           <div className="text-center text-sm text-muted-foreground">
@@ -203,14 +203,11 @@ export const RealtimeChat = ({
 
       {/* Fixed Input Area at Bottom */}
       <div className="absolute bottom-0 left-0 right-0 bg-background border-t border-border">
-        <form
-          onSubmit={handleSendMessage}
-          className="flex w-full gap-2 p-4"
-        >
+        <form onSubmit={handleSendMessage} className="flex w-full gap-2 p-4">
           <Input
             className={cn(
               "rounded-full bg-background text-sm transition-all duration-300",
-              newMessage.trim() ? "w-[calc(100%-36px)]" : "w-full",
+              newMessage.trim() ? "w-[calc(100%-36px)]" : "w-full"
             )}
             type="text"
             value={newMessage}
