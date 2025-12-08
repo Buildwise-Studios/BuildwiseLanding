@@ -22,6 +22,7 @@ export default function AIProductManager() {
   const [chatStarted, setChatStarted] = useState(false);
   const [emailError, setEmailError] = useState<string>("");
   const [isEmailValid, setIsEmailValid] = useState<boolean>(false);
+  const [chatRoomId, setChatRoomId] = useState<string>("");
 
   // Disposable email domains list
   const disposableDomains = [
@@ -102,6 +103,9 @@ export default function AIProductManager() {
 
   const handleStartChat = () => {
     if (userName.trim() && userEmail.trim() && isEmailValid) {
+      // Generate a unique room ID for this chat session
+      const uniqueRoomId = `${userEmail}-${Date.now()}`;
+      setChatRoomId(uniqueRoomId);
       setChatStarted(true);
     }
   };
@@ -175,7 +179,7 @@ export default function AIProductManager() {
             <CardContent className="flex-1 p-0 overflow-hidden">
               <div className="h-full">
                 <RealtimeChat
-                  roomName={userName}
+                  roomName={chatRoomId}
                   username={userName}
                   userEmail={userEmail}
                   sessionId={userEmail}
