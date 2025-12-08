@@ -93,6 +93,29 @@ export function useRealtimeChat({
     [sendMessage],
   );
 
+  const sendWelcomeMessage = useCallback(async () => {
+    if (welcomeMessageSent || messages.length > 0) return;
+
+    const firstMessage = `Hi ${username}! I am going to ask you a series of questions to define the scope of your project and produce a Project Requirements Document (PRD) that our team will send after our chat. Once you validate the document, we'll produce a mockup of your project within the next 24 hours!`;
+
+    const secondMessage = `Will ${userEmail} be the best way to contact you, if not please confirm your best email address!`;
+
+    await sendBotMessage(firstMessage);
+
+    // Add a small delay before sending the second message
+    setTimeout(async () => {
+      await sendBotMessage(secondMessage);
+    }, 1000);
+
+    setWelcomeMessageSent(true);
+  }, [
+    username,
+    userEmail,
+    sendBotMessage,
+    welcomeMessageSent,
+    messages.length,
+  ]);
+
   const setTypingIndicator = useCallback((typing: boolean) => {
     setIsTyping(typing);
   }, []);
@@ -100,24 +123,9 @@ export function useRealtimeChat({
   // Send welcome message when connected and no messages exist
   useEffect(() => {
     if (isConnected && !welcomeMessageSent && messages.length === 0) {
-      const sendWelcomeMessages = async () => {
-        const firstMessage = `Hi ${username}! I am going to ask you a series of questions to define the scope of your project and produce a Project Requirements Document (PRD) that our team will send after our chat. Once you validate the document, we'll produce a mockup of your project within the next 24 hours!`;
-
-        const secondMessage = `Will ${userEmail} be the best way to contact you, if not please confirm your best email address!`;
-
-        await sendBotMessage(firstMessage);
-
-        // Add a small delay before sending the second message
-        setTimeout(async () => {
-          await sendBotMessage(secondMessage);
-        }, 1000);
-
-        setWelcomeMessageSent(true);
-      };
-
-      sendWelcomeMessages();
+      sendWelcomeMessage();
     }
-  }, [isConnected, welcomeMessageSent, messages.length, username, userEmail, sendBotMessage]);
+  }, [isConnected, welcomeMessageSent, messages.length, sendWelcomeMessage]);
 
   return {
     messages,
