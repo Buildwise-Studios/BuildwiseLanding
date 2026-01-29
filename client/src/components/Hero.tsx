@@ -22,13 +22,23 @@ export default function Hero() {
               Built once, deployed forever. No custom dev, no consulting—just plug-and-play intelligence.
             </p>
             <div className="space-y-4 w-full">
-                <Button
+              <Button
                 size="lg"
                 className="bg-teal-500 hover:bg-teal-600 text-white px-6 sm:px-8 py-5 text-sm sm:text-lg font-semibold w-full flex items-center justify-center gap-3"
                 onClick={() => setLocation("/#verticals")}
               >
                 <span className="text-center leading-tight">
                   Explore Agents for Your Industry
+                </span>
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="text-teal-600 border-teal-600 hover:bg-teal-50 px-6 sm:px-8 py-5 text-sm sm:text-lg font-semibold w-full flex items-center justify-center gap-3"
+                onClick={() => setLocation("/ai-product-manager")}
+              >
+                <span className="text-center leading-tight">
+                  Not Sure? Talk to Jason →
                 </span>
               </Button>
             </div>

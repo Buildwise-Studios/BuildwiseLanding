@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/home";
 import Tos from "@/pages/tos";
+import AIProductManager from "@/pages/ai-product-manager";
 import PrivacyPolicy from "@/pages/privacy";
 
 function Router() {
@@ -11,6 +12,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/terms-of-services" component={Tos} />
       <Route path="/privacy-policy" component={PrivacyPolicy } />
+      <Route path="/ai-product-manager" component={AIProductManager} />
       <Route path="/:rest*" component={Home} />
     </Switch>
   );

@@ -28,8 +28,9 @@ export default function Header() {
   };
 
   const handleNavClick = (item: NavItem) => {
-    if (item.isPage) {
-      setLocation(`/${item.id.replace('ai-pm', 'ai-product-manager')}`);
+    // Handle route navigation (if id contains hyphens or is a route)
+    if (item.id === 'ai-product-manager') {
+      setLocation('/ai-product-manager');
       setIsOpen(false);
     } else {
       scrollToSection(item.id);
@@ -42,6 +43,7 @@ export default function Header() {
     { label: "Projects", id: "projects" },
     { label: "Team", id: "team" },
     { label: "FAQ", id: "faq" },
+    { label: "AI Scoping", id: "ai-product-manager" },
   ];
 
   return (
