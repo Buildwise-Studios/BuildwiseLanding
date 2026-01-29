@@ -12,36 +12,25 @@ export default function Hero() {
         <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center w-full">
           <div className="flex flex-col gap-4 mb-8 lg:mb-0 w-full">
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 mb-6 break-words">
-              Launch Your <span className="text-teal-500">MVP</span> in just{" "}
-              <span className="text-teal-500">4 Weeks</span>
+              AI Agents That <span className="text-teal-500">Replace</span>{" "}
+              Repetitive Work
             </h1>
             <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
-              Transform your idea into a market-ready product with our
-              AI-augmented development process.
+              We build vertical-specific AI agents for professional services and operations-heavy businesses.
             </p>
             <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
-              We are a compact and agile team based in Hong Kong, leveraging AI,
-              automation, and rapid development tools to deliver high-quality
-              MVPs faster and smarter.
+              Built once, deployed forever. No custom dev, no consulting—just plug-and-play intelligence.
             </p>
             <div className="space-y-4 w-full">
-              <Button
+                <Button
                 size="lg"
                 className="bg-teal-500 hover:bg-teal-600 text-white px-6 sm:px-8 py-5 text-sm sm:text-lg font-semibold w-full flex items-center justify-center gap-3"
-                onClick={() => setLocation("/ai-product-manager")}
+                onClick={() => setLocation("/#verticals")}
               >
-                <img
-                  src={jasonImage}
-                  alt="Jason AI Agent"
-                  className="hidden min-[390px]:block h-7 w-7 sm:h-9 sm:w-9 rounded-full object-cover flex-shrink-0"
-                />
                 <span className="text-center leading-tight">
-                  Scope your project with Jason, our AI agent
+                  Explore Agents for Your Industry
                 </span>
               </Button>
-              <p className="text-sm text-gray-500 text-center px-2">
-                Get your project requirements doc and UI Mock up in 24h!
-              </p>
             </div>
           </div>
           <div className="relative w-full max-w-full">

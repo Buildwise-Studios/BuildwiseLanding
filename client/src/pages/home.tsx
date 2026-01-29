@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Approach from "@/components/Approach";
-import Services from "@/components/Services";
+import Verticals from "@/components/Verticals";
 import Projects from "@/components/Projects";
 import Team from "@/components/Team";
 import Technologies from "@/components/Technologies";
@@ -16,7 +16,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Approach />
-      <Services />
+      <Verticals />
       <Technologies />
       <Projects />
       <Team />

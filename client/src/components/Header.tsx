@@ -8,6 +8,12 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [, setLocation] = useLocation();
 
+  interface NavItem {
+    label: string;
+    id: string;
+    isPage?: boolean;
+  }
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -21,7 +27,7 @@ export default function Header() {
     }
   };
 
-  const handleNavClick = (item: any) => {
+  const handleNavClick = (item: NavItem) => {
     if (item.isPage) {
       setLocation(`/${item.id.replace('ai-pm', 'ai-product-manager')}`);
       setIsOpen(false);
@@ -30,13 +36,12 @@ export default function Header() {
     }
   };
 
-  const navItems = [
+  const navItems: NavItem[] = [
     { label: "Our Approach", id: "approach" },
-    { label: "Services", id: "services" },
+    { label: "Verticals", id: "verticals" },
     { label: "Projects", id: "projects" },
     { label: "Team", id: "team" },
     { label: "FAQ", id: "faq" },
-    { label: "AI Product Manager", id: "ai-pm", isPage: true },
   ];
 
   return (
@@ -62,11 +67,11 @@ export default function Header() {
                   {item.label}
                 </button>
               ))}
-              <Button 
+              <Button
                 className="bg-teal-500 hover:bg-teal-600 flex-shrink-0"
-                onClick={() => setLocation("/ai-product-manager")}
+                onClick={() => scrollToSection("verticals")}
               >
-                Get Started
+                Explore AI Agents
               </Button>
             </div>
           </div>
@@ -90,11 +95,11 @@ export default function Header() {
                       {item.label}
                     </button>
                   ))}
-                  <Button 
-                    onClick={() => setLocation("/ai-product-manager")}
+                  <Button
+                    onClick={() => scrollToSection("verticals")}
                     className="bg-teal-500 hover:bg-teal-600 mt-4 w-full"
                   >
-                    Get Started
+                    Explore AI Agents
                   </Button>
                 </div>
               </SheetContent>
