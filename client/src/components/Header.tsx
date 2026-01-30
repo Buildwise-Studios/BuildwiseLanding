@@ -38,10 +38,10 @@ export default function Header() {
   };
 
   const navItems: NavItem[] = [
-    { label: "Our Approach", id: "approach" },
+    { label: "How It Works", id: "approach" },
     { label: "Verticals", id: "verticals" },
-    { label: "Projects", id: "projects" },
-    { label: "Team", id: "team" },
+    { label: "Agents in Action", id: "intelligence-agents" },
+    { label: "About", id: "team" },
     { label: "FAQ", id: "faq" },
     { label: "AI Scoping", id: "ai-product-manager" },
   ];

@@ -17,12 +17,12 @@ const steps = [
       {
         title: "Workflow Analysis",
         description:
-          "We analyze your business processes to identify repetitive tasks and decision points that can be automated with AI agents.",
+          "We study industries with repetitive, high-value workflows—like executive search partners spending 20 hours/week on LinkedIn tracking, or lawyers spending 15 hours/week on contract review.",
       },
       {
         title: "ROI Assessment",
         description:
-          "We prioritize workflows based on time savings, cost reduction, and strategic value to your organization.",
+          "We prioritize workflows where AI saves 20+ hours/month per user based on time savings, cost reduction, and strategic value to your organization.",
       },
       {
         title: "Integration Ready",
@@ -40,7 +40,7 @@ const steps = [
       {
         title: "Domain Expertise",
         description:
-          "Each AI agent is trained with deep domain knowledge specific to your industry and workflow requirements.",
+          "No generic chatbots. Our Intelligence Agents for executive search are trained on finance sector org charts, Bloomberg alerts, and CRM workflows. Our Legal Agents (coming Q2) are trained on contract clauses, case law, and client communication patterns.",
       },
       {
         title: "Multi-Agent Orchestration",
@@ -62,7 +62,7 @@ const steps = [
       {
         title: "Rapid Implementation",
         description:
-          "Our proven methodology ensures your AI agents are production-ready within 30 days, not months.",
+          "Setup, integration, training, optimization—done in 30 days. Your team starts delegating tasks via WhatsApp (no new tools to learn). Agents integrate with your existing CRM, email, and workflows from day one.",
       },
       {
         title: "Continuous Learning",
@@ -141,19 +141,29 @@ export default function Approach() {
         <div className="text-center mt-16 w-full">
           <div className="bg-gray-50 rounded-2xl p-6 sm:p-8 w-full">
             <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 break-words">
-              Ready to Transform Your Workflows?
+              Ready to Save 20+ Hours Per Month?
             </h3>
             <p className="text-sm sm:text-base text-gray-600 mb-6 max-w-2xl mx-auto px-4 break-words">
-              Get started with a free consultation to identify high-value AI agent opportunities in your organization.
+              Book a 30-minute call to see how AI agents fit your workflows—or scope your use case with Jason in 10 minutes.
             </p>
-            <Button
-              size="lg"
-              className="bg-teal-500 hover:bg-teal-600 text-white px-6 sm:px-8 py-5 text-sm sm:text-lg font-semibold w-full sm:w-auto flex items-center justify-center gap-3"
-              onClick={() => window.location.href = '/contact'}
-            >
-              <Rocket className="hidden min-[390px]:block h-7 w-7 sm:h-9 sm:w-9 rounded-full object-cover flex-shrink-0" />
-              <span className="text-center leading-tight">Schedule Your AI Agent Consultation</span>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="bg-teal-500 hover:bg-teal-600 text-white px-6 sm:px-8 py-5 text-sm sm:text-lg font-semibold w-full sm:w-auto flex items-center justify-center gap-3"
+                onClick={() => window.location.href = 'https://calendly.com/charles-buildwise/30min'}
+              >
+                <Rocket className="hidden min-[390px]:block h-7 w-7 sm:h-9 sm:w-9 rounded-full object-cover flex-shrink-0" />
+                <span className="text-center leading-tight">Book Setup Call</span>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-teal-600 border-teal-600 hover:bg-teal-50 px-6 sm:px-8 py-5 text-sm sm:text-lg font-semibold w-full sm:w-auto flex items-center justify-center gap-3"
+                onClick={() => window.location.href = '/ai-product-manager'}
+              >
+                <span className="text-center leading-tight">Talk to Jason</span>
+              </Button>
+            </div>
           </div>
         </div>
       </div>

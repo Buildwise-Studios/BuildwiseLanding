@@ -23,13 +23,15 @@ export default function JasonSection() {
                 Talk to Jason, our AI scoping agent.
               </h3>
               <p className="text-base sm:text-lg text-gray-600 mb-6 leading-relaxed">
-                Jason will ask about your industry, identify repetitive workflows, and either route you to our existing agents (if we've already built for your industry) or generate a custom PRD and scope new agents for your use case.
+                Jason will ask about your industry, identify repetitive workflows, and either:<br/>
+                • Route you to our existing agents (if we've already built for your industry)<br/>
+                • Send your use case to our team for custom scoping (24-hour turnaround with ROI breakdown)
               </p>
               <div className="space-y-4">
                 <p className="text-sm text-gray-500">
-                  ✓ Analyzes your business processes<br/>
-                  ✓ Identifies automation opportunities<br/>
-                  ✓ Provides custom scoping and ROI analysis
+                  ✓ 10-minute conversation, zero commitment<br/>
+                  ✓ 24-hour turnaround with scoped proposal<br/>
+                  ✓ Identifies 20+ hours/month of automation opportunities
                 </p>
               </div>
               <div className="mt-8">
