@@ -3,10 +3,10 @@ import Hero from "@/components/Hero";
 import Approach from "@/components/Approach";
 import JasonSection from "@/components/JasonSection";
 import Verticals from "@/components/Verticals";
-import Projects from "@/components/Projects";
-import Team from "@/components/Team";
+import IntelligenceAgents from "@/components/IntelligenceAgents";
 import Technologies from "@/components/Technologies";
 import Testimonials from "@/components/Testimonials";
+import Team from "@/components/Team";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 
@@ -18,8 +18,8 @@ export default function Home() {
       <Approach />
       <JasonSection />
       <Verticals />
+      <IntelligenceAgents />
       <Technologies />
-      <Projects />
       <Team />
       <Testimonials />
       <FAQ />

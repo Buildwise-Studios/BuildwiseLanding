@@ -16,7 +16,7 @@ export default function Hero() {
               Repetitive Work
             </h1>
             <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
-              We build vertical-specific AI agents for professional services and operations-heavy businesses.
+              We build vertical-specific AI agents for professional services—executive search, legal, consulting, and beyond.
             </p>
             <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
               Built once, deployed forever. No custom dev, no consulting—just plug-and-play intelligence.
@@ -28,7 +28,7 @@ export default function Hero() {
                 onClick={() => setLocation("/#verticals")}
               >
                 <span className="text-center leading-tight">
-                  Explore Agents for Your Industry
+                  See Agents for Your Industry
                 </span>
               </Button>
               <Button
