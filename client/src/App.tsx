@@ -10,9 +10,9 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-      <Route path="/ai-product-manager" component={AIProductManager} />
       <Route path="/terms-of-services" component={Tos} />
       <Route path="/privacy-policy" component={PrivacyPolicy } />
+      <Route path="/ai-product-manager" component={AIProductManager} />
       <Route path="/:rest*" component={Home} />
     </Switch>
   );

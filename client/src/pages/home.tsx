@@ -1,14 +1,14 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Approach from "@/components/Approach";
-import Services from "@/components/Services";
+import JasonSection from "@/components/JasonSection";
+import Verticals from "@/components/Verticals";
 import Projects from "@/components/Projects";
 import Team from "@/components/Team";
 import Technologies from "@/components/Technologies";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
-//import ChatWidget from "@/components/ChatWidget";
 
 export default function Home() {
   return (
@@ -16,7 +16,8 @@ export default function Home() {
       <Header />
       <Hero />
       <Approach />
-      <Services />
+      <JasonSection />
+      <Verticals />
       <Technologies />
       <Projects />
       <Team />
