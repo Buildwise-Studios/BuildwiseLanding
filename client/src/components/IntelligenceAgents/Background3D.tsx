@@ -20,7 +20,7 @@ const Background3D: React.FC = () => {
     const objectGroup = new THREE.Group();
     scene.add(objectGroup);
 
-    const geometry = new THREE.BoxGeometry(10, 10, 10, 32, 32, 32);
+    const geometry = new THREE.BoxGeometry(10, 10, 10, 64, 64, 64);
 
     const vertexShader = `
       uniform float uTime;
@@ -28,6 +28,7 @@ const Background3D: React.FC = () => {
       uniform float uSize;
       uniform vec2 uMouse;
       varying float vNoise;
+      varying float vDist;
 
       vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
       vec4 mod289(vec4 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
@@ -79,6 +80,7 @@ const Background3D: React.FC = () => {
         vNoise = noise;
         vec3 newPos = pos + (normal * noise * uDistortion);
         float dist = distance(uMouse * 10.0, newPos.xy);
+        vDist = dist;
         float interaction = smoothstep(6.0, 0.0, dist);
         newPos.z += interaction * 1.5;
         vec4 mvPosition = modelViewMatrix * vec4(newPos, 1.0);
@@ -89,24 +91,33 @@ const Background3D: React.FC = () => {
 
     const fragmentShader = `
       uniform vec3 uColor;
+      uniform float uTime;
       varying float vNoise;
+      varying float vDist;
       void main() {
         vec2 center = gl_PointCoord - vec2(0.5);
         float dist = length(center);
-        if (dist > 0.45) discard;
-        float alpha = 1.0;
+
+        // Soft glow effect
+        float glow = smoothstep(0.5, 0.0, dist);
+        if (glow < 0.1) discard;
+
+        // Subtle twinkle pulse
+        float twinkle = 0.8 + 0.2 * sin(uTime * 3.0 + vNoise * 10.0);
+
         vec3 color1 = uColor;
-        vec3 color2 = vec3(0.39, 0.71, 0.71);
+        vec3 color2 = vec3(0.9, 0.8, 0.6);
         vec3 finalColor = mix(color1, color2, vNoise * 0.5 + 0.5);
-        gl_FragColor = vec4(finalColor, alpha);
+
+        gl_FragColor = vec4(finalColor, glow * twinkle);
       }
     `;
 
     const uniforms = {
       uTime: { value: 0 },
-      uDistortion: { value: 0.2 },
-      uSize: { value: 1.5 },
-      uColor: { value: new THREE.Color('#64B5B5') },
+      uDistortion: { value: 0.6 },
+      uSize: { value: 4.0 },
+      uColor: { value: new THREE.Color('#D4A574') },
       uMouse: { value: new THREE.Vector2(0, 0) }
     };
 
@@ -133,11 +144,11 @@ const Background3D: React.FC = () => {
     const adjustLayout = () => {
       const w = window.innerWidth;
       if (w < 1024) {
-        objectGroup.position.set(3, 4, -5);
-        objectGroup.scale.set(0.6, 0.6, 0.6);
-      } else {
-        objectGroup.position.set(6, 2, -2);
+        objectGroup.position.set(2, 2, -5);
         objectGroup.scale.set(0.8, 0.8, 0.8);
+      } else {
+        objectGroup.position.set(4, 1, -2);
+        objectGroup.scale.set(1.3, 1.3, 1.3);
       }
     };
 
@@ -171,7 +182,7 @@ const Background3D: React.FC = () => {
     };
   }, []);
 
-  return <div id="canvas-container" ref={containerRef} className="fixed inset-0 z-0 opacity-40 pointer-events-none" />;
+  return <div id="canvas-container" ref={containerRef} className="fixed inset-0 z-0 opacity-80 pointer-events-none" />;
 };
 
 export default Background3D;
