@@ -75,7 +75,7 @@ const HowItWorks: React.FC = () => {
 
             {/* Progress Line */}
             <div
-              className="absolute left-1/2 top-0 w-px bg-brand -translate-x-1/2 transition-all duration-150 ease-out origin-top"
+              className="absolute left-1/2 top-0 w-px bg-[#D4A574] -translate-x-1/2 transition-all duration-150 ease-out origin-top"
               style={{ height: `${progress * 100}%` }}
             ></div>
 
@@ -105,12 +105,12 @@ const HowItWorks: React.FC = () => {
                     {step.side === 'left' ? (
                       <>
                         <div className="w-[42%] text-right pr-4 md:pr-8">
-                          <span className="font-mono text-[10px] text-brand uppercase tracking-wider block mb-1 font-bold">Step {step.id}</span>
+                          <span className="font-mono text-[10px] text-[#D4A574] uppercase tracking-wider block mb-1 font-bold">Step {step.id}</span>
                           <h3 className="font-sans text-base md:text-lg font-semibold text-[#1A1A1A]">{step.title}</h3>
                           <p className="hidden md:block text-xs text-subtle mt-1">{step.description}</p>
                         </div>
                         <div className="relative shrink-0 z-10">
-                          <div className={`w-3 h-3 md:w-4 md:h-4 rounded-full border transition-colors duration-300 ${isActive ? 'border-brand bg-brand shadow-[0_0_8px_rgba(100,181,181,0.5)]' : 'border-border bg-white'}`}></div>
+                          <div className={`w-3 h-3 md:w-4 md:h-4 rounded-full border transition-colors duration-300 ${isActive ? 'border-[#D4A574] bg-[#D4A574] shadow-[0_0_8px_rgba(212,165,116,0.5)]' : 'border-border bg-white'}`}></div>
                         </div>
                         <div className="w-[42%] pl-4 md:pl-8">
                           {step.id === '03' ? (
@@ -133,10 +133,10 @@ const HowItWorks: React.FC = () => {
                           </div>
                         </div>
                         <div className="relative shrink-0 z-10">
-                          <div className={`w-3 h-3 md:w-4 md:h-4 rounded-full border transition-colors duration-300 ${isActive ? 'border-brand bg-brand shadow-[0_0_8px_rgba(100,181,181,0.5)]' : 'border-border bg-white'}`}></div>
+                          <div className={`w-3 h-3 md:w-4 md:h-4 rounded-full border transition-colors duration-300 ${isActive ? 'border-[#D4A574] bg-[#D4A574] shadow-[0_0_8px_rgba(212,165,116,0.5)]' : 'border-border bg-white'}`}></div>
                         </div>
                         <div className="w-[42%] pl-4 md:pl-8">
-                          <span className="font-mono text-[10px] text-brand uppercase tracking-wider block mb-1 font-bold">Step {step.id}</span>
+                          <span className="font-mono text-[10px] text-[#D4A574] uppercase tracking-wider block mb-1 font-bold">Step {step.id}</span>
                           <h3 className="font-sans text-base md:text-lg font-semibold text-[#1A1A1A]">{step.title}</h3>
                           <p className="hidden md:block text-xs text-subtle mt-1">{step.description}</p>
                         </div>

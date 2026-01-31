@@ -5,10 +5,11 @@ import Background3D from "@/components/IntelligenceAgents/Background3D";
 import HeroAnimation from "@/components/IntelligenceAgents/HeroAnimation";
 import HowItWorks from "@/components/IntelligenceAgents/HowItWorks";
 import PricingSection from "@/components/IntelligenceAgents/PricingSection";
+import TestimonialsSection from "@/components/IntelligenceAgents/TestimonialsSection";
 
 const IntelligenceAgentsLanding: React.FC = () => {
   return (
-    <div className="w-full relative bg-[#F8F7F5] font-sans selection:bg-brand/20 selection:text-brand overflow-x-hidden">
+    <div className="w-full relative bg-[#F8F7F5] font-sans selection:bg-[#D4A574]/20 selection:text-[#2D1B10] overflow-x-hidden">
       {/* Backgrounds */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         {/* Subtle warm radial gradient */}
@@ -24,7 +25,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
       {/* Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 w-full px-6 py-4 md:px-12 flex justify-between items-center bg-white/80 backdrop-blur-md border-b border-border/50 transition-all duration-300">
         <div className="flex items-center gap-3">
-          <div className="text-brand flex items-center justify-center">
+          <div className="text-[#D4A574] flex items-center justify-center">
             <Egg className="h-6 w-6" />
           </div>
           <span className="font-sans text-sm font-bold tracking-tight text-[#1A1A1A] uppercase">
@@ -57,7 +58,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
         </nav>
 
         <div className="flex items-center gap-4">
-          <button className="group relative overflow-hidden bg-[#D4A574] text-[#1A1A1A] text-xs font-semibold px-5 py-2 rounded shadow-sm ring-1 ring-white/10 transition-all hover:scale-[1.02] hover:shadow-md active:scale-[0.98]">
+          <button className="group relative overflow-hidden bg-[#D4A574] text-[#2D1B10] text-xs font-semibold px-5 py-2 rounded shadow-sm ring-1 ring-white/10 transition-all hover:scale-[1.02] hover:shadow-md active:scale-[0.98]">
             <div className="shimmer-layer absolute inset-0 transform -translateX-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer z-10"></div>
             <span className="relative z-20">Book Setup Call</span>
           </button>
@@ -70,8 +71,8 @@ const IntelligenceAgentsLanding: React.FC = () => {
         <section className="relative min-h-[90vh] flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 lg:px-20 pt-32 pb-20 gap-16">
           <div className="max-w-2xl space-y-8 relative z-10 text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-border shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse"></span>
-              <span className="font-sans text-[10px] font-medium text-subtle tracking-tight uppercase">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#D4A574] animate-pulse"></span>
+              <span className="font-sans text-[10px] font-medium text-slate-500 tracking-tight uppercase">
                 24/7 Intelligence Operations
               </span>
             </div>
@@ -81,7 +82,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
               Should Do
             </h1>
 
-            <p className="max-w-xl font-sans text-lg text-subtle font-light leading-relaxed">
+            <p className="max-w-xl font-sans text-lg text-slate-600 font-light leading-relaxed">
               Executive search is about relationships and judgment calls—not
               updating org charts, monitoring LinkedIn, or logging notes into
               Salesforce from a taxi.
@@ -95,7 +96,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              <button className="group relative bg-[#D4A574] text-[#1A1A1A] text-sm font-medium px-8 py-3.5 rounded shadow-lg shadow-[#D4A574]/20 transition-all hover:-translate-y-0.5 hover:shadow-xl flex items-center gap-2">
+              <button className="group relative bg-[#D4A574] text-[#2D1B10] text-sm font-medium px-8 py-3.5 rounded shadow-lg shadow-[#D4A574]/20 transition-all hover:-translate-y-0.5 hover:shadow-xl flex items-center gap-2">
                 <span>Book Your Setup Call</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +116,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
               </button>
               <div className="text-xs text-subtle font-medium px-4 text-left">
                 <span className="block">HKD 50k Setup</span>
-                <span className="text-brand">30-Day Integration</span>
+                <span className="text-[#D4A574]">30-Day Integration</span>
               </div>
             </div>
           </div>
@@ -321,9 +322,9 @@ const IntelligenceAgentsLanding: React.FC = () => {
         {/* WHO THIS IS FOR */}
         <section className="relative z-20  py-24 bg-[#1A1A1A] text-white overflow-hidden border-t border-white/10 text-left">
           <div
-            className="absolute inset-0 opacity-[0.03]"
+            className="absolute inset-0 opacity-[0.05]"
             style={{
-              backgroundImage: "radial-gradient(#64B5B5 1px, transparent 1px)",
+              backgroundImage: "radial-gradient(#D4A574 1px, transparent 1px)",
               backgroundSize: "32px 32px",
             }}
           ></div>
@@ -341,7 +342,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
                 <div className="mt-8">
                   <a
                     href="#pricing"
-                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#D4A574] text-[#1A1A1A] px-6 py-3 text-sm font-semibold hover:bg-white transition-all shadow-[0_0_20px_rgba(212,165,116,0.2)]"
+                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#D4A574] text-[#2D1B10] px-6 py-3 text-sm font-semibold hover:bg-white transition-all shadow-[0_0_20px_rgba(212,165,116,0.2)]"
                   >
                     Book Set Up Call
                   </a>
@@ -370,12 +371,12 @@ const IntelligenceAgentsLanding: React.FC = () => {
                   ].map((item, idx) => (
                     <div
                       key={idx}
-                      className="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-brand/30 transition-colors duration-300"
+                      className="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-[#D4A574]/30 transition-colors duration-300"
                     >
                       <div className="shrink-0 mt-1">
                         <iconify-icon
                           icon="solar:check-circle-bold"
-                          className="text-xl text-brand"
+                          className="text-xl text-[#D4A574]"
                         ></iconify-icon>
                       </div>
                       <div>
@@ -392,12 +393,14 @@ const IntelligenceAgentsLanding: React.FC = () => {
           </div>
         </section>
 
+        <TestimonialsSection />
+
         {/* FOOTER */}
         <footer className="bg-white py-20 px-6 md:px-12 lg:px-20 border-t border-border text-left">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12">
             <div className="max-w-xs space-y-6">
               <div className="flex items-center gap-2">
-                <div className="text-brand flex items-center justify-center">
+                <div className="text-[#D4A574] flex items-center justify-center">
                   <Egg className="h-5 w-5" />
                 </div>
                 <span className="font-bold text-sm tracking-tight text-[#1A1A1A] uppercase">

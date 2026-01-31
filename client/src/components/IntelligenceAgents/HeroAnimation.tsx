@@ -84,7 +84,7 @@ const HeroAnimation: React.FC = () => {
 
     return (
         <div className="relative w-full max-w-lg aspect-square lg:aspect-[4/3] flex items-center justify-center">
-            <div className="absolute inset-0 bg-gradient-to-tr from-brand/10 via-transparent to-brand/5 rounded-full blur-3xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#D4A574]/20 via-transparent to-[#D4A574]/10 rounded-full blur-3xl"></div>
 
             <div className="premium-card w-full h-full relative overflow-hidden rounded-xl bg-white flex flex-col z-20 border border-slate-200 shadow-lg">
 
@@ -103,7 +103,7 @@ const HeroAnimation: React.FC = () => {
                                 <span className="text-[10px] text-subtle mt-0.5">Last seen Sat 18:30</span>
                             </div>
                         </div>
-                        <div className="flex gap-4 text-brand">
+                        <div className="flex gap-4 text-[#D4A574]">
                             <iconify-icon icon="solar:phone-linear" className="text-lg"></iconify-icon>
                             <iconify-icon icon="solar:videocamera-linear" className="text-lg"></iconify-icon>
                         </div>
@@ -143,16 +143,16 @@ const HeroAnimation: React.FC = () => {
                     className={`absolute inset-0 bg-white flex flex-col items-center justify-center transition-opacity duration-700 ${scene === 'process' ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                 >
                     <div className="absolute top-6 right-6 flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-brand animate-pulse"></div>
-                        <span className="text-xs font-mono text-brand">SAT 21:01</span>
+                        <div className="w-2 h-2 rounded-full bg-[#D4A574] animate-pulse"></div>
+                        <span className="text-xs font-mono text-[#D4A574]">SAT 21:01</span>
                     </div>
 
                     <div className="relative w-full h-full max-w-[320px] max-h-[320px]">
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center">
-                            <div className="w-16 h-16 bg-obsidian text-white rounded-2xl shadow-xl flex items-center justify-center ring-4 ring-white relative">
-                                <iconify-icon icon="solar:bolt-bold" className="text-3xl text-brand"></iconify-icon>
+                            <div className="w-16 h-16 bg-[#1A1A1A] text-white rounded-2xl shadow-xl flex items-center justify-center ring-4 ring-white relative">
+                                <iconify-icon icon="solar:bolt-bold" className="text-3xl text-[#D4A574]"></iconify-icon>
                             </div>
-                            <span className="text-xs font-bold mt-3 text-obsidian">AI Agent</span>
+                            <span className="text-xs font-bold mt-3 text-[#1A1A1A]">AI Agent</span>
                         </div>
 
                         <div className={`absolute top-1/2 left-0 -translate-y-1/2 transition-all duration-500 ${procSourceOpacity ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'}`}>
@@ -176,9 +176,9 @@ const HeroAnimation: React.FC = () => {
                         </div>
 
                         <svg className="absolute inset-0 w-full h-full z-0 pointer-events-none overflow-visible">
-                            <path d="M 40 160 L 110 160" stroke="#64B5B5" strokeWidth="2" strokeLinecap="round" strokeDasharray="100" strokeDashoffset={line1Offset} fill="none" style={{ transition: 'stroke-dashoffset 0.5s ease-out' }}></path>
-                            <path d="M 160 200 L 160 260" stroke="#64B5B5" strokeWidth="2" strokeLinecap="round" strokeDasharray="100" strokeDashoffset={line2Offset} fill="none" style={{ transition: 'stroke-dashoffset 0.5s ease-out' }}></path>
-                            <path d="M 210 160 L 280 160" stroke="#64B5B5" strokeWidth="2" strokeLinecap="round" strokeDasharray="100" strokeDashoffset={line3Offset} fill="none" style={{ transition: 'stroke-dashoffset 0.5s ease-out' }}></path>
+                            <path d="M 40 160 L 110 160" stroke="#D4A574" strokeWidth="2" strokeLinecap="round" strokeDasharray="100" strokeDashoffset={line1Offset} fill="none" style={{ transition: 'stroke-dashoffset 0.5s ease-out' }}></path>
+                            <path d="M 160 200 L 160 260" stroke="#D4A574" strokeWidth="2" strokeLinecap="round" strokeDasharray="100" strokeDashoffset={line2Offset} fill="none" style={{ transition: 'stroke-dashoffset 0.5s ease-out' }}></path>
+                            <path d="M 210 160 L 280 160" stroke="#D4A574" strokeWidth="2" strokeLinecap="round" strokeDasharray="100" strokeDashoffset={line3Offset} fill="none" style={{ transition: 'stroke-dashoffset 0.5s ease-out' }}></path>
                         </svg>
                     </div>
                     <p className="absolute bottom-10 text-xs text-subtle font-mono">Total Time: 00:01:00</p>
@@ -190,8 +190,8 @@ const HeroAnimation: React.FC = () => {
                 >
                     <div className="flex justify-between items-center px-6 py-5 border-b border-border/50 bg-white/80 backdrop-blur-sm z-20">
                         <div className="flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse"></div>
-                            <span className="text-[10px] uppercase tracking-wider font-semibold text-obsidian">
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#D4A574] animate-pulse"></div>
+                            <span className="text-[10px] uppercase tracking-wider font-semibold text-[#1A1A1A]">
                                 AI Agents that live in your everyday apps
                             </span>
                         </div>
@@ -206,7 +206,7 @@ const HeroAnimation: React.FC = () => {
                             <div className="aspect-square rounded-lg bg-canvas border border-border flex items-center justify-center shadow-sm"><iconify-icon icon="solar:linkedin-linear" className="text-xl text-[#0077B5]"></iconify-icon></div>
                             <div className="aspect-square rounded-lg bg-canvas border border-border flex items-center justify-center shadow-sm"><iconify-icon icon="solar:cloud-linear" className="text-xl text-[#00A1E0]"></iconify-icon></div>
                             <div className="aspect-square rounded-lg bg-canvas border border-border flex items-center justify-center shadow-sm"><iconify-icon icon="solar:letter-linear" className="text-xl text-[#0078D4]"></iconify-icon></div>
-                            <div className="aspect-square rounded-lg bg-canvas border border-border flex items-center justify-center shadow-sm"><iconify-icon icon="solar:globe-linear" className="text-xl text-obsidian"></iconify-icon></div>
+                            <div className="aspect-square rounded-lg bg-canvas border border-border flex items-center justify-center shadow-sm"><iconify-icon icon="solar:globe-linear" className="text-xl text-[#1A1A1A]"></iconify-icon></div>
                             <div className="aspect-square rounded-lg bg-canvas border border-border flex items-center justify-center shadow-sm"><iconify-icon icon="logos:slack-icon" className="text-lg"></iconify-icon></div>
                         </div>
 
@@ -217,20 +217,20 @@ const HeroAnimation: React.FC = () => {
                                 <path d="M150 150 L 150 0" stroke="#E2E8F0" strokeWidth="1" fill="none"></path>
                                 <path d="M150 150 L 210 0" stroke="#E2E8F0" strokeWidth="1" fill="none"></path>
                                 <path d="M150 150 L 270 0" stroke="#E2E8F0" strokeWidth="1" fill="none"></path>
-                                <circle cx="150" cy="150" r="4" fill="#64B5B5" className="animate-ping"></circle>
+                                <circle cx="150" cy="150" r="4" fill="#D4A574" className="animate-ping"></circle>
                             </svg>
                         </div>
 
                         <div className="mt-auto z-20 relative">
-                            <div className="w-14 h-14 bg-obsidian text-white rounded-xl shadow-lg shadow-brand/20 flex items-center justify-center ring-4 ring-white relative">
-                                <div className="absolute inset-0 bg-brand/20 rounded-xl animate-pulse"></div>
+                            <div className="w-14 h-14 bg-[#1A1A1A] text-white rounded-xl shadow-lg shadow-[#D4A574]/20 flex items-center justify-center ring-4 ring-white relative">
+                                <div className="absolute inset-0 bg-[#D4A574]/20 rounded-xl animate-pulse"></div>
                                 <iconify-icon icon="solar:bolt-linear" className="text-2xl relative z-10"></iconify-icon>
                             </div>
                         </div>
 
                         <div className="text-[10px] text-subtle mt-4 font-medium flex gap-4">
-                            <span className="flex items-center gap-1"><iconify-icon icon="solar:check-circle-linear" className="text-brand"></iconify-icon> 24/7 Monitoring</span>
-                            <span className="flex items-center gap-1"><iconify-icon icon="solar:shield-check-linear" className="text-brand"></iconify-icon> Enterprise Grade</span>
+                            <span className="flex items-center gap-1"><iconify-icon icon="solar:check-circle-linear" className="text-[#D4A574]"></iconify-icon> 24/7 Monitoring</span>
+                            <span className="flex items-center gap-1"><iconify-icon icon="solar:shield-check-linear" className="text-[#D4A574]"></iconify-icon> Enterprise Grade</span>
                         </div>
                     </div>
                 </div>
