@@ -1,0 +1,465 @@
+import React from "react";
+import { Button } from "@/components/ui/button";
+import Background3D from "@/components/IntelligenceAgents/Background3D";
+import HeroAnimation from "@/components/IntelligenceAgents/HeroAnimation";
+import HowItWorks from "@/components/IntelligenceAgents/HowItWorks";
+import PricingSection from "@/components/IntelligenceAgents/PricingSection";
+
+const IntelligenceAgentsLanding: React.FC = () => {
+  return (
+    <div className="w-full relative bg-canvas font-sans selection:bg-brand/20 selection:text-brand overflow-x-hidden">
+      {/* Backgrounds */}
+      <div
+        className="fixed inset-0 z-0 technical-grid pointer-events-none"
+        style={{
+          backgroundSize: "40px 40px",
+          backgroundImage:
+            "linear-gradient(to right, rgba(100, 181, 181, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(100, 181, 181, 0.05) 1px, transparent 1px)",
+          maskImage: "linear-gradient(to bottom, black 40%, transparent 100%)",
+        }}
+      ></div>
+      <Background3D />
+
+      {/* Navigation */}
+      <header className="fixed top-0 left-0 right-0 z-50 w-full px-6 py-4 md:px-12 flex justify-between items-center bg-white/80 backdrop-blur-md border-b border-border/50 transition-all duration-300">
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 text-brand flex items-center justify-center">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-full h-full"
+            >
+              <path
+                d="M12 2C7.5 2 4 6.5 4 12C4 17.5 7.5 22 12 22C16.5 22 20 17.5 20 12C20 6.5 16.5 2 12 2Z"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              ></path>
+              <path
+                d="M12 22C12 22 9 16 9 12C9 8 12 2 12 2"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                opacity="0.5"
+              ></path>
+              <path
+                d="M12 22C12 22 15 16 15 12C15 8 12 2 12 2"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                opacity="0.5"
+              ></path>
+            </svg>
+          </div>
+          <span className="font-sans text-sm font-bold tracking-tight text-obsidian uppercase">
+            Buildwise Studios
+          </span>
+        </div>
+
+        <nav className="hidden md:flex items-center gap-8">
+          <a
+            href="#problem"
+            className="text-xs font-medium text-subtle hover:text-obsidian transition-colors"
+          >
+            The Problem
+          </a>
+          <a
+            href="#pricing"
+            className="text-xs font-medium text-subtle hover:text-obsidian transition-colors"
+          >
+            Agents
+          </a>
+          <a
+            href="#process"
+            className="text-xs font-medium text-subtle hover:text-obsidian transition-colors"
+          >
+            How It Works
+          </a>
+          <a
+            href="#pricing"
+            className="text-xs font-medium text-subtle hover:text-obsidian transition-colors"
+          >
+            Pricing
+          </a>
+        </nav>
+
+        <div className="flex items-center gap-4">
+          <a
+            href="#pricing"
+            className="hidden md:block text-xs font-medium text-subtle hover:text-obsidian transition-colors"
+          >
+            ROI Calculator
+          </a>
+          <button className="group relative overflow-hidden bg-obsidian text-white text-xs font-semibold px-5 py-2 rounded shadow-sm ring-1 ring-white/10 transition-all hover:scale-[1.02] hover:shadow-md active:scale-[0.98]">
+            <div className="shimmer-layer absolute inset-0 transform -translateX-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer z-10"></div>
+            <span className="relative z-20">Book Setup Call</span>
+          </button>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <div className="relative z-10 flex flex-col w-full">
+        {/* HERO SECTION */}
+        <section className="relative min-h-[90vh] flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 lg:px-20 pt-32 pb-20 gap-16">
+          <div className="max-w-2xl space-y-8 relative z-10 text-left">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-border shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse"></span>
+              <span className="font-sans text-[10px] font-medium text-subtle tracking-tight uppercase">
+                24/7 Intelligence Operations
+              </span>
+            </div>
+
+            <h1 className="font-sans text-5xl md:text-6xl lg:text-7xl font-medium tracking-tighter text-obsidian leading-[1.05]">
+              Your Partners Are Wasting 20+ Hours Per Month on Work a Machine
+              Should Do
+            </h1>
+
+            <p className="max-w-xl font-sans text-lg text-subtle font-light leading-relaxed">
+              Executive search is about relationships and judgment calls—not
+              updating org charts, monitoring LinkedIn, or logging notes into
+              Salesforce from a taxi.
+              <br />
+              <br />
+              <span className="text-obsidian font-medium">
+                What if your partners could offload all of that to AI agents
+                that work 24/7, never take holidays, and cost less than a junior
+                assistant?
+              </span>
+            </p>
+
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <button className="group relative bg-obsidian text-white text-sm font-medium px-8 py-3.5 rounded shadow-lg shadow-obsidian/20 transition-all hover:-translate-y-0.5 hover:shadow-xl flex items-center gap-2">
+                <span>Book Your Setup Call</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="transition-transform group-hover:translate-x-1"
+                >
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </button>
+              <div className="text-xs text-subtle font-medium px-4 text-left">
+                <span className="block">HKD 50k Setup</span>
+                <span className="text-brand">30-Day Integration</span>
+              </div>
+            </div>
+          </div>
+
+          <HeroAnimation />
+        </section>
+
+        {/* INTEGRATIONS LOGOS */}
+        <section className="border-y border-border/60 py-12 bg-white">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
+            <p className="text-xs font-semibold text-subtle tracking-wider uppercase md:w-auto w-full text-center md:text-left">
+              Seamless integration with
+            </p>
+            <div className="flex flex-wrap justify-center md:justify-end gap-x-10 gap-y-6 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+              <div className="flex items-center gap-2 font-semibold text-sm font-sans">
+                <iconify-icon
+                  icon="solar:linkedin-linear"
+                  className="text-xl"
+                ></iconify-icon>{" "}
+                LinkedIn
+              </div>
+              <div className="flex items-center gap-2 font-semibold text-sm font-sans">
+                <iconify-icon
+                  icon="solar:cloud-linear"
+                  className="text-xl text-[#00A1E0]"
+                ></iconify-icon>{" "}
+                Salesforce
+              </div>
+              <div className="flex items-center gap-2 font-semibold text-sm font-sans">
+                <iconify-icon
+                  icon="solar:phone-linear"
+                  className="text-xl text-[#25D366]"
+                ></iconify-icon>{" "}
+                WhatsApp
+              </div>
+              <span className="font-sans text-sm font-bold tracking-tight text-obsidian">
+                Bloomberg
+              </span>
+              <span className="font-sans text-sm font-bold tracking-tight text-obsidian">
+                Outlook
+              </span>
+            </div>
+          </div>
+        </section>
+
+        {/* PAIN POINT SECTION */}
+        <section
+          id="problem"
+          className="py-24 md:py-32 px-6 md:px-12 lg:px-20 relative overflow-hidden bg-canvas"
+        >
+          <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] opacity-30 pointer-events-none"></div>
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="text-center mb-20 md:mb-24">
+              <h2 className="font-sans text-3xl md:text-5xl font-semibold text-obsidian tracking-tight leading-tight">
+                Your Partners Are Drowning in <br className="hidden lg:block" />{" "}
+                Intelligence Work That{" "}
+                <span className="text-danger relative inline-block">
+                  Doesn't Close Deals
+                  <svg
+                    className="absolute -bottom-2 left-0 w-full h-3 text-danger/20"
+                    viewBox="0 0 100 10"
+                    preserveAspectRatio="none"
+                  >
+                    <path
+                      d="M0 5 Q 50 10 100 5"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      fill="none"
+                    ></path>
+                  </svg>
+                </span>
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+              {/* Left: The Daily Struggle */}
+              <div className="text-left">
+                <p className="text-lg font-medium text-subtle mb-8 uppercase tracking-wide text-xs">
+                  The Daily Struggle
+                </p>
+                <p className="text-xl md:text-2xl font-medium text-obsidian mb-10 leading-snug">
+                  Every day, your partners spend hours on administrative tasks
+                  instead of relationships:
+                </p>
+
+                <ul className="space-y-8">
+                  {[
+                    {
+                      title: "Tracking executive movements",
+                      desc: "across LinkedIn, Bloomberg, and industry news.",
+                    },
+                    {
+                      title: "Updating org charts",
+                      desc: "manually when someone moves firms.",
+                    },
+                    {
+                      title: "Logging CRM notes",
+                      desc: "after client meetings (usually days later, from memory).",
+                    },
+                    {
+                      title: "Formatting PowerPoint decks",
+                      desc: "and Excel candidate trackers.",
+                    },
+                    {
+                      title: "Monitoring market intelligence",
+                      desc: "to spot placement opportunities before competitors.",
+                    },
+                  ].map((item, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-start gap-4 group text-left"
+                    >
+                      <div className="shrink-0 mt-1 w-6 h-6 rounded-full bg-danger/10 text-danger flex items-center justify-center group-hover:bg-danger group-hover:text-white transition-colors duration-300">
+                        <iconify-icon
+                          icon="solar:close-circle-linear"
+                          className="text-lg"
+                        ></iconify-icon>
+                      </div>
+                      <span className="text-lg text-subtle font-light leading-relaxed group-hover:text-obsidian transition-colors">
+                        <strong className="font-semibold text-obsidian">
+                          {item.title}
+                        </strong>{" "}
+                        {item.desc}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Right: The Reality Check */}
+              <div className="flex flex-col gap-12 lg:pt-12 text-left">
+                <div className="relative pl-8 border-l-2 border-danger/30">
+                  <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-danger border-4 border-white"></div>
+                  <h3 className="text-xs font-bold tracking-widest text-danger uppercase mb-6">
+                    The Real Cost
+                  </h3>
+
+                  <div className="space-y-6">
+                    <div>
+                      <div className="text-4xl md:text-5xl font-mono font-medium text-obsidian tracking-tighter mb-2">
+                        20-25 hrs
+                      </div>
+                      <p className="text-subtle font-medium">
+                        Lost per month, per partner.
+                      </p>
+                    </div>
+                    <div>
+                      <div className="text-3xl md:text-4xl font-mono font-medium text-obsidian tracking-tighter mb-2">
+                        HKD 25,000
+                      </div>
+                      <p className="text-subtle font-medium">
+                        In billable time wasted monthly.
+                      </p>
+                    </div>
+                    <div className="pt-4">
+                      <p className="text-lg font-semibold text-danger">
+                        → 2-3 lost placements per year
+                      </p>
+                      <p className="text-sm text-subtle mt-1">
+                        Because they're doing admin instead of relationships.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="relative pl-8 border-l-2 border-border">
+                  <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-subtle border-4 border-white"></div>
+                  <h3 className="text-xs font-bold tracking-widest text-subtle uppercase mb-6">
+                    And hiring a junior assistant?
+                  </h3>
+                  <ul className="space-y-4 text-subtle">
+                    <li className="flex items-center gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-obsidian"></span>
+                      <span>
+                        Costs <strong>HKD 20,000+</strong> / month
+                      </span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-obsidian"></span>
+                      <span>Works 9-5, takes holidays</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-obsidian"></span>
+                      <span>Handles one task at a time</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-obsidian"></span>
+                      <span>Requires partner oversight & training</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <PricingSection />
+
+        <HowItWorks />
+
+        {/* WHO THIS IS FOR */}
+        <section className="relative z-20  py-24 bg-obsidian text-white overflow-hidden border-t border-white/10 text-left">
+          <div
+            className="absolute inset-0 opacity-[0.03]"
+            style={{
+              backgroundImage: "radial-gradient(#64B5B5 1px, transparent 1px)",
+              backgroundSize: "32px 32px",
+            }}
+          ></div>
+          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
+              <div className="lg:col-span-5">
+                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-6">
+                  Who This Is For
+                </h2>
+                <p className="text-subtle text-lg font-light leading-relaxed">
+                  We don't work with everyone. Buildwise is designed for
+                  high-performance firms ready to automate the mundane and focus
+                  on the deal.
+                </p>
+                <div className="mt-8">
+                  <a
+                    href="#pricing"
+                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand text-obsidian px-6 py-3 text-sm font-semibold hover:bg-white transition-all shadow-[0_0_20px_rgba(100,181,181,0.2)]"
+                  >
+                    Book Set Up Call
+                  </a>
+                </div>
+              </div>
+
+              <div className="lg:col-span-7">
+                <div className="grid gap-6">
+                  {[
+                    {
+                      title: "Executive search firms",
+                      desc: "Finance sector focus, typically 11-50 employees.",
+                    },
+                    {
+                      title: "Partners spending 20+ hours/month",
+                      desc: "On low-leverage intelligence gathering and admin work.",
+                    },
+                    {
+                      title: "Firms using Salesforce or Custom CRMs",
+                      desc: "Must have API access for agents to read/write data.",
+                    },
+                    {
+                      title: "Teams ready for strategic AI",
+                      desc: "Viewing automation as a competitive advantage, not just a cost saver.",
+                    },
+                  ].map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-brand/30 transition-colors duration-300"
+                    >
+                      <div className="shrink-0 mt-1">
+                        <iconify-icon
+                          icon="solar:check-circle-bold"
+                          className="text-xl text-brand"
+                        ></iconify-icon>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-medium text-white">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm text-subtle mt-1">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FOOTER */}
+        <footer className="bg-white py-20 px-6 md:px-12 lg:px-20 border-t border-border text-left">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12">
+            <div className="max-w-xs space-y-6">
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-4 text-brand">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M12 2C7.5 2 4 6.5 4 12C4 17.5 7.5 22 12 22C16.5 22 20 17.5 20 12C20 6.5 16.5 2 12 2Z"></path>
+                  </svg>
+                </div>
+                <span className="font-bold text-sm tracking-tight text-obsidian uppercase">
+                  BUILDWISE STUDIOS
+                </span>
+              </div>
+              <p className="text-xs text-subtle leading-relaxed">
+                Building the digital workforce for the modern executive search
+                firm.
+              </p>
+              <div className="text-[10px] text-border">
+                © 2024 Buildwise Studios. All rights reserved.
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  );
+};
+
+export default IntelligenceAgentsLanding;

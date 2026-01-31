@@ -1,0 +1,1028 @@
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buildwise Studios | Intelligence Agents for Executive Search</title>
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<!-- Tailwind & Icons -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+<style>
+html { scroll-behavior: smooth; }
+body { margin: 0; background-color: #FAFAFA; color: #0F172A; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+.technical-grid {
+background-size: 40px 40px;
+background-image:
+linear-gradient(to right, rgba(100, 181, 181, 0.05) 1px, transparent 1px),
+linear-gradient(to bottom, rgba(100, 181, 181, 0.05) 1px, transparent 1px);
+mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+}
+.premium-card {
+background: #FFFFFF;
+border: 1px solid #E2E8F0;
+box-shadow: 0 2px 4px rgba(0,0,0,0.02), 0 8px 16px -4px rgba(0,0,0,0.04);
+transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.premium-card:hover {
+transform: translateY(-2px);
+box-shadow: 0 4px 8px rgba(0,0,0,0.03), 0 12px 24px -6px rgba(0,0,0,0.06);
+border-color: #CBD5E1;
+}
+.shimmer-layer { position: absolute; inset: 0; transform: translateX(-100%); background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); }
+.group:hover .shimmer-layer { animation: shimmer 2s infinite; }
+@keyframes shimmer { 100% { transform: translateX(100%); } }
+/* Pricing Animation */
+@keyframes fadeSlideIn {
+from { opacity: 0; transform: translateY(10px); }
+to { opacity: 1; transform: translateY(0); }
+}
+/* Chat Bubbles */
+.chat-bubble {
+position: relative;
+border-radius: 12px;
+border-top-right-radius: 2px;
+padding: 10px 14px;
+max-width: 85%;
+font-size: 13px;
+line-height: 1.4;
+box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+transform-origin: bottom right;
+animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+opacity: 0;
+transform: scale(0.9) translateY(10px);
+}
+@keyframes popIn {
+to { opacity: 1; transform: scale(1) translateY(0); }
+}
+</style></head>
+
+  <body class="w-full relative bg-canvas font-sans selection:bg-brand/20 selection:text-brand">
+    <!-- Backgrounds -->
+    <div class="fixed inset-0 z-0 technical-grid pointer-events-none"></div>
+    <div id="canvas-container" class="fixed inset-0 z-0 opacity-40 pointer-events-none"></div>
+
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 w-full px-6 py-4 md:px-12 flex justify-between items-center bg-white/80 backdrop-blur-md border-b border-border/50 transition-all duration-300">
+      <div class="flex items-center gap-3">
+        <!-- Logo -->
+        <div class="w-8 h-8 text-brand flex items-center justify-center">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+            <path d="M12 2C7.5 2 4 6.5 4 12C4 17.5 7.5 22 12 22C16.5 22 20 17.5 20 12C20 6.5 16.5 2 12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M12 22C12 22 9 16 9 12C9 8 12 2 12 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"></path>
+            <path d="M12 22C12 22 15 16 15 12C15 8 12 2 12 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"></path>
+          </svg>
+        </div>
+        <span class="font-sans text-sm font-bold tracking-tight text-obsidian uppercase">
+          Buildwise Studios
+        </span>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#problem" class="text-xs font-medium text-subtle hover:text-obsidian transition-colors">
+          The Problem
+        </a>
+        <a href="#pricing" class="text-xs font-medium text-subtle hover:text-obsidian transition-colors">
+          Agents
+        </a>
+        <a href="#process" class="text-xs font-medium text-subtle hover:text-obsidian transition-colors">
+          How It Works
+        </a>
+        <a href="#pricing" class="text-xs font-medium text-subtle hover:text-obsidian transition-colors">
+          Pricing
+        </a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a href="#pricing" class="hidden md:block text-xs font-medium text-subtle hover:text-obsidian transition-colors">
+          ROI Calculator
+        </a>
+        <button class="group relative isolate overflow-hidden bg-obsidian text-white text-xs font-semibold px-5 py-2 rounded shadow-sm ring-1 ring-white/10 transition-all hover:scale-[1.02] hover:shadow-md active:scale-[0.98]">
+          <div class="shimmer-layer z-10"></div>
+          <span class="relative z-20">Book Setup Call</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="relative z-10 flex flex-col w-full">
+      <!-- HERO SECTION -->
+      <section class="relative min-h-[90vh] flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 lg:px-20 pt-32 pb-20 gap-16">
+        <div class="max-w-2xl space-y-8 relative z-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-border shadow-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand animate-pulse"></span>
+            <span class="font-sans text-[10px] font-medium text-subtle tracking-tight uppercase">
+              24/7 Intelligence Operations
+            </span>
+          </div>
+
+          <h1 class="font-sans text-5xl md:text-6xl lg:text-7xl font-medium tracking-tighter text-obsidian leading-[1.05]">
+            Your Partners Are Wasting 20+ Hours Per Month on Work a Machine
+            Should Do
+          </h1>
+
+          <p class="max-w-xl font-sans text-lg text-subtle font-light leading-relaxed">
+            Executive search is about relationships and judgment calls—not
+            updating org charts, monitoring LinkedIn, or logging notes into
+            Salesforce from a taxi.
+            <br>
+            <br>
+            <span class="text-obsidian font-medium">
+              What if your partners could offload all of that to AI agents that
+              work 24/7, never take holidays, and cost less than a junior
+              assistant?
+            </span>
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <button class="group relative bg-obsidian text-white text-sm font-medium px-8 py-3.5 rounded shadow-lg shadow-obsidian/20 transition-all hover:-translate-y-0.5 hover:shadow-xl flex items-center gap-2">
+              <span>Book Your Setup Call</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-1">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </button>
+            <div class="text-xs text-subtle font-medium px-4">
+              <span class="block">HKD 50k Setup</span>
+              <span class="text-brand">30-Day Integration</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual: The Story Animation -->
+        <div class="relative w-full max-w-lg aspect-square lg:aspect-[4/3] flex items-center justify-center">
+          <div class="absolute inset-0 bg-gradient-to-tr from-brand/10 via-transparent to-brand/5 rounded-full blur-3xl"></div>
+          
+          <!-- ANIMATION CONTAINER CARD -->
+          <div class="premium-card w-full h-full relative overflow-hidden rounded-xl bg-white flex flex-col z-20">
+             
+             <!-- SCENE 1 & 2: THE CHAT (Problem) -->
+             <div id="scene-chat" class="absolute inset-0 flex flex-col bg-[#F0F2F5] transition-opacity duration-700 ease-in-out">
+                <!-- WhatsApp Header -->
+                <div class="bg-white px-4 py-3 flex items-center justify-between border-b border-border shadow-sm z-10">
+                   <div class="flex items-center gap-3">
+                      <div class="w-5 h-5 text-subtle">
+                         <iconify-icon icon="solar:arrow-left-linear" class="text-xl"></iconify-icon>
+                      </div>
+                      <div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-subtle font-bold text-xs">MK</div>
+                      <div class="flex flex-col">
+                         <span class="text-sm font-semibold text-obsidian leading-none">Mike (Partner)</span>
+                         <span class="text-[10px] text-subtle mt-0.5">Last seen Sat 18:30</span>
+                      </div>
+                   </div>
+                   <div class="flex gap-4 text-brand">
+                      <iconify-icon icon="solar:phone-linear" class="text-lg"></iconify-icon>
+                      <iconify-icon icon="solar:videocamera-linear" class="text-lg"></iconify-icon>
+                   </div>
+                </div>
+
+                <!-- Chat Area -->
+                <div class="flex-1 p-4 flex flex-col gap-4 relative overflow-hidden">
+                   <!-- BG pattern -->
+                   <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 20px 20px;"></div>
+                   
+                   <div class="mt-auto flex flex-col gap-6">
+                      <!-- Message 1 (Sat 9pm) -->
+                      <div id="msg-1" class="flex flex-col items-end opacity-0">
+                         <div class="chat-bubble bg-[#E7FFDB] border border-[#dcf8c6] text-obsidian">
+                            John Cowlton might have moved to JP Morgan.
+                            <div class="flex items-center justify-end gap-1 mt-1">
+                               <span class="text-[9px] text-subtle/80">21:00</span>
+                               <iconify-icon icon="solar:check-linear" class="text-[10px] text-subtle"></iconify-icon>
+                            </div>
+                         </div>
+                         <span class="text-[10px] text-subtle mt-1 font-medium bg-white/50 px-2 rounded">Saturday</span>
+                      </div>
+
+                      <!-- Message 2 (Mon 10am) -->
+                      <div id="msg-2" class="flex flex-col items-end opacity-0">
+                         <div class="chat-bubble bg-[#E7FFDB] border border-[#dcf8c6] text-obsidian">
+                            Hey Mike, any update on this?
+                            <div class="flex items-center justify-end gap-1 mt-1">
+                               <span class="text-[9px] text-subtle/80">10:00</span>
+                               <iconify-icon icon="solar:check-linear" class="text-[10px] text-subtle"></iconify-icon>
+                            </div>
+                         </div>
+                         <span class="text-[10px] text-subtle mt-1 font-medium bg-white/50 px-2 rounded">Monday</span>
+                      </div>
+                   </div>
+                </div>
+             </div>
+
+             <!-- SCENE 3: THE PROCESS (Solution) -->
+             <div id="scene-process" class="absolute inset-0 bg-white flex flex-col items-center justify-center opacity-0 transition-opacity duration-700 pointer-events-none">
+                <div class="absolute top-6 right-6 flex items-center gap-2">
+                   <div class="w-2 h-2 rounded-full bg-brand animate-pulse"></div>
+                   <span class="text-xs font-mono text-brand">SAT 21:01</span>
+                </div>
+                
+                <div class="relative w-full h-full max-w-[320px] max-h-[320px]">
+                   <!-- Center: Agent -->
+                   <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center">
+                      <div class="w-16 h-16 bg-obsidian text-white rounded-2xl shadow-xl flex items-center justify-center ring-4 ring-white relative">
+                         <iconify-icon icon="solar:bolt-bold" class="text-3xl text-brand"></iconify-icon>
+                      </div>
+                      <span class="text-xs font-bold mt-3 text-obsidian">AI Agent</span>
+                   </div>
+
+                   <!-- Left: Sources -->
+                   <div id="proc-source" class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-4 opacity-0 transition-all duration-500">
+                      <div class="bg-white border border-border p-3 rounded-xl shadow-sm flex flex-col gap-2">
+                         <iconify-icon icon="solar:globe-linear" class="text-2xl text-subtle"></iconify-icon>
+                         <iconify-icon icon="solar:linkedin-linear" class="text-2xl text-[#0077B5]"></iconify-icon>
+                      </div>
+                   </div>
+
+                   <!-- Bottom: CRM -->
+                   <div id="proc-crm" class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 transition-all duration-500">
+                      <div class="bg-white border border-border px-4 py-2 rounded-xl shadow-sm flex items-center gap-2">
+                         <iconify-icon icon="solar:cloud-linear" class="text-xl text-[#00A1E0]"></iconify-icon>
+                         <span class="text-xs font-semibold text-subtle">CRM Updated</span>
+                      </div>
+                   </div>
+
+                   <!-- Right: Output -->
+                   <div id="proc-out" class="absolute top-1/2 right-0 -translate-y-1/2 translate-x-4 opacity-0 transition-all duration-500">
+                      <div class="bg-white border border-border p-3 rounded-xl shadow-sm">
+                         <iconify-icon icon="logos:slack-icon" class="text-2xl"></iconify-icon>
+                      </div>
+                   </div>
+
+                   <!-- Lines SVG -->
+                   <svg class="absolute inset-0 w-full h-full z-0 pointer-events-none overflow-visible">
+                      <!-- Line 1: Left to Center -->
+                      <path id="line-1" d="M 40 160 L 110 160" stroke="#64B5B5" stroke-width="2" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100" fill="none"></path>
+                      <!-- Line 2: Center to Bottom -->
+                      <path id="line-2" d="M 160 200 L 160 260" stroke="#64B5B5" stroke-width="2" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100" fill="none"></path>
+                      <!-- Line 3: Center to Right -->
+                      <path id="line-3" d="M 210 160 L 280 160" stroke="#64B5B5" stroke-width="2" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100" fill="none"></path>
+                   </svg>
+                </div>
+                <p class="absolute bottom-10 text-xs text-subtle font-mono">Total Time: 00:01:00</p>
+             </div>
+
+             <!-- SCENE 4: FINAL UI (The Integration Grid) -->
+             <div id="scene-final" class="absolute inset-0 bg-white flex flex-col opacity-0 transition-opacity duration-1000">
+                <!-- Card Header -->
+                <div class="flex justify-between items-center px-6 py-5 border-b border-border/50 bg-white/80 backdrop-blur-sm z-20">
+                   <div class="flex items-center gap-2">
+                      <div class="w-1.5 h-1.5 rounded-full bg-brand animate-pulse"></div>
+                      <span class="text-[10px] uppercase tracking-wider font-semibold text-obsidian">
+                         AI Agents that live in your everyday apps
+                      </span>
+                   </div>
+                   <div class="flex gap-1.5">
+                      <span class="w-1 h-1 rounded-full bg-border"></span>
+                      <span class="w-1 h-1 rounded-full bg-border"></span>
+                   </div>
+                </div>
+
+                <!-- Content -->
+                <div class="flex-1 relative flex flex-col justify-between items-center w-full z-10 p-6">
+                   <!-- Grid Icons -->
+                   <div class="grid grid-cols-5 w-full gap-2 relative z-20 mb-auto">
+                      <div class="aspect-square rounded-lg bg-canvas border border-border flex items-center justify-center shadow-sm"><iconify-icon icon="solar:linkedin-linear" class="text-xl text-[#0077B5]"></iconify-icon></div>
+                      <div class="aspect-square rounded-lg bg-canvas border border-border flex items-center justify-center shadow-sm"><iconify-icon icon="solar:cloud-linear" class="text-xl text-[#00A1E0]"></iconify-icon></div>
+                      <div class="aspect-square rounded-lg bg-canvas border border-border flex items-center justify-center shadow-sm"><iconify-icon icon="solar:letter-linear" class="text-xl text-[#0078D4]"></iconify-icon></div>
+                      <div class="aspect-square rounded-lg bg-canvas border border-border flex items-center justify-center shadow-sm"><iconify-icon icon="solar:globe-linear" class="text-xl text-obsidian"></iconify-icon></div>
+                      <div class="aspect-square rounded-lg bg-canvas border border-border flex items-center justify-center shadow-sm"><iconify-icon icon="logos:slack-icon" class="text-lg"></iconify-icon></div>
+                   </div>
+
+                   <!-- Abstract Connections -->
+                   <div class="absolute inset-0 top-20 bottom-24 z-0 opacity-50">
+                       <svg viewBox="0 0 300 150" preserveAspectRatio="none" class="w-full h-full">
+                          <path d="M150 150 L 30 0" stroke="#E2E8F0" stroke-width="1" fill="none"></path>
+                          <path d="M150 150 L 90 0" stroke="#E2E8F0" stroke-width="1" fill="none"></path>
+                          <path d="M150 150 L 150 0" stroke="#E2E8F0" stroke-width="1" fill="none"></path>
+                          <path d="M150 150 L 210 0" stroke="#E2E8F0" stroke-width="1" fill="none"></path>
+                          <path d="M150 150 L 270 0" stroke="#E2E8F0" stroke-width="1" fill="none"></path>
+                          <circle cx="150" cy="150" r="4" fill="#64B5B5" class="animate-ping"></circle>
+                       </svg>
+                   </div>
+
+                   <!-- Bottom Hub -->
+                   <div class="mt-auto z-20 relative">
+                      <div class="w-14 h-14 bg-obsidian text-white rounded-xl shadow-lg shadow-brand/20 flex items-center justify-center ring-4 ring-white relative">
+                         <div class="absolute inset-0 bg-brand/20 rounded-xl animate-pulse"></div>
+                         <iconify-icon icon="solar:bolt-linear" class="text-2xl relative z-10"></iconify-icon>
+                      </div>
+                   </div>
+                   
+                   <div class="text-[10px] text-subtle mt-4 font-medium flex gap-4">
+                      <span class="flex items-center gap-1"><iconify-icon icon="solar:check-circle-linear" class="text-brand"></iconify-icon> 24/7 Monitoring</span>
+                      <span class="flex items-center gap-1"><iconify-icon icon="solar:shield-check-linear" class="text-brand"></iconify-icon> Enterprise Grade</span>
+                   </div>
+                </div>
+             </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ANIMATION SCRIPT -->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+           const scenes = {
+              chat: document.getElementById('scene-chat'),
+              process: document.getElementById('scene-process'),
+              final: document.getElementById('scene-final')
+           };
+           
+           const els = {
+              msg1: document.getElementById('msg-1'),
+              msg2: document.getElementById('msg-2'),
+              procSource: document.getElementById('proc-source'),
+              procCrm: document.getElementById('proc-crm'),
+              procOut: document.getElementById('proc-out'),
+              line1: document.getElementById('line-1'),
+              line2: document.getElementById('line-2'),
+              line3: document.getElementById('line-3')
+           };
+
+           const runAnimation = async () => {
+              // RESET
+              scenes.chat.style.opacity = '1';
+              scenes.process.style.opacity = '0';
+              scenes.final.style.opacity = '0';
+              els.msg1.style.opacity = '0';
+              els.msg2.style.opacity = '0';
+              
+              // Reset Process items
+              els.procSource.classList.remove('translate-x-0', 'opacity-100');
+              els.procSource.classList.add('-translate-x-4', 'opacity-0');
+              els.procCrm.classList.remove('translate-y-0', 'opacity-100');
+              els.procCrm.classList.add('translate-y-4', 'opacity-0');
+              els.procOut.classList.remove('translate-x-0', 'opacity-100');
+              els.procOut.classList.add('translate-x-4', 'opacity-0');
+              
+              // Reset Lines
+              [els.line1, els.line2, els.line3].forEach(l => {
+                 l.style.transition = 'none';
+                 l.style.strokeDashoffset = '100';
+              });
+
+              // --- SCENE 1: SATURDAY 9PM ---
+              await wait(500);
+              els.msg1.style.opacity = '1'; // Show first message
+              
+              // --- SCENE 2: MONDAY 10AM ---
+              await wait(3000);
+              els.msg2.style.opacity = '1'; // Show follow up
+              
+              // --- TRANSITION TO PROCESS ---
+              await wait(2500);
+              scenes.chat.style.opacity = '0';
+              scenes.process.style.opacity = '1';
+              
+              // --- SCENE 3: PROCESS ANIMATION ---
+              await wait(500);
+              // 1. Sources appear
+              els.procSource.classList.remove('-translate-x-4', 'opacity-0');
+              els.procSource.classList.add('translate-x-0', 'opacity-100');
+              
+              // Line 1 animate
+              await wait(300);
+              els.line1.style.transition = 'stroke-dashoffset 0.5s ease-out';
+              els.line1.style.strokeDashoffset = '0';
+              
+              // 2. CRM Update
+              await wait(400);
+              els.line2.style.transition = 'stroke-dashoffset 0.5s ease-out';
+              els.line2.style.strokeDashoffset = '0';
+              els.procCrm.classList.remove('translate-y-4', 'opacity-0');
+              els.procCrm.classList.add('translate-y-0', 'opacity-100');
+
+              // 3. Slack Notify
+              await wait(400);
+              els.line3.style.transition = 'stroke-dashoffset 0.5s ease-out';
+              els.line3.style.strokeDashoffset = '0';
+              els.procOut.classList.remove('translate-x-4', 'opacity-0');
+              els.procOut.classList.add('translate-x-0', 'opacity-100');
+
+              // --- SCENE 4: FINAL UI ---
+              await wait(3000);
+              scenes.process.style.opacity = '0';
+              scenes.final.style.opacity = '1';
+
+              // Loop
+              await wait(6000);
+              runAnimation();
+           };
+
+           const wait = (ms) => new Promise(r => setTimeout(r, ms));
+           
+           // Start
+           setTimeout(runAnimation, 100);
+        });
+      </script>
+
+      <!-- INTEGRATIONS LOGOS -->
+      <section class="border-y border-border/60 py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
+          <p class="text-xs font-semibold text-subtle tracking-wider uppercase md:w-auto w-full text-center md:text-left">
+            Seamless integration with
+          </p>
+          <div class="flex flex-wrap justify-center md:justify-end gap-x-10 gap-y-6 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+            <div class="flex items-center gap-2 font-semibold text-sm font-sans">
+              <iconify-icon icon="solar:linkedin-linear" class="text-xl"></iconify-icon> LinkedIn
+            </div>
+            <div class="flex items-center gap-2 font-semibold text-sm font-sans">
+              <iconify-icon icon="solar:cloud-linear" class="text-xl text-[#00A1E0]"></iconify-icon> Salesforce
+            </div>
+            <div class="flex items-center gap-2 font-semibold text-sm font-sans">
+              <iconify-icon icon="solar:phone-linear" class="text-xl text-[#25D366]"></iconify-icon> WhatsApp
+            </div>
+            <span class="font-sans text-sm font-bold tracking-tight text-obsidian">Bloomberg</span>
+            <span class="font-sans text-sm font-bold tracking-tight text-obsidian">Outlook</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAIN POINT SECTION -->
+      <section id="problem" class="py-24 md:py-32 px-6 md:px-12 lg:px-20 relative overflow-hidden bg-canvas">
+        <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] opacity-30 pointer-events-none"></div>
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+          <div class="text-center mb-20 md:mb-24">
+            <h2 class="font-sans text-3xl md:text-5xl font-semibold text-obsidian tracking-tight leading-tight">
+              Your Partners Are Drowning in <br class="hidden lg:block"> Intelligence Work That <span class="text-danger relative inline-block">Doesn't Close Deals<svg class="absolute -bottom-2 left-0 w-full h-3 text-danger/20" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="3" fill="none"></path></svg></span>
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+            <!-- Left: The Daily Struggle -->
+            <div>
+              <p class="text-lg font-medium text-subtle mb-8 uppercase tracking-wide text-xs">The Daily Struggle</p>
+              <p class="text-xl md:text-2xl font-medium text-obsidian mb-10 leading-snug">
+                Every day, your partners spend hours on administrative tasks instead of relationships:
+              </p>
+              
+              <ul class="space-y-8">
+                <li class="flex items-start gap-4 group">
+                  <div class="shrink-0 mt-1 w-6 h-6 rounded-full bg-danger/10 text-danger flex items-center justify-center group-hover:bg-danger group-hover:text-white transition-colors duration-300">
+                    <iconify-icon icon="solar:close-circle-linear" class="text-lg"></iconify-icon>
+                  </div>
+                  <span class="text-lg text-subtle font-light leading-relaxed group-hover:text-obsidian transition-colors">
+                    <strong class="font-semibold text-obsidian">Tracking executive movements</strong> across LinkedIn, Bloomberg, and industry news.
+                  </span>
+                </li>
+                <li class="flex items-start gap-4 group">
+                  <div class="shrink-0 mt-1 w-6 h-6 rounded-full bg-danger/10 text-danger flex items-center justify-center group-hover:bg-danger group-hover:text-white transition-colors duration-300">
+                    <iconify-icon icon="solar:close-circle-linear" class="text-lg"></iconify-icon>
+                  </div>
+                  <span class="text-lg text-subtle font-light leading-relaxed group-hover:text-obsidian transition-colors">
+                    <strong class="font-semibold text-obsidian">Updating org charts</strong> manually when someone moves firms.
+                  </span>
+                </li>
+                <li class="flex items-start gap-4 group">
+                  <div class="shrink-0 mt-1 w-6 h-6 rounded-full bg-danger/10 text-danger flex items-center justify-center group-hover:bg-danger group-hover:text-white transition-colors duration-300">
+                    <iconify-icon icon="solar:close-circle-linear" class="text-lg"></iconify-icon>
+                  </div>
+                  <span class="text-lg text-subtle font-light leading-relaxed group-hover:text-obsidian transition-colors">
+                    <strong class="font-semibold text-obsidian">Logging CRM notes</strong> after client meetings (usually days later, from memory).
+                  </span>
+                </li>
+                <li class="flex items-start gap-4 group">
+                  <div class="shrink-0 mt-1 w-6 h-6 rounded-full bg-danger/10 text-danger flex items-center justify-center group-hover:bg-danger group-hover:text-white transition-colors duration-300">
+                    <iconify-icon icon="solar:close-circle-linear" class="text-lg"></iconify-icon>
+                  </div>
+                  <span class="text-lg text-subtle font-light leading-relaxed group-hover:text-obsidian transition-colors">
+                    <strong class="font-semibold text-obsidian">Formatting PowerPoint decks</strong> and Excel candidate trackers.
+                  </span>
+                </li>
+                <li class="flex items-start gap-4 group">
+                  <div class="shrink-0 mt-1 w-6 h-6 rounded-full bg-danger/10 text-danger flex items-center justify-center group-hover:bg-danger group-hover:text-white transition-colors duration-300">
+                    <iconify-icon icon="solar:close-circle-linear" class="text-lg"></iconify-icon>
+                  </div>
+                  <span class="text-lg text-subtle font-light leading-relaxed group-hover:text-obsidian transition-colors">
+                    <strong class="font-semibold text-obsidian">Monitoring market intelligence</strong> to spot placement opportunities before competitors.
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Right: The Reality Check -->
+            <div class="flex flex-col gap-12 lg:pt-12">
+              <!-- The Cost -->
+              <div class="relative pl-8 border-l-2 border-danger/30">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-danger border-4 border-white"></div>
+                <h3 class="text-xs font-bold tracking-widest text-danger uppercase mb-6">The Real Cost</h3>
+                
+                <div class="space-y-6">
+                  <div>
+                    <div class="text-4xl md:text-5xl font-mono font-medium text-obsidian tracking-tighter mb-2">20-25 hrs</div>
+                    <p class="text-subtle font-medium">Lost per month, per partner.</p>
+                  </div>
+                  
+                  <div>
+                    <div class="text-3xl md:text-4xl font-mono font-medium text-obsidian tracking-tighter mb-2">HKD 25,000</div>
+                    <p class="text-subtle font-medium">In billable time wasted monthly.</p>
+                  </div>
+
+                  <div class="pt-4">
+                    <p class="text-lg font-semibold text-danger">
+                      → 2-3 lost placements per year
+                    </p>
+                    <p class="text-sm text-subtle mt-1">Because they're doing admin instead of relationships.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- The Alternative -->
+              <div class="relative pl-8 border-l-2 border-border">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-subtle border-4 border-white"></div>
+                <h3 class="text-xs font-bold tracking-widest text-subtle uppercase mb-6">And hiring a junior assistant?</h3>
+                
+                <ul class="space-y-4 text-subtle">
+                  <li class="flex items-center gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-obsidian"></span>
+                    <span>Costs <strong>HKD 20,000+</strong> / month</span>
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-obsidian"></span>
+                    <span>Works 9-5, takes holidays</span>
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-obsidian"></span>
+                    <span>Handles one task at a time</span>
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-obsidian"></span>
+                    <span>Requires partner oversight &amp; training</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING SECTION -->
+      <section class="sm:px-6 lg:px-8 [animation:fadeSlideIn_0.8s_ease-out_0.1s_both] animate-on-scroll z-10 max-w-7xl mr-auto ml-auto pt-20 pr-4 pb-16 pl-4 relative" id="pricing">
+        <div class="relative overflow-hidden rounded-3xl ring-1 ring-white/10 bg-obsidian backdrop-blur">
+          <!-- Subtle decor -->
+          <div class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-brand/10 blur-3xl"></div>
+          <div class="pointer-events-none absolute -left-24 -bottom-24 h-72 w-72 rounded-full bg-brand/5 blur-3xl"></div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 items-stretch">
+            <!-- LEFT: Copy + Plan list -->
+            <div class="sm:p-10 flex flex-col pt-6 pr-6 pb-6 pl-6">
+              <h2 class="sm:text-5xl md:text-5xl text-4xl font-semibold text-white tracking-tight mt-4">
+                Choose your
+                <span class="block text-brand">intelligence team</span>
+              </h2>
+
+              <p class="mt-4 text-base md:text-lg text-zinc-300/90 max-w-2xl">
+                Start with specialized agents or deploy the full workforce. Scale your capacity instantly.
+              </p>
+
+              <!-- Segmented control -->
+              <div class="mt-6">
+                <div class="inline-flex items-center gap-1 rounded-2xl border border-white/10 bg-white/[0.05] p-1 ring-1 ring-white/10">
+                  <button data-mode="individual" class="billing-tab px-3 py-1.5 text-[11px] rounded-lg uppercase tracking-tight text-white ring-1 ring-white/20 bg-white/[0.08] transition">
+                    INDIVIDUAL
+                  </button>
+                  <button data-mode="bundle" class="billing-tab px-3 py-1.5 text-[11px] rounded-lg uppercase tracking-tight text-zinc-300 hover:text-white transition flex items-center gap-1.5">
+                    BUNDLE <span class="text-[9px] bg-brand text-obsidian px-1 rounded font-bold">SAVE 20%</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Plan list -->
+              <div id="plan-list-container" class="mt-10 space-y-3">
+                <!-- Dynamically populated via JS -->
+              </div>
+
+              <div class="mt-auto"></div>
+            </div>
+
+            <!-- RIGHT: Plan detail -->
+            <div class="flex flex-col sm:p-8 bg-gradient-to-br from-white/0 via-white/5 to-white/0 max-w-xl rounded-2xl mt-8 mr-8 mb-8 ml-8 pt-6 pr-6 pb-6 pl-6 relative shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] gap-x-6 gap-y-6" style="position: relative; --border-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); --border-radius-before: 16px">
+              <div class="pointer-events-none absolute inset-0 opacity-[0.05]" style="background: radial-gradient(900px 360px at 20% -10%, rgba(100,181,181,0.12) 15%, transparent 60%);"></div>
+
+              <!-- Header row -->
+              <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <h3 id="planName" class="text-2xl text-white font-semibold tracking-tight text-center sm:text-left">
+                  Market Intelligence
+                </h3>
+              </div>
+
+              <!-- Price -->
+              <div class="flex flex-col sm:flex-row items-center sm:items-end justify-between gap-6">
+                <div class="flex items-end gap-2 justify-center sm:justify-start">
+                  <span class="text-4xl lg:text-5xl text-white tracking-tight font-medium" id="planPrice">HKD 12k</span>
+                  <span class="text-zinc-300 mb-1.5 text-sm">/month</span>
+                </div>
+              </div>
+              
+              <div class="text-xs text-brand/80 font-mono mt-[-10px] text-center sm:text-left">
+                + HKD 50k Setup Fee
+              </div>
+
+              <!-- Tagline -->
+              <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4">
+                <p id="planTagline" class="text-[12px] tracking-tight text-zinc-200 uppercase text-center sm:text-left font-medium">
+                  Replaces manual LinkedIn monitoring &amp; news tracking.
+                </p>
+              </div>
+
+              <!-- Features -->
+              <div class="bg-gradient-to-br from-white/5 to-white/0 rounded-2xl pt-6 pr-6 pb-6 pl-6 border border-white/5">
+                <ul id="featureList" class="space-y-3 text-sm text-zinc-100">
+                  <!-- Dynamically populated -->
+                </ul>
+
+                <div class="mt-6 pt-4 border-t border-white/10 text-[12px] text-zinc-300/90 text-center sm:text-left flex items-center justify-between">
+                   <span id="roiText">Saves ~20 hrs/partner/mo</span>
+                   <a href="#" class="underline decoration-white/30 hover:decoration-brand hover:text-brand transition-colors">Setup Details</a>
+                </div>
+
+                <!-- CTA -->
+                <div class="mt-6">
+                  <a href="#join" class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand text-obsidian hover:bg-white h-11 px-5 text-sm font-semibold transition shadow-[0_8px_24px_-8px_rgba(100,181,181,0.25)]">
+                    Book Setup Call
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            (function () {
+              const root = document.getElementById('pricing');
+              if (!root) return;
+
+              const state = { mode: 'individual', selectedId: 'market' };
+
+              const plans = {
+                market: {
+                  id: 'market',
+                  name: 'Market Intelligence',
+                  shortDesc: 'LinkedIn & News Monitoring',
+                  tagline: 'Replaces manual LinkedIn monitoring & news tracking.',
+                  price: 'HKD 12k',
+                  roi: 'Saves ~15-20 hrs/partner/mo',
+                  features: [
+                    'Monitors LinkedIn job changes',
+                    'Tracks Bloomberg terminal alerts',
+                    'Flags placement opportunities',
+                    'Daily WhatsApp briefings',
+                    'Auto-updates org charts'
+                  ]
+                },
+                office: {
+                  id: 'office',
+                  name: 'Office Intelligence',
+                  shortDesc: 'Admin & Formatting Agent',
+                  tagline: 'Your 24/7 executive assistant.',
+                  price: 'HKD 10k',
+                  roi: 'Saves ~10-15 hrs/partner/mo',
+                  features: [
+                    'WhatsApp voice commands',
+                    'Formats PowerPoints & Excel',
+                    'Email & calendar coordination',
+                    'Document retrieval',
+                    'Works 24/7 globally'
+                  ]
+                },
+                salesforce: {
+                  id: 'salesforce',
+                  name: 'Salesforce Intelligence',
+                  shortDesc: 'CRM Automation Agent',
+                  tagline: 'No more "I\'ll update it later".',
+                  price: 'HKD 8k',
+                  roi: 'Saves ~8-12 hrs/partner/mo',
+                  features: [
+                    'Updates CRM via WhatsApp',
+                    'Syncs market intelligence',
+                    'Logs meeting outcomes',
+                    'Pulls pipeline reports',
+                    'Real-time data hygiene'
+                  ]
+                },
+                bundle: {
+                  id: 'bundle',
+                  name: 'Complete Suite',
+                  shortDesc: 'All 3 Agents Integrated',
+                  tagline: 'Full cross-agent data intelligence.',
+                  price: 'HKD 25k',
+                  roi: 'Saves ~40 hrs/mo + Revenue Growth',
+                  features: [
+                    'All Market, Office, & CRM Agents',
+                    'Cross-agent intelligence syncing',
+                    'Unified ROI Analysis Dashboard',
+                    'Priority 24/7 Support',
+                    'Save HKD 60k/yr vs Individual'
+                  ]
+                }
+              };
+
+              const els = {
+                tabs: root.querySelectorAll('.billing-tab'),
+                planListContainer: root.querySelector('#plan-list-container'),
+                planName: root.querySelector('#planName'),
+                planPrice: root.querySelector('#planPrice'),
+                planTagline: root.querySelector('#planTagline'),
+                featureList: root.querySelector('#featureList'),
+                roiText: root.querySelector('#roiText')
+              };
+
+              const checkSVG = '<iconify-icon icon="solar:check-circle-linear" class="text-lg text-brand mt-0.5"></iconify-icon>';
+              const arrowSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>';
+
+              function renderList() {
+                els.planListContainer.innerHTML = '';
+                
+                let keysToShow = [];
+                if(state.mode === 'individual') {
+                  keysToShow = ['market', 'office', 'salesforce'];
+                  // If we switched to individual and currently selected bundle, reset to market
+                  if(state.selectedId === 'bundle') state.selectedId = 'market';
+                } else {
+                  keysToShow = ['bundle'];
+                  state.selectedId = 'bundle';
+                }
+
+                keysToShow.forEach(key => {
+                  const plan = plans[key];
+                  const isActive = state.selectedId === key;
+                  
+                  const btn = document.createElement('button');
+                  btn.className = `group transition flex text-left w-full rounded-2xl ring-0 pt-5 pr-5 pb-5 pl-5 items-center justify-between ${isActive ? 'bg-white/[0.08] ring-1 ring-white/20' : 'bg-gradient-to-br from-white/5 to-white/0 hover:bg-white/[0.05]'}`;
+                  
+                  btn.innerHTML = `
+                    <div>
+                      <p class="text-white text-lg tracking-tight font-semibold">${plan.name}</p>
+                      <p class="text-[12px] tracking-tight text-zinc-300 mt-1 uppercase">${plan.shortDesc}</p>
+                    </div>
+                    <span class="inline-flex items-center justify-center h-9 w-9 rounded-full ${isActive ? 'bg-brand text-obsidian' : 'bg-white/5 ring-1 ring-white/10 text-zinc-300 group-hover:bg-white/10'} transition">
+                      ${arrowSVG}
+                    </span>
+                  `;
+                  
+                  btn.onclick = () => {
+                    state.selectedId = key;
+                    render();
+                  };
+                  els.planListContainer.appendChild(btn);
+                });
+              }
+
+              function renderDetails() {
+                const cfg = plans[state.selectedId];
+                els.planName.textContent = cfg.name;
+                els.planTagline.textContent = cfg.tagline.toUpperCase();
+                els.planPrice.textContent = cfg.price;
+                els.roiText.textContent = cfg.roi;
+                els.featureList.innerHTML = cfg.features.map(f => `<li class="flex items-start gap-3">${checkSVG}<span>${f}</span></li>`).join('');
+              }
+
+              function renderTabs() {
+                els.tabs.forEach(tab => {
+                  const active = tab.getAttribute('data-mode') === state.mode;
+                  tab.classList.toggle('text-white', active);
+                  tab.classList.toggle('text-zinc-300', !active);
+                  tab.classList.toggle('bg-white/[0.08]', active);
+                  tab.classList.toggle('ring-1', active);
+                  tab.classList.toggle('ring-white/20', active);
+                });
+              }
+
+              function render() {
+                renderList();
+                renderDetails();
+                renderTabs();
+              }
+
+              els.tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                  state.mode = tab.getAttribute('data-mode');
+                  render();
+                });
+              });
+
+              render();
+            })();
+          </script>
+        </div>
+      </section>
+
+      <!-- PROCESS SCROLL SECTION (UPDATED HEIGHT & PADDING) -->
+      <section id="process" class="relative z-30 w-full bg-slate-50 border-y border-border/60" style="height: 500vh;">
+        <div class="sticky top-0 left-0 w-full h-screen overflow-hidden flex flex-col items-center justify-center">
+          <div class="max-w-4xl w-full px-6 md:px-12 relative z-10 flex flex-col items-center h-full py-20">
+            <div class="text-center mb-8 shrink-0 transition-opacity duration-700">
+              <h2 class="font-sans text-2xl md:text-3xl font-semibold text-obsidian tracking-tight mb-3">
+                How It Works
+              </h2>
+              <p class="text-subtle text-sm max-w-md mx-auto">
+                From setup to delegation in 30 days.
+              </p>
+            </div>
+            <div class="relative w-full max-w-2xl flex-1 flex flex-col justify-center my-auto">
+              <div class="absolute left-1/2 top-4 bottom-4 w-px bg-border/60 -translate-x-1/2"></div>
+              <div id="lifecycle-line" class="absolute left-1/2 top-4 w-px bg-brand -translate-x-1/2 transition-all duration-75 ease-linear h-0 max-h-[calc(100%-2rem)]"></div>
+
+              <!-- Increased bottom padding (pb-40) to prevent cutoff -->
+              <div class="space-y-20 pt-10 pb-40 relative">
+                <!-- Step 1 -->
+                <div class="lifecycle-step group flex items-center justify-between w-full opacity-30 transition-all duration-500" data-threshold="0.1">
+                  <div class="w-[42%] text-right pr-8">
+                    <span class="font-mono text-[10px] text-brand uppercase tracking-wider block mb-1">Step 01</span>
+                    <h3 class="font-sans text-lg font-semibold text-obsidian">Setup Call</h3>
+                    <p class="text-xs text-subtle mt-1">We map your workflow and identify ROI.</p>
+                  </div>
+                  <div class="relative shrink-0 z-10">
+                    <div class="w-4 h-4 rounded-full border border-border bg-white group-[.active]:border-brand group-[.active]:bg-brand transition-colors duration-300"></div>
+                  </div>
+                  <div class="w-[42%] pl-8">
+                    <div class="bg-white border border-border p-3 rounded shadow-sm inline-block">
+                      <span class="text-xs font-medium text-obsidian">Custom Configuration</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="lifecycle-step group flex items-center justify-between w-full opacity-30 transition-all duration-500" data-threshold="0.35">
+                  <div class="w-[42%] text-right pr-8">
+                    <div class="bg-white border border-border p-3 rounded shadow-sm inline-block">
+                      <span class="text-xs font-medium text-obsidian">Salesforce &amp; LinkedIn API</span>
+                    </div>
+                  </div>
+                  <div class="relative shrink-0 z-10">
+                    <div class="w-4 h-4 rounded-full border border-border bg-white group-[.active]:border-brand group-[.active]:bg-brand transition-colors duration-300"></div>
+                  </div>
+                  <div class="w-[42%] pl-8">
+                    <span class="font-mono text-[10px] text-brand uppercase tracking-wider block mb-1">Step 02</span>
+                    <h3 class="font-sans text-lg font-semibold text-obsidian">30-Day Integration</h3>
+                    <p class="text-xs text-subtle mt-1">We build, connect, and train your agents.</p>
+                  </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="lifecycle-step group flex items-center justify-between w-full opacity-30 transition-all duration-500" data-threshold="0.6">
+                  <div class="w-[42%] text-right pr-8">
+                    <span class="font-mono text-[10px] text-brand uppercase tracking-wider block mb-1">Step 03</span>
+                    <h3 class="font-sans text-lg font-semibold text-obsidian">Delegation</h3>
+                    <p class="text-xs text-subtle mt-1">Partners text the agent, it executes.</p>
+                  </div>
+                  <div class="relative shrink-0 z-10">
+                    <div class="w-4 h-4 rounded-full border border-border bg-white group-[.active]:border-brand group-[.active]:bg-brand transition-colors duration-300"></div>
+                  </div>
+                  <div class="w-[42%] pl-8">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-[#25D366] text-white text-xs font-semibold shadow-lg">
+                      <iconify-icon icon="solar:chat-round-linear"></iconify-icon>
+                      <span>WhatsApp Command Center</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          (function(){const section=document.getElementById('process');const line=document.getElementById('lifecycle-line');const steps=section.querySelectorAll('.lifecycle-step');function handleScroll(){if(!section)return;const rect=section.getBoundingClientRect();const viewH=window.innerHeight;const travelDistance=rect.height-viewH;const scrolled=-rect.top;let progress=scrolled/travelDistance;progress=Math.max(0,Math.min(1,progress));line.style.height=(progress*100)+'%';steps.forEach(step=>{const t=parseFloat(step.dataset.threshold);if(progress>=t){if(progress<t+0.2){step.classList.add('active');step.classList.replace('opacity-30','opacity-100');step.style.transform='scale(1.05)';}else{step.classList.add('active');step.classList.replace('opacity-30','opacity-60');step.style.transform='scale(1)';}}else{step.classList.remove('active');step.classList.replace('opacity-100','opacity-30');step.classList.replace('opacity-60','opacity-30');step.style.transform='scale(1)';}});};window.addEventListener('scroll',handleScroll,{passive:true});handleScroll();})();
+        </script>
+      </section>
+
+      <!-- WHO THIS IS FOR (New Section - Added Margin Top) -->
+      <section class="relative z-20 mt-48 py-24 bg-obsidian text-white overflow-hidden border-t border-white/10">
+        <!-- Background pattern -->
+        <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#64B5B5 1px, transparent 1px); background-size: 32px 32px;"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
+            
+            <!-- Left: Header -->
+            <div class="lg:col-span-5">
+              <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-6">
+                Who This Is For
+              </h2>
+              <p class="text-subtle text-lg font-light leading-relaxed">
+                We don't work with everyone. Buildwise is designed for high-performance firms ready to automate the mundane and focus on the deal.
+              </p>
+              
+              <!-- Small CTA Button -->
+               <div class="mt-8">
+                  <a href="#pricing" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand text-obsidian px-6 py-3 text-sm font-semibold hover:bg-white transition-all shadow-[0_0_20px_rgba(100,181,181,0.2)]">
+                    Book Set Up Call
+                  </a>
+               </div>
+            </div>
+
+            <!-- Right: Checklist -->
+            <div class="lg:col-span-7">
+               <div class="grid gap-6">
+                  <!-- Item 1 -->
+                  <div class="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-brand/30 transition-colors duration-300">
+                     <div class="shrink-0 mt-1">
+                        <iconify-icon icon="solar:check-circle-bold" class="text-xl text-brand"></iconify-icon>
+                     </div>
+                     <div>
+                        <h3 class="text-lg font-medium text-white">Executive search firms</h3>
+                        <p class="text-sm text-subtle mt-1">Finance sector focus, typically 11-50 employees.</p>
+                     </div>
+                  </div>
+                  
+                  <!-- Item 2 -->
+                  <div class="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-brand/30 transition-colors duration-300">
+                     <div class="shrink-0 mt-1">
+                        <iconify-icon icon="solar:check-circle-bold" class="text-xl text-brand"></iconify-icon>
+                     </div>
+                     <div>
+                        <h3 class="text-lg font-medium text-white">Partners spending 20+ hours/month</h3>
+                        <p class="text-sm text-subtle mt-1">On low-leverage intelligence gathering and admin work.</p>
+                     </div>
+                  </div>
+
+                  <!-- Item 3 -->
+                  <div class="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-brand/30 transition-colors duration-300">
+                     <div class="shrink-0 mt-1">
+                        <iconify-icon icon="solar:check-circle-bold" class="text-xl text-brand"></iconify-icon>
+                     </div>
+                     <div>
+                        <h3 class="text-lg font-medium text-white">Firms using Salesforce or Custom CRMs</h3>
+                        <p class="text-sm text-subtle mt-1">Must have API access for agents to read/write data.</p>
+                     </div>
+                  </div>
+
+                  <!-- Item 4 -->
+                  <div class="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-brand/30 transition-colors duration-300">
+                     <div class="shrink-0 mt-1">
+                        <iconify-icon icon="solar:check-circle-bold" class="text-xl text-brand"></iconify-icon>
+                     </div>
+                     <div>
+                        <h3 class="text-lg font-medium text-white">Teams ready for strategic AI</h3>
+                        <p class="text-sm text-subtle mt-1">Viewing automation as a competitive advantage, not just a cost saver.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="bg-white py-20 px-6 md:px-12 lg:px-20 border-t border-border">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12">
+          <div class="max-w-xs space-y-6">
+            <div class="flex items-center gap-2">
+              <div class="w-4 h-4 text-brand">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2C7.5 2 4 6.5 4 12C4 17.5 7.5 22 12 22C16.5 22 20 17.5 20 12C20 6.5 16.5 2 12 2Z"></path>
+                </svg>
+              </div>
+              <span class="font-bold text-sm tracking-tight text-obsidian uppercase">BUILDWISE STUDIOS</span>
+            </div>
+            <p class="text-xs text-subtle leading-relaxed">Building the digital workforce for the modern executive search firm.</p>
+            <div class="text-[10px] text-border">© 2024 Buildwise Studios. All rights reserved.</div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Shaders & ThreeJS -->
+    <script type="x-shader/x-vertex" id="vertexShader">
+      uniform float uTime; uniform float uDistortion; uniform float uSize; uniform vec2 uMouse; varying float vNoise;
+      vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+      vec4 mod289(vec4 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+      vec4 permute(vec4 x) { return mod289(((x*34.0)+1.0)*x); }
+      vec4 taylorInvSqrt(vec4 r) { return 1.79284291400159 - 0.85373472095314 * r; }
+      float snoise(vec3 v) { const vec2 C = vec2(1.0/6.0, 1.0/3.0); const vec4 D = vec4(0.0, 0.5, 1.0, 2.0); vec3 i = floor(v + dot(v, C.yyy)); vec3 x0 = v - i + dot(i, C.xxx); vec3 g = step(x0.yzx, x0.xyz); vec3 l = 1.0 - g; vec3 i1 = min(g.xyz, l.zxy); vec3 i2 = max(g.xyz, l.zxy); vec3 x1 = x0 - i1 + 1.0 * C.xxx; vec3 x2 = x0 - i2 + 2.0 * C.xxx; vec3 x3 = x0 - 1.0 + 3.0 * C.xxx; i = mod289(i); vec4 p = permute(permute(permute(i.z + vec4(0.0, i1.z, i2.z, 1.0)) + i.y + vec4(0.0, i1.y, i2.y, 1.0)) + i.x + vec4(0.0, i1.x, i2.x, 1.0)); float n_ = 1.0/7.0; vec3 ns = n_ * D.wyz - D.xzx; vec4 j = p - 49.0 * floor(p * ns.z * ns.z); vec4 x_ = floor(j * ns.z); vec4 y_ = floor(j - 7.0 * x_); vec4 x = x_ * ns.x + ns.yyyy; vec4 y = y_ * ns.x + ns.yyyy; vec4 h = 1.0 - abs(x) - abs(y); vec4 b0 = vec4(x.xy, y.xy); vec4 b1 = vec4(x.zw, y.zw); vec4 s0 = floor(b0)*2.0 + 1.0; vec4 s1 = floor(b1)*2.0 + 1.0; vec4 sh = -step(h, vec4(0.0)); vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy; vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww; vec3 p0 = vec3(a0.xy, h.x); vec3 p1 = vec3(a0.zw, h.y); vec3 p2 = vec3(a1.xy, h.z); vec3 p3 = vec3(a1.zw, h.w); vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3))); p0 *= norm.x; p1 *= norm.y; p2 *= norm.z; p3 *= norm.w; vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0); m = m * m; return 42.0 * dot(m*m, vec4(dot(p0,x0), dot(p1,x1), dot(p2,x2), dot(p3,x3))); }
+      void main() { vec3 pos = position; float noise = snoise(vec3(pos.x * 0.5 + uTime * 0.15, pos.y * 0.5, pos.z * 0.5)); vNoise = noise; vec3 newPos = pos + (normal * noise * uDistortion); float dist = distance(uMouse * 10.0, newPos.xy); float interaction = smoothstep(6.0, 0.0, dist); newPos.z += interaction * 1.5; vec4 mvPosition = modelViewMatrix * vec4(newPos, 1.0); gl_Position = projectionMatrix * mvPosition; gl_PointSize = uSize * (20.0 / -mvPosition.z); }
+    </script>
+    <script type="x-shader/x-fragment" id="fragmentShader">
+      uniform vec3 uColor; varying float vNoise;
+      void main() { vec2 center = gl_PointCoord - vec2(0.5); float dist = length(center); if (dist > 0.45) discard; float alpha = 1.0; vec3 color1 = uColor; vec3 color2 = vec3(0.39, 0.71, 0.71); vec3 finalColor = mix(color1, color2, vNoise * 0.5 + 0.5); gl_FragColor = vec4(finalColor, alpha); }
+    </script>
+    <script>
+      lucide.createIcons();
+      const container = document.getElementById('canvas-container');
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+      camera.position.set(0, 0, 20);
+      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      container.appendChild(renderer.domElement);
+      const objectGroup = new THREE.Group();
+      scene.add(objectGroup);
+      const geometry = new THREE.BoxGeometry(10, 10, 10, 32, 32, 32);
+      const uniforms = { uTime: { value: 0 }, uDistortion: { value: 0.2 }, uSize: { value: 1.5 }, uColor: { value: new THREE.Color('#64B5B5') }, uMouse: { value: new THREE.Vector2(0, 0) } };
+      const material = new THREE.ShaderMaterial({ vertexShader: document.getElementById('vertexShader').textContent, fragmentShader: document.getElementById('fragmentShader').textContent, uniforms: uniforms, transparent: true, blending: THREE.NormalBlending });
+      const points = new THREE.Points(geometry, material);
+      objectGroup.add(points);
+      let time = 0; let mouseX = 0, mouseY = 0;
+      document.addEventListener('mousemove', (e) => { mouseX = (e.clientX / window.innerWidth) * 2 - 1; mouseY = -(e.clientY / window.innerHeight) * 2 + 1; uniforms.uMouse.value.x += (mouseX - uniforms.uMouse.value.x) * 0.05; uniforms.uMouse.value.y += (mouseY - uniforms.uMouse.value.y) * 0.05; });
+      function adjustLayout() { const w = window.innerWidth; if(w < 1024) { objectGroup.position.set(3, 4, -5); objectGroup.scale.set(0.6, 0.6, 0.6); } else { objectGroup.position.set(6, 2, -2); objectGroup.scale.set(0.8, 0.8, 0.8); } }
+      window.addEventListener('resize', () => { camera.aspect = window.innerWidth / window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); adjustLayout(); });
+      adjustLayout();
+      function animate() { requestAnimationFrame(animate); time += 0.005; objectGroup.rotation.y = time * 0.15; objectGroup.rotation.x = time * 0.05; uniforms.uTime.value = time; renderer.render(scene, camera); }
+      animate();
+    </script>
+</body></html>
