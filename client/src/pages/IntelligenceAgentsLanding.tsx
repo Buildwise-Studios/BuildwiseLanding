@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { Egg } from "lucide-react";
 import Background3D from "@/components/IntelligenceAgents/Background3D";
 import HeroAnimation from "@/components/IntelligenceAgents/HeroAnimation";
 import HowItWorks from "@/components/IntelligenceAgents/HowItWorks";
@@ -23,49 +24,18 @@ const IntelligenceAgentsLanding: React.FC = () => {
       {/* Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 w-full px-6 py-4 md:px-12 flex justify-between items-center bg-white/80 backdrop-blur-md border-b border-border/50 transition-all duration-300">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 text-brand flex items-center justify-center">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-full h-full"
-            >
-              <path
-                d="M12 2C7.5 2 4 6.5 4 12C4 17.5 7.5 22 12 22C16.5 22 20 17.5 20 12C20 6.5 16.5 2 12 2Z"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              ></path>
-              <path
-                d="M12 22C12 22 9 16 9 12C9 8 12 2 12 2"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                opacity="0.5"
-              ></path>
-              <path
-                d="M12 22C12 22 15 16 15 12C15 8 12 2 12 2"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                opacity="0.5"
-              ></path>
-            </svg>
+          <div className="text-brand flex items-center justify-center">
+            <Egg className="h-6 w-6" />
           </div>
           <span className="font-sans text-sm font-bold tracking-tight text-obsidian uppercase">
-            Buildwise Studios
+            Intelligence Agents
+            <span className="ml-2 text-[10px] text-subtle font-medium lowercase">
+              by Buildwise Studios
+            </span>
           </span>
         </div>
 
         <nav className="hidden md:flex items-center gap-8">
-          <a
-            href="#problem"
-            className="text-xs font-medium text-subtle hover:text-obsidian transition-colors"
-          >
-            The Problem
-          </a>
           <a
             href="#pricing"
             className="text-xs font-medium text-subtle hover:text-obsidian transition-colors"
@@ -87,12 +57,6 @@ const IntelligenceAgentsLanding: React.FC = () => {
         </nav>
 
         <div className="flex items-center gap-4">
-          <a
-            href="#pricing"
-            className="hidden md:block text-xs font-medium text-subtle hover:text-obsidian transition-colors"
-          >
-            ROI Calculator
-          </a>
           <button className="group relative overflow-hidden bg-obsidian text-white text-xs font-semibold px-5 py-2 rounded shadow-sm ring-1 ring-white/10 transition-all hover:scale-[1.02] hover:shadow-md active:scale-[0.98]">
             <div className="shimmer-layer absolute inset-0 transform -translateX-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer z-10"></div>
             <span className="relative z-20">Book Setup Call</span>
@@ -231,7 +195,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
               {/* Left: The Daily Struggle */}
               <div className="text-left">
-                <p className="text-lg font-medium text-subtle mb-8 uppercase tracking-wide text-xs">
+                <p className="text-base font-medium text-subtle mb-8 uppercase tracking-wide">
                   The Daily Struggle
                 </p>
                 <p className="text-xl md:text-2xl font-medium text-obsidian mb-10 leading-snug">
@@ -433,18 +397,14 @@ const IntelligenceAgentsLanding: React.FC = () => {
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12">
             <div className="max-w-xs space-y-6">
               <div className="flex items-center gap-2">
-                <div className="w-4 h-4 text-brand">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M12 2C7.5 2 4 6.5 4 12C4 17.5 7.5 22 12 22C16.5 22 20 17.5 20 12C20 6.5 16.5 2 12 2Z"></path>
-                  </svg>
+                <div className="text-brand flex items-center justify-center">
+                  <Egg className="h-5 w-5" />
                 </div>
                 <span className="font-bold text-sm tracking-tight text-obsidian uppercase">
-                  BUILDWISE STUDIOS
+                  Intelligence Agents
+                  <span className="ml-2 text-[10px] text-subtle font-medium lowercase">
+                    by Buildwise Studios
+                  </span>
                 </span>
               </div>
               <p className="text-xs text-subtle leading-relaxed">
