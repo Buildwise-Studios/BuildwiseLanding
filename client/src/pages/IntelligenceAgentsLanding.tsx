@@ -6,6 +6,7 @@ import HeroAnimation from "@/components/IntelligenceAgents/HeroAnimation";
 import HowItWorks from "@/components/IntelligenceAgents/HowItWorks";
 import PricingSection from "@/components/IntelligenceAgents/PricingSection";
 import TestimonialsSection from "@/components/IntelligenceAgents/TestimonialsSection";
+import FAQSection from "@/components/IntelligenceAgents/FAQSection";
 
 const IntelligenceAgentsLanding: React.FC = () => {
   return (
@@ -394,6 +395,8 @@ const IntelligenceAgentsLanding: React.FC = () => {
         </section>
 
         <TestimonialsSection />
+
+        <FAQSection />
 
         {/* FOOTER */}
         <footer className="bg-white py-20 px-6 md:px-12 lg:px-20 border-t border-border text-left">

@@ -1,0 +1,131 @@
+<section class="w-full max-w-7xl sm:px-6 lg:px-8 mx-auto px-4">
+    <div class="mt-16 text-center">
+      <h2 class="text-3xl font-semibold tracking-tight lg:text-4xl">Frequently asked questions</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-base text-neutral-300">
+        Everything you need to know about AI Factory. Can't find the answer you're looking for? Reach out to our team.
+      </p>
+    </div>
+  
+    <div class="mx-auto mt-12 max-w-4xl">
+      <div class="space-y-6">
+        <!-- FAQ Item 1 -->
+        <div class="rounded-2xl border border-white/10 bg-neutral-900/40 p-6">
+          <button class="flex w-full items-center justify-between text-left" onclick="toggleFAQ(this)">
+            <h3 class="text-base font-medium tracking-tight">How does AI Factory differ from other AI platforms?</h3>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-neutral-400 transition-transform">
+              <path d="M6 9l6 6 6-6" class=""></path>
+            </svg>
+          </button>
+          <div class="mt-4 hidden text-sm text-neutral-300">
+            <p>AI Factory focuses specifically on operationalizing AI models for production use. Unlike general ML
+              platforms, we provide end-to-end evaluation pipelines, safety guardrails, and enterprise-grade compliance
+              out of the box. Our platform bridges the gap between AI research and reliable production deployment.</p>
+          </div>
+        </div>
+  
+        <!-- FAQ Item 2 -->
+        <div class="rounded-2xl border border-white/10 bg-neutral-900/40 p-6">
+          <button class="flex w-full items-center justify-between text-left" onclick="toggleFAQ(this)">
+            <h3 class="text-base font-medium tracking-tight">What models and providers do you support?</h3>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-neutral-400 transition-transform">
+              <path d="M6 9l6 6 6-6" class=""></path>
+            </svg>
+          </button>
+          <div class="mt-4 hidden text-sm text-neutral-300">
+            <p>We support all major AI providers including OpenAI, Anthropic, Google, Cohere, and Hugging Face. You can
+              also bring your own models via API or deploy custom models on our infrastructure. Our platform abstracts
+              provider differences, making it easy to switch or A/B test between models.</p>
+          </div>
+        </div>
+  
+        <!-- FAQ Item 3 -->
+        <div class="rounded-2xl border border-white/10 bg-neutral-900/40 p-6">
+          <button class="flex w-full items-center justify-between text-left" onclick="toggleFAQ(this)">
+            <h3 class="text-base font-medium tracking-tight">How do you ensure data security and compliance?</h3>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-neutral-400 transition-transform">
+              <path d="M6 9l6 6 6-6" class=""></path>
+            </svg>
+          </button>
+          <div class="mt-4 hidden text-sm text-neutral-300">
+            <p>We're SOC2 Type II certified with end-to-end encryption, automatic PII detection and scrubbing, and
+              comprehensive audit trails. Data is processed in secure, isolated environments and never stored longer than
+              necessary. We support GDPR, CCPA, and other regulatory requirements out of the box.</p>
+          </div>
+        </div>
+  
+        <!-- FAQ Item 4 -->
+        <div class="rounded-2xl border border-white/10 bg-neutral-900/40 p-6">
+          <button class="flex w-full items-center justify-between text-left" onclick="toggleFAQ(this)">
+            <h3 class="text-base font-medium tracking-tight">Can I use my own infrastructure or cloud account?</h3>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-neutral-400 transition-transform">
+              <path d="M6 9l6 6 6-6" class=""></path>
+            </svg>
+          </button>
+          <div class="mt-4 hidden text-sm text-neutral-300">
+            <p>Yes, we offer flexible deployment options. You can use our managed cloud, bring your own cloud (BYOC) on
+              AWS/GCP/Azure, or deploy on-premises. Enterprise customers can also opt for dedicated infrastructure with
+              isolated compute and networking.</p>
+          </div>
+        </div>
+  
+        <!-- FAQ Item 5 -->
+        <div class="rounded-2xl border border-white/10 bg-neutral-900/40 p-6">
+          <button class="flex w-full items-center justify-between text-left" onclick="toggleFAQ(this)">
+            <h3 class="text-base font-medium tracking-tight">What kind of evaluation metrics do you provide?</h3>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-neutral-400 transition-transform">
+              <path d="M6 9l6 6 6-6" class=""></path>
+            </svg>
+          </button>
+          <div class="mt-4 hidden text-sm text-neutral-300">
+            <p>We provide comprehensive evaluation metrics including accuracy, bias detection, hallucination rates, safety
+              scores, latency, cost analysis, and custom business metrics. Our platform supports both automated
+              evaluations and human-in-the-loop workflows for continuous model improvement.</p>
+          </div>
+        </div>
+  
+        <!-- FAQ Item 6 -->
+        <div class="rounded-2xl border border-white/10 bg-neutral-900/40 p-6">
+          <button class="flex w-full items-center justify-between text-left" onclick="toggleFAQ(this)">
+            <h3 class="text-base font-medium tracking-tight">How do I get started with the free plan?</h3>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-neutral-400 transition-transform">
+              <path d="M6 9l6 6 6-6" class=""></path>
+            </svg>
+          </button>
+          <div class="mt-4 hidden text-sm text-neutral-300">
+            <p>Simply sign up for our waitlist to get early access. Once available, you'll get 10K free API calls per
+              month with no credit card required. Our quick-start guides and SDKs make integration straightforward - you
+              can be up and running in under 10 minutes.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Contact CTA -->
+      <div
+        class="mt-12 rounded-2xl border border-white/10 bg-gradient-to-br from-neutral-900/60 to-neutral-900/30 p-8 text-center">
+        <h3 class="text-lg font-semibold tracking-tight">Still have questions?</h3>
+        <p class="mt-2 text-sm text-neutral-300">
+          Can't find the answer you're looking for? Please chat with our friendly team.
+        </p>
+        <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
+          <a href="#"
+            class="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-lime-400 to-emerald-500 px-6 py-3 text-sm font-semibold text-neutral-900 hover:brightness-95 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" class=""></path>
+            </svg>
+            Get in touch
+          </a>
+          <a href="#"
+            class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-white hover:bg-white/10 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+              <path
+                d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+                class=""></path>
+            </svg>
+            Schedule demo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
