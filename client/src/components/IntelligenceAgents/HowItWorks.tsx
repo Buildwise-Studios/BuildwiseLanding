@@ -55,13 +55,13 @@ const HowItWorks: React.FC = () => {
     <section
       id="process"
       ref={sectionRef}
-      className="relative z-30 w-full bg-slate-50 border-y border-border/60"
+      className="relative z-30 w-full bg-[#F8F7F5] border-y border-border/60"
       style={{ height: '120vh' }}
     >
       <div className="sticky top-0 left-0 w-full h-screen flex flex-col items-center justify-start pt-16 md:pt-24">
         <div className="max-w-4xl w-full px-6 md:px-12 relative z-10 flex flex-col items-center">
           <div className="text-center mb-6 shrink-0">
-            <h2 className="font-sans text-3xl md:text-5xl font-semibold text-obsidian tracking-tight mb-2">
+            <h2 className="font-sans text-3xl md:text-5xl font-semibold text-[#1A1A1A] tracking-tight mb-2">
               How It Works
             </h2>
             <p className="text-subtle text-base md:text-lg max-w-md mx-auto">
@@ -106,7 +106,7 @@ const HowItWorks: React.FC = () => {
                       <>
                         <div className="w-[42%] text-right pr-4 md:pr-8">
                           <span className="font-mono text-[10px] text-brand uppercase tracking-wider block mb-1 font-bold">Step {step.id}</span>
-                          <h3 className="font-sans text-base md:text-lg font-semibold text-obsidian">{step.title}</h3>
+                          <h3 className="font-sans text-base md:text-lg font-semibold text-[#1A1A1A]">{step.title}</h3>
                           <p className="hidden md:block text-xs text-subtle mt-1">{step.description}</p>
                         </div>
                         <div className="relative shrink-0 z-10">
@@ -120,7 +120,7 @@ const HowItWorks: React.FC = () => {
                             </span>
                           ) : (
                             <div className="bg-white border border-border px-2 py-1 md:p-3 rounded shadow-sm inline-block">
-                              <span className="text-[10px] md:text-xs font-medium text-obsidian">{step.tag}</span>
+                              <span className="text-[10px] md:text-xs font-medium text-[#1A1A1A]">{step.tag}</span>
                             </div>
                           )}
                         </div>
@@ -129,7 +129,7 @@ const HowItWorks: React.FC = () => {
                       <>
                         <div className="w-[42%] text-right pr-4 md:pr-8">
                           <div className="bg-white border border-border px-2 py-1 md:p-3 rounded shadow-sm inline-block">
-                            <span className="text-[10px] md:text-xs font-medium text-obsidian">{step.tag}</span>
+                            <span className="text-[10px] md:text-xs font-medium text-[#1A1A1A]">{step.tag}</span>
                           </div>
                         </div>
                         <div className="relative shrink-0 z-10">
@@ -137,7 +137,7 @@ const HowItWorks: React.FC = () => {
                         </div>
                         <div className="w-[42%] pl-4 md:pl-8">
                           <span className="font-mono text-[10px] text-brand uppercase tracking-wider block mb-1 font-bold">Step {step.id}</span>
-                          <h3 className="font-sans text-base md:text-lg font-semibold text-obsidian">{step.title}</h3>
+                          <h3 className="font-sans text-base md:text-lg font-semibold text-[#1A1A1A]">{step.title}</h3>
                           <p className="hidden md:block text-xs text-subtle mt-1">{step.description}</p>
                         </div>
                       </>

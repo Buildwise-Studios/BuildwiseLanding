@@ -85,7 +85,7 @@ const PricingSection: React.FC = () => {
 
   return (
     <section className="sm:px-6 lg:px-8 animate-fadeSlideIn z-10 max-w-7xl mx-auto pt-20 px-4 pb-16 relative" id="pricing">
-      <div className="relative overflow-hidden rounded-3xl ring-1 ring-white/10 bg-obsidian backdrop-blur">
+      <div className="relative overflow-hidden rounded-3xl ring-1 ring-white/10 bg-[#1A1A1A] backdrop-blur">
         <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-brand/10 blur-3xl"></div>
         <div className="pointer-events-none absolute -left-24 -bottom-24 h-72 w-72 rounded-full bg-brand/5 blur-3xl"></div>
 
@@ -94,7 +94,7 @@ const PricingSection: React.FC = () => {
           <div className="p-6 sm:p-10 flex flex-col">
             <h2 className="text-4xl sm:text-5xl font-semibold text-white tracking-tight mt-4">
               Choose your
-              <span className="block text-brand">intelligence team</span>
+              <span className="block text-[#D4A574]">intelligence team</span>
             </h2>
 
             <p className="mt-4 text-base md:text-lg text-zinc-300/90 max-w-2xl">
@@ -114,7 +114,7 @@ const PricingSection: React.FC = () => {
                   onClick={() => { setMode('bundle'); setSelectedId('bundle'); }}
                   className={`px-3 py-1.5 text-[11px] rounded-lg uppercase tracking-tight transition flex items-center gap-1.5 ${mode === 'bundle' ? 'text-white ring-1 ring-white/20 bg-white/[0.08]' : 'text-zinc-300 hover:text-white'}`}
                 >
-                  BUNDLE <span className="text-[9px] bg-brand text-obsidian px-1 rounded font-bold">SAVE 20%</span>
+                  BUNDLE <span className="text-[9px] bg-[#D4A574] text-[#1A1A1A] px-1 rounded font-bold">SAVE 20%</span>
                 </button>
               </div>
             </div>
@@ -134,7 +134,7 @@ const PricingSection: React.FC = () => {
                       <p className="text-white text-lg tracking-tight font-semibold">{plan.name}</p>
                       <p className="text-[12px] tracking-tight text-zinc-300 mt-1 uppercase">{plan.shortDesc}</p>
                     </div>
-                    <span className={`inline-flex items-center justify-center h-9 w-9 rounded-full transition ${isActive ? 'bg-brand text-obsidian' : 'bg-white/5 ring-1 ring-white/10 text-zinc-300 group-hover:bg-white/10'}`}>
+                    <span className={`inline-flex items-center justify-center h-9 w-9 rounded-full transition ${isActive ? 'bg-[#D4A574] text-[#1A1A1A]' : 'bg-white/5 ring-1 ring-white/10 text-zinc-300 group-hover:bg-white/10'}`}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                     </span>
                   </button>
@@ -186,7 +186,7 @@ const PricingSection: React.FC = () => {
               </div>
 
               <div className="mt-6">
-                <a href="#join" className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand text-obsidian hover:bg-white h-11 px-5 text-sm font-semibold transition shadow-[0_8px_24px_-8px_rgba(100,181,181,0.25)]">
+                <a href="#join" className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#D4A574] text-[#1A1A1A] hover:bg-white h-11 px-5 text-sm font-semibold transition shadow-[0_8px_24px_-8px_rgba(212,165,116,0.25)]">
                   Book Setup Call
                 </a>
               </div>

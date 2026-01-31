@@ -8,17 +8,17 @@ import PricingSection from "@/components/IntelligenceAgents/PricingSection";
 
 const IntelligenceAgentsLanding: React.FC = () => {
   return (
-    <div className="w-full relative bg-canvas font-sans selection:bg-brand/20 selection:text-brand overflow-x-hidden">
+    <div className="w-full relative bg-[#F8F7F5] font-sans selection:bg-brand/20 selection:text-brand overflow-x-hidden">
       {/* Backgrounds */}
-      <div
-        className="fixed inset-0 z-0 technical-grid pointer-events-none"
-        style={{
-          backgroundSize: "40px 40px",
-          backgroundImage:
-            "linear-gradient(to right, rgba(100, 181, 181, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(100, 181, 181, 0.05) 1px, transparent 1px)",
-          maskImage: "linear-gradient(to bottom, black 40%, transparent 100%)",
-        }}
-      ></div>
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        {/* Subtle warm radial gradient */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#D4A57410,transparent_70%)] opacity-50"></div>
+        {/* Noise/Paper texture */}
+        <div
+          className="absolute inset-0 opacity-[0.03] mix-blend-multiply"
+          style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}
+        ></div>
+      </div>
       <Background3D />
 
       {/* Navigation */}
@@ -27,7 +27,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
           <div className="text-brand flex items-center justify-center">
             <Egg className="h-6 w-6" />
           </div>
-          <span className="font-sans text-sm font-bold tracking-tight text-obsidian uppercase">
+          <span className="font-sans text-sm font-bold tracking-tight text-[#1A1A1A] uppercase">
             Intelligence Agents
             <span className="ml-2 text-[10px] text-subtle font-medium lowercase">
               by Buildwise Studios
@@ -38,26 +38,26 @@ const IntelligenceAgentsLanding: React.FC = () => {
         <nav className="hidden md:flex items-center gap-8">
           <a
             href="#pricing"
-            className="text-xs font-medium text-subtle hover:text-obsidian transition-colors"
+            className="text-xs font-medium text-subtle hover:text-[#1A1A1A] transition-colors"
           >
             Agents
           </a>
           <a
             href="#process"
-            className="text-xs font-medium text-subtle hover:text-obsidian transition-colors"
+            className="text-xs font-medium text-subtle hover:text-[#1A1A1A] transition-colors"
           >
             How It Works
           </a>
           <a
             href="#pricing"
-            className="text-xs font-medium text-subtle hover:text-obsidian transition-colors"
+            className="text-xs font-medium text-subtle hover:text-[#1A1A1A] transition-colors"
           >
             Pricing
           </a>
         </nav>
 
         <div className="flex items-center gap-4">
-          <button className="group relative overflow-hidden bg-obsidian text-white text-xs font-semibold px-5 py-2 rounded shadow-sm ring-1 ring-white/10 transition-all hover:scale-[1.02] hover:shadow-md active:scale-[0.98]">
+          <button className="group relative overflow-hidden bg-[#D4A574] text-[#1A1A1A] text-xs font-semibold px-5 py-2 rounded shadow-sm ring-1 ring-white/10 transition-all hover:scale-[1.02] hover:shadow-md active:scale-[0.98]">
             <div className="shimmer-layer absolute inset-0 transform -translateX-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer z-10"></div>
             <span className="relative z-20">Book Setup Call</span>
           </button>
@@ -76,7 +76,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
               </span>
             </div>
 
-            <h1 className="font-sans text-5xl md:text-6xl lg:text-7xl font-medium tracking-tighter text-obsidian leading-[1.05]">
+            <h1 className="font-sans text-5xl md:text-6xl lg:text-7xl font-medium tracking-tighter text-[#1A1A1A] leading-[1.05]">
               Your Partners Are Wasting 20+ Hours Per Month on Work a Machine
               Should Do
             </h1>
@@ -87,7 +87,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
               Salesforce from a taxi.
               <br />
               <br />
-              <span className="text-obsidian font-medium">
+              <span className="text-[#1A1A1A] font-medium">
                 What if your partners could offload all of that to AI agents
                 that work 24/7, never take holidays, and cost less than a junior
                 assistant?
@@ -95,7 +95,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              <button className="group relative bg-obsidian text-white text-sm font-medium px-8 py-3.5 rounded shadow-lg shadow-obsidian/20 transition-all hover:-translate-y-0.5 hover:shadow-xl flex items-center gap-2">
+              <button className="group relative bg-[#D4A574] text-[#1A1A1A] text-sm font-medium px-8 py-3.5 rounded shadow-lg shadow-[#D4A574]/20 transition-all hover:-translate-y-0.5 hover:shadow-xl flex items-center gap-2">
                 <span>Book Your Setup Call</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -151,10 +151,10 @@ const IntelligenceAgentsLanding: React.FC = () => {
                 ></iconify-icon>{" "}
                 WhatsApp
               </div>
-              <span className="font-sans text-sm font-bold tracking-tight text-obsidian">
+              <span className="font-sans text-sm font-bold tracking-tight text-[#1A1A1A]">
                 Bloomberg
               </span>
-              <span className="font-sans text-sm font-bold tracking-tight text-obsidian">
+              <span className="font-sans text-sm font-bold tracking-tight text-[#1A1A1A]">
                 Outlook
               </span>
             </div>
@@ -164,14 +164,14 @@ const IntelligenceAgentsLanding: React.FC = () => {
         {/* PAIN POINT SECTION */}
         <section
           id="problem"
-          className="py-24 md:py-32 px-6 md:px-12 lg:px-20 relative overflow-hidden bg-canvas"
+          className="py-24 md:py-32 px-6 md:px-12 lg:px-20 relative overflow-hidden bg-[#F8F7F5]"
         >
           <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] opacity-30 pointer-events-none"></div>
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
 
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-20 md:mb-24">
-              <h2 className="font-sans text-3xl md:text-5xl font-semibold text-obsidian tracking-tight leading-tight">
+              <h2 className="font-sans text-3xl md:text-5xl font-semibold text-[#1A1A1A] tracking-tight leading-tight">
                 Your Partners Are Drowning in <br className="hidden lg:block" />{" "}
                 Intelligence Work That{" "}
                 <span className="text-danger relative inline-block">
@@ -198,7 +198,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
                 <p className="text-base font-medium text-subtle mb-8 uppercase tracking-wide">
                   The Daily Struggle
                 </p>
-                <p className="text-xl md:text-2xl font-medium text-obsidian mb-10 leading-snug">
+                <p className="text-xl md:text-2xl font-medium text-[#1A1A1A] mb-10 leading-snug">
                   Every day, your partners spend hours on administrative tasks
                   instead of relationships:
                 </p>
@@ -236,8 +236,8 @@ const IntelligenceAgentsLanding: React.FC = () => {
                           className="text-lg"
                         ></iconify-icon>
                       </div>
-                      <span className="text-lg text-subtle font-light leading-relaxed group-hover:text-obsidian transition-colors">
-                        <strong className="font-semibold text-obsidian">
+                      <span className="text-lg text-subtle font-light leading-relaxed group-hover:text-[#1A1A1A] transition-colors">
+                        <strong className="font-semibold text-[#1A1A1A]">
                           {item.title}
                         </strong>{" "}
                         {item.desc}
@@ -257,7 +257,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
 
                   <div className="space-y-6">
                     <div>
-                      <div className="text-4xl md:text-5xl font-mono font-medium text-obsidian tracking-tighter mb-2">
+                      <div className="text-4xl md:text-5xl font-mono font-medium text-[#1A1A1A] tracking-tighter mb-2">
                         20-25 hrs
                       </div>
                       <p className="text-subtle font-medium">
@@ -265,7 +265,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
                       </p>
                     </div>
                     <div>
-                      <div className="text-3xl md:text-4xl font-mono font-medium text-obsidian tracking-tighter mb-2">
+                      <div className="text-3xl md:text-4xl font-mono font-medium text-[#1A1A1A] tracking-tighter mb-2">
                         HKD 25,000
                       </div>
                       <p className="text-subtle font-medium">
@@ -290,21 +290,21 @@ const IntelligenceAgentsLanding: React.FC = () => {
                   </h3>
                   <ul className="space-y-4 text-subtle">
                     <li className="flex items-center gap-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-obsidian"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]"></span>
                       <span>
                         Costs <strong>HKD 20,000+</strong> / month
                       </span>
                     </li>
                     <li className="flex items-center gap-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-obsidian"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]"></span>
                       <span>Works 9-5, takes holidays</span>
                     </li>
                     <li className="flex items-center gap-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-obsidian"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]"></span>
                       <span>Handles one task at a time</span>
                     </li>
                     <li className="flex items-center gap-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-obsidian"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]"></span>
                       <span>Requires partner oversight & training</span>
                     </li>
                   </ul>
@@ -319,7 +319,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
         <HowItWorks />
 
         {/* WHO THIS IS FOR */}
-        <section className="relative z-20  py-24 bg-obsidian text-white overflow-hidden border-t border-white/10 text-left">
+        <section className="relative z-20  py-24 bg-[#1A1A1A] text-white overflow-hidden border-t border-white/10 text-left">
           <div
             className="absolute inset-0 opacity-[0.03]"
             style={{
@@ -341,7 +341,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
                 <div className="mt-8">
                   <a
                     href="#pricing"
-                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand text-obsidian px-6 py-3 text-sm font-semibold hover:bg-white transition-all shadow-[0_0_20px_rgba(100,181,181,0.2)]"
+                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#D4A574] text-[#1A1A1A] px-6 py-3 text-sm font-semibold hover:bg-white transition-all shadow-[0_0_20px_rgba(212,165,116,0.2)]"
                   >
                     Book Set Up Call
                   </a>
@@ -400,7 +400,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
                 <div className="text-brand flex items-center justify-center">
                   <Egg className="h-5 w-5" />
                 </div>
-                <span className="font-bold text-sm tracking-tight text-obsidian uppercase">
+                <span className="font-bold text-sm tracking-tight text-[#1A1A1A] uppercase">
                   Intelligence Agents
                   <span className="ml-2 text-[10px] text-subtle font-medium lowercase">
                     by Buildwise Studios
