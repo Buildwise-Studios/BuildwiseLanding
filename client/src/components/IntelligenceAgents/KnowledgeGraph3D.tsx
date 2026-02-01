@@ -26,7 +26,7 @@ const KnowledgeGraph3D: React.FC = () => {
         const maxDistance = 65; // Increased connection distance
         const particlesGeometry = new THREE.BufferGeometry();
         const positions = new Float32Array(particleCount * 3);
-        const velocities = [];
+        const velocities: Array<{ x: number; y: number; z: number }> = [];
 
         // Initial positions & velocities
         for (let i = 0; i < particleCount; i++) {

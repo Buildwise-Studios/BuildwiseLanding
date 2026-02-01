@@ -324,7 +324,13 @@ const ConstellationScene = () => {
 
 /* --- SUB-COMPONENTS --- */
 
-const AnimatedPath = ({ d, delay, trigger }: any) => (
+interface AnimatedPathProps {
+    d: string;
+    delay: number;
+    trigger: boolean;
+}
+
+const AnimatedPath = ({ d, delay, trigger }: AnimatedPathProps) => (
     <motion.path
         d={d}
         stroke="#D4A574"
@@ -338,25 +344,39 @@ const AnimatedPath = ({ d, delay, trigger }: any) => (
     />
 );
 
-const DataPacket = ({ d, delay }: any) => (
-    <motion.circle r="2.5" fill="#D4A574">
-        <motion.animateMotion
-            path={d}
-            begin={`${delay}s`}
-            dur="0.9s"
-            repeatCount="indefinite"
-        />
-        <motion.animate
-            attributeName="opacity"
-            values="0;1;1;0"
-            dur="0.9s"
-            begin={`${delay}s`}
-            repeatCount="indefinite"
-        />
-    </motion.circle>
+interface DataPacketProps {
+    d: string;
+    delay: number;
+}
+
+const DataPacket = ({ d, delay }: DataPacketProps) => (
+    <motion.circle
+        r="2.5"
+        fill="#D4A574"
+        initial={{ opacity: 0 }}
+        animate={{
+            opacity: [0, 1, 1, 0],
+            transition: {
+                opacity: {
+                    times: [0, 0.1, 0.9, 1],
+                    duration: 0.9,
+                    delay,
+                    repeat: Infinity,
+                    repeatDelay: 0
+                }
+            }
+        }}
+    />
 );
 
-const PipelineNode = ({ icon, label, color, delay }: any) => (
+interface PipelineNodeProps {
+    icon: string;
+    label: string;
+    color: string;
+    delay: number;
+}
+
+const PipelineNode = ({ icon, label, color, delay }: PipelineNodeProps) => (
     <motion.div
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
