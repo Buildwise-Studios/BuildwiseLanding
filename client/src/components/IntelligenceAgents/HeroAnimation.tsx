@@ -2,16 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const HeroAnimation: React.FC = () => {
-    const [scene, setScene] = useState<'human' | 'agent' | 'constellation'>('human');
+    const [scene, setScene] = useState<'human' | 'ai-response' | 'agent' | 'constellation'>('human');
 
     useEffect(() => {
         const timer = setInterval(() => {
             setScene(current => {
-                if (current === 'human') return 'agent';
+                if (current === 'human') return 'ai-response';
+                if (current === 'ai-response') return 'agent';
                 if (current === 'agent') return 'constellation';
                 return 'human';
             });
-        }, 5000); // 50% faster (approx 4.5-5s per scene)
+        }, 5000); // 5 seconds per scene = 20 second total cycle
 
         return () => clearInterval(timer);
     }, []);
@@ -24,6 +25,7 @@ const HeroAnimation: React.FC = () => {
             <div className="w-full h-full relative overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-2xl z-20">
                 <AnimatePresence mode="wait">
                     {scene === 'human' && <HumanScene key="human" />}
+                    {scene === 'ai-response' && <AgentResponseScene key="ai-response" />}
                     {scene === 'agent' && <AgentPipelineScene key="agent" scene={scene} />}
                     {scene === 'constellation' && <ConstellationScene key="constellation" />}
                 </AnimatePresence>
@@ -41,7 +43,12 @@ const HumanScene = () => {
             exit={{ opacity: 0 }}
             className="absolute inset-0 flex flex-col bg-[#F0F2F5]"
         >
-            <div className="bg-white px-4 py-3 flex items-center justify-between border-b border-border shadow-sm z-10">
+            {/* Scene Label */}
+            <div className="absolute top-4 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 font-medium bg-white/80 px-3 py-1 rounded-full border border-slate-200 z-20">
+                Without Buildwise Agent
+            </div>
+
+            <div className="bg-white px-4 py-3 flex items-center justify-between border-b border-border shadow-sm z-10 mt-8">
                 <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-500 font-bold text-xs">MK</div>
                     <div className="flex flex-col text-left">
@@ -99,7 +106,81 @@ const HumanScene = () => {
     );
 };
 
-/* --- SCENE 2: THE DIAMOND PIPELINE --- */
+/* --- SCENE 2: AI AGENT RESPONSE (AFTER BUILDWISE) --- */
+const AgentResponseScene = () => {
+    return (
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 flex flex-col bg-[#F0F2F5]"
+        >
+            {/* Scene Label */}
+            <div className="absolute top-4 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 font-medium bg-white/80 px-3 py-1 rounded-full border border-slate-200 z-20">
+                With Buildwise Agent
+            </div>
+
+            <div className="bg-white px-4 py-3 flex items-center justify-between border-b border-border shadow-sm z-10 mt-8">
+                <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center text-white font-bold text-xs">
+                        <iconify-icon icon="solar:robot-2-linear" className="text-white text-sm"></iconify-icon>
+                    </div>
+                    <div className="flex flex-col text-left">
+                        <span className="text-sm font-semibold text-[#1A1A1A]">Buildwise Agent</span>
+                        <span className="text-[10px] text-teal-600 font-medium">AI Assistant • Online</span>
+                    </div>
+                </div>
+                <div className="flex gap-4 text-[#D4A574] opacity-50">
+                    <iconify-icon icon="solar:phone-linear" className="text-lg"></iconify-icon>
+                    <iconify-icon icon="solar:videocamera-linear" className="text-lg"></iconify-icon>
+                </div>
+            </div>
+
+            <div className="flex-1 p-4 flex flex-col justify-end space-y-4 pb-12">
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="flex flex-col items-end"
+                >
+                    <div className="bg-[#E7FFDB] border border-[#dcf8c6] text-[#1A1A1A] p-3 rounded-lg text-xs max-w-[85%] shadow-sm">
+                        John Colton might have moved to JP Morgan.
+                        <div className="flex items-center justify-end gap-1 mt-1">
+                            <span className="text-[9px] text-slate-500/80">Sat 21:00</span>
+                            <iconify-icon icon="solar:check-read-linear" className="text-[10px] text-slate-400"></iconify-icon>
+                        </div>
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 }}
+                    className="flex flex-col items-start"
+                >
+                    <div className="bg-white border border-slate-200 text-[#1A1A1A] p-3 rounded-lg text-xs max-w-[85%] shadow-sm">
+                        Found a news confirming your hearsay. I updated the CRM accordingly and your JP Morgan org chart. I notified the team that his previous seat is now a potential lead to explore.
+                        <div className="flex items-center justify-end gap-1 mt-1">
+                            <span className="text-[9px] text-slate-500/80">Sat 21:01</span>
+                            <iconify-icon icon="solar:check-read-linear" className="text-[10px] text-teal-600"></iconify-icon>
+                        </div>
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.2 }}
+                    className="self-center py-2 px-4 rounded-full bg-teal-50 text-[10px] text-teal-600 font-medium border border-teal-200"
+                >
+                    Intelligence gathered, CRM updated, team notified • All actions completed
+                </motion.div>
+            </div>
+        </motion.div>
+    );
+};
+
+/* --- SCENE 3: THE DIAMOND PIPELINE --- */
 const AgentPipelineScene = ({ scene }: { scene: string }) => {
     return (
         <motion.div
