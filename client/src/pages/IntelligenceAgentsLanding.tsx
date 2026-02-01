@@ -7,6 +7,7 @@ import HowItWorks from "@/components/IntelligenceAgents/HowItWorks";
 import PricingSection from "@/components/IntelligenceAgents/PricingSection";
 import TestimonialsSection from "@/components/IntelligenceAgents/TestimonialsSection";
 import FAQSection from "@/components/IntelligenceAgents/FAQSection";
+import IntegrationsLogos from "@/components/IntelligenceAgents/IntegrationsLogos";
 
 const IntelligenceAgentsLanding: React.FC = () => {
   return (
@@ -125,43 +126,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
           <HeroAnimation />
         </section>
 
-        {/* INTEGRATIONS LOGOS */}
-        <section className="border-y border-border/60 py-12 bg-white">
-          <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
-            <p className="text-xs font-semibold text-subtle tracking-wider uppercase md:w-auto w-full text-center md:text-left">
-              Seamless integration with
-            </p>
-            <div className="flex flex-wrap justify-center md:justify-end gap-x-10 gap-y-6 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-              <div className="flex items-center gap-2 font-semibold text-sm font-sans">
-                <iconify-icon
-                  icon="solar:linkedin-linear"
-                  className="text-xl"
-                ></iconify-icon>{" "}
-                LinkedIn
-              </div>
-              <div className="flex items-center gap-2 font-semibold text-sm font-sans">
-                <iconify-icon
-                  icon="solar:cloud-linear"
-                  className="text-xl text-[#00A1E0]"
-                ></iconify-icon>{" "}
-                Salesforce
-              </div>
-              <div className="flex items-center gap-2 font-semibold text-sm font-sans">
-                <iconify-icon
-                  icon="solar:phone-linear"
-                  className="text-xl text-[#25D366]"
-                ></iconify-icon>{" "}
-                WhatsApp
-              </div>
-              <span className="font-sans text-sm font-bold tracking-tight text-[#1A1A1A]">
-                Bloomberg
-              </span>
-              <span className="font-sans text-sm font-bold tracking-tight text-[#1A1A1A]">
-                Outlook
-              </span>
-            </div>
-          </div>
-        </section>
+        <IntegrationsLogos />
 
         {/* PAIN POINT SECTION */}
         <section
