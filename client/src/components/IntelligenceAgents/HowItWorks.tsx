@@ -64,8 +64,8 @@ const HowItWorks: React.FC = () => {
             <h2 className="font-sans text-3xl md:text-5xl font-semibold text-[#1A1A1A] tracking-tight mb-2">
               How It Works
             </h2>
-            <p className="text-subtle text-base md:text-lg max-w-md mx-auto">
-              From setup to delegation in 30 days.
+            <p className="text-subtle text-base md:text-lg max-w-xl mx-auto font-light">
+              We build, connect, and train agents specifically for your data ecosystem.
             </p>
           </div>
 
@@ -114,10 +114,11 @@ const HowItWorks: React.FC = () => {
                         </div>
                         <div className="w-[42%] pl-4 md:pl-8">
                           {step.id === '03' ? (
-                            <span className="inline-flex items-center gap-1.5 px-2 py-1 md:px-3 md:py-1.5 rounded bg-[#25D366] text-white text-[10px] md:text-xs font-semibold shadow-lg">
-                              <iconify-icon icon="solar:chat-round-linear"></iconify-icon>
-                              <span>{step.tag}</span>
-                            </span>
+                            <div className="inline-flex items-center gap-2 md:gap-3 bg-[#25D366]/10 p-2 md:p-2.5 rounded-xl border border-[#25D366]/20">
+                              <iconify-icon icon="fa6-brands:whatsapp" className="text-lg md:text-xl text-[#25D366]"></iconify-icon>
+                              <iconify-icon icon="fa6-brands:slack" className="text-lg md:text-xl text-[#4A154B]"></iconify-icon>
+                              <iconify-icon icon="fa6-brands:telegram" className="text-lg md:text-xl text-[#24A1DE]"></iconify-icon>
+                            </div>
                           ) : (
                             <div className="bg-white border border-border px-2 py-1 md:p-3 rounded shadow-sm inline-block">
                               <span className="text-[10px] md:text-xs font-medium text-[#1A1A1A]">{step.tag}</span>
@@ -128,9 +129,17 @@ const HowItWorks: React.FC = () => {
                     ) : (
                       <>
                         <div className="w-[42%] text-right pr-4 md:pr-8">
-                          <div className="bg-white border border-border px-2 py-1 md:p-3 rounded shadow-sm inline-block">
-                            <span className="text-[10px] md:text-xs font-medium text-[#1A1A1A]">{step.tag}</span>
-                          </div>
+                          {step.id === '02' ? (
+                            <div className="inline-flex items-center justify-end gap-2 md:gap-3 bg-[#D4A574]/10 p-2 md:p-2.5 rounded-xl border border-[#D4A574]/20">
+                              <iconify-icon icon="fa6-brands:linkedin-in" className="text-lg md:text-xl text-[#0077B5]"></iconify-icon>
+                              <iconify-icon icon="solar:graph-up-linear" className="text-lg md:text-xl text-[#1A1A1A]"></iconify-icon>
+                              <iconify-icon icon="fa6-brands:google-drive" className="text-lg md:text-xl text-[#34A853]"></iconify-icon>
+                            </div>
+                          ) : (
+                            <div className="bg-white border border-border px-2 py-1 md:p-3 rounded shadow-sm inline-block">
+                              <span className="text-[10px] md:text-xs font-medium text-[#1A1A1A]">{step.tag}</span>
+                            </div>
+                          )}
                         </div>
                         <div className="relative shrink-0 z-10">
                           <div className={`w-3 h-3 md:w-4 md:h-4 rounded-full border transition-colors duration-300 ${isActive ? 'border-[#D4A574] bg-[#D4A574] shadow-[0_0_8px_rgba(212,165,116,0.5)]' : 'border-border bg-white'}`}></div>
