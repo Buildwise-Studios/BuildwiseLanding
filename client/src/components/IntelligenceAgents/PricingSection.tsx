@@ -85,9 +85,9 @@ const PricingSection: React.FC = () => {
 
   return (
     <section className="sm:px-6 lg:px-8 animate-fadeSlideIn z-10 max-w-7xl mx-auto pt-20 px-4 pb-16 relative" id="pricing">
-      <div className="relative overflow-hidden rounded-3xl ring-1 ring-white/10 bg-[#1A1A1A] backdrop-blur">
-        <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-brand/10 blur-3xl"></div>
-        <div className="pointer-events-none absolute -left-24 -bottom-24 h-72 w-72 rounded-full bg-brand/5 blur-3xl"></div>
+      <div className="relative overflow-hidden rounded-3xl ring-1 ring-white/10 bg-[#1A1A1A] backdrop-blur text-left">
+        <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#D4A574]/10 blur-3xl"></div>
+        <div className="pointer-events-none absolute -left-24 -bottom-24 h-72 w-72 rounded-full bg-[#D4A574]/5 blur-3xl"></div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
           {/* LEFT: Copy + Plan list */}
@@ -160,7 +160,7 @@ const PricingSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="text-xs text-brand/80 font-mono mt-[-10px] text-center sm:text-left">
+            <div className="text-xs text-[#D4A574]/80 font-mono mt-[-10px] text-center sm:text-left">
               + HKD 50k Setup Fee
             </div>
 
@@ -174,7 +174,7 @@ const PricingSection: React.FC = () => {
               <ul className="space-y-3 text-sm text-zinc-100">
                 {currentPlan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <iconify-icon icon="solar:check-circle-linear" className="text-lg text-brand mt-0.5"></iconify-icon>
+                    <iconify-icon icon="solar:check-circle-linear" className="text-lg text-[#D4A574] mt-0.5"></iconify-icon>
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -182,12 +182,13 @@ const PricingSection: React.FC = () => {
 
               <div className="mt-6 pt-4 border-t border-white/10 text-[12px] text-zinc-300/90 text-center sm:text-left flex items-center justify-between">
                 <span>{currentPlan.roi}</span>
-                <a href="#" className="underline decoration-white/30 hover:decoration-brand hover:text-brand transition-colors">Setup Details</a>
+                <a href="#" className="underline decoration-white/30 hover:decoration-[#D4A574] hover:text-[#D4A574] transition-colors">Setup Details</a>
               </div>
 
               <div className="mt-6">
-                <a href="#join" className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#D4A574] text-[#2D1B10] hover:bg-white h-11 px-5 text-sm font-semibold transition shadow-[0_8px_24px_-8px_rgba(212,165,116,0.25)]">
-                  Book Setup Call
+                <a href="#join" className="group relative overflow-hidden inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#D4A574] text-[#2D1B10] h-11 px-5 text-sm font-bold transition shadow-[0_8px_24px_-8px_rgba(212,165,116,0.25)]">
+                  <div className="shimmer-layer absolute inset-0 transform -translateX-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer z-10 transition-transform"></div>
+                  <span className="relative z-20 font-bold">Book Setup Call</span>
                 </a>
               </div>
             </div>

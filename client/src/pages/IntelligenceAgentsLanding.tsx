@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Egg } from "lucide-react";
-import Background3D from "@/components/IntelligenceAgents/Background3D";
 import KnowledgeGraph3D from "@/components/IntelligenceAgents/KnowledgeGraph3D";
+// import Background3D from "@/components/IntelligenceAgents/Background3D";
 import HeroAnimation from "@/components/IntelligenceAgents/HeroAnimation";
 import HowItWorks from "@/components/IntelligenceAgents/HowItWorks";
 import PricingSection from "@/components/IntelligenceAgents/PricingSection";
@@ -42,27 +42,27 @@ const IntelligenceAgentsLanding: React.FC = () => {
         <nav className="hidden md:flex items-center gap-8">
           <a
             href="#pricing"
-            className="text-xs font-medium text-subtle hover:text-[#1A1A1A] transition-colors"
+            className="text-[14px] font-medium text-subtle hover:text-[#1A1A1A] transition-colors"
           >
             Agents
           </a>
           <a
             href="#process"
-            className="text-xs font-medium text-subtle hover:text-[#1A1A1A] transition-colors"
+            className="text-[14px] font-medium text-subtle hover:text-[#1A1A1A] transition-colors"
           >
             How It Works
           </a>
           <a
             href="#pricing"
-            className="text-xs font-medium text-subtle hover:text-[#1A1A1A] transition-colors"
+            className="text-[14px] font-medium text-subtle hover:text-[#1A1A1A] transition-colors"
           >
             Pricing
           </a>
         </nav>
 
         <div className="flex items-center gap-4">
-          <button className="group relative overflow-hidden bg-[#D4A574] text-[#2D1B10] text-xs font-semibold px-5 py-2 rounded shadow-sm ring-1 ring-white/10 transition-all hover:scale-[1.02] hover:shadow-md active:scale-[0.98]">
-            <div className="shimmer-layer absolute inset-0 transform -translateX-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer z-10"></div>
+          <button className="group relative overflow-hidden bg-[#D4A574] text-[#2D1B10] text-xs font-bold px-5 py-2 rounded shadow-sm ring-1 ring-white/10 transition-all hover:scale-[1.02] hover:shadow-md active:scale-[0.98]">
+            <div className="shimmer-layer absolute inset-0 transform -translateX-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer z-10 transition-transform"></div>
             <span className="relative z-20">Book Setup Call</span>
           </button>
         </div>
@@ -99,8 +99,9 @@ const IntelligenceAgentsLanding: React.FC = () => {
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              <button className="group relative bg-[#D4A574] text-[#2D1B10] text-sm font-medium px-8 py-3.5 rounded shadow-lg shadow-[#D4A574]/20 transition-all hover:-translate-y-0.5 hover:shadow-xl flex items-center gap-2">
-                <span>Book Your Setup Call</span>
+              <button className="group relative overflow-hidden bg-[#D4A574] text-[#2D1B10] text-sm font-bold px-8 py-3.5 rounded shadow-lg shadow-[#D4A574]/20 transition-all hover:-translate-y-0.5 hover:shadow-xl flex items-center gap-2">
+                <div className="shimmer-layer absolute inset-0 transform -translateX-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer z-10 transition-transform"></div>
+                <span className="relative z-20">Book Your Setup Call</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -111,7 +112,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="transition-transform group-hover:translate-x-1"
+                  className="transition-transform group-hover:translate-x-1 relative z-20"
                 >
                   <path d="M5 12h14"></path>
                   <path d="m12 5 7 7-7 7"></path>
@@ -309,9 +310,10 @@ const IntelligenceAgentsLanding: React.FC = () => {
                 <div className="mt-8">
                   <a
                     href="#pricing"
-                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#D4A574] text-[#2D1B10] px-6 py-3 text-sm font-semibold hover:bg-white transition-all shadow-[0_0_20px_rgba(212,165,116,0.2)]"
+                    className="group relative overflow-hidden inline-flex items-center justify-center gap-2 rounded-lg bg-[#D4A574] text-[#2D1B10] px-6 py-3 text-sm font-bold transition-all shadow-[0_0_20px_rgba(212,165,116,0.2)]"
                   >
-                    Book Set Up Call
+                    <div className="shimmer-layer absolute inset-0 transform -translateX-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer z-10 transition-transform"></div>
+                    <span className="relative z-20 font-bold">Book Set Up Call</span>
                   </a>
                 </div>
               </div>
