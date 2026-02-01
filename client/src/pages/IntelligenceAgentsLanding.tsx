@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Egg } from "lucide-react";
 import Background3D from "@/components/IntelligenceAgents/Background3D";
+import KnowledgeGraph3D from "@/components/IntelligenceAgents/KnowledgeGraph3D";
 import HeroAnimation from "@/components/IntelligenceAgents/HeroAnimation";
 import HowItWorks from "@/components/IntelligenceAgents/HowItWorks";
 import PricingSection from "@/components/IntelligenceAgents/PricingSection";
@@ -22,7 +23,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
           style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}
         ></div>
       </div>
-      <Background3D />
+      <KnowledgeGraph3D />
 
       {/* Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 w-full px-6 py-4 md:px-12 flex justify-between items-center bg-white/80 backdrop-blur-md border-b border-border/50 transition-all duration-300">
