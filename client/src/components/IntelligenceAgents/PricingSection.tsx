@@ -24,7 +24,7 @@ const plans: Record<PlanId, Plan> = {
       'Monitors LinkedIn job changes',
       'Tracks Bloomberg terminal alerts',
       'Flags placement opportunities',
-      'Daily WhatsApp briefings',
+      'Daily briefings via your usual chat app (WhatsApp, Slack or Telegram)',
       'Auto-updates org charts'
     ]
   },
@@ -36,7 +36,7 @@ const plans: Record<PlanId, Plan> = {
     price: 'HKD 10k',
     roi: 'Saves ~10-15 hrs/partner/mo',
     features: [
-      'WhatsApp voice commands',
+      'Chat interface via WhatsApp, Slack or Telegram',
       'Formats PowerPoints & Excel',
       'Email & calendar coordination',
       'Document retrieval',
@@ -51,7 +51,7 @@ const plans: Record<PlanId, Plan> = {
     price: 'HKD 8k',
     roi: 'Saves ~8-12 hrs/partner/mo',
     features: [
-      'Updates CRM via WhatsApp',
+      'Updates CRM via your usual chat app (WhatsApp, Slack or Telegram)',
       'Syncs market intelligence',
       'Logs meeting outcomes',
       'Pulls pipeline reports',
@@ -68,8 +68,6 @@ const plans: Record<PlanId, Plan> = {
     features: [
       'All Market, Office, & CRM Agents',
       'Cross-agent intelligence syncing',
-      'Unified ROI Analysis Dashboard',
-      'Priority 24/7 Support',
       'Save HKD 60k/yr vs Individual'
     ]
   }
@@ -182,7 +180,7 @@ const PricingSection: React.FC = () => {
 
               <div className="mt-6 pt-4 border-t border-white/10 text-[12px] text-zinc-300/90 text-center sm:text-left flex items-center justify-between">
                 <span>{currentPlan.roi}</span>
-                <a href="#" className="underline decoration-white/30 hover:decoration-[#D4A574] hover:text-[#D4A574] transition-colors">Setup Details</a>
+                <a href="#process" className="underline decoration-white/30 hover:decoration-[#D4A574] hover:text-[#D4A574] transition-colors">Setup Details</a>
               </div>
 
               <div className="mt-6">
