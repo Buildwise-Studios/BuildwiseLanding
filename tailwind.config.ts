@@ -44,6 +44,11 @@ export default {
         border: "var(--border)",
         input: "var(--input)",
         ring: "var(--ring)",
+        brand: "#64B5B5",
+        obsidian: "#0F172A",
+        subtle: "#64748B",
+        canvas: "#FAFAFA",
+        danger: "#EF4444",
         chart: {
           "1": "var(--chart-1)",
           "2": "var(--chart-2)",
@@ -79,10 +84,34 @@ export default {
             height: "0",
           },
         },
+        shimmer: {
+          "100%": {
+            transform: "translateX(100%)",
+          },
+        },
+        popIn: {
+          to: {
+            opacity: "1",
+            transform: "scale(1) translateY(0)",
+          },
+        },
+        fadeSlideIn: {
+          from: {
+            opacity: "0",
+            transform: "translateY(10px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        shimmer: "shimmer 2s infinite",
+        popIn: "popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards",
+        fadeSlideIn: "fadeSlideIn 0.8s ease-out 0.1s both",
       },
     },
   },
