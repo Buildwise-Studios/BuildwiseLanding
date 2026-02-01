@@ -1,6 +1,5 @@
 import { Search, Lightbulb, Code, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import jasonImage from "@assets/jason.png";
 
 // images
 import mvp from "@/assets/mvp.png";
@@ -11,69 +10,69 @@ import traffic from "@/assets/traffic.png";
 const steps = [
   {
     number: 1,
-    title: "Test your idea Fast",
+    title: "We Identify High-Value Workflows",
     icon: Search,
     image: mvp,
     features: [
       {
-        title: "Test Your Idea Fast",
+        title: "Workflow Analysis",
         description:
-          "The goal is to find the quickest way to confront your idea with the market.",
+          "We study industries with repetitive, high-value workflows—like executive search partners spending 20 hours/week on LinkedIn tracking, or lawyers spending 15 hours/week on contract review.",
       },
       {
-        title: "Audience First",
+        title: "ROI Assessment",
         description:
-          "Who are your first users, and where can you find them? We answer these questions before building anything.",
+          "We prioritize workflows where AI saves 20+ hours/month per user based on time savings, cost reduction, and strategic value to your organization.",
       },
       {
-        title: "The MVP of your MVP",
+        title: "Integration Ready",
         description:
-          "We identify the ONE feature that makes the difference. Your MVP should do ONE thing and do it really well.",
+          "Our agents are designed to integrate seamlessly with your existing tools and systems from day one.",
       },
     ],
   },
   {
     number: 2,
-    title: "Roadmap",
+    title: "We Build Vertical-Specific Agents",
     icon: Lightbulb,
     image: roadmap,
     features: [
       {
-        title: "We agree on a launch date",
+        title: "Domain Expertise",
         description:
-          "This drives the project timeline and keeps the focus on your MVP's core value. No endless development or unnecessary features.",
+          "No generic chatbots. Our Intelligence Agents for executive search are trained on finance sector org charts, Bloomberg alerts, and CRM workflows. Our Legal Agents (coming Q2) are trained on contract clauses, case law, and client communication patterns.",
       },
       {
-        title: "We define the User Journey",
-        description: "This is validated before development begins.",
+        title: "Multi-Agent Orchestration",
+        description: "Complex workflows are handled by coordinated teams of specialized agents working together.",
       },
       {
-        title: "What You See Is What You Get",
+        title: "Human-in-the-Loop",
         description:
-          "We finalize the design so you know exactly what to expect, no surprises.",
+          "Agents escalate to human experts when needed, ensuring quality and maintaining control over critical decisions.",
       },
     ],
   },
   {
     number: 3,
-    title: "Rapid Development",
+    title: "You Deploy in 30 Days",
     icon: Code,
     image: rapidDev,
     features: [
       {
-        title: "Light Architecture",
+        title: "Rapid Implementation",
         description:
-          "We use automation tools and efficient frameworks to integrate APIs seamlessly.",
+          "Setup, integration, training, optimization—done in 30 days. Your team starts delegating tasks via WhatsApp (no new tools to learn). Agents integrate with your existing CRM, email, and workflows from day one.",
       },
       {
-        title: "AI-Assisted Development",
+        title: "Continuous Learning",
         description:
-          "Our tools use AI in various forms to speed up development and streamline content creation.",
+          "Agents improve over time by learning from interactions and feedback, becoming more efficient and accurate.",
       },
       {
-        title: "Minimalist Frontend Approach",
+        title: "Scalable Architecture",
         description:
-          "Focus on chat interfaces and clean, simple designs for a faster build and better user experience.",
+          "Built to grow with your business, easily adding new capabilities and handling increased workload.",
       },
     ],
   },
@@ -86,11 +85,10 @@ export default function Approach() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 break-words">
-            Our Approach
+            How It Works
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
-            We follow a proven 3-step process to turn your idea into a
-            market-ready MVP.
+            We follow a proven 3-step process to deploy AI agents that transform your business workflows.
           </p>
         </div>
 
@@ -143,23 +141,29 @@ export default function Approach() {
         <div className="text-center mt-16 w-full">
           <div className="bg-gray-50 rounded-2xl p-6 sm:p-8 w-full">
             <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 break-words">
-              Ready to Start Your MVP Journey?
+              Ready to Save 20+ Hours Per Month?
             </h3>
             <p className="text-sm sm:text-base text-gray-600 mb-6 max-w-2xl mx-auto px-4 break-words">
-              Let our AI Product Manager help you define your project scope and get started with a clear roadmap.
+              Book a 30-minute call to see how AI agents fit your workflows—or scope your use case with Jason in 10 minutes.
             </p>
-            <Button
-              size="lg"
-              className="bg-teal-500 hover:bg-teal-600 text-white px-6 sm:px-8 py-5 text-sm sm:text-lg font-semibold w-full sm:w-auto flex items-center justify-center gap-3"
-              onClick={() => window.location.href = '/ai-product-manager'}
-            >
-              <img 
-                src={jasonImage} 
-                alt="Jason AI Agent" 
-                className="hidden min-[390px]:block h-7 w-7 sm:h-9 sm:w-9 rounded-full object-cover flex-shrink-0" 
-              />
-              <span className="text-center leading-tight">Scope your project with Jason, our AI agent</span>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="bg-teal-500 hover:bg-teal-600 text-white px-6 sm:px-8 py-5 text-sm sm:text-lg font-semibold w-full sm:w-auto flex items-center justify-center gap-3"
+                onClick={() => window.location.href = 'https://calendly.com/charles-buildwise/30min'}
+              >
+                <Rocket className="hidden min-[390px]:block h-7 w-7 sm:h-9 sm:w-9 rounded-full object-cover flex-shrink-0" />
+                <span className="text-center leading-tight">Book Setup Call</span>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-teal-600 border-teal-600 hover:bg-teal-50 px-6 sm:px-8 py-5 text-sm sm:text-lg font-semibold w-full sm:w-auto flex items-center justify-center gap-3"
+                onClick={() => window.location.href = '/ai-product-manager'}
+              >
+                <span className="text-center leading-tight">Talk to Jason</span>
+              </Button>
+            </div>
           </div>
         </div>
       </div>

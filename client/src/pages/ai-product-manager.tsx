@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BotBadge } from "@/components/ui/bot-badge";
 import { RealtimeChat } from "@/components/realtime-chat";
+// TODO: Add jason.png asset before merging - referenced in AI Product Manager
 import jasonImage from "@assets/jason.png";
 import {
   ArrowLeft,

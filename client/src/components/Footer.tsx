@@ -27,9 +27,7 @@ export default function Footer() {
               <span className="text-xl font-bold">Buildwise</span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
-              We are a consulting and development agency specialized in creating
-              MVPs. We leverage AI, low-code approaches, and rapid development
-              to help you test your market quickly and cost-effectively.
+              Powered by AI. Built in Hong Kong.
             </p>
             <div className="flex space-x-4">
               <a
@@ -71,23 +69,23 @@ export default function Footer() {
                   onClick={() => scrollToSection("approach")}
                   className="text-gray-300 hover:text-teal-500 transition-colors"
                 >
-                  Our Approach
+                  How It Works
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection("services")}
+                  onClick={() => scrollToSection("verticals")}
                   className="text-gray-300 hover:text-teal-500 transition-colors"
                 >
-                  Services
+                  Verticals
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection("projects")}
+                  onClick={() => scrollToSection("intelligence-agents")}
                   className="text-gray-300 hover:text-teal-500 transition-colors"
                 >
-                  Projects
+                  Agents in Action
                 </button>
               </li>
               <li>
