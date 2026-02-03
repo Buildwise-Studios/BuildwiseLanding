@@ -32,7 +32,7 @@ export default function Team() {
             Meet the Team
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
-            We're a compact, agile team with diverse expertise and a shared passion for building innovative, AI-powered MVPs. 
+            We're a compact, agile team with diverse expertise and a shared passion for building AI agents that transform professional services.
             Here's how we help you succeed:
           </p>
         </div>

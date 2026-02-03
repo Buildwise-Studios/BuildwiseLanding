@@ -4,33 +4,33 @@ import { ChevronDown } from "lucide-react";
 const faqs = [
   {
     id: "faq1",
-    question: "What are the advantages of developing an MVP with your agency?",
-    answer: "Developing an MVP (Minimum Viable Product) with our agency allows you to quickly test your idea in the market with minimal initial investment. This approach helps you validate core hypotheses, gather user feedback effectively, and iterate before committing to a full product development cycle.",
+    question: "What are AI agents and how do they help professional service firms?",
+    answer: "AI agents are autonomous software assistants that handle repetitive, time-consuming tasks like monitoring LinkedIn for job changes, tracking market intelligence, updating CRMs, and notifying your team of opportunities. They work 24/7, never take holidays, and can save partners 20+ hours per month while capturing opportunities that would otherwise be missed.",
   },
   {
     id: "faq2",
-    question: "What is the development process you follow for an MVP?",
-    answer: "Our development process follows four key phases: Discovery & Analysis (market research and requirements gathering), Design & Planning (wireframes and technical architecture), Development & Iteration (agile development with AI-powered tools), and Launch & Support (market launch with ongoing support and monitoring).",
+    question: "What is the setup process for implementing AI agents?",
+    answer: "Our implementation follows three phases: 1) Setup Call where we map your workflow and identify ROI opportunities, 2) 30-Day Integration where we build, connect, and train your agents with your tools (Salesforce, LinkedIn, etc.), and 3) Optimization where we fine-tune based on your feedback. Most firms are fully operational within 30 days.",
   },
   {
     id: "faq3",
-    question: "What types of technologies do you use for MVP development?",
-    answer: "We use modern, scalable technologies including React, Next.js, Node.js, Python, AWS cloud infrastructure, MongoDB, Supabase, TypeScript, PydanticAI, LangGraph and other AI tools. Our tech stack is carefully selected based on your specific project requirements to ensure optimal performance and future scalability.",
+    question: "What tools and platforms do your AI agents integrate with?",
+    answer: "Our agents integrate with professional services tools including Salesforce, LinkedIn Sales Navigator, HubSpot, Slack, Microsoft Teams, email systems, and various data sources like Bloomberg terminals. If your tool has an API, we can integrate with it. We also support custom CRMs and proprietary systems.",
   },
   {
     id: "faq4",
-    question: "How do you handle user feedback after MVP launch?",
-    answer: "We implement comprehensive analytics and feedback collection systems from day one. We help you analyze user behavior, gather qualitative feedback, and prioritize feature improvements. Our ongoing support includes regular performance reviews and strategic guidance for product evolution based on real user data.",
+    question: "How do you ensure data security and compliance?",
+    answer: "We implement enterprise-grade security including end-to-end encryption, SOC 2 Type II compliance, GDPR adherence, and regular security audits. Our agents operate within your existing security infrastructure and never store sensitive data. We also provide comprehensive audit trails and access controls for regulated industries.",
   },
   {
     id: "faq5",
-    question: "Do you offer support services after MVP launch?",
-    answer: "Yes, we provide comprehensive post-launch support including technical maintenance, performance monitoring, security updates, feature enhancements, and strategic consultation. We also offer growth hacking services, fundraising support, and B2B sales optimization to help scale your MVP into a successful business.",
+    question: "What kind of ROI can we expect from AI agents?",
+    answer: "Most executive search firms see ROI within 2-3 months. Our Market Intelligence Agent alone saves ~15-20 hours per partner monthly. The Office Automation Agent saves another 10-15 hours, and the Salesforce Intelligence Agent saves 8-12 hours. Combined, that's 40+ hours per partner per month - equivalent to adding a junior assistant without the HR overhead.",
   },
   {
     id: "faq6",
-    question: "What is the average cost to develop an MVP with your agency?",
-    answer: "MVP development costs vary significantly based on complexity, features, and specific requirements. We offer flexible pricing models including fixed-price packages for standard MVPs and custom quotes for complex projects. Contact us for a detailed estimate based on your specific needs and budget constraints.",
+    question: "Can we start with one agent and add more later?",
+    answer: "Absolutely. Most firms start with the Market Intelligence Agent (highest ROI at HKD 12k/month), then add Office Automation and Salesforce Intelligence agents as they see results. This modular approach lets you validate value before expanding. We also offer a bundle at HKD 25k/month that includes all three agents plus cross-agent intelligence syncing.",
   },
 ];
 
@@ -53,8 +53,8 @@ export default function FAQ() {
             Frequently Asked Questions
           </h2>
           <p className="text-base sm:text-lg text-teal-100 max-w-3xl mx-auto px-4">
-            Get answers to the most common questions about our MVP development
-            process.
+            Get answers to the most common questions about our AI agents and how
+            they can transform your professional services firm.
           </p>
         </div>
 
