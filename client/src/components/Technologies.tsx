@@ -98,8 +98,8 @@ export default function Technologies() {
             Technologies We Use
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We leverage technologies and frameworks that we know well to build
-            scalable, efficient MVPs.
+            We leverage modern AI technologies and frameworks to build
+            intelligent agents that integrate seamlessly with your professional services tools.
           </p>
         </div>
 

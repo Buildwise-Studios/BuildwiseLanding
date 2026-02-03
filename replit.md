@@ -1,7 +1,7 @@
-# Buildwise - MVP Development Studio
+# Buildwise - AI Agent Studio for Professional Services
 
 ## Project Overview
-Buildwise is a modern MVP development studio website built with React, TypeScript, and Vite. The application serves as a marketing and business showcase for an AI-powered development agency specializing in rapid MVP creation. It features a clean, modern design with comprehensive UI components, real-time chat functionality, and integration with external services for lead generation and communication.
+Buildwise is an AI Agent Studio website built with React, TypeScript, and Vite. The application serves as a marketing and business showcase for an AI agents platform specializing in professional services automation. It features a clean, modern design with comprehensive UI components, real-time chat functionality, and integration with external services for lead generation and communication. AI agents automate repetitive tasks for executive search, legal, and consulting firms, saving 20+ hours per partner per month.
 
 ## User Preferences
 

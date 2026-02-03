@@ -11,8 +11,8 @@ const testimonials = [
   },
   {
     name: "Bosco Wang.",
-    title: "Early Stage Startup Founder",
-    content: "Technical co-founder backed out 3 weeks before my Cyberport incubation application was due. Buildwise delivered a working MVP that made me confident for the pitch. And I got in!!!",
+    title: "Executive Search Partner",
+    content: "My team was spending 15+ hours per week manually tracking LinkedIn changes and updating CRMs. Buildwise AI agents now handle all of that automatically—we capture opportunities we would have missed and our partners focus on relationships instead of admin work.",
     image: "https://images.unsplash.com/photo-1487309078313-fad80c3ec1e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
     rating: 5,
   },
