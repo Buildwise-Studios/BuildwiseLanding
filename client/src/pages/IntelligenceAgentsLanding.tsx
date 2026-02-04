@@ -75,7 +75,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
           <button
             onClick={() => {
               trackWTPDiscovery('navigation', 'jason_wtp');
-              window.open('/ai-product-manager', '_blank', 'noopener,noreferrer');
+              window.open('https://calendly.com/charles-buildwise/30min', '_blank', 'noopener,noreferrer');
             }}
             className="group relative overflow-hidden bg-[#D4A574] text-[#2D1B10] text-xs font-bold px-5 py-2 rounded shadow-sm ring-1 ring-white/10 transition-all hover:scale-[1.02] hover:shadow-md active:scale-[0.98]">
             <div className="shimmer-layer absolute inset-0 transform -translateX-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer z-10 transition-transform"></div>

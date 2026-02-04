@@ -117,7 +117,7 @@ const FAQSection: React.FC = () => {
             </button>
             <button onClick={() => {
               trackWTPDiscovery('faq', 'assessment');
-              window.open('/ai-product-manager', '_blank', 'noopener,noreferrer');
+              window.open('https://calendly.com/charles-buildwise/30min', '_blank', 'noopener,noreferrer');
             }} className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-white text-[#1A1A1A] px-8 py-4 text-sm font-semibold hover:bg-slate-50 transition">
               <Calendar className="h-4 w-4" />
               Schedule Demo
