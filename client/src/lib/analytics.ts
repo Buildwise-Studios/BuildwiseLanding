@@ -57,7 +57,7 @@ export function trackEvent(eventName: string, params: AnalyticsParams): void {
  * @param entryPoint - Where user entered WTP flow
  * @param path - Which WTP path they took
  */
-export function trackWTPDiscovery(entryPoint: 'hero' | 'problem' | 'faq' | 'navigation', path: 'partnership' | 'capacity' | 'assessment'): void {
+export function trackWTPDiscovery(entryPoint: 'hero' | 'problem' | 'faq' | 'navigation', path: 'partnership' | 'capacity' | 'assessment' | 'jason_wtp'): void {
   trackEvent(AnalyticsEvent.CLICK, {
     event_category: AnalyticsCategory.WTP_DISCOVERY,
     event_label: `${entryPoint}_${path}`,
