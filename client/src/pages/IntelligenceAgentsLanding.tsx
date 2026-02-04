@@ -2,13 +2,20 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Egg } from "lucide-react";
 import KnowledgeGraph3D from "@/components/IntelligenceAgents/KnowledgeGraph3D";
+import { trackWTPDiscovery } from "@/lib/analytics";
 // import Background3D from "@/components/IntelligenceAgents/Background3D";
 import HeroAnimation from "@/components/IntelligenceAgents/HeroAnimation";
 import HowItWorks from "@/components/IntelligenceAgents/HowItWorks";
-import PricingSection from "@/components/IntelligenceAgents/PricingSection";
+import ValueDiscoverySection from "@/components/IntelligenceAgents/ValueDiscoverySection";
 import TestimonialsSection from "@/components/IntelligenceAgents/TestimonialsSection";
 import FAQSection from "@/components/IntelligenceAgents/FAQSection";
 import IntegrationsLogos from "@/components/IntelligenceAgents/IntegrationsLogos";
+
+declare global {
+  interface Window {
+    gtag?: (command: string, action: string, params?: Record<string, any>) => void;
+  }
+}
 
 const IntelligenceAgentsLanding: React.FC = () => {
   return (
@@ -41,10 +48,10 @@ const IntelligenceAgentsLanding: React.FC = () => {
 
         <nav className="hidden md:flex items-center gap-8">
           <a
-            href="#pricing"
+            href="#intelligence-agents"
             className="text-[14px] font-medium text-subtle hover:text-[#1A1A1A] transition-colors"
           >
-            Agents
+            Intelligence
           </a>
           <a
             href="#process"
@@ -53,10 +60,10 @@ const IntelligenceAgentsLanding: React.FC = () => {
             How It Works
           </a>
           <a
-            href="#pricing"
+            href="#value-discovery"
             className="text-[14px] font-medium text-subtle hover:text-[#1A1A1A] transition-colors"
           >
-            Pricing
+            Value Discovery
           </a>
         </nav>
 
@@ -99,28 +106,24 @@ const IntelligenceAgentsLanding: React.FC = () => {
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              <button className="group relative overflow-hidden bg-[#D4A574] text-[#2D1B10] text-sm font-bold px-8 py-3.5 rounded shadow-lg shadow-[#D4A574]/20 transition-all hover:-translate-y-0.5 hover:shadow-xl flex items-center gap-2">
+              <button
+                id="discuss-partnership"
+                onClick={() => {
+                  trackWTPDiscovery('hero', 'partnership');
+                  window.location.href = 'https://calendly.com/charles-buildwise/partnership-strategy-call';
+                }}
+                className="group relative overflow-hidden bg-[#D4A574] text-[#2D1B10] text-sm font-bold px-8 py-3.5 rounded shadow-lg shadow-[#D4A574]/20 transition-all hover:-translate-y-0.5 hover:shadow-xl flex items-center gap-2"
+              >
                 <div className="shimmer-layer absolute inset-0 transform -translateX-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer z-10 transition-transform"></div>
-                <span className="relative z-20">Book Your Setup Call</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="transition-transform group-hover:translate-x-1 relative z-20"
-                >
+                <span className="relative z-20">Discuss Partnership Opportunity</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1 relative z-20">
                   <path d="M5 12h14"></path>
                   <path d="m12 5 7 7-7 7"></path>
                 </svg>
               </button>
               <div className="text-xs text-subtle font-medium px-4 text-left">
-                <span className="block">HKD 50k Setup</span>
-                <span className="text-[#D4A574]">30-Day Integration</span>
+                <span className="block">Global Executive Search</span>
+                <span className="text-[#D4A574]">Partnership Discovery</span>
               </div>
             </div>
           </div>
@@ -168,8 +171,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
                   The Daily Struggle
                 </p>
                 <p className="text-xl md:text-2xl font-medium text-[#1A1A1A] mb-10 leading-snug">
-                  Every day, your partners spend hours on administrative tasks
-                  instead of relationships:
+                  Partners waste <span className="text-[#D4A574]">25+ hours per partner monthly</span> on admin tasks that generate zero relationship value:
                 </p>
 
                 <ul className="space-y-8">
@@ -235,10 +237,10 @@ const IntelligenceAgentsLanding: React.FC = () => {
                     </div>
                     <div>
                       <div className="text-3xl md:text-4xl font-mono font-medium text-[#1A1A1A] tracking-tighter mb-2">
-                        HKD 25,000
+                        25+ hours
                       </div>
                       <p className="text-subtle font-medium">
-                        In billable time wasted monthly.
+                        Of partner time redirected to client relationships monthly.
                       </p>
                     </div>
                     <div className="pt-4">
@@ -260,9 +262,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
                   <ul className="space-y-4 text-subtle">
                     <li className="flex items-center gap-3">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]"></span>
-                      <span>
-                        Costs <strong>HKD 20,000+</strong> / month
-                      </span>
+                      <span>Overhead of training, management, and retention</span>
                     </li>
                     <li className="flex items-center gap-3">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]"></span>
@@ -280,10 +280,25 @@ const IntelligenceAgentsLanding: React.FC = () => {
                 </div>
               </div>
             </div>
+
+            <div className="mt-12 pt-8 border-t border-border">
+              <a
+                href="https://calendly.com/charles-buildwise/partnership-capacity-analysis"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-flex items-center gap-2 bg-[#D4A574] text-[#2D1B10] px-6 py-3 rounded-lg text-sm font-bold hover:bg-[#D4A574]/90 transition"
+                onClick={() => trackWTPDiscovery('problem', 'capacity')}
+              >
+                <span>Calculate Your Partner Time Liberation</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1">
+                  <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
           </div>
         </section>
 
-        <PricingSection />
+        <ValueDiscoverySection />
 
         <HowItWorks />
 

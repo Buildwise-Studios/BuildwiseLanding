@@ -5,7 +5,7 @@ import { Plus, Minus, MessageCircle, Calendar } from 'lucide-react';
 const faqs = [
   {
     question: "How is this different from hiring a junior assistant?",
-    answer: "A junior assistant costs HKD 35k-45k/month, works 9-5, and handles one task at a time. Our agents cost HKD 25k/month for all three, work 24/7, and execute multiple tasks simultaneously. Plus, they never quit or need training."
+    answer: "A junior assistant works 9-5, takes holidays, and handles one task at a time requiring training and supervision. Our AI agents work 24/7 globally, handle multiple tasks simultaneously, and don't require ongoing training or vacation time. Plus, they're purpose-built for executive search intelligence work."
   },
   {
     question: "What if we don't use Salesforce?",
@@ -20,8 +20,8 @@ const faqs = [
     answer: "Absolutely. Most firms start with Market Intelligence Agent (highest ROI), then add Office and Salesforce agents as they see results."
   },
   {
-    question: "What's included in the HKD 50k setup fee?",
-    answer: "Full integration with your CRM/tools, agent customization for your firm's workflow, 30-day training period, and optimization based on partner feedback."
+    question: "What's included in the partnership development process?",
+    answer: "Full integration with your CRM/tools, agent customization for your firm's workflow, training on agent use, and ongoing optimization based on partner feedback. We work together to create the perfect fit for your operations."
   }
 ];
 
