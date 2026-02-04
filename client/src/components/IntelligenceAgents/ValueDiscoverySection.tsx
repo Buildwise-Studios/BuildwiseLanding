@@ -19,7 +19,7 @@ const ValueDiscoverySection: React.FC = () => {
 
           <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/ai-product-manager"
+              href="https://calendly.com/charles-buildwise/partnership-strategy-call"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative bg-[#D4A574] text-[#2D1B10] text-sm font-bold px-8 py-3.5 rounded shadow-lg shadow-[#D4A574]/20 transition-all hover:-translate-y-0.5 hover:shadow-xl flex items-center gap-2"
@@ -31,7 +31,7 @@ const ValueDiscoverySection: React.FC = () => {
             </a>
 
             <a
-              href="/ai-product-manager"
+              href="https://calendly.com/charles-buildwise/value-assessment-scoping"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative bg-white/10 text-white text-sm font-bold px-8 py-3.5 rounded ring-1 ring-white/20 transition-all hover:bg-white/20 flex items-center gap-2"

@@ -6,6 +6,10 @@ import { trackWTPDiscovery } from "@/lib/analytics";
 // import Background3D from "@/components/IntelligenceAgents/Background3D";
 import HeroAnimation from "@/components/IntelligenceAgents/HeroAnimation";
 import HowItWorks from "@/components/IntelligenceAgents/HowItWorks";
+// Background3D disabled for performance optimization
+// Note: KnowledgeGraph3D provides the 3D background effect
+// import Background3D from "@/components/IntelligenceAgents/Background3D";
+
 import ValueDiscoverySection from "@/components/IntelligenceAgents/ValueDiscoverySection";
 import TestimonialsSection from "@/components/IntelligenceAgents/TestimonialsSection";
 import FAQSection from "@/components/IntelligenceAgents/FAQSection";
@@ -69,12 +73,11 @@ const IntelligenceAgentsLanding: React.FC = () => {
 
         <div className="flex items-center gap-4">
           <button
-            className="group relative overflow-hidden bg-[#D4A574] text-[#2D1B10] text-xs font-bold px-5 py-2 rounded shadow-sm ring-1 ring-white/10 transition-all hover:scale-[1.02] hover:shadow-md active:scale-[0.98]"
             onClick={() => {
-              trackWTPDiscovery("navigation", "jason_wtp");
-              window.open("/ai-product-manager", "_blank", "noopener,noreferrer");
+              trackWTPDiscovery('navigation', 'partnership');
+              window.open('https://calendly.com/charles-buildwise/30min', '_blank', 'noopener,noreferrer');
             }}
-          >
+            className="group relative overflow-hidden bg-[#D4A574] text-[#2D1B10] text-xs font-bold px-5 py-2 rounded shadow-sm ring-1 ring-white/10 transition-all hover:scale-[1.02] hover:shadow-md active:scale-[0.98]">
             <div className="shimmer-layer absolute inset-0 transform -translateX-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer z-10 transition-transform"></div>
             <span className="relative z-20">Book Setup Call</span>
           </button>
@@ -94,8 +97,8 @@ const IntelligenceAgentsLanding: React.FC = () => {
             </div>
 
             <h1 className="font-sans text-5xl md:text-6xl lg:text-7xl font-medium tracking-tighter text-[#1A1A1A] leading-[1.05]">
-              Your Partners Are Wasting 20+ Hours Per Month on Work a Machine
-              Should Do
+              Your Partners Are Wasting 20+ Hours Per Month on Work Intelligence Agents 
+              Should Handle
             </h1>
 
             <p className="max-w-xl font-sans text-lg text-slate-600 font-light leading-relaxed">
@@ -115,8 +118,8 @@ const IntelligenceAgentsLanding: React.FC = () => {
               <button
                 id="discuss-partnership"
                 onClick={() => {
-                  trackWTPDiscovery("hero", "jason_wtp");
-                  window.open("/ai-product-manager", "_blank", "noopener,noreferrer");
+                  trackWTPDiscovery('hero', 'partnership');
+                  window.open('https://calendly.com/charles-buildwise/30min', '_blank', 'noopener,noreferrer');
                 }}
                 className="group relative overflow-hidden bg-[#D4A574] text-[#2D1B10] text-sm font-bold px-8 py-3.5 rounded shadow-lg shadow-[#D4A574]/20 transition-all hover:-translate-y-0.5 hover:shadow-xl flex items-center gap-2"
               >
@@ -243,10 +246,10 @@ const IntelligenceAgentsLanding: React.FC = () => {
                     </div>
                     <div>
                       <div className="text-3xl md:text-4xl font-mono font-medium text-[#1A1A1A] tracking-tighter mb-2">
-                        2-3 placements
+                        25+ hours
                       </div>
                       <p className="text-subtle font-medium">
-                        Additional annual capacity from time liberation
+                        Of partner time redirected to client relationships monthly.
                       </p>
                     </div>
                     <div className="pt-4">
@@ -288,31 +291,18 @@ const IntelligenceAgentsLanding: React.FC = () => {
             </div>
 
             <div className="mt-12 pt-8 border-t border-border">
-              <button
-                type="button"
+              <a
+                href="https://calendly.com/charles-buildwise/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative inline-flex items-center gap-2 bg-[#D4A574] text-[#2D1B10] px-6 py-3 rounded-lg text-sm font-bold hover:bg-[#D4A574]/90 transition"
-                onClick={() => {
-                  trackWTPDiscovery("problem", "jason_wtp");
-                  window.open("/ai-product-manager", "_blank", "noopener,noreferrer");
-                }}
+                onClick={() => trackWTPDiscovery('problem', 'capacity')}
               >
                 <span>Calculate Your Partner Time Liberation</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="transition-transform group-hover:translate-x-1"
-                >
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1">
+                  <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
                 </svg>
-              </button>
+              </a>
             </div>
           </div>
         </section>
@@ -343,11 +333,12 @@ const IntelligenceAgentsLanding: React.FC = () => {
                 </p>
                 <div className="mt-8">
                   <a
-                    href="#pricing"
+                    href="#value-discovery"
+                    onClick={() => trackWTPDiscovery('problem', 'partnership')}
                     className="group relative overflow-hidden inline-flex items-center justify-center gap-2 rounded-lg bg-[#D4A574] text-[#2D1B10] px-6 py-3 text-sm font-bold transition-all shadow-[0_0_20px_rgba(212,165,116,0.2)]"
                   >
                     <div className="shimmer-layer absolute inset-0 transform -translateX-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer z-10 transition-transform"></div>
-                    <span className="relative z-20 font-bold">Book Set Up Call</span>
+                    <span className="relative z-20 font-bold">Discuss Partnership</span>
                   </a>
                 </div>
               </div>
