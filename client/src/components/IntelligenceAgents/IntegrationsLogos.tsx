@@ -5,7 +5,7 @@ const integrations = [
   { name: 'Salesforce', icon: 'fa6-brands:salesforce', color: '#00A1E0' },
   { name: 'WhatsApp', icon: 'fa6-brands:whatsapp', color: '#25D366' },
   { name: 'Slack', icon: 'fa6-brands:slack', color: '#4A154B' },
-  { name: 'Bloomberg', icon: 'solar:graph-up-linear', color: '#1A1A1A' }, // Retained Solar icon
+  { name: 'Bloomberg', icon: null, color: '#1A1A1A', customIcon: 'bloomberg' },
   { name: 'Outlook', icon: 'fa6-brands:microsoft', color: '#0078D4' },
 ];
 
@@ -35,10 +35,14 @@ const IntegrationsLogos: React.FC = () => {
                 className="group relative flex items-center gap-4 px-6 py-4 rounded-2xl bg-white/70 border border-white/80 shadow-sm backdrop-blur-xl transition-all duration-500 hover:bg-white hover:scale-105 hover:shadow-2xl hover:border-[#D4A574]/40"
               >
                 <div
-                  className="text-2xl md:text-3xl text-slate-400 transition-all duration-300 group-hover:text-[var(--hover-color)] group-hover:drop-shadow-[0_0_8px_var(--hover-color)]"
+                  className="text-2xl md:text-3xl text-slate-400 transition-all duration-300 group-hover:text-[var(--hover-color)] group-hover:drop-shadow-[0_0_8px_var(--hover-color)] flex items-center justify-center"
                   style={{ '--hover-color': item.color } as React.CSSProperties}
                 >
-                  <iconify-icon icon={item.icon}></iconify-icon>
+                  {'customIcon' in item && item.customIcon === 'bloomberg' ? (
+                    <img src="/bloomberg-icon.svg" alt="Bloomberg" className="w-8 h-8 md:w-9 md:h-9 object-contain" aria-hidden />
+                  ) : item.icon != null ? (
+                    <iconify-icon icon={item.icon}></iconify-icon>
+                  ) : null}
                 </div>
                 <span className="text-sm md:text-base font-semibold text-slate-600 transition-colors duration-300 group-hover:text-[#1A1A1A]">
                   {item.name}

@@ -180,29 +180,21 @@ const IntelligenceAgentsLanding: React.FC = () => {
                   The Daily Struggle
                 </p>
                 <p className="text-xl md:text-2xl font-medium text-[#1A1A1A] mb-10 leading-snug">
-                  Partners waste <span className="text-[#D4A574]">25+ hours per partner monthly</span> on admin tasks that generate zero relationship value:
+                  Partners waste <span className="text-[#D4A574]">25+ hours per partner monthly</span> on admin that doesn't build relationships:
                 </p>
 
                 <ul className="space-y-8">
                   {[
                     {
-                      title: "Tracking executive movements",
+                      title: "Manually tracking executive movements",
                       desc: "across LinkedIn, Bloomberg, and industry news.",
                     },
                     {
-                      title: "Updating org charts",
-                      desc: "manually when someone moves firms.",
+                      title: "Manually logging CRM notes",
+                      desc: "after client meetings (often days later, from memory).",
                     },
                     {
-                      title: "Logging CRM notes",
-                      desc: "after client meetings (usually days later, from memory).",
-                    },
-                    {
-                      title: "Formatting PowerPoint decks",
-                      desc: "and Excel candidate trackers.",
-                    },
-                    {
-                      title: "Monitoring market intelligence",
+                      title: "Manually monitoring market intelligence",
                       desc: "to spot placement opportunities before competitors.",
                     },
                   ].map((item, idx) => (
@@ -235,76 +227,23 @@ const IntelligenceAgentsLanding: React.FC = () => {
                     The Real Cost
                   </h3>
 
-                  <div className="space-y-6">
+                  <div className="space-y-4">
                     <div>
                       <div className="text-4xl md:text-5xl font-mono font-medium text-[#1A1A1A] tracking-tighter mb-2">
-                        25+ hours
-                      </div>
-                      <p className="text-subtle font-medium">
-                        Available for redirection to high-value work
-                      </p>
-                    </div>
-                    <div>
-                      <div className="text-3xl md:text-4xl font-mono font-medium text-[#1A1A1A] tracking-tighter mb-2">
                         2-3 placements
                       </div>
                       <p className="text-subtle font-medium">
-                        Additional annual capacity from time liberation
+                        Additional annual capacity from time liberation—or 2-3 lost today to admin.
                       </p>
                     </div>
-                    <div className="pt-4">
-                      <p className="text-lg font-semibold text-danger">
-                        → 2-3 lost placements per year
-                      </p>
-                      <p className="text-sm text-subtle mt-1">
-                        Because they're doing admin instead of relationships.
-                      </p>
-                    </div>
+                    <p className="text-sm text-subtle pt-2">
+                      A junior hire means training, 9-5, and oversight—agents don't.
+                    </p>
                   </div>
-                </div>
-
-                <div className="relative pl-8 border-l-2 border-border">
-                  <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-subtle border-4 border-white"></div>
-                  <h3 className="text-xs font-bold tracking-widest text-subtle uppercase mb-6">
-                    And hiring a junior assistant?
-                  </h3>
-                  <ul className="space-y-4 text-subtle">
-                    <li className="flex items-center gap-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]"></span>
-                      <span>Overhead of training, management, and retention</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]"></span>
-                      <span>Works 9-5, takes holidays</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]"></span>
-                      <span>Handles one task at a time</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]"></span>
-                      <span>Requires partner oversight & training</span>
-                    </li>
-                  </ul>
                 </div>
               </div>
             </div>
 
-            <div className="mt-12 pt-8 border-t border-border">
-              <button
-                type="button"
-                className="group relative inline-flex items-center gap-2 bg-[#D4A574] text-[#2D1B10] px-6 py-3 rounded-lg text-sm font-bold hover:bg-[#D4A574]/90 transition"
-                onClick={() => {
-                  trackWTPDiscovery('problem', 'jason_wtp');
-                  window.open('/ai-product-manager', '_blank', 'noopener,noreferrer');
-                }}
-              >
-                <span>Calculate Your Partner Time Liberation</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1">
-                  <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </button>
-            </div>
           </div>
         </section>
 
