@@ -238,10 +238,10 @@ const IntelligenceAgentsLanding: React.FC = () => {
                   <div className="space-y-6">
                     <div>
                       <div className="text-4xl md:text-5xl font-mono font-medium text-[#1A1A1A] tracking-tighter mb-2">
-                        20-25 hrs
+                        25+ hours
                       </div>
                       <p className="text-subtle font-medium">
-                        Lost per month, per partner.
+                        Available for redirection to high-value work
                       </p>
                     </div>
                     <div>
@@ -387,7 +387,8 @@ const IntelligenceAgentsLanding: React.FC = () => {
           </div>
         </section>
 
-        <TestimonialsSection />
+        {/* TestimonialsSection hidden until real testimonials are available */}
+        {false && <TestimonialsSection />}
 
         <FAQSection />
 

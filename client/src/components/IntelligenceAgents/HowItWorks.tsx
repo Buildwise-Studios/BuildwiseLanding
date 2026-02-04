@@ -3,27 +3,30 @@ import React, { useEffect, useState, useRef } from 'react';
 const steps = [
   {
     id: "01",
-    title: "Setup Call",
-    description: "We map your workflow and identify ROI.",
+    title: "Strategic Assessment & Agent Selection",
+    description:
+      "We start by understanding your current partner workflow - where time goes, what it's worth, and what liberated hours could mean for placement capacity. Like strategic planning before any hire.",
     threshold: 0.1,
     side: "left",
-    tag: "Custom Configuration"
+    tag: "Strategic Value Assessment"
   },
   {
     id: "02",
-    title: "30-Day Integration",
-    description: "We build, connect, and train your agents.",
+    title: "Agent Onboarding & Training",
+    description:
+      "Our agents arrive highly capable - like hiring a senior researcher who already knows the industry. We onboard them to your team culture, preferences, and workflows.",
     threshold: 0.5,
     side: "right",
-    tag: "Salesforce & LinkedIn API"
+    tag: "Custom Training Program"
   },
   {
     id: "03",
-    title: "Delegation",
-    description: "Partners text the agent, it executes.",
+    title: "Team Integration & Delegation",
+    description:
+      "Now your agents are integrated team members. Partners delegate naturally while focusing on relationships. Success measured against the value framework from Step 1.",
     threshold: 0.9,
     side: "left",
-    tag: "WhatsApp Command Center"
+    tag: "Seamless Team Integration"
   }
 ];
 
@@ -65,7 +68,8 @@ const HowItWorks: React.FC = () => {
               How It Works
             </h2>
             <p className="text-subtle text-base md:text-lg max-w-xl mx-auto font-light">
-              We build, connect, and train agents specifically for your data ecosystem.
+              Think of our agents as experienced hires who already understand executive search.
+              Like any new team member, they need onboarding to your firm's specific way of working.
             </p>
           </div>
 
@@ -107,7 +111,7 @@ const HowItWorks: React.FC = () => {
                         <div className="w-[42%] text-right pr-4 md:pr-8">
                           <span className="font-mono text-[10px] text-[#D4A574] uppercase tracking-wider block mb-1 font-bold">Step {step.id}</span>
                           <h3 className="font-sans text-base md:text-lg font-semibold text-[#1A1A1A]">{step.title}</h3>
-                          <p className="hidden md:block text-xs text-subtle mt-1">{step.description}</p>
+                          <p className="hidden md:block text-xs md:text-sm text-subtle mt-1 leading-relaxed max-w-[90%]">{step.description}</p>
                         </div>
                         <div className="relative shrink-0 z-10">
                           <div className={`w-3 h-3 md:w-4 md:h-4 rounded-full border transition-colors duration-300 ${isActive ? 'border-[#D4A574] bg-[#D4A574] shadow-[0_0_8px_rgba(212,165,116,0.5)]' : 'border-border bg-white'}`}></div>
@@ -131,9 +135,22 @@ const HowItWorks: React.FC = () => {
                         <div className="w-[42%] text-right pr-4 md:pr-8">
                           {step.id === '02' ? (
                             <div className="inline-flex items-center justify-end gap-2 md:gap-3 bg-[#D4A574]/10 p-2 md:p-2.5 rounded-xl border border-[#D4A574]/20">
-                              <iconify-icon icon="fa6-brands:linkedin-in" className="text-lg md:text-xl text-[#0077B5]"></iconify-icon>
-                              <iconify-icon icon="solar:graph-up-linear" className="text-lg md:text-xl text-[#1A1A1A]"></iconify-icon>
-                              <iconify-icon icon="fa6-brands:google-drive" className="text-lg md:text-xl text-[#34A853]"></iconify-icon>
+                              <iconify-icon
+                                icon="fa6-brands:linkedin-in"
+                                className="text-lg md:text-xl text-[#0077B5]"
+                              ></iconify-icon>
+                              <iconify-icon
+                                icon="simple-icons:salesforce"
+                                className="text-lg md:text-xl text-[#00A1E0]"
+                              ></iconify-icon>
+                              <iconify-icon
+                                icon="fa6-brands:google-drive"
+                                className="text-lg md:text-xl text-[#34A853]"
+                              ></iconify-icon>
+                              <iconify-icon
+                                icon="simple-icons:microsoftonedrive"
+                                className="text-lg md:text-xl text-[#0364B8]"
+                              ></iconify-icon>
                             </div>
                           ) : (
                             <div className="bg-white border border-border px-2 py-1 md:p-3 rounded shadow-sm inline-block">
@@ -147,7 +164,7 @@ const HowItWorks: React.FC = () => {
                         <div className="w-[42%] pl-4 md:pl-8">
                           <span className="font-mono text-[10px] text-[#D4A574] uppercase tracking-wider block mb-1 font-bold">Step {step.id}</span>
                           <h3 className="font-sans text-base md:text-lg font-semibold text-[#1A1A1A]">{step.title}</h3>
-                          <p className="hidden md:block text-xs text-subtle mt-1">{step.description}</p>
+                          <p className="hidden md:block text-xs md:text-sm text-subtle mt-1 leading-relaxed max-w-[90%]">{step.description}</p>
                         </div>
                       </>
                     )}
