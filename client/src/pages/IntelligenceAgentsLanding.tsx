@@ -11,6 +11,7 @@ import HowItWorks from "@/components/IntelligenceAgents/HowItWorks";
 // import Background3D from "@/components/IntelligenceAgents/Background3D";
 
 import ValueDiscoverySection from "@/components/IntelligenceAgents/ValueDiscoverySection";
+import ShowcaseSection from "@/components/IntelligenceAgents/ShowcaseSection";
 import TestimonialsSection from "@/components/IntelligenceAgents/TestimonialsSection";
 import FAQSection from "@/components/IntelligenceAgents/FAQSection";
 import IntegrationsLogos from "@/components/IntelligenceAgents/IntegrationsLogos";
@@ -248,6 +249,8 @@ const IntelligenceAgentsLanding: React.FC = () => {
         </section>
 
         <ValueDiscoverySection />
+
+        <ShowcaseSection />
 
         <HowItWorks />
 
