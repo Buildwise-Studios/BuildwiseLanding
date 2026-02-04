@@ -9,10 +9,15 @@ const ValueDiscoverySection: React.FC = () => {
 
         <div className="text-center py-16 px-6">
           <h2 className="sm:text-5xl md:text-5xl text-4xl font-semibold text-white tracking-tight mt-4">
-            Discover Your Partner Time
-            <span className="block text-[#D4A574]">Liberation Value</span>
+            Discover Your Partner Time Liberation Value
           </h2>
 
+          {/* BRIDGE LINE - Solution introduction */}
+          <p className="text-lg font-medium text-white mt-6 mb-4 max-w-3xl mx-auto">
+            We built intelligence agents that take over this work—so your partners can focus on relationships and placements.
+          </p>
+
+          {/* Original paragraph - Value discovery */}
           <p className="mt-4 text-base md:text-lg text-zinc-300/90 max-w-2xl mx-auto">
             Every executive search firm is different. Let's explore your specific challenges and calculate what redirecting partner time could mean for your placement capacity.
           </p>

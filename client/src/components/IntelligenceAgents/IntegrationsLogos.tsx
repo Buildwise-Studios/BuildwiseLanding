@@ -39,7 +39,7 @@ const IntegrationsLogos: React.FC = () => {
                   style={{ '--hover-color': item.color } as React.CSSProperties}
                 >
                   {'customIcon' in item && item.customIcon === 'bloomberg' ? (
-                    <img src="/bloomberg-icon.svg" alt="Bloomberg" className="w-8 h-8 md:w-9 md:h-9 object-contain" aria-hidden />
+                    <img src="/bloomberg-icon.svg" alt="Bloomberg" className="w-8 h-8 md:w-9 md:h-9 object-contain opacity-40 group-hover:opacity-100 transition-opacity duration-300" aria-hidden />
                   ) : item.icon != null ? (
                     <iconify-icon icon={item.icon}></iconify-icon>
                   ) : null}
