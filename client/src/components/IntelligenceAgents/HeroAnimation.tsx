@@ -5,17 +5,22 @@ const HeroAnimation: React.FC = () => {
     const [scene, setScene] = useState<'human' | 'ai-response' | 'agent' | 'constellation'>('human');
 
     useEffect(() => {
-        const timer = setInterval(() => {
+        const sceneDurations: Record<typeof scene, number> = {
+            human: 5000,
+            'ai-response': 8000,  // longer so users can read the agent response
+            agent: 5000,
+            constellation: 5000,
+        };
+        const t = setTimeout(() => {
             setScene(current => {
                 if (current === 'human') return 'ai-response';
                 if (current === 'ai-response') return 'agent';
                 if (current === 'agent') return 'constellation';
                 return 'human';
             });
-        }, 5000); // 5 seconds per scene = 20 second total cycle
-
-        return () => clearInterval(timer);
-    }, []);
+        }, sceneDurations[scene]);
+        return () => clearTimeout(t);
+    }, [scene]);
 
     return (
         <div className="relative w-full max-w-lg aspect-square lg:aspect-[4/3] flex items-center justify-center">
@@ -235,7 +240,7 @@ const AgentPipelineScene = ({ scene }: { scene: string }) => {
                     <PipelineNode icon="fa6-brands:linkedin-in" label="Research" color="#0077B5" delay={0.6} />
                 </div>
                 <div className="absolute top-[80px] right-[80px] translate-x-1/2 -translate-y-1/2">
-                    <PipelineNode icon="solar:graph-up-linear" label="Market" color="#1A1A1A" delay={0.6} />
+                    <PipelineNode icon="solar:graph-up-linear" label="Market" color="#1A1A1A" delay={0.6} customIcon="bloomberg" />
                 </div>
 
                 {/* Row 2: Brain */}
@@ -299,7 +304,7 @@ const ConstellationScene = () => {
         { icon: 'fa6-brands:salesforce', x: 90, y: -45, color: '#00A1E0' },
         { icon: 'fa6-brands:whatsapp', x: 90, y: 45, color: '#25D366' },
         { icon: 'fa6-brands:microsoft', x: 0, y: 85, color: '#0078D4' },
-        { icon: 'solar:graph-up-linear', x: -90, y: 45, color: '#1A1A1A' },
+        { icon: 'solar:graph-up-linear', x: -90, y: 45, color: '#1A1A1A', customIcon: 'bloomberg' as const },
         { icon: 'fa6-brands:slack', x: -90, y: -45, color: '#4A154B' },
     ];
 
@@ -364,7 +369,11 @@ const ConstellationScene = () => {
                         }}
                         className="absolute w-12 h-12 bg-white rounded-xl border border-slate-100 shadow-lg flex items-center justify-center z-10"
                     >
-                        <iconify-icon icon={app.icon} className="text-xl" style={{ color: app.color }}></iconify-icon>
+                        {'customIcon' in app && app.customIcon === 'bloomberg' ? (
+                            <img src="/bloomberg-icon.svg" alt="Bloomberg" className="w-6 h-6 object-contain" aria-hidden />
+                        ) : (
+                            <iconify-icon icon={app.icon} className="text-xl" style={{ color: app.color }}></iconify-icon>
+                        )}
 
                         {/* Animated Signal Dot */}
                         <motion.div
@@ -455,9 +464,10 @@ interface PipelineNodeProps {
     label: string;
     color: string;
     delay: number;
+    customIcon?: 'bloomberg';
 }
 
-const PipelineNode = ({ icon, label, color, delay }: PipelineNodeProps) => (
+const PipelineNode = ({ icon, label, color, delay, customIcon }: PipelineNodeProps) => (
     <motion.div
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -465,7 +475,11 @@ const PipelineNode = ({ icon, label, color, delay }: PipelineNodeProps) => (
         className="flex flex-col items-center"
     >
         <div className="w-12 h-12 bg-white rounded-xl shadow-xl flex items-center justify-center border border-slate-100 mb-1.5 relative z-10">
-            <iconify-icon icon={icon} className="text-xl" style={{ color }}></iconify-icon>
+            {customIcon === 'bloomberg' ? (
+                <img src="/bloomberg-icon.svg" alt="Bloomberg" className="w-6 h-6 object-contain" aria-hidden />
+            ) : (
+                <iconify-icon icon={icon} className="text-xl" style={{ color }}></iconify-icon>
+            )}
         </div>
         <span className="text-[8px] font-extrabold text-[#1A1A1A]/40 uppercase tracking-widest">{label}</span>
     </motion.div>
