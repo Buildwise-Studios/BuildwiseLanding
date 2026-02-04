@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, MessageCircle, Calendar } from 'lucide-react';
+import { trackWTPDiscovery } from "@/lib/analytics";
 
 const faqs = [
   {
     question: "How is this different from hiring a junior assistant?",
-    answer: "A junior assistant costs HKD 35k-45k/month, works 9-5, and handles one task at a time. Our agents cost HKD 25k/month for all three, work 24/7, and execute multiple tasks simultaneously. Plus, they never quit or need training."
+    answer: "A junior assistant works 9-5, takes holidays, and handles one task at a time requiring training and supervision. Our AI agents work 24/7 globally, handle multiple tasks simultaneously, and don't require ongoing training or vacation time. Plus, they're purpose-built for executive search intelligence work."
   },
   {
     question: "What if we don't use Salesforce?",
@@ -20,8 +21,8 @@ const faqs = [
     answer: "Absolutely. Most firms start with Market Intelligence Agent (highest ROI), then add Office and Salesforce agents as they see results."
   },
   {
-    question: "What's included in the HKD 50k setup fee?",
-    answer: "Full integration with your CRM/tools, agent customization for your firm's workflow, 30-day training period, and optimization based on partner feedback."
+    question: "What's included in the partnership development process?",
+    answer: "Full integration with your CRM/tools, agent customization for your firm's workflow, training on agent use, and ongoing optimization based on partner feedback. We work together to create the perfect fit for your operations."
   }
 ];
 
@@ -90,12 +91,18 @@ const FAQSection: React.FC = () => {
             Can't find the answer you're looking for? Please chat with our friendly team or schedule a personalized walkthrough.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <button className="group relative overflow-hidden inline-flex items-center justify-center gap-2 rounded-xl bg-[#D4A574] text-[#2D1B10] px-8 py-4 text-sm font-bold transition shadow-lg shadow-[#D4A574]/20">
+            <button onClick={() => {
+              trackWTPDiscovery('faq', 'partnership');
+              window.open('https://calendly.com/charles-buildwise/30min', '_blank', 'noopener,noreferrer');
+            }} className="group relative overflow-hidden inline-flex items-center justify-center gap-2 rounded-xl bg-[#D4A574] text-[#2D1B10] px-8 py-4 text-sm font-bold transition shadow-lg shadow-[#D4A574]/20">
               <div className="shimmer-layer absolute inset-0 transform -translateX-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer z-10 transition-transform"></div>
               <MessageCircle className="h-4 w-4 relative z-20" />
               <span className="relative z-20 font-bold">Get in touch</span>
             </button>
-            <button className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-white text-[#1A1A1A] px-8 py-4 text-sm font-semibold hover:bg-slate-50 transition">
+            <button onClick={() => {
+              trackWTPDiscovery('faq', 'assessment');
+              window.open('https://calendly.com/charles-buildwise/30min', '_blank', 'noopener,noreferrer');
+            }} className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-white text-[#1A1A1A] px-8 py-4 text-sm font-semibold hover:bg-slate-50 transition">
               <Calendar className="h-4 w-4" />
               Schedule Demo
             </button>
