@@ -97,8 +97,8 @@ const IntelligenceAgentsLanding: React.FC = () => {
             </div>
 
             <h1 className="font-sans text-5xl md:text-6xl lg:text-7xl font-medium tracking-tighter text-[#1A1A1A] leading-[1.05]">
-              Your Partners Are Wasting 20+ Hours Per Month on Work a Machine
-              Should Do
+              Your Partners Are Wasting 20+ Hours Per Month on Work Intelligence Agents 
+              Should Handle
             </h1>
 
             <p className="max-w-xl font-sans text-lg text-slate-600 font-light leading-relaxed">
