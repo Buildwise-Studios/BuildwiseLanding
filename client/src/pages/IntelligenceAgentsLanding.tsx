@@ -6,6 +6,10 @@ import { trackWTPDiscovery } from "@/lib/analytics";
 // import Background3D from "@/components/IntelligenceAgents/Background3D";
 import HeroAnimation from "@/components/IntelligenceAgents/HeroAnimation";
 import HowItWorks from "@/components/IntelligenceAgents/HowItWorks";
+// Background3D disabled for performance optimization
+// Note: KnowledgeGraph3D provides the 3D background effect
+// import Background3D from "@/components/IntelligenceAgents/Background3D";
+
 import ValueDiscoverySection from "@/components/IntelligenceAgents/ValueDiscoverySection";
 import TestimonialsSection from "@/components/IntelligenceAgents/TestimonialsSection";
 import FAQSection from "@/components/IntelligenceAgents/FAQSection";
@@ -68,7 +72,12 @@ const IntelligenceAgentsLanding: React.FC = () => {
         </nav>
 
         <div className="flex items-center gap-4">
-          <button className="group relative overflow-hidden bg-[#D4A574] text-[#2D1B10] text-xs font-bold px-5 py-2 rounded shadow-sm ring-1 ring-white/10 transition-all hover:scale-[1.02] hover:shadow-md active:scale-[0.98]">
+          <button
+            onClick={() => {
+              trackWTPDiscovery('navigation', 'partnership');
+              window.open('https://calendly.com/charles-buildwise/30min', '_blank', 'noopener,noreferrer');
+            }}
+            className="group relative overflow-hidden bg-[#D4A574] text-[#2D1B10] text-xs font-bold px-5 py-2 rounded shadow-sm ring-1 ring-white/10 transition-all hover:scale-[1.02] hover:shadow-md active:scale-[0.98]">
             <div className="shimmer-layer absolute inset-0 transform -translateX-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer z-10 transition-transform"></div>
             <span className="relative z-20">Book Setup Call</span>
           </button>
@@ -110,7 +119,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
                 id="discuss-partnership"
                 onClick={() => {
                   trackWTPDiscovery('hero', 'partnership');
-                  window.location.href = 'https://calendly.com/charles-buildwise/partnership-strategy-call';
+                  window.open('https://calendly.com/charles-buildwise/30min', '_blank', 'noopener,noreferrer');
                 }}
                 className="group relative overflow-hidden bg-[#D4A574] text-[#2D1B10] text-sm font-bold px-8 py-3.5 rounded shadow-lg shadow-[#D4A574]/20 transition-all hover:-translate-y-0.5 hover:shadow-xl flex items-center gap-2"
               >
@@ -283,7 +292,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
 
             <div className="mt-12 pt-8 border-t border-border">
               <a
-                href="https://calendly.com/charles-buildwise/partnership-capacity-analysis"
+                href="https://calendly.com/charles-buildwise/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative inline-flex items-center gap-2 bg-[#D4A574] text-[#2D1B10] px-6 py-3 rounded-lg text-sm font-bold hover:bg-[#D4A574]/90 transition"
@@ -324,11 +333,12 @@ const IntelligenceAgentsLanding: React.FC = () => {
                 </p>
                 <div className="mt-8">
                   <a
-                    href="#pricing"
+                    href="#value-discovery"
+                    onClick={() => trackWTPDiscovery('problem', 'partnership')}
                     className="group relative overflow-hidden inline-flex items-center justify-center gap-2 rounded-lg bg-[#D4A574] text-[#2D1B10] px-6 py-3 text-sm font-bold transition-all shadow-[0_0_20px_rgba(212,165,116,0.2)]"
                   >
                     <div className="shimmer-layer absolute inset-0 transform -translateX-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer z-10 transition-transform"></div>
-                    <span className="relative z-20 font-bold">Book Set Up Call</span>
+                    <span className="relative z-20 font-bold">Discuss Partnership</span>
                   </a>
                 </div>
               </div>

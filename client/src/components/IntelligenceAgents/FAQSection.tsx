@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, MessageCircle, Calendar } from 'lucide-react';
+import { trackWTPDiscovery } from "@/lib/analytics";
 
 const faqs = [
   {
@@ -90,12 +91,18 @@ const FAQSection: React.FC = () => {
             Can't find the answer you're looking for? Please chat with our friendly team or schedule a personalized walkthrough.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <button className="group relative overflow-hidden inline-flex items-center justify-center gap-2 rounded-xl bg-[#D4A574] text-[#2D1B10] px-8 py-4 text-sm font-bold transition shadow-lg shadow-[#D4A574]/20">
+            <button onClick={() => {
+              trackWTPDiscovery('faq', 'partnership');
+              window.open('https://calendly.com/charles-buildwise/30min', '_blank', 'noopener,noreferrer');
+            }} className="group relative overflow-hidden inline-flex items-center justify-center gap-2 rounded-xl bg-[#D4A574] text-[#2D1B10] px-8 py-4 text-sm font-bold transition shadow-lg shadow-[#D4A574]/20">
               <div className="shimmer-layer absolute inset-0 transform -translateX-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer z-10 transition-transform"></div>
               <MessageCircle className="h-4 w-4 relative z-20" />
               <span className="relative z-20 font-bold">Get in touch</span>
             </button>
-            <button className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-white text-[#1A1A1A] px-8 py-4 text-sm font-semibold hover:bg-slate-50 transition">
+            <button onClick={() => {
+              trackWTPDiscovery('faq', 'assessment');
+              window.open('https://calendly.com/charles-buildwise/30min', '_blank', 'noopener,noreferrer');
+            }} className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-white text-[#1A1A1A] px-8 py-4 text-sm font-semibold hover:bg-slate-50 transition">
               <Calendar className="h-4 w-4" />
               Schedule Demo
             </button>
