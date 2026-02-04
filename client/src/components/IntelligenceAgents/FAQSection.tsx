@@ -21,8 +21,24 @@ const faqs = [
     answer: "Absolutely. Most firms start with Market Intelligence Agent (highest ROI), then add Office and Salesforce agents as they see results."
   },
   {
-    question: "What's included in the partnership development process?",
-    answer: "Full integration with your CRM/tools, agent customization for your firm's workflow, training on agent use, and ongoing optimization based on partner feedback. We work together to create the perfect fit for your operations."
+    question: "What's included in the agent onboarding process?",
+    answer: "Full value discovery session, agent customization for your firm's workflow, onboarding to your preferences, and ongoing optimization. We start with understanding your partner time value, then build everything around maximizing that discovered value."
+  },
+  {
+    question: "How do you calculate what partner time liberation is worth?",
+    answer: "We start with a strategic assessment of your current workflow - where partners spend time, what those hours could generate in placements, and what redirecting them to relationships means for your firm. Every firm has different economics, so we build your specific value framework first."
+  },
+  {
+    question: "What if we're not sure about our partner time allocation?",
+    answer: "That's exactly why we start with discovery. Most firms don't track this precisely - we'll help you audit where time currently goes versus where it should go, then calculate what liberation means for your placement capacity."
+  },
+  {
+    question: "How does pricing work after we understand the value?",
+    answer: "We design investment levels around the value you discover - typically a setup investment plus monthly value that's meaningfully less than what you save. You set the value framework, we design pricing to fit it."
+  },
+  {
+    question: "Are the agents really like hiring a senior team member?",
+    answer: "Exactly. Our agents arrive with deep executive search capability - like hiring a senior researcher who already knows the industry. The 30-day onboarding is about teaching them your firm's specific preferences, workflows, and culture - not basic training."
   }
 ];
 
@@ -93,7 +109,7 @@ const FAQSection: React.FC = () => {
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <button onClick={() => {
               trackWTPDiscovery('faq', 'partnership');
-              window.open('https://calendly.com/charles-buildwise/30min', '_blank', 'noopener,noreferrer');
+              window.open('/ai-product-manager', '_blank', 'noopener,noreferrer');
             }} className="group relative overflow-hidden inline-flex items-center justify-center gap-2 rounded-xl bg-[#D4A574] text-[#2D1B10] px-8 py-4 text-sm font-bold transition shadow-lg shadow-[#D4A574]/20">
               <div className="shimmer-layer absolute inset-0 transform -translateX-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer z-10 transition-transform"></div>
               <MessageCircle className="h-4 w-4 relative z-20" />
@@ -101,7 +117,7 @@ const FAQSection: React.FC = () => {
             </button>
             <button onClick={() => {
               trackWTPDiscovery('faq', 'assessment');
-              window.open('https://calendly.com/charles-buildwise/30min', '_blank', 'noopener,noreferrer');
+              window.open('/ai-product-manager', '_blank', 'noopener,noreferrer');
             }} className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-white text-[#1A1A1A] px-8 py-4 text-sm font-semibold hover:bg-slate-50 transition">
               <Calendar className="h-4 w-4" />
               Schedule Demo
