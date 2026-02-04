@@ -13,7 +13,7 @@ const ValueDiscoverySection: React.FC = () => {
           </h2>
 
           {/* BRIDGE LINE - Solution introduction */}
-          <p className="text-lg font-medium text-white mt-6 mb-4 max-w-3xl mx-auto">
+          <p className="text-lg font-medium text-[#D4A574] mt-6 mb-4 max-w-3xl mx-auto">
             We built intelligence agents that take over this work—so your partners can focus on relationships and placements.
           </p>
 
