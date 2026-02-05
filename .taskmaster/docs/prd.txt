@@ -1,0 +1,23 @@
+# PRD: Dedicated Jason Page for Intelligence Agents
+
+## Overview
+Create an alternative dedicated page for "Jason" (the AI Product Manager) specifically for users coming from the "Intelligence Agents" page. This allows for a tailored experience that aligns with the modern design and branding of our headhunting and intelligence agents offer.
+
+## Objectives
+1.  **Page Duplication**: Duplicate the "Jason" setup/landing page to create a new dedicated route.
+    -   Target: `client/src/pages/ai-product-manager.tsx`.
+    -   Note: We only need to revamp the "landing" part (the setup screen before the chat starts). The actual chat interface (RealtimeChat) will remain the same for now.
+    -   The original `/ai-product-manager` route must remain unchanged.
+2.  **Copy Update**: Replace the content of the new page with specific copy provided for the "Intelligence Agents" context.
+3.  **Design Revamp**: Update the visual design and branding of the setup screen to be more aligned with modern headhunting/intelligence agents offer (e.g., using consistent colors, typography, and layout from the intelligence agents' design language).
+
+## Scope
+-   Create a new page component (e.g., `client/src/pages/headhunting-scoping.tsx`).
+-   Update routing in `client/src/main.tsx` or `client/src/App.tsx` (need to check which one handles routes).
+-   The design should shift from the general "Buildwise" teal theme to the "Intelligence Agents" branding.
+
+## Acceptance Criteria
+-   A new route (e.g., `/intel-agent-scoping`) leads to the alternative Jason page.
+-   The original `/ai-product-manager` continues to work as it does today.
+-   The new page uses updated copy and a revamped design aligned with the headhunting offer.
+-   The "Start Chat" button still launches the same chat functionality.

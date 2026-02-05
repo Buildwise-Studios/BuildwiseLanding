@@ -24,7 +24,7 @@ const ValueDiscoverySection: React.FC = () => {
 
           <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/ai-product-manager"
+              href="/intel-agent-scoping-v2"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative bg-[#D4A574] text-[#2D1B10] text-sm font-bold px-8 py-3.5 rounded shadow-lg shadow-[#D4A574]/20 transition-all hover:-translate-y-0.5 hover:shadow-xl flex items-center gap-2"

@@ -105,6 +105,22 @@ export default {
             transform: "translateY(0)",
           },
         },
+        "text-glint": {
+          "0%, 100%": {
+            "background-position": "-100% 0",
+          },
+          "50%": {
+            "background-position": "100% 0",
+          },
+        },
+        "pulse-line": {
+          "0%": {
+            transform: "translateX(-100%)",
+          },
+          "100%": {
+            transform: "translateX(200%)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -112,6 +128,8 @@ export default {
         shimmer: "shimmer 2s infinite",
         popIn: "popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards",
         fadeSlideIn: "fadeSlideIn 0.8s ease-out 0.1s both",
+        "text-glint": "text-glint 4s ease-in-out infinite",
+        "pulse-line": "pulse-line 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
     },
   },

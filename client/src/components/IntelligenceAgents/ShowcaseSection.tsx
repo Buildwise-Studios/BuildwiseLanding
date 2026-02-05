@@ -139,7 +139,7 @@ const ShowcaseSection: React.FC = () => {
           </p>
 
           <a
-            href="/ai-product-manager"
+            href="/intel-agent-scoping-v2"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative overflow-hidden inline-flex items-center gap-2 bg-[#D4A574] text-[#2D1B10] px-10 py-4 rounded-xl text-sm font-bold transition shadow-lg shadow-[#D4A574]/20 hover:-translate-y-0.5 hover:shadow-xl"

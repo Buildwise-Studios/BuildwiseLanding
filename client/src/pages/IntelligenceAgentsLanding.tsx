@@ -120,7 +120,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
                 id="discuss-partnership"
                 onClick={() => {
                   trackWTPDiscovery('hero', 'jason_wtp');
-                  window.open('/ai-product-manager', '_blank', 'noopener,noreferrer');
+                  window.open('/intel-agent-scoping-v2', '_self');
                 }}
                 className="group relative overflow-hidden bg-[#D4A574] text-[#2D1B10] text-sm font-bold px-8 py-3.5 rounded shadow-lg shadow-[#D4A574]/20 transition-all hover:-translate-y-0.5 hover:shadow-xl flex items-center gap-2"
               >

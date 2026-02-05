@@ -109,7 +109,7 @@ const FAQSection: React.FC = () => {
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <button onClick={() => {
               trackWTPDiscovery('faq', 'partnership');
-              window.open('/ai-product-manager', '_blank', 'noopener,noreferrer');
+              window.open('/intel-agent-scoping-v2', '_blank', 'noopener,noreferrer');
             }} className="group relative overflow-hidden inline-flex items-center justify-center gap-2 rounded-xl bg-[#D4A574] text-[#2D1B10] px-8 py-4 text-sm font-bold transition shadow-lg shadow-[#D4A574]/20">
               <div className="shimmer-layer absolute inset-0 transform -translateX-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer z-10 transition-transform"></div>
               <MessageCircle className="h-4 w-4 relative z-20" />
