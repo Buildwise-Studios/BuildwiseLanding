@@ -15,7 +15,7 @@ const steps = [
     title: "Agent Onboarding & Training",
     description:
       "Our agents arrive highly capable - like hiring a senior researcher who already knows the industry. We onboard them to your team culture, preferences, and workflows.",
-    threshold: 0.5,
+    threshold: 0.4,
     side: "right",
     tag: "Custom Training Program"
   },
@@ -24,7 +24,7 @@ const steps = [
     title: "Team Integration & Delegation",
     description:
       "Now your agents are integrated team members. Partners delegate naturally while focusing on relationships. Success measured against the value framework from Step 1.",
-    threshold: 0.9,
+    threshold: 0.7,
     side: "left",
     tag: "Seamless Team Integration"
   }
@@ -40,7 +40,7 @@ const HowItWorks: React.FC = () => {
       const rect = sectionRef.current.getBoundingClientRect();
       const viewH = window.innerHeight;
 
-      // Calculate progress based on sticky duration (120vh total height - 100vh viewport = 20vh travel distance)
+      // Calculate progress based on sticky duration (200vh total height - 100vh viewport = 100vh travel distance)
       const totalScrollable = rect.height - viewH;
       const scrolled = -rect.top;
 
@@ -58,10 +58,10 @@ const HowItWorks: React.FC = () => {
     <section
       id="process"
       ref={sectionRef}
-      className="relative z-30 w-full bg-[#F8F7F5] border-y border-border/60"
-      style={{ height: '120vh' }}
+      className="relative z-20 w-full bg-[#F8F7F5] border-y border-border/60"
+      style={{ height: '200vh' }}
     >
-      <div className="sticky top-0 left-0 w-full h-screen flex flex-col items-center justify-start pt-16 md:pt-24">
+      <div className="sticky top-0 left-0 w-full h-[100dvh] flex flex-col items-center justify-start pt-[15vh] md:pt-[20vh] pb-12">
         <div className="max-w-4xl w-full px-6 md:px-12 relative z-10 flex flex-col items-center">
           <div className="text-center mb-6 shrink-0">
             <h2 className="font-sans text-3xl md:text-5xl font-semibold text-[#1A1A1A] tracking-tight mb-2">

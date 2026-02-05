@@ -62,7 +62,7 @@ const ShowcaseSection: React.FC = () => {
   ];
 
   return (
-    <section id="showcase" className="py-24 md:py-32 bg-[#F8F7F5] overflow-hidden border-t border-border/40">
+    <section id="showcase" className="relative z-30 py-24 md:py-32 bg-[#F8F7F5] overflow-hidden border-t border-border/40">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
         {/* Header */}
         <div className="text-center mb-16 md:mb-20">
@@ -75,66 +75,46 @@ const ShowcaseSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Master Grid Container */}
-        <div className="relative">
-          {/* Decorative Card Backgrounds layer */}
-          <div className="hidden lg:grid grid-cols-3 gap-8 absolute inset-0 -mx-4 px-4 pointer-events-none">
-            {[0, 1, 2].map(i => (
-              <div key={i} className="bg-white rounded-3xl shadow-xl shadow-[#D4A574]/5 border border-border/40 h-full w-full"></div>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-0 relative z-10">
-            {/* Headers */}
-            {demoData.map(demo => (
-              <div key={`${demo.id}-header`} className="lg:pt-8 lg:px-8 px-6 pt-8 bg-white lg:bg-transparent rounded-t-3xl lg:rounded-none border-x border-t border-border/40 lg:border-none">
+        {/* Master Container */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 relative z-10">
+          {demoData.map(demo => (
+            <div key={demo.id} className="bg-white rounded-3xl shadow-xl shadow-[#D4A574]/5 border border-border/40 overflow-hidden flex flex-col">
+              {/* Header */}
+              <div className="p-6 md:p-8 pb-4">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 rounded-2xl bg-[#D4A574]/10 flex items-center justify-center border border-[#D4A574]/20 text-[#D4A574]">
                     <iconify-icon icon={demo.icon} className="text-xl" />
                   </div>
                   <h3 className="font-sans text-xl font-bold text-[#1A1A1A] uppercase tracking-tight">{demo.name}</h3>
                 </div>
-              </div>
-            ))}
 
-            {/* Hooks */}
-            {demoData.map(demo => (
-              <div key={`${demo.id}-hook`} className="lg:px-8 px-6 pb-6 lg:pb-6 bg-white lg:bg-transparent border-x border-border/40 lg:border-none">
-                <p className="font-sans text-sm text-subtle min-h-[3rem]">
+                {/* Hook */}
+                <p className="font-sans text-sm text-subtle min-h-[3rem] mb-6">
                   {demo.hook}
                 </p>
-              </div>
-            ))}
 
-            {/* Videos */}
-            {demoData.map(demo => (
-              <div key={`${demo.id}-video`} className="lg:px-8 px-6 pb-8 bg-white lg:bg-transparent border-x border-border/40 lg:border-none">
-                <div className="bg-slate-50 rounded-xl p-3 font-mono text-sm border border-slate-100">
+                {/* Video Placeholder */}
+                <div className="bg-slate-50 rounded-xl p-3 font-mono text-sm border border-slate-100 mb-8">
                   <div className="aspect-video bg-slate-200 rounded-lg flex items-center justify-center text-slate-400 relative group/video cursor-pointer overflow-hidden">
                     <div className="absolute inset-0 bg-[#1A1A1A]/5 group-hover/video:bg-[#1A1A1A]/0 transition-colors duration-300"></div>
                     <iconify-icon icon="solar:play-circle-bold" className="text-4xl text-white drop-shadow-lg opacity-80 group-hover/video:scale-110 group-hover/video:opacity-100 transition-all duration-300 z-10" />
                     <span className="absolute bottom-2 left-2 text-[9px] uppercase font-bold tracking-widest text-slate-500 bg-white/80 px-2 py-0.5 rounded">Live Agent Demo</span>
                   </div>
                 </div>
-              </div>
-            ))}
 
-            {/* Pain Point */}
-            {demoData.map(demo => (
-              <div key={`${demo.id}-step-pain`} className="lg:px-8 px-6 pb-8 bg-white lg:bg-transparent border-x border-border/40 lg:border-none relative">
-                <div className="absolute left-12 top-0 bottom-0 w-px bg-slate-100 hidden lg:block"></div>
-                <DemoStep {...demo.steps[0]} />
-              </div>
-            ))}
+                {/* Steps Container */}
+                <div className="space-y-8 relative">
+                  <div className="absolute left-4 top-0 bottom-0 w-px bg-slate-100 hidden md:block"></div>
 
-            {/* Value (Row 7 in original, now Row 5) */}
-            {demoData.map(demo => (
-              <div key={`${demo.id}-step-value`} className="lg:px-8 px-6 pb-12 bg-white lg:bg-transparent rounded-b-3xl border-x border-b border-border/40 lg:border-none relative">
-                <div className="absolute left-12 top-0 bottom-12 w-px bg-slate-100 hidden lg:block"></div>
-                <DemoStep {...demo.steps[1]} />
+                  {/* Pain Point */}
+                  <DemoStep {...demo.steps[0]} />
+
+                  {/* Value Libereated */}
+                  <DemoStep {...demo.steps[1]} />
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
         {/* Value Focus CTA */}

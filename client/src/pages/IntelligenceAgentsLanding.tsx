@@ -255,7 +255,7 @@ const IntelligenceAgentsLanding: React.FC = () => {
         <HowItWorks />
 
         {/* WHO THIS IS FOR */}
-        <section className="relative z-20  py-24 bg-[#1A1A1A] text-white overflow-hidden border-t border-white/10 text-left">
+        <section className="relative z-30  py-32 md:py-48 bg-[#1A1A1A] text-white overflow-hidden border-t border-white/10 text-left">
           <div
             className="absolute inset-0 opacity-[0.05]"
             style={{
