@@ -36,7 +36,7 @@ const ValueDiscoverySection: React.FC = () => {
             </a>
 
             <a
-              href="https://calendly.com/charles-buildwise/value-assessment-scoping"
+              href="https://cal.com/charles-fauchet-buildwise/intelligence-agents"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative bg-white/10 text-white text-sm font-bold px-8 py-3.5 rounded ring-1 ring-white/20 transition-all hover:bg-white/20 flex items-center gap-2"

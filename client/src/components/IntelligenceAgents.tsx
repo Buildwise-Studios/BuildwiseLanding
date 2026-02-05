@@ -69,7 +69,7 @@ export default function IntelligenceAgents() {
                 </div>
                 <Button
                   className="w-full bg-[#D4A574] hover:bg-[#D4A574]/90 text-[#2D1B10] font-bold rounded-xl h-12 transition-all shadow-md shadow-[#D4A574]/10"
-                  onClick={() => agent.path ? setLocation(agent.path) : window.open('https://calendly.com/charles-buildwise/30min', '_blank')}
+                  onClick={() => agent.path ? setLocation(agent.path) : window.open('https://cal.com/charles-fauchet-buildwise/intelligence-agents', '_blank')}
                 >
                   <agent.icon className="mr-2 h-4 w-4" />
                   {agent.cta}
@@ -86,7 +86,7 @@ export default function IntelligenceAgents() {
           <Button
             size="lg"
             className="bg-[#D4A574] hover:bg-[#D4A574]/90 text-[#2D1B10] font-bold px-10 py-6 rounded-xl text-lg shadow-lg shadow-[#D4A574]/20 transition-all hover:-translate-y-0.5"
-            onClick={() => window.open('https://calendly.com/charles-buildwise/30min', '_blank')}
+            onClick={() => window.open('https://cal.com/charles-fauchet-buildwise/intelligence-agents', '_blank')}
           >
             See How Intelligence Agents Work for Your Firm
           </Button>
