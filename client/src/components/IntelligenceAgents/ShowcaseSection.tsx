@@ -6,36 +6,57 @@ const ShowcaseSection: React.FC = () => {
       id: "market",
       name: "Market Intelligence",
       icon: "solar:radar-2-linear",
-      hook: "Watch a partner discover an executive movement and get instant org chart updates.",
+      hook: "Watch a partner discover an executive movement and get instant org chart updates",
       steps: [
-        { type: "pain", label: "Current Problem", content: "Partner spends 15 hours/month manually tracking news and LinkedIn for candidate moves." },
-        { type: "delegate", label: "Partner Delegates", content: '"Monitor the top 5 competitors for all MD-level departures and alert me immediately."' },
-        { type: "agent", label: "Agent Response", content: "✓ Complete in 12 seconds. Search active, CRM monitoring triggered.", highlight: true },
-        { type: "value", label: "Value Liberated", content: "3 hours/week redirected to high-talent interviews and deal-making.", success: true },
+        {
+          type: "pain",
+          label: "Current Problem",
+          content: "Partner spends 15 hours monthly tracking news and LinkedIn for executive moves - missing opportunities while focused on research"
+        },
+        {
+          type: "value",
+          label: "Value Liberated",
+          content: "3 hours weekly redirected to high-talent interviews and deal-making. Never miss an executive movement again.",
+          success: true
+        }
       ]
     },
     {
       id: "office",
       name: "Office Assistant",
       icon: "solar:document-linear",
-      hook: "See admin work disappear while partners focus on client relationships.",
+      hook: "See admin work disappear while partners focus on client relationships",
       steps: [
-        { type: "pain", label: "Current Problem", content: "Partner spends 10 hours/month on manual PowerPoint formatting and candidate data entry." },
-        { type: "delegate", label: "Partner Delegates", content: '"Format these 12 raw LinkedIn profiles into our firm\'s branded talent deck."' },
-        { type: "agent", label: "Agent Response", content: "✓ Complete in 42 seconds. Presentation ready in OneDrive.", highlight: true },
-        { type: "value", label: "Value Liberated", content: "Sunday evenings reclaimed for strategic planning and rest.", success: true },
+        {
+          type: "pain",
+          label: "Current Problem",
+          content: "Partner spends 10 hours monthly formatting presentations and entering candidate data - evenings lost to admin work"
+        },
+        {
+          type: "value",
+          label: "Value Liberated",
+          content: "Evenings reclaimed for strategic planning and rest. Professional presentations ready in under a minute.",
+          success: true
+        }
       ]
     },
     {
       id: "crm",
       name: "CRM Intelligence",
       icon: "fa6-brands:salesforce",
-      hook: "Watch CRM updates happen automatically after client meetings.",
+      hook: "Watch CRM updates happen automatically after client meetings",
       steps: [
-        { type: "pain", label: "Current Problem", content: "CRM records are incomplete; partner spends 8 hours/month logging meeting notes from memory." },
-        { type: "delegate", label: "Partner Delegates", content: '"Log the notes from my lunch with the Goldman Sachs MD and update the pipeline stage."' },
-        { type: "agent", label: "Agent Response", content: "✓ Complete in 8 seconds. Meeting synced, follow-up tasks created.", highlight: true },
-        { type: "value", label: "Value Liberated", content: "100% data fidelity, identifying 2-3 extra placement opportunities per year.", success: true },
+        {
+          type: "pain",
+          label: "Current Problem",
+          content: "CRM records incomplete; partner spends 8 hours monthly logging notes from memory - missing follow-up opportunities"
+        },
+        {
+          type: "value",
+          label: "Value Liberated",
+          content: "100% data fidelity, identifying 2-3 extra placement opportunities per year. Never lose track of client relationships.",
+          success: true
+        }
       ]
     }
   ];
@@ -64,7 +85,7 @@ const ShowcaseSection: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-0 relative z-10">
-            {/* Row 1: Headers */}
+            {/* Headers */}
             {demoData.map(demo => (
               <div key={`${demo.id}-header`} className="lg:pt-8 lg:px-8 px-6 pt-8 bg-white lg:bg-transparent rounded-t-3xl lg:rounded-none border-x border-t border-border/40 lg:border-none">
                 <div className="flex items-center gap-3 mb-6">
@@ -76,7 +97,7 @@ const ShowcaseSection: React.FC = () => {
               </div>
             ))}
 
-            {/* Row 2: Hooks */}
+            {/* Hooks */}
             {demoData.map(demo => (
               <div key={`${demo.id}-hook`} className="lg:px-8 px-6 pb-6 lg:pb-6 bg-white lg:bg-transparent border-x border-border/40 lg:border-none">
                 <p className="font-sans text-sm text-subtle min-h-[3rem]">
@@ -85,7 +106,7 @@ const ShowcaseSection: React.FC = () => {
               </div>
             ))}
 
-            {/* Row 3: Videos */}
+            {/* Videos */}
             {demoData.map(demo => (
               <div key={`${demo.id}-video`} className="lg:px-8 px-6 pb-8 bg-white lg:bg-transparent border-x border-border/40 lg:border-none">
                 <div className="bg-slate-50 rounded-xl p-3 font-mono text-sm border border-slate-100">
@@ -98,7 +119,7 @@ const ShowcaseSection: React.FC = () => {
               </div>
             ))}
 
-            {/* Row 4: Pain Point */}
+            {/* Pain Point */}
             {demoData.map(demo => (
               <div key={`${demo.id}-step-pain`} className="lg:px-8 px-6 pb-8 bg-white lg:bg-transparent border-x border-border/40 lg:border-none relative">
                 <div className="absolute left-12 top-0 bottom-0 w-px bg-slate-100 hidden lg:block"></div>
@@ -106,27 +127,11 @@ const ShowcaseSection: React.FC = () => {
               </div>
             ))}
 
-            {/* Row 5: Delegation */}
-            {demoData.map(demo => (
-              <div key={`${demo.id}-step-delegate`} className="lg:px-8 px-6 pb-8 bg-white lg:bg-transparent border-x border-border/40 lg:border-none relative">
-                <div className="absolute left-12 top-0 bottom-0 w-px bg-slate-100 hidden lg:block"></div>
-                <DemoStep {...demo.steps[1]} />
-              </div>
-            ))}
-
-            {/* Row 6: Agent Result */}
-            {demoData.map(demo => (
-              <div key={`${demo.id}-step-agent`} className="lg:px-8 px-6 pb-8 bg-white lg:bg-transparent border-x border-border/40 lg:border-none relative">
-                <div className="absolute left-12 top-0 bottom-0 w-px bg-slate-100 hidden lg:block"></div>
-                <DemoStep {...demo.steps[2]} />
-              </div>
-            ))}
-
-            {/* Row 7: Value */}
+            {/* Value (Row 7 in original, now Row 5) */}
             {demoData.map(demo => (
               <div key={`${demo.id}-step-value`} className="lg:px-8 px-6 pb-12 bg-white lg:bg-transparent rounded-b-3xl border-x border-b border-border/40 lg:border-none relative">
                 <div className="absolute left-12 top-0 bottom-12 w-px bg-slate-100 hidden lg:block"></div>
-                <DemoStep {...demo.steps[3]} />
+                <DemoStep {...demo.steps[1]} />
               </div>
             ))}
           </div>
