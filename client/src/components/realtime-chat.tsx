@@ -15,6 +15,7 @@ interface RealtimeChatProps {
   sessionId?: string;
   onMessage?: (messages: ChatMessage[]) => void;
   messages?: ChatMessage[];
+  accentColor?: "teal" | "gold";
 }
 
 /**
@@ -23,6 +24,7 @@ interface RealtimeChatProps {
  * @param username - The username of the user
  * @param onMessage - The callback function to handle the messages. Useful if you want to store the messages in a database.
  * @param messages - The messages to display in the chat. Useful if you want to display messages from a database.
+ * @param accentColor - The accent color for the chat interface (teal or gold)
  * @returns The chat component
  */
 export const RealtimeChat = ({
@@ -32,6 +34,7 @@ export const RealtimeChat = ({
   sessionId,
   onMessage,
   messages: initialMessages = [],
+  accentColor = "teal",
 }: RealtimeChatProps) => {
   const { containerRef, scrollToBottom } = useChatScroll();
 
@@ -187,6 +190,7 @@ export const RealtimeChat = ({
                   message={message}
                   isOwnMessage={message.user.name === username}
                   showHeader={showHeader}
+                  accentColor={accentColor}
                 />
               </div>
             );
@@ -207,6 +211,7 @@ export const RealtimeChat = ({
           <Input
             className={cn(
               "rounded-full bg-background text-sm transition-all duration-300",
+              accentColor === "gold" ? "focus-visible:ring-[#D4A574]" : "focus-visible:ring-ring",
               newMessage.trim() ? "w-[calc(100%-36px)]" : "w-full"
             )}
             type="text"
@@ -217,7 +222,10 @@ export const RealtimeChat = ({
           />
           {newMessage.trim() && (
             <Button
-              className="aspect-square rounded-full animate-in fade-in slide-in-from-right-4 duration-300"
+              className={cn(
+                "aspect-square rounded-full animate-in fade-in slide-in-from-right-4 duration-300",
+                accentColor === "gold" && "bg-[#D4A574] hover:bg-[#D4A574]/90 text-[#2D1B10]"
+              )}
               type="submit"
               disabled={false}
             >

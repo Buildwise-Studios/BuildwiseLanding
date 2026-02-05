@@ -104,6 +104,7 @@ export default function HeadhuntingScopingV2() {
                   username={userName}
                   userEmail={userEmail}
                   sessionId={userEmail}
+                  accentColor="gold"
                 />
             </div>
           </div>
