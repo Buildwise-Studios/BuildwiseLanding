@@ -29,7 +29,7 @@ const ValueDiscoverySection: React.FC = () => {
               rel="noopener noreferrer"
               className="group relative bg-[#D4A574] text-[#2D1B10] text-sm font-bold px-8 py-3.5 rounded shadow-lg shadow-[#D4A574]/20 transition-all hover:-translate-y-0.5 hover:shadow-xl flex items-center gap-2"
             >
-              <span>Discuss Partnership Strategy</span>
+              <span>Reclaim Admin Hours</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1">
                 <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
               </svg>
@@ -41,7 +41,7 @@ const ValueDiscoverySection: React.FC = () => {
               rel="noopener noreferrer"
               className="group relative bg-white/10 text-white text-sm font-bold px-8 py-3.5 rounded ring-1 ring-white/20 transition-all hover:bg-white/20 flex items-center gap-2"
             >
-              <span>Schedule Value Assessment</span>
+              <span>Book a Call</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1">
                 <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
               </svg>
