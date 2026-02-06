@@ -121,6 +121,7 @@ export const RealtimeChat = ({
               message: userMessage,
               username: username,
               timestamp: new Date().toISOString(),
+              persona: persona || "general",
             }),
           }
         );
