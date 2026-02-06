@@ -14,6 +14,7 @@ interface RealtimeChatProps {
   userEmail: string;
   sessionId?: string;
   webhookUrl?: string;
+  persona?: "general" | "headhunting";
   onMessage?: (messages: ChatMessage[]) => void;
   messages?: ChatMessage[];
   accentColor?: "teal" | "gold";
@@ -35,6 +36,7 @@ export const RealtimeChat = ({
   userEmail,
   sessionId,
   webhookUrl,
+  persona,
   onMessage,
   messages: initialMessages = [],
   accentColor = "teal",
@@ -45,7 +47,6 @@ export const RealtimeChat = ({
     messages: realtimeMessages,
     sendMessage,
     sendBotMessage,
-    isConnected,
     isTyping,
     setTypingIndicator,
   } = useRealtimeChat({
@@ -53,6 +54,7 @@ export const RealtimeChat = ({
     username,
     userEmail,
     sessionId,
+    persona,
   });
   const [newMessage, setNewMessage] = useState("");
 
@@ -106,8 +108,9 @@ export const RealtimeChat = ({
 
       // Trigger the webhook to fetch the bot's response
       try {
+        const targetWebhook = webhookUrl || "https://n8n-n8n.iftctq.easypanel.host/webhook/d7f6b3de-d918-49dd-b915-0f4a603271d0";
         const response = await fetch(
-          "https://n8n-n8n.iftctq.easypanel.host/webhook/jasonheadhunting",
+          targetWebhook,
           {
             method: "POST",
             headers: {
@@ -142,7 +145,6 @@ export const RealtimeChat = ({
         }
 
         const botReply = await response.json();
-        console.log("Bot reply received:", botReply);
 
         // Add the bot's reply to the chat
         if (botReply.output) {
@@ -162,6 +164,7 @@ export const RealtimeChat = ({
       setTypingIndicator,
       sessionId,
       username,
+      webhookUrl,
     ]
   );
 

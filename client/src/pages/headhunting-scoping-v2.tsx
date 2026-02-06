@@ -105,6 +105,8 @@ export default function HeadhuntingScopingV2() {
                   userEmail={userEmail}
                   sessionId={userEmail}
                   accentColor="gold"
+                  persona="headhunting"
+                  webhookUrl="https://n8n-n8n.iftctq.easypanel.host/webhook/jasonheadhunting"
                 />
             </div>
           </div>

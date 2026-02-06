@@ -8,6 +8,7 @@ interface UseRealtimeChatProps {
   username: string;
   userEmail: string;
   sessionId?: string;
+  persona?: "general" | "headhunting";
 }
 
 export interface ChatMessage {
@@ -26,6 +27,7 @@ export function useRealtimeChat({
   username,
   userEmail,
   sessionId,
+  persona = "general",
 }: UseRealtimeChatProps) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [channel, setChannel] = useState<ReturnType<
@@ -96,16 +98,31 @@ export function useRealtimeChat({
   const sendWelcomeMessage = useCallback(async () => {
     if (welcomeMessageSent || messages.length > 0) return;
 
-    const firstMessage = `Hi ${username}! I am going to ask you a series of questions to define the scope of your project and produce a Project Requirements Document (PRD) that our team will send after our chat. Once you validate the document, we'll produce a mockup of your project within the next 24 hours!`;
+    if (persona === "headhunting") {
+      const firstMessage = `Hi ${username}! I'm Jason and I'll help you discover what freed partner time could mean for your firm.`;
+      const secondMessage = `I see your email is ${userEmail} - is that the best way to reach you, or would you prefer a different address?`;
+      const thirdMessage = `Once we confirm contact, I'll ask you some questions to understand your current workflow and calculate what partner time liberation could enable for your relationships and placements.`;
 
-    const secondMessage = `Will ${userEmail} be the best way to contact you, if not please confirm your best email address!`;
+      await sendBotMessage(firstMessage);
 
-    await sendBotMessage(firstMessage);
+      setTimeout(async () => {
+        await sendBotMessage(secondMessage);
 
-    // Add a small delay before sending the second message
-    setTimeout(async () => {
-      await sendBotMessage(secondMessage);
-    }, 1000);
+        setTimeout(async () => {
+          await sendBotMessage(thirdMessage);
+        }, 1000);
+      }, 1000);
+    } else {
+      const firstMessage = `Hi ${username}! I am going to ask you a series of questions to define the scope of your project and produce a Project Requirements Document (PRD) that our team will send after our chat. Once you validate the document, we'll produce a mockup of your project within the next 24 hours!`;
+      const secondMessage = `Will ${userEmail} be the best way to contact you, if not please confirm your best email address!`;
+
+      await sendBotMessage(firstMessage);
+
+      // Add a small delay before sending the second message
+      setTimeout(async () => {
+        await sendBotMessage(secondMessage);
+      }, 1000);
+    }
 
     setWelcomeMessageSent(true);
   }, [
@@ -114,6 +131,7 @@ export function useRealtimeChat({
     sendBotMessage,
     welcomeMessageSent,
     messages.length,
+    persona,
   ]);
 
   const setTypingIndicator = useCallback((typing: boolean) => {
