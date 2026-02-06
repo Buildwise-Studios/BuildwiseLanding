@@ -59,7 +59,7 @@ const HowItWorks: React.FC = () => {
       id="process"
       ref={sectionRef}
       className="relative z-20 w-full bg-[#F8F7F5] border-y border-border/60"
-      style={{ height: '200vh' }}
+      style={{ height: '140vh' }}
     >
       <div className="sticky top-0 left-0 w-full h-[100dvh] flex flex-col items-center justify-start pt-[15vh] md:pt-[20vh] pb-12">
         <div className="max-w-4xl w-full px-6 md:px-12 relative z-10 flex flex-col items-center">
