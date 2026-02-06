@@ -131,10 +131,6 @@ const IntelligenceAgentsLanding: React.FC = () => {
                   <path d="m12 5 7 7-7 7"></path>
                 </svg>
               </button>
-              <div className="text-xs text-subtle font-medium px-4 text-left">
-                <span className="block">Global Executive Search</span>
-                <span className="text-[#D4A574]">Partnership Discovery</span>
-              </div>
             </div>
           </div>
 
@@ -234,11 +230,11 @@ const IntelligenceAgentsLanding: React.FC = () => {
                         2-3 placements
                       </div>
                       <p className="text-subtle font-medium">
-                        Additional annual capacity from time liberation—or 2-3 lost today to admin.
+                        <span className="font-semibold">Gained</span> each year when admin work <span className="font-semibold">moves off</span> your partners&apos; plates—or <span className="font-semibold">lost</span> if it doesn&apos;t.
                       </p>
                     </div>
                     <p className="text-sm text-subtle pt-2">
-                      A junior hire means training, 9-5, and oversight—agents don't.
+                      Yes, you could hire an intern or a junior—but they need ramp-up, 9-5 hours, and ongoing oversight. <span className="font-semibold">Agents are already trained</span>, work 24/7, and manage the workflow themselves.
                     </p>
                   </div>
                 </div>
