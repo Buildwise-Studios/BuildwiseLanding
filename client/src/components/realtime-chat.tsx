@@ -13,6 +13,7 @@ interface RealtimeChatProps {
   username: string;
   userEmail: string;
   sessionId?: string;
+  webhookUrl?: string;
   onMessage?: (messages: ChatMessage[]) => void;
   messages?: ChatMessage[];
   accentColor?: "teal" | "gold";
@@ -25,6 +26,7 @@ interface RealtimeChatProps {
  * @param onMessage - The callback function to handle the messages. Useful if you want to store the messages in a database.
  * @param messages - The messages to display in the chat. Useful if you want to display messages from a database.
  * @param accentColor - The accent color for the chat interface (teal or gold)
+ * @param webhookUrl - Optional custom webhook URL for processed responses
  * @returns The chat component
  */
 export const RealtimeChat = ({
@@ -32,6 +34,7 @@ export const RealtimeChat = ({
   username,
   userEmail,
   sessionId,
+  webhookUrl,
   onMessage,
   messages: initialMessages = [],
   accentColor = "teal",
@@ -104,7 +107,7 @@ export const RealtimeChat = ({
       // Trigger the webhook to fetch the bot's response
       try {
         const response = await fetch(
-          "https://n8n-n8n.iftctq.easypanel.host/webhook/d7f6b3de-d918-49dd-b915-0f4a603271d0",
+          "https://n8n-n8n.iftctq.easypanel.host/webhook/jasonheadhunting",
           {
             method: "POST",
             headers: {
