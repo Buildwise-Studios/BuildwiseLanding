@@ -48,7 +48,7 @@ export const TypingIndicator = ({
 
         <div
           className={cn(
-            "py-3 px-4 rounded-2xl w-fit flex items-center justify-center min-w-[56px] shadow-sm",
+            "py-3 px-4 rounded-2xl w-fit flex items-center justify-center min-w-[56px] shadow-sm relative group",
             isOwnMessage
               ? accentColor === "gold"
                 ? "bg-[#D4A574] text-[#2D1B10] rounded-br-none"
@@ -56,7 +56,7 @@ export const TypingIndicator = ({
               : "bg-muted text-foreground rounded-bl-none"
           )}
         >
-          <div className="flex items-center space-x-1.5 h-4">
+          <div className="flex items-center space-x-1.5 h-4 relative z-10">
             <div
               className={cn(
                 "w-1.5 h-1.5 rounded-full animate-typing-dot-bounce",
@@ -64,7 +64,7 @@ export const TypingIndicator = ({
                   ? "bg-[#2D1B10]"
                   : isOwnMessage
                   ? "bg-primary-foreground"
-                  : "bg-zinc-400"
+                  : "bg-[#D4A574]"
               )}
               style={{ animationDelay: "0s" }}
             ></div>
@@ -75,7 +75,7 @@ export const TypingIndicator = ({
                   ? "bg-[#2D1B10]"
                   : isOwnMessage
                   ? "bg-primary-foreground"
-                  : "bg-zinc-400"
+                  : "bg-[#D4A574]"
               )}
               style={{ animationDelay: "0.2s" }}
             ></div>
@@ -86,7 +86,7 @@ export const TypingIndicator = ({
                   ? "bg-[#2D1B10]"
                   : isOwnMessage
                   ? "bg-primary-foreground"
-                  : "bg-zinc-400"
+                  : "bg-[#D4A574]"
               )}
               style={{ animationDelay: "0.4s" }}
             ></div>

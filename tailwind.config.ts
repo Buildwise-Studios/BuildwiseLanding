@@ -131,6 +131,11 @@ export default {
             opacity: "1",
           },
         },
+        "border-beam": {
+          "100%": {
+            "offset-distance": "100%",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -141,6 +146,7 @@ export default {
         "text-glint": "text-glint 4s ease-in-out infinite",
         "pulse-line": "pulse-line 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "typing-dot-bounce": "typing-dot-bounce 1s infinite ease-in-out",
+        "border-beam": "border-beam var(--duration) infinite linear",
       },
     },
   },
