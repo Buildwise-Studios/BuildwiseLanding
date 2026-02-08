@@ -48,7 +48,7 @@ export const TypingIndicator = ({
 
         <div
           className={cn(
-            "py-3 px-4 rounded-2xl w-fit flex items-center justify-center min-w-[56px] shadow-sm relative group",
+            "py-3 px-4 rounded-2xl w-fit flex items-center justify-center min-w-[56px] shadow relative group border border-[#D4A574]/15",
             isOwnMessage
               ? accentColor === "gold"
                 ? "bg-[#D4A574] text-[#2D1B10] rounded-br-none"
