@@ -217,7 +217,7 @@ export const RealtimeChat = ({
           {/* Show typing indicator when bot is typing */}
           {isTyping && (
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-300">
-              <TypingIndicator />
+              <TypingIndicator accentColor={accentColor} />
             </div>
           )}
         </div>
