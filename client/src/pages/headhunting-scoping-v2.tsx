@@ -4,7 +4,6 @@ import { RealtimeChat } from "@/components/realtime-chat";
 import jasonImage from "@assets/jason.png";
 import {
   ArrowLeft,
-  MessageSquare,
   CheckCircle,
 } from "lucide-react";
 import { useLocation } from "wouter";

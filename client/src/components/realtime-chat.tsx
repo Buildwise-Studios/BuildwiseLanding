@@ -47,6 +47,7 @@ export const RealtimeChat = ({
     messages: realtimeMessages,
     sendMessage,
     sendBotMessage,
+    isConnected,
     isTyping,
     setTypingIndicator,
   } = useRealtimeChat({
@@ -57,6 +58,7 @@ export const RealtimeChat = ({
     persona,
   });
   const [newMessage, setNewMessage] = useState("");
+  const [initialPromptSent, setInitialPromptSent] = useState(false);
 
   // Merge realtime messages with initial messages
   const allMessages = useMemo(() => {
@@ -89,6 +91,71 @@ export const RealtimeChat = ({
     scrollToBottom();
   }, [allMessages, scrollToBottom]);
 
+  const triggerWebhook = useCallback(async (message: string) => {
+    // Show typing indicator before making the API call
+    setTypingIndicator(true);
+
+    // Trigger the webhook to fetch the bot's response
+    try {
+      const targetWebhook = webhookUrl || "https://n8n-n8n.iftctq.easypanel.host/webhook/d7f6b3de-d918-49dd-b915-0f4a603271d0";
+      const response = await fetch(
+        targetWebhook,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            sessionId: sessionId,
+            message: message,
+            username: username,
+            timestamp: new Date().toISOString(),
+            persona: persona || "general",
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        const errorData = await response
+          .json()
+          .catch(() => ({ message: "Unknown error" }));
+        console.warn("n8n webhook returned error:", {
+          status: response.status,
+          statusText: response.statusText,
+          error: errorData,
+        });
+
+        // If it's a 404, the workflow needs to be activated
+        if (response.status === 404) {
+          console.warn(
+            "n8n webhook not registered. Please activate your workflow in n8n."
+          );
+        }
+        return;
+      }
+
+      const botReply = await response.json();
+
+      // Add the bot's reply to the chat
+      if (botReply.output) {
+        sendBotMessage(botReply.output);
+      }
+    } catch (error) {
+      console.error("Error triggering webhook:", error);
+    } finally {
+      // Hide typing indicator regardless of success or failure
+      setTypingIndicator(false);
+    }
+  }, [sessionId, username, webhookUrl, persona, sendBotMessage, setTypingIndicator]);
+
+  // Handle initial "quiet" prompt
+  useEffect(() => {
+    if (isConnected && !initialPromptSent && realtimeMessages.length === 0) {
+      setInitialPromptSent(true);
+      triggerWebhook(`${username} with the following email address ${userEmail} just started a conversation. Validate their email and introduce yourself.`);
+    }
+  }, [isConnected, initialPromptSent, realtimeMessages.length, username, userEmail, triggerWebhook]);
+
   const handleSendMessage = useCallback(
     async (e: React.FormEvent) => {
       e.preventDefault();
@@ -103,69 +170,13 @@ export const RealtimeChat = ({
       // Clear the input field immediately
       setNewMessage("");
 
-      // Show typing indicator before making the API call
-      setTypingIndicator(true);
-
-      // Trigger the webhook to fetch the bot's response
-      try {
-        const targetWebhook = webhookUrl || "https://n8n-n8n.iftctq.easypanel.host/webhook/d7f6b3de-d918-49dd-b915-0f4a603271d0";
-        const response = await fetch(
-          targetWebhook,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              sessionId: sessionId,
-              message: userMessage,
-              username: username,
-              timestamp: new Date().toISOString(),
-              persona: persona || "general",
-            }),
-          }
-        );
-
-        if (!response.ok) {
-          const errorData = await response
-            .json()
-            .catch(() => ({ message: "Unknown error" }));
-          console.warn("n8n webhook returned error:", {
-            status: response.status,
-            statusText: response.statusText,
-            error: errorData,
-          });
-
-          // If it's a 404, the workflow needs to be activated
-          if (response.status === 404) {
-            console.warn(
-              "n8n webhook not registered. Please activate your workflow in n8n."
-            );
-          }
-          return;
-        }
-
-        const botReply = await response.json();
-
-        // Add the bot's reply to the chat
-        if (botReply.output) {
-          sendBotMessage(botReply.output);
-        }
-      } catch (error) {
-        console.error("Error triggering webhook:", error);
-      } finally {
-        // Hide typing indicator regardless of success or failure
-        setTypingIndicator(false);
-      }
+      // Trigger the webhook
+      await triggerWebhook(userMessage);
     },
     [
       newMessage,
       sendMessage,
-      sendBotMessage,
-      setTypingIndicator,
-      sessionId,
-      username,
-      webhookUrl,
+      triggerWebhook,
     ]
   );
 
