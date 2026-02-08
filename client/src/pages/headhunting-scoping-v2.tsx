@@ -103,7 +103,7 @@ export default function HeadhuntingScopingV2() {
                   roomName={chatRoomId}
                   username={userName}
                   userEmail={userEmail}
-                  sessionId={`headhunting-${userEmail}`}
+                  sessionId={userEmail}
                   accentColor="gold"
                   persona="headhunting"
                   webhookUrl="https://n8n-n8n.iftctq.easypanel.host/webhook/jasonheadhunting"
