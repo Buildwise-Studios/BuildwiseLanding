@@ -134,7 +134,7 @@ export default function AIProductManager() {
 
   if (chatStarted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-teal-50">
+      <div className="min-h-screen bg-warm-off-white">
         <div className="max-w-4xl mx-auto px-4 py-8">
           <div className="mb-6">
             <Button
@@ -194,7 +194,7 @@ export default function AIProductManager() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-teal-50">
+    <div className="min-h-screen bg-warm-off-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <Button
           variant="ghost"
@@ -232,11 +232,11 @@ export default function AIProductManager() {
             for your MVP development.
           </p>
           <div className="flex items-center justify-center gap-2">
-            <Badge variant="secondary" className="bg-teal-100 text-teal-700">
+            <Badge variant="secondary" className="bg-warm-amber-10 text-teal-700">
               <MessageSquare className="h-3 w-3 mr-1" />
               Real-time Chat
             </Badge>
-            <Badge variant="secondary" className="bg-teal-100 text-teal-700">
+            <Badge variant="secondary" className="bg-warm-amber-10 text-teal-700">
               <Bot className="h-3 w-3 mr-1" />
               AI Powered
             </Badge>
@@ -250,8 +250,8 @@ export default function AIProductManager() {
               className="text-center hover:shadow-lg transition-shadow"
             >
               <CardContent className="p-8">
-                <div className="bg-teal-100 rounded-xl p-3 w-fit mx-auto mb-6">
-                  <feature.icon className="h-8 w-8 text-teal-600" />
+                <div className="bg-warm-amber-10 rounded-xl p-3 w-fit mx-auto mb-6">
+                  <feature.icon className="h-8 w-8 text-warm-amber" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
                   {feature.title}
@@ -282,7 +282,7 @@ export default function AIProductManager() {
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
                 placeholder="Enter your name"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-warm-amber focus:border-transparent"
               />
             </div>
             <div>
@@ -303,7 +303,7 @@ export default function AIProductManager() {
                     ? "border-red-300 focus:ring-red-500"
                     : isEmailValid && userEmail.trim()
                       ? "border-green-300 focus:ring-green-500"
-                      : "border-gray-300 focus:ring-teal-500"
+                      : "border-gray-300 focus:ring-warm-amber"
                 }`}
               />
               {emailError && (
@@ -318,7 +318,7 @@ export default function AIProductManager() {
             <Button
               onClick={handleStartChat}
               disabled={!userName.trim() || !userEmail.trim() || !isEmailValid}
-              className="w-full bg-teal-500 hover:bg-teal-600"
+              className="w-full bg-warm-amber hover:bg-warm-amber"
               size="lg"
             >
               <MessageSquare className="h-5 w-5 mr-2" />

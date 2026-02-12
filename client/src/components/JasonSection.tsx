@@ -6,7 +6,7 @@ export default function JasonSection() {
   const [, setLocation] = useLocation();
 
   return (
-    <section id="jason" className="py-16 bg-gradient-to-r from-teal-50 to-blue-50 overflow-hidden">
+    <section id="jason" className="py-16 bg-warm-off-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
@@ -15,8 +15,8 @@ export default function JasonSection() {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-2xl p-8 sm:p-12 shadow-lg border border-gray-100">
               <div className="flex justify-center mb-6">
-                <div className="bg-teal-100 rounded-lg p-4">
-                  <Bot className="h-8 w-8 text-teal-600" />
+                <div className="bg-warm-amber-10 rounded-lg p-4">
+                  <Bot className="h-8 w-8 text-warm-amber" />
                 </div>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
@@ -37,7 +37,7 @@ export default function JasonSection() {
               <div className="mt-8">
                 <Button
                   size="lg"
-                  className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-5 text-sm sm:text-base font-semibold w-full sm:w-auto inline-flex items-center justify-center gap-3"
+                  className="bg-warm-amber hover:bg-teal-700 text-white px-8 py-5 text-sm sm:text-base font-semibold w-full sm:w-auto inline-flex items-center justify-center gap-3"
                   onClick={() => setLocation("/ai-product-manager")}
                 >
                   <span className="text-center leading-tight">

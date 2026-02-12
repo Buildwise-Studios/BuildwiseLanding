@@ -28,6 +28,15 @@
   --teal-500: hsl(173, 80%, 40%);
   --teal-600: hsl(172, 83%, 32%);
   --teal-700: hsl(173, 90%, 25%);
+  /* Intelligence Agents Warm Amber Palette */
+  --warm-amber: hsl(34, 54%, 65%);
+  --warm-off-white: hsl(45, 14%, 97%);
+  --warm-amber-10: hsl(34, 54%, 65%, 0.1);
+  --warm-amber-20: hsl(34, 54%, 65%, 0.2);
+  --warm-amber-30: hsl(34, 54%, 65%, 0.3);
+  --warm-amber-light: hsl(34, 54%, 65%, 0.4);
+  --warm-charcoal: hsl(0, 0%, 10%);
+  --warm-brown: hsl(25, 35%, 14%);
 }
 
 .dark {

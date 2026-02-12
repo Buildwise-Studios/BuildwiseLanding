@@ -81,13 +81,13 @@ const steps = [
 
 export default function Approach() {
   return (
-    <section id="approach" className="py-20 bg-white overflow-hidden">
+    <section id="approach" className="py-24 md:py-32 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="text-center mb-16">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 break-words">
+        <div className="text-center mb-20 md:mb-24">
+          <h2 className="text-3xl md:text-5xl font-semibold text-warm-charcoal tracking-tight leading-tight">
             How It Works
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
+          <p className="text-lg text-slate-600 font-light leading-relaxed max-w-3xl mx-auto mt-6">
             We follow a proven 3-step process to deploy AI agents that transform your business workflows.
           </p>
         </div>
@@ -104,7 +104,7 @@ export default function Approach() {
                 className={`mb-8 lg:mb-0 w-full ${index % 2 === 1 ? "lg:col-start-2" : ""}`}
               >
                 <div className="flex items-center mb-6">
-                  <div className="bg-teal-500 text-white rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-lg sm:text-xl font-bold mr-4 flex-shrink-0">
+                  <div className="bg-warm-amber text-white rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-lg sm:text-xl font-bold mr-4 flex-shrink-0">
                     {step.number}
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900 break-words flex-1">
@@ -149,7 +149,7 @@ export default function Approach() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-teal-500 hover:bg-teal-600 text-white px-6 sm:px-8 py-5 text-sm sm:text-lg font-semibold w-full sm:w-auto flex items-center justify-center gap-3"
+                className="bg-warm-amber hover:bg-warm-amber text-white px-6 sm:px-8 py-5 text-sm sm:text-lg font-semibold w-full sm:w-auto flex items-center justify-center gap-3"
                 onClick={() => window.location.href = 'https://calendly.com/charles-buildwise/30min'}
               >
                 <Rocket className="hidden min-[390px]:block h-7 w-7 sm:h-9 sm:w-9 rounded-full object-cover flex-shrink-0" />
@@ -158,7 +158,7 @@ export default function Approach() {
               <Button
                 size="lg"
                 variant="outline"
-                className="text-teal-600 border-teal-600 hover:bg-teal-50 px-6 sm:px-8 py-5 text-sm sm:text-lg font-semibold w-full sm:w-auto flex items-center justify-center gap-3"
+                className="text-warm-amber border-warm-amber hover:bg-warm-off-white px-6 sm:px-8 py-5 text-sm sm:text-lg font-semibold w-full sm:w-auto flex items-center justify-center gap-3"
                 onClick={() => window.location.href = '/ai-product-manager'}
               >
                 <span className="text-center leading-tight">Talk to Jason</span>

@@ -1,52 +1,72 @@
 import { Button } from "@/components/ui/button";
-import { Calendar, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import { useLocation } from "wouter";
-import jasonImage from "@assets/jason.png";
+import { scrollToSection, openExternalLink } from "@/lib/scroll";
 
 export default function Hero() {
   const [, setLocation] = useLocation();
 
   return (
-    <section className="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-teal-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <section className="pt-24 pb-16 bg-warm-off-white overflow-hidden relative">
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        {/* Subtle warm radial gradient */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#D4A57410,transparent_70%)] opacity-50"></div>
+        {/* Noise/Paper texture */}
+        <div
+          className="absolute inset-0 opacity-[0.03] mix-blend-multiply"
+          style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}
+        ></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center w-full">
-          <div className="flex flex-col gap-4 mb-8 lg:mb-0 w-full">
-            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 mb-6 break-words">
-              AI Agents That <span className="text-teal-500">Replace</span>{" "}
-              Repetitive Work
+          <div className="flex flex-col gap-6 mb-8 lg:mb-0 w-full">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-border shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-warm-amber animate-pulse"></span>
+              <span className="font-sans text-[10px] font-medium text-slate-500 tracking-tight uppercase">
+                60-Second Deployment
+              </span>
+            </div>
+
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-medium tracking-tighter text-warm-charcoal leading-[1.05]">
+              Get OpenClaw Running <span className="text-warm-amber">Instantly</span>
             </h1>
-            <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
-              We build vertical-specific AI agents for professional services—executive search, legal, consulting, and beyond.
+
+            <p className="max-w-xl font-sans text-lg text-slate-600 font-light leading-relaxed">
+              Start with InstantClaw in 60 seconds, or explore Buildwise enterprise solutions for your industry.
             </p>
-            <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
-              Built once, deployed forever. No custom dev, no consulting—just plug-and-play intelligence.
-            </p>
-            <div className="space-y-4 w-full">
-              <Button
-                size="lg"
-                className="bg-teal-500 hover:bg-teal-600 text-white px-6 sm:px-8 py-5 text-sm sm:text-lg font-semibold w-full flex items-center justify-center gap-3"
-                onClick={() => setLocation("/#verticals")}
+
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <button
+                onClick={() => openExternalLink("https://instantclaw.co")}
+                className="group relative overflow-hidden bg-warm-amber text-warm-brown text-sm font-bold px-8 py-3.5 rounded shadow-lg shadow-warm-amber/20 transition-all hover:-translate-y-0.5 hover:shadow-xl flex items-center gap-2"
               >
-                <span className="text-center leading-tight">
-                  See Agents for Your Industry
-                </span>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="text-teal-600 border-teal-600 hover:bg-teal-50 px-6 sm:px-8 py-5 text-sm sm:text-lg font-semibold w-full flex items-center justify-center gap-3"
-                onClick={() => setLocation("/ai-product-manager")}
+                <div className="shimmer-layer absolute inset-0 transform -translateX-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer z-10 transition-transform"></div>
+                <span className="relative z-20">Try InstantClaw Free</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1 relative z-20">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </button>
+
+              <button
+                onClick={() => scrollToSection("enterprise")}
+                className="group relative overflow-hidden bg-white text-warm-charcoal text-sm font-bold px-8 py-3.5 rounded shadow-sm ring-1 ring-warm-amber/10 transition-all hover:scale-[1.02] hover:shadow-md active:scale-[0.98] flex items-center gap-2"
               >
-                <span className="text-center leading-tight">
-                  Not Sure? Talk to Jason →
-                </span>
-              </Button>
+                <div className="shimmer-layer absolute inset-0 transform -translateX-full bg-gradient-to-r from-transparent via-warm-amber/10 to-transparent group-hover:animate-shimmer z-10 transition-transform"></div>
+                <span className="relative z-20">Enterprise Solutions</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1 relative z-20">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </button>
             </div>
           </div>
+
           <div className="relative w-full max-w-full">
             <img
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-              alt="Modern tech team collaboration workspace"
+              alt="Modern technology team collaborating in bright office workspace"
               className="rounded-2xl shadow-2xl w-full max-w-full h-auto"
               width={800}
               height={600}
@@ -55,7 +75,7 @@ export default function Hero() {
               <div className="flex items-center space-x-2 sm:space-x-3">
                 <img
                   src="https://images.unsplash.com/photo-1512484776495-a09d92e87c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"
-                  alt="Client testimonial"
+                  alt="Happy customer testimonial avatar"
                   className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover flex-shrink-0"
                 />
                 <div className="min-w-0">

@@ -50,8 +50,8 @@ export default function Team() {
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 break-words px-2">
                 {member.name}
               </h3>
-              <p className="text-sm sm:text-base text-teal-600 font-semibold mb-4 break-words px-2">{member.role}</p>
-              {/* <button className="text-gray-400 hover:text-teal-600 transition-colors">
+              <p className="text-sm sm:text-base text-warm-amber font-semibold mb-4 break-words px-2">{member.role}</p>
+              {/* <button className="text-gray-400 hover:text-warm-amber transition-colors">
                 <Linkedin className="h-5 w-5" />
               </button> */}
             </div>
