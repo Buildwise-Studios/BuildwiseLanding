@@ -21,7 +21,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
-              <div className="bg-teal-500 rounded-lg p-2 mr-3">
+              <div className="bg-warm-amber rounded-lg p-2 mr-3">
                 <Egg className="h-5 w-5 text-white" />
               </div>
               <span className="text-xl font-bold">Buildwise</span>
@@ -35,7 +35,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button className="text-gray-400 hover:text-teal-500 transition-colors">
+                <button className="text-gray-400 hover:text-warm-amber transition-colors">
                   <Linkedin className="h-5 w-5" />
                 </button>
               </a>
@@ -44,7 +44,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button className="text-gray-400 hover:text-teal-500 transition-colors">
+                <button className="text-gray-400 hover:text-warm-amber transition-colors">
                   <FiFacebook className="h-5 w-5" />
                 </button>
               </a>
@@ -53,7 +53,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button className="text-gray-400 hover:text-teal-500 transition-colors">
+                <button className="text-gray-400 hover:text-warm-amber transition-colors">
                   <FiInstagram className="h-5 w-5" />
                 </button>
               </a>
@@ -67,7 +67,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("approach")}
-                  className="text-gray-300 hover:text-teal-500 transition-colors"
+                  className="text-gray-300 hover:text-warm-amber transition-colors"
                 >
                   How It Works
                 </button>
@@ -75,7 +75,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("verticals")}
-                  className="text-gray-300 hover:text-teal-500 transition-colors"
+                  className="text-gray-300 hover:text-warm-amber transition-colors"
                 >
                   Verticals
                 </button>
@@ -83,7 +83,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("intelligence-agents")}
-                  className="text-gray-300 hover:text-teal-500 transition-colors"
+                  className="text-gray-300 hover:text-warm-amber transition-colors"
                 >
                   Agents in Action
                 </button>
@@ -91,7 +91,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("team")}
-                  className="text-gray-300 hover:text-teal-500 transition-colors"
+                  className="text-gray-300 hover:text-warm-amber transition-colors"
                 >
                   Team
                 </button>
@@ -99,7 +99,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("faq")}
-                  className="text-gray-300 hover:text-teal-500 transition-colors"
+                  className="text-gray-300 hover:text-warm-amber transition-colors"
                 >
                   FAQ
                 </button>
@@ -112,25 +112,25 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-6">Contact Us</h3>
             <div className="space-y-4">
               <div className="flex items-center">
-                <Mail className="h-5 w-5 text-teal-500 mr-3" />
+                <Mail className="h-5 w-5 text-warm-amber mr-3" />
                 <a
                   href="mailto:charles@voxelai.ai"
-                  className="text-gray-300 hover:text-teal-500 transition-colors"
+                  className="text-gray-300 hover:text-warm-amber transition-colors"
                 >
                   contact@buildwise-studios.com
                 </a>
               </div>
               <div className="flex items-center">
-                <Phone className="h-5 w-5 text-teal-500 mr-3" />
+                <Phone className="h-5 w-5 text-warm-amber mr-3" />
                 <a
                   href="tel:+85269784602"
-                  className="text-gray-300 hover:text-teal-500 transition-colors"
+                  className="text-gray-300 hover:text-warm-amber transition-colors"
                 >
                   +852 6978 4602
                 </a>
               </div>
               <div className="flex items-start">
-                <MapPin className="h-5 w-5 text-teal-500 mr-3 mt-1" />
+                <MapPin className="h-5 w-5 text-warm-amber mr-3 mt-1" />
                 <span className="text-gray-300">Hong Kong</span>
               </div>
             </div>
@@ -144,12 +144,12 @@ export default function Footer() {
             </p>
             <div className="flex space-x-6">
               <a href="/privacy-policy" target="_blank">
-                <button className="text-gray-400 hover:text-teal-500 transition-colors">
+                <button className="text-gray-400 hover:text-warm-amber transition-colors">
                   Privacy Policy
                 </button>
               </a>
               <a href="/terms-of-services" target="_blank">
-                <button className="text-gray-400 hover:text-teal-500 transition-colors">
+                <button className="text-gray-400 hover:text-warm-amber transition-colors">
                   Terms of Service
                 </button>
               </a>

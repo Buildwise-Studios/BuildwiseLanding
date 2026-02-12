@@ -77,7 +77,7 @@ export default function Projects() {
                   <p className="text-gray-600 mb-2 leading-relaxed">{project.highlight}</p>
                 </div>
                   <span className="text-xs sm:text-sm text-gray-500 break-words">{project.category}</span>
-                  {/* <button className="text-teal-600 hover:text-teal-700 font-semibold">
+                  {/* <button className="text-warm-amber hover:text-teal-700 font-semibold">
                     <ExternalLink className="h-4 w-4" />
                   </button> */}
                 </div>
@@ -88,7 +88,7 @@ export default function Projects() {
 
         <div className="text-center mt-12 w-full">
         <a href="https://calendly.com/charles-buildwise/30min" target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
-          <Button size="lg" className="bg-teal-500 hover:bg-teal-600 w-full sm:w-auto">
+          <Button size="lg" className="bg-warm-amber hover:bg-warm-amber w-full sm:w-auto">
             <Calendar className="mr-2 h-5 w-5 flex-shrink-0" />
             <span className="truncate">Schedule a Meeting</span>
           </Button>

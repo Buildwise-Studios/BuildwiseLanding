@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Enterprise from "@/components/Enterprise";
 import Approach from "@/components/Approach";
 import JasonSection from "@/components/JasonSection";
 import Verticals from "@/components/Verticals";
@@ -15,6 +16,7 @@ export default function Home() {
     <div className="min-h-screen">
       <Header />
       <Hero />
+      <Enterprise />
       <Approach />
       <JasonSection />
       <Verticals />

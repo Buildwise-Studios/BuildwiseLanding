@@ -46,13 +46,13 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-20 bg-teal-500 overflow-hidden">
+    <section id="faq" className="py-20 bg-warm-amber overflow-hidden">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 break-words">
             Frequently Asked Questions
           </h2>
-          <p className="text-base sm:text-lg text-teal-100 max-w-3xl mx-auto px-4">
+          <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto px-4">
             Get answers to the most common questions about our AI agents and how
             they can transform your professional services firm.
           </p>

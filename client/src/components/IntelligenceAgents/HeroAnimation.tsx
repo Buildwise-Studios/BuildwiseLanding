@@ -127,12 +127,12 @@ const AgentResponseScene = () => {
 
             <div className="bg-white px-4 py-3 flex items-center justify-between border-b border-border shadow-sm z-10 mt-8">
                 <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center text-white font-bold text-xs">
+                    <div className="w-8 h-8 rounded-full bg-warm-amber flex items-center justify-center text-white font-bold text-xs">
                         <iconify-icon icon="solar:robot-2-linear" className="text-white text-sm"></iconify-icon>
                     </div>
                     <div className="flex flex-col text-left">
                         <span className="text-sm font-semibold text-[#1A1A1A]">Buildwise Agent</span>
-                        <span className="text-[10px] text-teal-600 font-medium">AI Assistant • Online</span>
+                        <span className="text-[10px] text-warm-amber font-medium">AI Assistant • Online</span>
                     </div>
                 </div>
                 <div className="flex gap-4 text-[#D4A574] opacity-50">
@@ -167,7 +167,7 @@ const AgentResponseScene = () => {
                         Found a news confirming your hearsay. I updated the CRM accordingly and your JP Morgan org chart. I notified the team that his previous seat is now a potential lead to explore.
                         <div className="flex items-center justify-end gap-1 mt-1">
                             <span className="text-[9px] text-slate-500/80">Sat 21:01</span>
-                            <iconify-icon icon="solar:check-read-linear" className="text-[10px] text-teal-600"></iconify-icon>
+                            <iconify-icon icon="solar:check-read-linear" className="text-[10px] text-warm-amber"></iconify-icon>
                         </div>
                     </div>
                 </motion.div>
@@ -176,7 +176,7 @@ const AgentResponseScene = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.2 }}
-                    className="self-center py-2 px-4 rounded-full bg-teal-50 text-[10px] text-teal-600 font-medium border border-teal-200"
+                    className="self-center py-2 px-4 rounded-full bg-warm-off-white text-[10px] text-warm-amber font-medium border border-warm-amber-20"
                 >
                     Intelligence gathered, CRM updated, team notified • All actions completed
                 </motion.div>

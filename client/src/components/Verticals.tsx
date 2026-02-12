@@ -46,10 +46,10 @@ export default function Verticals() {
             >
               <CardContent className="p-6 sm:p-8">
                 <div className={`rounded-lg p-3 w-fit mb-6 ${
-                  vertical.status === "upcoming" ? "bg-gray-200" : "bg-teal-100"
+                  vertical.status === "upcoming" ? "bg-gray-200" : "bg-warm-amber-10"
                 }`}>
                   <vertical.icon className={`h-6 w-6 ${
-                    vertical.status === "upcoming" ? "text-gray-500" : "text-teal-600"
+                    vertical.status === "upcoming" ? "text-gray-500" : "text-warm-amber"
                   }`} />
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 break-words">
@@ -66,7 +66,7 @@ export default function Verticals() {
                     rel="noopener noreferrer"
                     className="inline-block w-full"
                   >
-                    <Button className="w-full bg-teal-600 hover:bg-teal-700">
+                    <Button className="w-full bg-warm-amber hover:bg-teal-700">
                       <Calendar className="mr-2 h-4 w-4" />
                       Schedule Demo
                     </Button>

@@ -48,7 +48,7 @@ const technologies = [
   {
     name: "Supabase",
     icon: SiSupabase,
-    color: "text-teal-400",
+    color: "text-warm-amber",
     bgColor: "hover:bg-green-50",
   },
   {
@@ -78,8 +78,8 @@ const technologies = [
   {
     name: "OpenAI",
     icon: SiOpenai,
-    color: "text-teal-500",
-    bgColor: "hover:bg-teal-50",
+    color: "text-warm-amber",
+    bgColor: "hover:bg-warm-off-white",
   },
   {
     name: "Stripe",
